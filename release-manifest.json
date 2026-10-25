@@ -1,9 +1,9 @@
 {
-  "version": "0.4.0-preview.1",
+  "version": "0.4.1-preview.1",
   "validationStatus": "새 합성 원장 변환·감사 입력 검증 완료; 전체 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.4.0-preview.1",
+    "version": "0.4.1-preview.1",
     "unitTestsPassed": true,
     "unitTestCount": 35,
     "dummyConversion": {
@@ -19,7 +19,7 @@
       "leadingZerosPreserved": true,
       "mappingMethod": "명시된 합성 시나리오 설정 8개 적용. 실제 사용자 승인·감사의견 아님.",
       "reviewFolder": "표준화결과",
-      "auditInput": "감사입력/통합감사입력_20261025_141015_393497/통합감사_원장입력.xlsx"
+      "auditInput": "감사입력/통합감사입력_20261025_204215_734013/통합감사_원장입력.xlsx"
     },
     "auditImport": {
       "auditSuiteVersion": "2.1.0",
@@ -34,8 +34,8 @@
       "sourceAccounts": 8,
       "leadGroups": 7,
       "revenueBinding": 12900000,
-      "runId": "8d1aa12e9ca348349885f09cabe0c835",
-      "resultHash": "392335681040d72374d014889d5a5f7dc04046c9348fc04565643f5f21f72b37",
+      "runId": "ef48ac31978a43c985dbea0250b141ae",
+      "resultHash": "5b3525606a12351bb2c73f695cf99c49b4cef2fdff62d6f69d9a0903b6ac020f",
       "workspaceReopened": true,
       "sourceIntegrity": true,
       "reviewMessages": [
@@ -53,18 +53,35 @@
       },
       "scope": "새 합성 업무의 원장·리드 입력·수치 대사·저장·재열기만 확인. 실제 독립 감사증거·감사결론·다른 모듈 수행은 아님."
     },
+    "journalView": {
+      "journalViewRows": 14,
+      "rawLedgerRows": 28,
+      "viewMatchesLedger": true,
+      "sourceAmountsDatesCodesUnchanged": true,
+      "sourceLeadingZerosPreserved": true,
+      "bankDebit": "신한은행",
+      "bankCredit": "국민은행",
+      "bankAmount": 2000000,
+      "costDebit": "매출원가",
+      "costCredit": "재고자산",
+      "costAmounts": [
+        1200000,
+        700000
+      ],
+      "removedPrefixesAbsent": true,
+      "auditInputDescriptionsMatch": true,
+      "unrelatedSupportValuesUnchanged": true
+    },
     "guiExport": {
-      "sourceGuiButtonClicked": true,
-      "backgroundExportCompleted": true,
-      "outputWorkbookExists": true,
-      "nativeFileDialogsMocked": true,
-      "actualOsFilePickerExercised": false,
-      "realDataUsed": false
+      "rerunThisVersion": false,
+      "lastCheckedVersion": "0.4.0-preview.1",
+      "reason": "예제·재현 도구의 표기 변경. GUI 저장 로직 변경 없음.",
+      "actualOsFilePickerExercised": false
     }
   },
   "initialUiRendered": true,
   "exeStartup": {
-    "version": "0.4.0-preview.1",
+    "version": "0.4.1-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -84,7 +101,7 @@
   "pythonModuleCount": 76,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "1b541b6655bd18335a846acc511b5e8cbe8611fbf007800d258612de57eaae83",
+    "sha256": "966b420a6cfee02b692a8656d1cd071ba36dab19a93fa8d7e142cb522a66f5fa",
     "bytes": 3082003
   },
   "files": [
@@ -95,13 +112,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 8381,
-      "sha256": "9fd247671817576b825c890dd5e949d3c0bd9272ed651821530664fc4b4024a8"
+      "bytes": 8423,
+      "sha256": "529b812e78b2062223962517c586be55dff008bb89742892127aa76cacb7619a"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "93ddbcb4d928f2c29d8749071d1b20b102db9675901b9a939ce48cf6bcfc3f8a"
+      "sha256": "2b114cea7c40b9b69ee824c7f6658bee632cefa98dc18404579013672ee1d098"
     },
     {
       "file": "main.py",
@@ -480,18 +497,18 @@
     },
     {
       "file": "docs/DEMO_RESULT.md",
-      "bytes": 1889,
-      "sha256": "1c861edf8312025b9e6fd02083b79f54bb00bb1744c5b418f2a919227488081d"
+      "bytes": 2359,
+      "sha256": "a1889194dcef7dd18f12a2ef8adb0ce7db3c776425bc555a232451b8e0252fe1"
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 5312,
-      "sha256": "5d33a5d97d216259a2bf17699a8a4057cc5fc24ae31699606539484d7caa5ac4"
+      "bytes": 5420,
+      "sha256": "6c1b385868b22deab9fca41fb3127cf628b2ba6479e4357b45382e723ecb8629"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 1536,
-      "sha256": "665b054db6d272d70caa4bd6d1649cf47e742afef335666a039865b140668e99"
+      "bytes": 2434,
+      "sha256": "a4c9faf767e07f990441c71984fa2938613cb452a1ec1492e8e1716def4da588"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -530,8 +547,8 @@
     },
     {
       "file": "tools/build_windows.py",
-      "bytes": 4692,
-      "sha256": "a075916893fbe44a373c5515d37039c0fc1e3f03d0999675b81475dbe627d3df"
+      "bytes": 4698,
+      "sha256": "ec9c49f3b82a01c658d260b4a842d4caf05d8070d9d6e919b443c921b1132230"
     },
     {
       "file": "tools/package_release.py",
@@ -581,7 +598,7 @@
     {
       "file": "docs/프로젝트_소개글.txt",
       "bytes": 1281,
-      "sha256": "43d100f8754acf9bbf74b8e014ce93cab4574181308512e380c5d7a7e8b7627f"
+      "sha256": "0f693b0e05f4b2cb90d487751340906f8f0f99f393f4457dcd8ed460e74dce87"
     },
     {
       "file": "tools/run_audit_demo.py",
@@ -590,28 +607,28 @@
     },
     {
       "file": "tools/verify_audit_demo_import.py",
-      "bytes": 2815,
-      "sha256": "4aa7c0a5e79d88e78959fc90b3844622ab65e9486cd8173b087c6a49ba5d9317"
+      "bytes": 2801,
+      "sha256": "f8817ec28ba3998d0032e84116d3f35e22340cbe09c2347a575cdfa343bf7958"
     },
     {
       "file": "samples/새회사변환예제/01_노바부품_원본원장.xlsx",
-      "bytes": 5626,
-      "sha256": "06c97d613d0fcc46a2b2998d8d9288960bb557863901582049eef9aa8fa833d0"
+      "bytes": 7345,
+      "sha256": "5935e16d79f667ca161cb5f604a5435d7ad030c5791fd82e158fea2877bd5b42"
     },
     {
       "file": "samples/새회사변환예제/02_노바부품_시산표_통제자료.xlsx",
-      "bytes": 7958,
-      "sha256": "e245714496586d89a6109fdce20bce35c6e37d92b4d1ecec31d32000b4e28dbc"
+      "bytes": 7952,
+      "sha256": "f0c9030aa72e12eaa735d9cdf3e4e9a0e7b25488975e1a5ca0762b86ee028106"
     },
     {
       "file": "samples/새회사변환예제/README.md",
-      "bytes": 2038,
-      "sha256": "e375ebf0a7363a0677d14ff1c5eb2b55c23ec6c70854d9cfb73fd7374bf0852b"
+      "bytes": 2460,
+      "sha256": "a4cf478cb814c4d09497ee110ec510135ad4e2c182e0dda3d5bac45a5066dfb7"
     },
     {
       "file": "samples/새회사변환예제/시나리오.json",
-      "bytes": 366,
-      "sha256": "9e25a9f4cb57894a48dea5b07d416250feafcac03b8bc89bcb61dca08171237e"
+      "bytes": 352,
+      "sha256": "c75ae8aeb427c1b92c368691a410e867c7bca9af19275a3d0c7f66dabd31547d"
     },
     {
       "file": "samples/새회사변환예제/예제_계정연결.json",

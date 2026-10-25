@@ -11,7 +11,7 @@ if work.exists():raise FileExistsError('기존 감사업무를 변경하지 않�
 sys.path.insert(0,str(suite))
 from workspace import Workspace
 from common import VERSION
-scope={'회사코드':'NOVA_DEMO','회사명':'노바부품(가상회사)','시작일':'2026-01-01','기준일':'2026-01-31',
+scope={'회사코드':'NOVA_DEMO','회사명':'노바부품','시작일':'2026-01-01','기준일':'2026-01-31',
        '회계체계':'시험용 명시 계정체계','감사기준':'입력 호환성·기계적 대사 시험','작성자':'더미 시나리오 실행','더미업무':True}
 workspace=Workspace(work,create=scope)
 run=workspace.execute('원장·리드',args.input)

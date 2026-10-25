@@ -76,7 +76,7 @@ collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNo
     shutil.copy2(ROOT/'assets/fonts/OFL.txt',licenses/'NotoSansKR-OFL.txt')
     python_license=Path(sys.base_prefix)/'LICENSE.txt'
     if python_license.is_file():shutil.copy2(python_license,licenses/'Python-LICENSE.txt')
-    (portable/'시작하기.txt').write_text('AccountDataNormalizer.exe를 실행해 주세요.\nPython 설치 없이 사용할 수 있어요.\n_internal 폴더는 EXE와 함께 보관해 주세요.\n사용자 검증 대기 버전이며 원장 변환 기능의 실행 검증은 수행하지 않았습니다.\n',encoding='utf-8')
+    (portable/'시작하기.txt').write_text('AccountDataNormalizer.exe를 실행해 주세요.\nPython 설치 없이 사용할 수 있어요.\n_internal 폴더는 EXE와 함께 보관해 주세요.\n테스트 원장 변환·감사 입력의 확인 범위는 README.md와 RELEASE_NOTES.md에서 볼 수 있어요.\n',encoding='utf-8')
     print('Portable EXE created: '+str(portable))
 
 if __name__=='__main__':main()

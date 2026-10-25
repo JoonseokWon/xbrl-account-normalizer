@@ -2,11 +2,11 @@
 
 엑셀 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 데스크톱 앱입니다. 원본 계정코드·행 출처를 남기면서 후보를 비교하고, 확인한 연결을 다음 작업에 다시 사용할 수 있습니다.
 
-**v0.4.0-preview.1 — 새 가상 회사 원장의 변환·통합감사 원장 입력을 검증했습니다. 전체 GUI·다른 모듈·실사용 자료는 사용자 확인이 필요합니다.**
+**v0.4.1-preview.1 — 노바부품 예제를 차변·대변 분개장으로 정리하고 변환·통합감사 원장 입력을 재확인했습니다. 전체 GUI·다른 모듈·실사용 자료는 사용자 확인이 필요합니다.**
 
 ## Windows에서 시작하기
 
-1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.4.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.4.1-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
