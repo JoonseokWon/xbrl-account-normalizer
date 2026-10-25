@@ -2,11 +2,11 @@
 
 엑셀 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 데스크톱 앱입니다. 원본 계정코드·행 출처를 남기면서 후보를 비교하고, 확인한 연결을 다음 작업에 다시 사용할 수 있습니다.
 
-**v0.3.2-preview.1 — 사용자 검증 대기. 기능·회계 결과의 실행 검증은 수행하지 않았습니다. 화면 렌더링과 EXE 초기화·리소스 확인은 배포 준비 범위로 구분합니다.**
+**v0.4.0-preview.1 — 새 가상 회사 원장의 변환·통합감사 원장 입력을 검증했습니다. 전체 GUI·다른 모듈·실사용 자료는 사용자 확인이 필요합니다.**
 
 ## Windows에서 시작하기
 
-1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.3.2-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.4.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -48,7 +48,7 @@ EXE의 로컬 이력과 오류 기록은 `%LOCALAPPDATA%/AccountDataNormalizer`�
 
 재무제표는 **BS 재무상태표**를 지원합니다. PL에는 기간 시작·종료 규격이 추가로 필요합니다. 상세·소계·합계를 구분하고 중복 합산하지 않습니다. 원장 당기순변동을 기말잔액으로 대체하지 않습니다.
 
-결과 폴더에는 `계정표준화_검토.xlsx`, `standardized.json`, `audit_bridge.json`, 사용한 열 연결 설정인 `input-profile.json`이 있습니다. 원본은 덮어쓰지 않습니다. `audit_bridge.json`은 기존 감사 입력의 원장·계정매핑 두 표만 제공하며 기존 감사 앱에 직접 불러오는 기능과 공식 XBRL GL 출력은 아직 포함하지 않습니다. 시산표·독립 추출 통제·증빙·모듈별 자료는 추가로 필요합니다.
+검토 결과 폴더에는 `계정표준화_검토.xlsx`, `standardized.json`, 부분 표인 `audit_bridge.json`, `input-profile.json`이 있습니다. 원본은 덮어쓰지 않습니다. 계정 연결을 확인한 뒤 **통합감사 입력 저장**에서 별도의 시산표·통제 보조파일을 선택하면 원장·리드 모듈에 등록할 7시트 `통합감사_원장입력.xlsx`와 출처 JSON을 새 폴더에 만듭니다. 보조 통제는 제공값과 비교하며 원장으로 채워 맞추지 않습니다. [보조파일 규격과 사용법](docs/AUDIT_EXPORT.md)을 참고하세요. 공식 XBRL GL 출력은 향후 확장 항목입니다.
 
 ## 소스로 실행·빌드하기
 
@@ -72,7 +72,7 @@ python tools/build_windows.py
 python tools/package_release.py
 ```
 
-[수동 확인 목록](docs/MANUAL_VALIDATION.md)과 `tests/`는 사용자가 검증할 수 있도록 제공합니다. 이번 버전에서 기능 테스트를 실행하지 않았으며 이전 버전의 결과를 이번 버전의 통과 기록으로 사용하지 않습니다.
+[새 회사 변환 예제](samples/새회사변환예제/)와 [실행 결과](docs/DEMO_RESULT.md)를 제공합니다. 28개 원장 행을 변환해 통합감사 소스 v2.1.0의 새 더미 업무에 등록·실행·재열기했고, 대사 67개가 일치했습니다. 단위 테스트 35개를 실행했습니다. 실제 통제의 독립성이나 감사결론 검증을 뜻하지 않습니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)으로 전체 GUI와 실사용 자료는 별도로 확인해 주세요.
 
 ## 참고 자료
 

@@ -1,10 +1,70 @@
 {
-  "version": "0.3.2-preview.1",
-  "validationStatus": "사용자 검증 대기",
-  "applicationTestsRun": false,
+  "version": "0.4.0-preview.1",
+  "validationStatus": "새 합성 원장 변환·감사 입력 검증 완료; 전체 실사용 확인 필요",
+  "applicationTestsRun": true,
+  "validation": {
+    "version": "0.4.0-preview.1",
+    "unitTestsPassed": true,
+    "unitTestCount": 35,
+    "dummyConversion": {
+      "company": "NOVA_DEMO",
+      "sourceRows": 28,
+      "sourceAccounts": 8,
+      "standardAccounts": 7,
+      "initialPendingRows": 28,
+      "finalPendingRows": 0,
+      "conversionErrors": 0,
+      "debitTotal": 26700000,
+      "creditTotal": 26700000,
+      "leadingZerosPreserved": true,
+      "mappingMethod": "명시된 합성 시나리오 설정 8개 적용. 실제 사용자 승인·감사의견 아님.",
+      "reviewFolder": "표준화결과",
+      "auditInput": "감사입력/통합감사입력_20261025_141015_393497/통합감사_원장입력.xlsx"
+    },
+    "auditImport": {
+      "auditSuiteVersion": "2.1.0",
+      "pythonVersion": "3.14.8",
+      "module": "원장·리드",
+      "company": "NOVA_DEMO",
+      "blockingIssues": 0,
+      "reviewIssues": 1,
+      "controlChecks": 67,
+      "matchedChecks": 67,
+      "ledgerRows": 28,
+      "sourceAccounts": 8,
+      "leadGroups": 7,
+      "revenueBinding": 12900000,
+      "runId": "8d1aa12e9ca348349885f09cabe0c835",
+      "resultHash": "392335681040d72374d014889d5a5f7dc04046c9348fc04565643f5f21f72b37",
+      "workspaceReopened": true,
+      "sourceIntegrity": true,
+      "reviewMessages": [
+        {
+          "code": "JE_CANDIDATE",
+          "severity": "검토",
+          "message": "전표 검토후보 2건 (부정 확정 아님)",
+          "reference": ""
+        }
+      ],
+      "engineSourceHashes": {
+        "ledger.py": "76c5db7c33e8a3891daf676dc1ccd76c3f062f7ba1178589307233fc475b8f48",
+        "adapters.py": "3ac345b17fe4d0e84708e4aa8733ab16da8ab756a82a1064cfcfee17e30c4fc5",
+        "workspace.py": "4dc4561e88bb57777602458ea020a8e4783b9389be7f916fbd779894b47f2e62"
+      },
+      "scope": "새 합성 업무의 원장·리드 입력·수치 대사·저장·재열기만 확인. 실제 독립 감사증거·감사결론·다른 모듈 수행은 아님."
+    },
+    "guiExport": {
+      "sourceGuiButtonClicked": true,
+      "backgroundExportCompleted": true,
+      "outputWorkbookExists": true,
+      "nativeFileDialogsMocked": true,
+      "actualOsFilePickerExercised": false,
+      "realDataUsed": false
+    }
+  },
   "initialUiRendered": true,
   "exeStartup": {
-    "version": "0.3.2-preview.1",
+    "version": "0.4.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -20,12 +80,12 @@
     },
     "scope": "startup and resource discovery only; no conversion run"
   },
-  "sourceFileCount": 91,
-  "pythonModuleCount": 68,
+  "sourceFileCount": 108,
+  "pythonModuleCount": 76,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "c45a04b857a0e6549b854ab830edc2958e07988152b2fa62befb004f91724e2b",
-    "bytes": 3066295
+    "sha256": "1b541b6655bd18335a846acc511b5e8cbe8611fbf007800d258612de57eaae83",
+    "bytes": 3082003
   },
   "files": [
     {
@@ -35,13 +95,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 7916,
-      "sha256": "080daf0a3127fd41b6543c4e33f1b57c3d1dbcebe2a4a517dd512e5ff81ae76f"
+      "bytes": 8381,
+      "sha256": "9fd247671817576b825c890dd5e949d3c0bd9272ed651821530664fc4b4024a8"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "0afdc93de8142ff8285dbdaf40473bfb27ad08dfdb194a2ac8710809bd9befc8"
+      "sha256": "93ddbcb4d928f2c29d8749071d1b20b102db9675901b9a939ce48cf6bcfc3f8a"
     },
     {
       "file": "main.py",
@@ -114,9 +174,19 @@
       "sha256": "4c52370287b5583f178af60f0fcae8665e3f079cf75c80879fe576e55aef6206"
     },
     {
+      "file": "core/audit_contract.py",
+      "bytes": 1742,
+      "sha256": "943adb19cf4f63ed7a6db017d5ef969aa3d77b6591ac754a28ae6ff58be592c0"
+    },
+    {
+      "file": "core/audit_validation.py",
+      "bytes": 6845,
+      "sha256": "2b034b6f7193418845e85167e992f46189390fb43802486edf6770281653b145"
+    },
+    {
       "file": "core/bridge.py",
-      "bytes": 1587,
-      "sha256": "20bc24519d957ec1398106a3e867d1fc617b6c86fd7bad107cd9a1e63f51e2af"
+      "bytes": 1900,
+      "sha256": "a55d862b7c6047e6446008080d08b3f226fae1dd21410b744786d25c3f283e41"
     },
     {
       "file": "core/catalog.py",
@@ -159,14 +229,19 @@
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
     },
     {
+      "file": "application/audit_export.py",
+      "bytes": 3265,
+      "sha256": "7d9df36d52d329f31036e85f666f2aaac58c1179c45f6d9b5998b5fa763a672f"
+    },
+    {
       "file": "application/configuration.py",
       "bytes": 890,
       "sha256": "44e87de3811cd22c4bb989a4a1a7aad551a2dca56404e4741601587bf4ddff20"
     },
     {
       "file": "application/exporting.py",
-      "bytes": 1282,
-      "sha256": "61684f9a64f8324f8868a9f1924784457d0006be0f7a691125d093712aa91fe4"
+      "bytes": 1298,
+      "sha256": "d147677b3b4f0ef1584d610647d6523e389cea20d624d73e867fab1a3b69e91c"
     },
     {
       "file": "application/loading.py",
@@ -265,8 +340,13 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 7996,
-      "sha256": "04941b0a4a73a6f86b613762628848ac679c4d2fcf915396f3334e990afb294c"
+      "bytes": 8399,
+      "sha256": "f1096e41396bfb62daea4d3b09f315d40c1871f4efd7eaf4715a5aec753fd5d3"
+    },
+    {
+      "file": "desktop/controllers/audit_export.py",
+      "bytes": 861,
+      "sha256": "615cbff0067bf35910347c8aab10011e4f745296b2eb34bd8d588693ebea74a5"
     },
     {
       "file": "desktop/controllers/jobs.py",
@@ -295,8 +375,8 @@
     },
     {
       "file": "desktop/screens/help.py",
-      "bytes": 1931,
-      "sha256": "f4e8c16ac4f65f4442df81d68d829a6a91461c28736c4f27b5ffef0470a38559"
+      "bytes": 1969,
+      "sha256": "b405169e8500a946584acf392c25c9a8494c7fb41b233e6816270e3dc1095da8"
     },
     {
       "file": "desktop/screens/mapping.py",
@@ -310,8 +390,8 @@
     },
     {
       "file": "desktop/screens/results.py",
-      "bytes": 4158,
-      "sha256": "80299f95c92305e1e2c813203f904e5c4ed512acf80365d6b06f8950e432bee4"
+      "bytes": 4663,
+      "sha256": "23085bb7a0284937cce2d34663c1ffc4f8d1f9625a644297e6205cd63ab9179a"
     },
     {
       "file": "desktop/theme/__init__.py",
@@ -364,6 +444,11 @@
       "sha256": "f086a5102198b29eb05113873396957bafe3e29d088db75a0055cd83907e076c"
     },
     {
+      "file": "io_xlsx/tables.py",
+      "bytes": 2583,
+      "sha256": "59fd09ae6c9898731998ce4c17b9c5f1f34b701020704da1dd34862658b80b71"
+    },
+    {
       "file": "io_xlsx/writer.py",
       "bytes": 5974,
       "sha256": "0b58b63cbf2004c7461078b4b051d82cf16443e217f7b382e7342ba59003cf29"
@@ -385,18 +470,28 @@
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 2711,
-      "sha256": "40eeead4e2744d052ed4dc1a05321621226686c6aad7bd453f249c77fa321a43"
+      "bytes": 3071,
+      "sha256": "465efdc446839afb26fcf61ccd1cba291a1edef7381a5dba8490e9cbf7ba8e4c"
+    },
+    {
+      "file": "docs/AUDIT_EXPORT.md",
+      "bytes": 3605,
+      "sha256": "17b25ff60273a8b00c3dc23eae01c98deeca348f04cdcdc2dd8ac03401bb221d"
+    },
+    {
+      "file": "docs/DEMO_RESULT.md",
+      "bytes": 1889,
+      "sha256": "1c861edf8312025b9e6fd02083b79f54bb00bb1744c5b418f2a919227488081d"
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 4742,
-      "sha256": "645737431bf706d06ae8f4287abe6c6925f47386efa0ae44680c16cdf776993e"
+      "bytes": 5312,
+      "sha256": "5d33a5d97d216259a2bf17699a8a4057cc5fc24ae31699606539484d7caa5ac4"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 1592,
-      "sha256": "f501ea1075e3c2018e24765ab8c67f711767091ae7ca6ee095333ba58da6d415"
+      "bytes": 1536,
+      "sha256": "665b054db6d272d70caa4bd6d1649cf47e742afef335666a039865b140668e99"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -405,8 +500,13 @@
     },
     {
       "file": "docs/UI_DESIGN.md",
-      "bytes": 3018,
-      "sha256": "d88f27750c5dc94b5242dc6440d8c7823085d3f5fa7fb2956d4975fee0f6320e"
+      "bytes": 3369,
+      "sha256": "d069e9731160034b5b9fc85ea00adbc89e1170004346b9944fdaa7cc99b7541c"
+    },
+    {
+      "file": "tests/test_audit_export.py",
+      "bytes": 4680,
+      "sha256": "395d8900bdfd153f2ae9bc933112fe27205ed9aff15f2cab6c0a230d2bb2ebc3"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -435,8 +535,8 @@
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 4592,
-      "sha256": "2f6dd54dae2161b0accdc734a0405d856c22ba740793ea4c28e2c50cd82104e2"
+      "bytes": 5498,
+      "sha256": "3c08cf0694bf71a0be027008c945594be3b864db9fb423bbfb1676c5b7c71cf5"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -480,8 +580,53 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 1215,
-      "sha256": "c6b4fd24ea07717b1e0f5d38f4b067e5914e6f26923ccd3c1627b88504c146bf"
+      "bytes": 1281,
+      "sha256": "43d100f8754acf9bbf74b8e014ce93cab4574181308512e380c5d7a7e8b7627f"
+    },
+    {
+      "file": "tools/run_audit_demo.py",
+      "bytes": 4021,
+      "sha256": "c1854f97d7d7e294ddd79d186bb8ac2b7b79b0d585dda408f5eb6075202f4edf"
+    },
+    {
+      "file": "tools/verify_audit_demo_import.py",
+      "bytes": 2815,
+      "sha256": "4aa7c0a5e79d88e78959fc90b3844622ab65e9486cd8173b087c6a49ba5d9317"
+    },
+    {
+      "file": "samples/새회사변환예제/01_노바부품_원본원장.xlsx",
+      "bytes": 5626,
+      "sha256": "06c97d613d0fcc46a2b2998d8d9288960bb557863901582049eef9aa8fa833d0"
+    },
+    {
+      "file": "samples/새회사변환예제/02_노바부품_시산표_통제자료.xlsx",
+      "bytes": 7958,
+      "sha256": "e245714496586d89a6109fdce20bce35c6e37d92b4d1ecec31d32000b4e28dbc"
+    },
+    {
+      "file": "samples/새회사변환예제/README.md",
+      "bytes": 2038,
+      "sha256": "e375ebf0a7363a0677d14ff1c5eb2b55c23ec6c70854d9cfb73fd7374bf0852b"
+    },
+    {
+      "file": "samples/새회사변환예제/시나리오.json",
+      "bytes": 366,
+      "sha256": "9e25a9f4cb57894a48dea5b07d416250feafcac03b8bc89bcb61dca08171237e"
+    },
+    {
+      "file": "samples/새회사변환예제/예제_계정연결.json",
+      "bytes": 336,
+      "sha256": "63bd0eeaca4d711b3afdae8ae695d8b8e9a5813fce36973108f1ef76f22f9af4"
+    },
+    {
+      "file": "samples/새회사변환예제/예제_열연결.json",
+      "bytes": 276,
+      "sha256": "90c913b19f88e211df26a512b797ee2f8d81bb1c5197fae0e9d8afbd76fe951d"
+    },
+    {
+      "file": "samples/새회사변환예제/예제_입력프로필.json",
+      "bytes": 1493,
+      "sha256": "15b4cf53249f5632b15a4ba1b0a3a764d3ffa34c016836f22debfc7a594bc305"
     }
   ]
 }

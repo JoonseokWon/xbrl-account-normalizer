@@ -14,7 +14,7 @@ def export_session(session,folder,history_path=None,exact_folder=False):
     base=Path(folder)
     target=base if exact_folder else base/datetime.now().strftime('변환_%Y%m%d_%H%M%S_%f')
     target.mkdir(parents=True,exist_ok=False)
-    for name,data in [('standardized.json',session.result),('audit_bridge.json',audit_bridge(session.result)),
+    for name,data in [('standardized.json',session.result),('audit_bridge.json',audit_bridge(session.result,session.catalog)),
                       ('input-profile.json',session.profile)]:
         with (target/name).open('x',encoding='utf-8',newline='\n') as output:
             json.dump(data,output,ensure_ascii=False,indent=2,default=json_value)

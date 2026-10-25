@@ -1,0 +1,14 @@
+{
+  "gl": {
+    "company": "CorpCode",
+    "date": "PostingDate",
+    "journal": "VoucherNo",
+    "line": "LineSeq",
+    "account": "GLCode",
+    "name": "GLName",
+    "debit": "Debit_Won",
+    "credit": "Credit_Won",
+    "description": "Memo",
+    "author": "EnteredBy"
+  }
+}

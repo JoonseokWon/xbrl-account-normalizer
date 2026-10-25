@@ -10,6 +10,7 @@ from application.paths import user_data,default_outputs
 from io_xlsx.inspection import inspect_workbook
 from .jobs import Jobs
 from desktop.components.confirmation import confirm
+from .audit_export import choose_and_export
 
 class AppController(QObject):
     def __init__(self,window):
@@ -22,6 +23,7 @@ class AppController(QObject):
         self.columns.loadRequested.connect(self.load);self.mapping.resultsRequested.connect(lambda:window.show_page(3))
         self.mapping.editor.decisionRequested.connect(self.review)
         self.results.exportRequested.connect(self.export);self.results.openFolderRequested.connect(self.open_results)
+        self.results.auditExportRequested.connect(lambda:choose_and_export(self))
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
     def action(self,index):
         if self.window.busy:return
@@ -85,6 +87,9 @@ class AppController(QObject):
         self.jobs.start(lambda:export_session(self.session,folder),self.export_ready,self.failure)
     def export_ready(self,path):
         self.finish_job();self.results.exported(path);self.window.show_page(3);self.window.notice.set_message('검토 결과를 새 폴더에 저장했어요. 결과 폴더에서 파일을 열어 확인해 주세요.')
+    def audit_export_ready(self,path):
+        self.finish_job();self.results.exported(path);self.window.show_page(3)
+        self.window.notice.set_message('통합감사 입력 엑셀을 저장했어요. 통합감사프로그램의 원장·리드에서 등록해 주세요.')
     def open_results(self):
         if self.results.output_path:QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.results.output_path)))
     def open_data(self):

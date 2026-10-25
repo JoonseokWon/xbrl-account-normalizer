@@ -30,6 +30,8 @@ def main():
                                       'samples/계정매핑_합성입력.xlsx','assets/app-icon.svg','assets/fonts/NotoSansKR.ttf','assets/fonts/OFL.txt'))
     files.extend(sorted((ROOT/'assets/licenses').glob('*.txt')))
     files.extend(sorted((ROOT/'docs').glob('*.txt')))
+    files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py'))
+    files.extend(sorted(path for path in (ROOT/'samples/새회사변환예제').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')
@@ -45,7 +47,11 @@ def main():
     startup=json.loads(diagnostics.read_text(encoding='utf-8-sig'))
     if startup.get('version')!=VERSION or not startup.get('frozen') or not all(startup.get('resources',{}).values()):
         raise ValueError('이 버전 EXE의 시작·리소스 확인 기록이 필요합니다.')
-    manifest={'version':VERSION,'validationStatus':'사용자 검증 대기','applicationTestsRun':False,
+    evidence_path=release/'validation-summary.json'
+    evidence=json.loads(evidence_path.read_text(encoding='utf-8')) if evidence_path.exists() else None
+    if evidence and evidence.get('version')!=VERSION:raise ValueError('다른 버전의 검증 기록입니다.')
+    manifest={'version':VERSION,'validationStatus':'새 합성 원장 변환·감사 입력 검증 완료; 전체 실사용 확인 필요' if evidence else '사용자 검증 대기',
+              'applicationTestsRun':bool(evidence and evidence.get('unitTestsPassed')),'validation':evidence,
               'initialUiRendered':(release/'화면_초안.png').is_file(),'exeStartup':startup,
               'sourceFileCount':len(entries),'pythonModuleCount':sum(path.suffix=='.py' for path in files),
               'exe':{'name':executable.name,'sha256':digest(executable),'bytes':executable.stat().st_size},'files':entries}
@@ -58,9 +64,11 @@ def main():
     with ZipFile(windows_zip,'x',ZIP_DEFLATED) as output:
         for path in sorted(runtime.rglob('*')):
             if path.is_file():output.write(path,'AccountDataNormalizer/'+path.relative_to(runtime).as_posix())
-    checksums=''.join(f'{digest(path)}  {path.name}\n' for path in (windows_zip,source_zip,manifest_path))
+    checksum_files=[windows_zip,source_zip,manifest_path]
+    checksum_files.extend(path for path in (release/'demo-conversion-pack.zip',release/'validation-summary.json') if path.is_file())
+    checksums=''.join(f'{digest(path)}  {path.name}\n' for path in checksum_files)
     (release/'SHA256SUMS.txt').write_text(checksums,encoding='utf-8')
     print(json.dumps({'windows':str(windows_zip),'source':str(source_zip),'sourceFileCount':len(entries),
-                      'pythonModuleCount':manifest['pythonModuleCount'],'applicationTestsRun':False},ensure_ascii=False))
+                      'pythonModuleCount':manifest['pythonModuleCount'],'applicationTestsRun':manifest['applicationTestsRun']},ensure_ascii=False))
 
 if __name__=='__main__':main()

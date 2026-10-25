@@ -19,6 +19,7 @@ application/
   loading.py                    원본 읽기와 표준화 시작
   reviews.py                    계정 확인·거절·미확정 변경
   exporting.py                  새 결과 폴더 저장과 이력 보관
+  audit_export.py               확인 원장과 별도 보조자료로 통합감사 입력 생성
 core/
   values.py                     코드·일자·금액 규칙
   catalog.py                    사전·명시적 매핑 규칙
@@ -27,9 +28,12 @@ core/
   financial.py                  재무상태표 문맥
   aggregation.py                확인한 원장행의 표준 계정 집계
   bridge.py                     기존 감사 입력용 부분 데이터
+  audit_contract.py             통합감사 7시트·보조파일·모듈 연결 규격
+  audit_validation.py           회사·기간·시산표·별도 통제의 기계적 비교
 io_xlsx/
   package_guard.py              XLSX 압축·XML 입력 한도
   inspection.py                 시트·열 이름 조회
+  tables.py                     보조파일의 엄격한 확정값 표 읽기
   reader.py                     확정값 원본 읽기
   styling.py                    Excel 시트 스타일 생성
   writer.py                     검토 엑셀 시트 구성

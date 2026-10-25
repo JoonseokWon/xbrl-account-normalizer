@@ -1,0 +1,13 @@
+{
+  "company": "NOVA_DEMO",
+  "name": "노바부품(가상회사)",
+  "start": "2026-01-01",
+  "end": "2026-01-31",
+  "journals": 14,
+  "ledgerRows": 28,
+  "sourceAccounts": 8,
+  "standardAccounts": 7,
+  "debitTotal": 26700000,
+  "creditTotal": 26700000,
+  "note": "모든 거래·통제·매핑은 테스트용 합성자료. 실제 독립 감사증거가 아님."
+}
