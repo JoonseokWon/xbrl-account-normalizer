@@ -1,10 +1,10 @@
 {
-  "version": "0.3.1-preview.1",
+  "version": "0.3.2-preview.1",
   "validationStatus": "사용자 검증 대기",
   "applicationTestsRun": false,
   "initialUiRendered": true,
   "exeStartup": {
-    "version": "0.3.1-preview.1",
+    "version": "0.3.2-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -24,8 +24,8 @@
   "pythonModuleCount": 68,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "93a4128a31723ea47ea656a5a92cbef75163aed9d5d6ed0f94484b4d57707797",
-    "bytes": 3064899
+    "sha256": "c45a04b857a0e6549b854ab830edc2958e07988152b2fa62befb004f91724e2b",
+    "bytes": 3066295
   },
   "files": [
     {
@@ -35,13 +35,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 7469,
-      "sha256": "01ed0e406422fd65a97f8b62480b1badaba0ad1ccb61f228fd2af41e5f07ccc6"
+      "bytes": 7916,
+      "sha256": "080daf0a3127fd41b6543c4e33f1b57c3d1dbcebe2a4a517dd512e5ff81ae76f"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "cb6bf8fd82dd473f08ca367952e6836c0581ecf22d10f9cf810e645ee830f6ff"
+      "sha256": "0afdc93de8142ff8285dbdaf40473bfb27ad08dfdb194a2ac8710809bd9befc8"
     },
     {
       "file": "main.py",
@@ -220,13 +220,13 @@
     },
     {
       "file": "desktop/components/drop_zone.py",
-      "bytes": 2032,
-      "sha256": "f365ab11feeabca254d9b8b1387ae6ac7b72040f1b1e231b416cebb3602784c1"
+      "bytes": 2047,
+      "sha256": "d46aec1ee3834aaf17b16012611192608c71be1774d8bbdd07f807f8d9781f1a"
     },
     {
       "file": "desktop/components/field_selector.py",
-      "bytes": 2658,
-      "sha256": "1d7882bcfbebe890fc63e8f136960c29dd0ebb69b05decc89631ced1876e8829"
+      "bytes": 2840,
+      "sha256": "61a4f22f4824d15f20ac93fbc813f6ecb3580df7e4b3d9649ddfea3eb06e0a57"
     },
     {
       "file": "desktop/components/metric.py",
@@ -265,8 +265,8 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 7855,
-      "sha256": "f05abc065c5c91701aa05932b74511ff92638f69b312226b7cdb9575df9ad161"
+      "bytes": 7996,
+      "sha256": "04941b0a4a73a6f86b613762628848ac679c4d2fcf915396f3334e990afb294c"
     },
     {
       "file": "desktop/controllers/jobs.py",
@@ -290,28 +290,28 @@
     },
     {
       "file": "desktop/screens/columns.py",
-      "bytes": 1969,
-      "sha256": "b9eae3588058e5b03d823a151f8c9dcf1aa854dacf2aa3620f0775ef1a6fefce"
+      "bytes": 2087,
+      "sha256": "7662bb8c7079c4036e6ff5ffdea842c844d7bf96c82821d895e41d1c5094eda8"
     },
     {
       "file": "desktop/screens/help.py",
-      "bytes": 1880,
-      "sha256": "e979ed2a850b8e24102878b9840d4515e181d26fb9e2972879bc41d18d9398bf"
+      "bytes": 1931,
+      "sha256": "f4e8c16ac4f65f4442df81d68d829a6a91461c28736c4f27b5ffef0470a38559"
     },
     {
       "file": "desktop/screens/mapping.py",
-      "bytes": 3710,
-      "sha256": "0b76cc9d3be2c8dfd9721f83c9244af632dd6f2034775c3329e618fec4da97e1"
+      "bytes": 4303,
+      "sha256": "3522e89a4c277b44ca3965c3dce5503d1a4052614d167ffa6f3990abf23be881"
     },
     {
       "file": "desktop/screens/overview.py",
-      "bytes": 3985,
-      "sha256": "a55c13944466b2112fba3c59630919d5fcf08bc71321f6a20ddbf9f3b51edfde"
+      "bytes": 4163,
+      "sha256": "43ff46a58ffd27e1aabfede7f3ba8e666187ddbe51372dc25bfa8939798d8497"
     },
     {
       "file": "desktop/screens/results.py",
-      "bytes": 3821,
-      "sha256": "378c6208613cc65aef94cacc0b387e77b2e7e8163f7b24ff942610b6d0ced798"
+      "bytes": 4158,
+      "sha256": "80299f95c92305e1e2c813203f904e5c4ed512acf80365d6b06f8950e432bee4"
     },
     {
       "file": "desktop/theme/__init__.py",
@@ -335,8 +335,8 @@
     },
     {
       "file": "desktop/window.py",
-      "bytes": 4505,
-      "sha256": "cc5e62f9002342f34dda26c7f94c59c0d803fab63a4cbded0031be197d28f773"
+      "bytes": 4852,
+      "sha256": "c62c1cb06a5f4ccbb4a5cd7157582e3cf38e529671187d82ded74153951c7613"
     },
     {
       "file": "io_xlsx/__init__.py",
@@ -390,13 +390,13 @@
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 4431,
-      "sha256": "8ebcc907b51e93b21ca3bc8c1468f615a708a565f39d074c04a38dd1c4c3f239"
+      "bytes": 4742,
+      "sha256": "645737431bf706d06ae8f4287abe6c6925f47386efa0ae44680c16cdf776993e"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 1485,
-      "sha256": "5d4ad3ab05c74a6e1a3fddcaf0cb23f20ca8cf49bd54463bdb714813f1304b25"
+      "bytes": 1592,
+      "sha256": "f501ea1075e3c2018e24765ab8c67f711767091ae7ca6ee095333ba58da6d415"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -405,8 +405,8 @@
     },
     {
       "file": "docs/UI_DESIGN.md",
-      "bytes": 2651,
-      "sha256": "b0d0c82d830efe3fc33edf4d26e4a03fe894496b8fc2829cd500390a78fa4d74"
+      "bytes": 3018,
+      "sha256": "d88f27750c5dc94b5242dc6440d8c7823085d3f5fa7fb2956d4975fee0f6320e"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -480,8 +480,8 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 1185,
-      "sha256": "bd9bdeb7f6195aeb84af6e6b0323eefb320266a34e260139a50b0584eebba7b5"
+      "bytes": 1215,
+      "sha256": "c6b4fd24ea07717b1e0f5d38f4b067e5914e6f26923ccd3c1627b88504c146bf"
     }
   ]
 }

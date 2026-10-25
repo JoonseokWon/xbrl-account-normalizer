@@ -1,24 +1,23 @@
-from copy import deepcopy
 from pathlib import Path
 from PySide6.QtCore import QObject,QUrl,QTimer
 from PySide6.QtGui import QDesktopServices
-from PySide6.QtWidgets import QFileDialog,QMessageBox
+from PySide6.QtWidgets import QFileDialog
 from application.configuration import default_profile,default_catalog,configure_profile
 from application.loading import load_session
 from application.reviews import apply_review
 from application.exporting import export_session
-from application.paths import resources,user_data,default_outputs
+from application.paths import user_data,default_outputs
 from io_xlsx.inspection import inspect_workbook
 from .jobs import Jobs
 from desktop.components.confirmation import confirm
 
 class AppController(QObject):
     def __init__(self,window):
-        super().__init__(window);self.window=window;self.jobs=Jobs();self.path=None;self.session=None;self.profile=default_profile();self.catalog=default_catalog();self.close_after_work=False;self.force_close=False
+        super().__init__(window);self.window=window;self.jobs=Jobs();self.path=None;self.pending_path=None;self.session=None;self.profile=default_profile();self.catalog=default_catalog();self.close_after_work=False;self.force_close=False
         window.close_guard=self.can_close
         self.home,self.columns,self.mapping,self.results,self.help=window.pages
         self.home.chooseRequested.connect(self.choose_file);self.home.fileDropped.connect(self.open_file)
-        self.home.sampleRequested.connect(lambda:self.open_file(str(resources()/'samples/계정매핑_합성입력.xlsx')))
+        window.fileRequested.connect(self.choose_file)
         self.columns.inspectRequested.connect(self.inspect)
         self.columns.loadRequested.connect(self.load);self.mapping.resultsRequested.connect(lambda:window.show_page(3))
         self.mapping.editor.decisionRequested.connect(self.review)
@@ -26,25 +25,31 @@ class AppController(QObject):
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
     def action(self,index):
         if self.window.busy:return
-        if index==0:self.window.show_page(1)
+        if index==0:
+            if self.window.has_file:self.window.show_page(1)
+            else:self.choose_file()
         elif index==1:self.load()
         elif index==2:self.window.show_page(3)
         elif index==3:self.export()
     def choose_file(self):
-        path,_=QFileDialog.getOpenFileName(self.window,'엑셀 파일을 선택해 주세요',str(Path.home()/'Documents'),'Excel (*.xlsx)')
+        if self.window.busy:return
+        folder=self.path.parent if self.path else Path.home()/'Documents'
+        path,_=QFileDialog.getOpenFileName(self.window,'새 작업에 사용할 엑셀 파일을 선택해 주세요',str(folder),'엑셀 통합문서 (*.xlsx)')
         if path:self.open_file(path)
     def open_file(self,path):
         if self.window.busy:return
         if self.session and self.session.dirty:
-            if not confirm(self.window,'다른 자료를 열까요?','저장하지 않은 계정 연결이 있어요. 다른 자료를 열면 현재 작업을 바꿔요.','다른 자료 열기'):return
-        self.path=Path(path);self.session=None;self.window.has_session=False;self.window.has_file=False;self.results.save.setEnabled(False)
-        self.results.reset_export()
-        for metric in (self.home.row_count,self.home.account_count,self.home.pending_count):metric.update_value('—')
+            if not confirm(self.window,'새 파일로 작업을 시작할까요?','저장하지 않은 계정 연결이 있어요. 새 파일을 열면 현재 작업과 회사 정보를 바꿔요.','새 파일 열기'):return
+        selected=Path(path);self.pending_path=selected
         self.window.set_busy(True,'엑셀의 시트와 열 이름을 읽고 있어요.')
-        self.jobs.start(lambda:inspect_workbook(self.path,1),self.file_ready,self.failure)
+        self.jobs.start(lambda:inspect_workbook(selected,1),self.file_ready,self.failure)
     def file_ready(self,sheets):
-        self.finish_job();self.window.has_file=True;self.home.set_file(self.path);self.columns.header.setValue(1);self.columns.populate(sheets)
-        self.window.show_page(1);self.window.notice.set_message('시트와 열 이름을 읽었어요. 사용할 자료의 열을 확인해 주세요.')
+        previous=self.path;self.path=self.pending_path;self.pending_path=None;self.session=None
+        self.window.has_file=True;self.window.has_session=False
+        self.home.begin_file(self.path,reset_details=previous is not None)
+        self.columns.reset();self.columns.populate(sheets);self.mapping.reset();self.results.reset()
+        self.finish_job();self.window.show_page(0)
+        self.window.notice.set_message('파일을 열었어요. 회사 정보를 확인한 뒤 열 연결 설정을 눌러 주세요.')
     def inspect(self,header_row):
         if not self.path or self.window.busy:return
         self.window.set_busy(True,'선택한 행에서 열 이름을 다시 읽고 있어요.')
@@ -85,7 +90,7 @@ class AppController(QObject):
     def open_data(self):
         path=user_data();path.mkdir(parents=True,exist_ok=True);QDesktopServices.openUrl(QUrl.fromLocalFile(str(path)))
     def failure(self,message,trace):
-        self.finish_job();self.window.notice.set_message(message or '자료를 읽는 중 문제가 생겼어요. 파일과 열 연결을 확인해 주세요.',True)
+        self.pending_path=None;self.finish_job();self.window.notice.set_message(message or '자료를 읽는 중 문제가 생겼어요. 파일과 열 연결을 확인해 주세요.',True)
         folder=user_data()/'logs';folder.mkdir(parents=True,exist_ok=True)
         with (folder/'desktop.log').open('a',encoding='utf-8') as output:output.write(trace+'\n')
     def finish_job(self):

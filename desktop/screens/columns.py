@@ -22,6 +22,9 @@ class ColumnsScreen(QWidget):
         self.load=button('계정 후보 불러오기','primary');self.load.clicked.connect(self.loadRequested);footer.addWidget(self.load);root.addLayout(footer)
     def populate(self,sheets):
         for selector in self.selectors.values():selector.populate(sheets)
+    def reset(self):
+        self.header.setValue(1)
+        for selector in self.selectors.values():selector.reset()
     def selections(self):
         sheets,columns={},{}
         for role,selector in self.selectors.items():sheets[role],columns[role]=selector.selection()

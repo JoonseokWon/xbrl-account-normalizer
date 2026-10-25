@@ -1,2 +1,2 @@
-VERSION = '0.3.1-preview.1'
+VERSION = '0.3.2-preview.1'
 VALIDATION_STATUS = '사용자 검증 대기'

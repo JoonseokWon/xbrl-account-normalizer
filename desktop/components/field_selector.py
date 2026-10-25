@@ -37,3 +37,6 @@ class FieldSelector(QWidget):
             combo.setEnabled(bool(name))
     def selection(self):
         return self.sheet.currentData(),{key:combo.currentData() for key,combo in self.controls.items()}
+    def reset(self):
+        self.sheet.blockSignals(True);self.sheet.clear();self.sheet.blockSignals(False);self.sheets=[]
+        for combo in self.controls.values():combo.clear()

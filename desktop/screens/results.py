@@ -44,3 +44,8 @@ class ResultsScreen(QWidget):
         self.save_text.setText(f'새 폴더에 저장했어요.\n{Path(path).name}')
     def reset_export(self):
         self.output_path=None;self.open_folder.setEnabled(False)
+    def reset(self):
+        self.reset_export();self.save.setEnabled(False)
+        self.save_text.setText('엑셀 검토본과 연결 데이터를 새 폴더에 저장해요.')
+        for metric in (self.loaded,self.pending,self.errors):metric.update_value('—')
+        for table in (self.gl,self.fs,self.issues):table.set_rows([])

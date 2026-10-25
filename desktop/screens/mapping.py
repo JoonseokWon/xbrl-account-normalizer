@@ -44,3 +44,10 @@ class MappingScreen(QWidget):
     def select_row(self,current,previous):
         if current.isValid() and current.row()<len(self.visible):
             self.editor.set_account(self.visible[current.row()],self.catalog,self.default_reviewer)
+    def reset(self):
+        self.accounts=[];self.visible=[];self.catalog={};self.default_reviewer=''
+        self.search.clear();self.only_pending.setChecked(False);self.table.set_rows([])
+        self.editor.key=None;self.editor.name.setText('검토할 계정을 선택해요');self.editor.original.clear()
+        self.editor.candidates.setText('계정명과 별칭을 비교해 후보를 제안해요.')
+        self.editor.target.clear();self.editor.reviewer.clear();self.editor.setEnabled(False)
+        for metric in (self.total,self.confirmed,self.pending):metric.update_value('—')
