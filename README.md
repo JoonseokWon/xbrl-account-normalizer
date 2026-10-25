@@ -2,11 +2,11 @@
 
 엑셀 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 데스크톱 앱입니다. 원본 계정코드·행 출처를 남기면서 후보를 비교하고, 확인한 연결을 다음 작업에 다시 사용할 수 있습니다.
 
-**v0.3.0-preview.1 — 사용자 검증 대기. 기능·회계 결과의 실행 검증은 수행하지 않았습니다. 초기 UI 렌더링과 EXE 초기화·리소스 확인은 배포 준비 범위로 구분합니다.**
+**v0.3.1-preview.1 — 사용자 검증 대기. 기능·회계 결과의 실행 검증은 수행하지 않았습니다. 화면 글꼴·배율 렌더링과 EXE 초기화·리소스 확인은 배포 준비 범위로 구분합니다.**
 
 ## Windows에서 시작하기
 
-1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.3.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.3.1-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -24,6 +24,8 @@
 [토스 UI/UX 가이드](https://developers-apps-in-toss.toss.im/design/consumer-ux-guide)를 참고해 해요체, 명확한 행동 이름, 예상 가능한 이동, 정보 중심의 화면을 적용했습니다. 자료·작업 정보·연결 예시·요약을 서로 다른 크기의 카드에 배치한 벤토 그리드입니다. Windows에서는 왼쪽 내비게이션과 고정 상단 작업 버튼을 사용하고 본문은 창 크기에 따라 스크롤합니다. 토스 로고와 그래픽은 사용하지 않습니다.
 
 계산·매핑, 엑셀 입출력, 작업 서비스, 화면, 공통 컴포넌트, 테마, 백그라운드 작업을 나눴습니다. [모듈 구조](docs/ARCHITECTURE.md)와 [UI 설계 반영 내용](docs/UI_DESIGN.md)을 확인할 수 있습니다. CLI도 같은 서비스를 사용합니다.
+
+Windows에서는 설치된 맑은 고딕을 우선 사용하고, 해당 글꼴이 없으면 포함된 Noto Sans KR을 사용합니다. 본문 11pt·안내 10.5pt로 키우고 보조 글자와 입력 안내의 대비를 높였습니다. Windows 글꼴은 실행팩에 복사하지 않습니다.
 
 ## 연결 규칙
 

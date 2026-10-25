@@ -5,7 +5,7 @@ class DataTable(QTableView):
     def __init__(self,headers):
         super().__init__()
         self.data_model=DataTableModel(headers);self.setModel(self.data_model)
-        self.verticalHeader().hide();self.verticalHeader().setDefaultSectionSize(43)
+        self.verticalHeader().hide();self.verticalHeader().setDefaultSectionSize(48)
         self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self.horizontalHeader().setStretchLastSection(True)
         self.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)

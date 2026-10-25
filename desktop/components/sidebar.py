@@ -10,7 +10,7 @@ from version import VERSION
 class Sidebar(QFrame):
     pageRequested=Signal(int)
     def __init__(self):
-        super().__init__();self.setObjectName('Sidebar');self.setFixedWidth(205)
+        super().__init__();self.setObjectName('Sidebar');self.setFixedWidth(220)
         layout=QVBoxLayout(self);layout.setContentsMargins(18,28,18,24);layout.setSpacing(8)
         brand=QHBoxLayout();icon=label();icon.setPixmap(QIcon(str(resources()/'assets/app-icon.svg')).pixmap(34,34));brand.addWidget(icon)
         brand.addWidget(label('계정 연결','CardTitle'));brand.addStretch();layout.addLayout(brand)

@@ -1,10 +1,10 @@
 {
-  "version": "0.3.0-preview.1",
+  "version": "0.3.1-preview.1",
   "validationStatus": "사용자 검증 대기",
   "applicationTestsRun": false,
   "initialUiRendered": true,
   "exeStartup": {
-    "version": "0.3.0-preview.1",
+    "version": "0.3.1-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -12,14 +12,20 @@
       "assets/app-icon.svg": true,
       "samples/계정매핑_합성입력.xlsx": true
     },
+    "display": {
+      "platform": "windows",
+      "devicePixelRatio": 1.5,
+      "fontFamily": "Malgun Gothic",
+      "pointSize": 11.0
+    },
     "scope": "startup and resource discovery only; no conversion run"
   },
-  "sourceFileCount": 90,
-  "pythonModuleCount": 67,
+  "sourceFileCount": 91,
+  "pythonModuleCount": 68,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "0271b2bbecd9128537632a7d9c7770af3f1397b39fda1d64123771a780328b31",
-    "bytes": 3062720
+    "sha256": "93a4128a31723ea47ea656a5a92cbef75163aed9d5d6ed0f94484b4d57707797",
+    "bytes": 3064899
   },
   "files": [
     {
@@ -29,18 +35,18 @@
     },
     {
       "file": "README.md",
-      "bytes": 7162,
-      "sha256": "2d60fddd93b595ea06729e625d4cb1d5058f2dc38eb5bce44cf7fddef4f3ef42"
+      "bytes": 7469,
+      "sha256": "01ed0e406422fd65a97f8b62480b1badaba0ad1ccb61f228fd2af41e5f07ccc6"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "cc1370d18c26e0299011b103d44ccf76da692ab296bd5288de99d1073adb181f"
+      "sha256": "cb6bf8fd82dd473f08ca367952e6836c0581ecf22d10f9cf810e645ee830f6ff"
     },
     {
       "file": "main.py",
-      "bytes": 2304,
-      "sha256": "f170301866c84141cfbe5c9f4b6b94de47168dc1e277837e7cef6ed1d7293a42"
+      "bytes": 2622,
+      "sha256": "dd509f4c30eb123dca6fa931eec85962eadf7e0cbb518e90a7ef06fc9300c110"
     },
     {
       "file": "convert.py",
@@ -194,8 +200,8 @@
     },
     {
       "file": "desktop/components/badge.py",
-      "bytes": 531,
-      "sha256": "19f44886d361a2906aeea8195060c2ba0bad46004c217bf3623d87ab8d1519b5"
+      "bytes": 596,
+      "sha256": "7eed642afb1347ecf6bb546734ccf22e78bc299112dc2db18033bc63e50c902a"
     },
     {
       "file": "desktop/components/buttons.py",
@@ -240,12 +246,12 @@
     {
       "file": "desktop/components/sidebar.py",
       "bytes": 1775,
-      "sha256": "6134990e56f440d3813c24391e3e9eca8be26d304d6cda93b32e396f97d3c864"
+      "sha256": "7b62a347888322818cc93fcd77671f52a293c71a3a6b0f26af31e6bd136c95f8"
     },
     {
       "file": "desktop/components/table.py",
       "bytes": 1072,
-      "sha256": "44033224344c69a2bc348400df6cc3da399bce9ea27ce3a92aaed85b4ec92678"
+      "sha256": "e46836050e0dbe5bdbb7e8ff0de296928a52fa658f5e7770baac48eb25148e24"
     },
     {
       "file": "desktop/components/text.py",
@@ -314,13 +320,18 @@
     },
     {
       "file": "desktop/theme/styles.py",
-      "bytes": 3850,
-      "sha256": "a955d5111b39a191c25814074f629f2ff9dd96d29bfe5f39c2fd772d65c441ad"
+      "bytes": 3941,
+      "sha256": "652d8dc86475a9d31539ad9fb429c8f3d3359437b3d93665b568215fc47fce78"
     },
     {
       "file": "desktop/theme/tokens.py",
-      "bytes": 321,
-      "sha256": "c8159d5bef9faa44e6e980ec8141e4eb510acc7762484ebd56b6e45878476824"
+      "bytes": 436,
+      "sha256": "238daa1816d615d3b096dae174ce8800e7a3b18f2a9876075bdfd0e881ff109e"
+    },
+    {
+      "file": "desktop/theme/typography.py",
+      "bytes": 1101,
+      "sha256": "99ad8de9e401fa2f0bab02eb46e727e3ec05e765f64dafa14c474be1bd8eb2e9"
     },
     {
       "file": "desktop/window.py",
@@ -374,28 +385,28 @@
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 2605,
-      "sha256": "fdeefe02b9f2a07a2ded5de60a2fff0ac5eec1e713a265a57f07765ca7e06c4a"
+      "bytes": 2711,
+      "sha256": "40eeead4e2744d052ed4dc1a05321621226686c6aad7bd453f249c77fa321a43"
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 4261,
-      "sha256": "7ca2a45859696fe00a6f0be977ba75413848ff05ca68e611024dd65919346887"
+      "bytes": 4431,
+      "sha256": "8ebcc907b51e93b21ca3bc8c1468f615a708a565f39d074c04a38dd1c4c3f239"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 1526,
-      "sha256": "b48a6bfc4e893442addc1b6699736648b4aacab872dedcf9186176449ea4ab68"
+      "bytes": 1485,
+      "sha256": "5d4ad3ab05c74a6e1a3fddcaf0cb23f20ca8cf49bd54463bdb714813f1304b25"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
-      "bytes": 1928,
-      "sha256": "72452f7f04bfca0f858d49c072ee5cb5f0771c540c6428613931369d09ac419e"
+      "bytes": 2105,
+      "sha256": "38c3abde9c7954ba3fdd87954cd8c2941385e250336b1e9a1f2f2fde585f95c6"
     },
     {
       "file": "docs/UI_DESIGN.md",
-      "bytes": 1763,
-      "sha256": "7b750d316ce538b56ea026a7cc17730000727dcac79b6404cd335d5818e0016f"
+      "bytes": 2651,
+      "sha256": "b0d0c82d830efe3fc33edf4d26e4a03fe894496b8fc2829cd500390a78fa4d74"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -470,7 +481,7 @@
     {
       "file": "docs/프로젝트_소개글.txt",
       "bytes": 1185,
-      "sha256": "cb2cc8558ff66a63ceb64bf4f1069cce473b7929f77968366d5eb001d6a1b9e1"
+      "sha256": "bd9bdeb7f6195aeb84af6e6b0323eefb320266a34e260139a50b0584eebba7b5"
     }
   ]
 }

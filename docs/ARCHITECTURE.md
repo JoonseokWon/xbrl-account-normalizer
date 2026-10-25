@@ -6,7 +6,8 @@
 main.py                         Windows GUI 진입점
 convert.py                      CLI 어댑터와 기존 read_input/read_json 호환
 desktop/
-  theme/                        색상·간격·스타일
+  theme/                        색상·간격·글자 크기·스타일
+    typography.py               Windows 한글 글꼴 선택·힌팅·입력 안내 색상
   components/                   카드·버튼·배지·파일 영역·테이블·확인창
   models/                       Qt 테이블 데이터 모델
   screens/                      자료 준비 / 열 연결 / 계정 검토 / 결과 / 안내
