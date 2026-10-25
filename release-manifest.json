@@ -1,0 +1,476 @@
+{
+  "version": "0.3.0-preview.1",
+  "validationStatus": "사용자 검증 대기",
+  "applicationTestsRun": false,
+  "initialUiRendered": true,
+  "exeStartup": {
+    "version": "0.3.0-preview.1",
+    "frozen": true,
+    "resources": {
+      "config/profile.json": true,
+      "config/catalog.json": true,
+      "assets/app-icon.svg": true,
+      "samples/계정매핑_합성입력.xlsx": true
+    },
+    "scope": "startup and resource discovery only; no conversion run"
+  },
+  "sourceFileCount": 90,
+  "pythonModuleCount": 67,
+  "exe": {
+    "name": "AccountDataNormalizer.exe",
+    "sha256": "0271b2bbecd9128537632a7d9c7770af3f1397b39fda1d64123771a780328b31",
+    "bytes": 3062720
+  },
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 109,
+      "sha256": "def88d449e94b9a1f9eb52151ee767e25d89888047ffc1e13204ea43d192bb9a"
+    },
+    {
+      "file": "README.md",
+      "bytes": 7162,
+      "sha256": "2d60fddd93b595ea06729e625d4cb1d5058f2dc38eb5bce44cf7fddef4f3ef42"
+    },
+    {
+      "file": "version.py",
+      "bytes": 74,
+      "sha256": "cc1370d18c26e0299011b103d44ccf76da692ab296bd5288de99d1073adb181f"
+    },
+    {
+      "file": "main.py",
+      "bytes": 2304,
+      "sha256": "f170301866c84141cfbe5c9f4b6b94de47168dc1e277837e7cef6ed1d7293a42"
+    },
+    {
+      "file": "convert.py",
+      "bytes": 2618,
+      "sha256": "dc274a6c527883ad56c1e77fd47c643012d300728659075f7e573d3188d8ef06"
+    },
+    {
+      "file": "normalizer.py",
+      "bytes": 2673,
+      "sha256": "0c7f804b2fd6f0a9762844563272bbda31d5a0715fea4454fe9ed016fa3a711a"
+    },
+    {
+      "file": "suggestions.py",
+      "bytes": 1819,
+      "sha256": "d876858965a6a65b2b00fe88dabf741637eb219620af0b3679a47cb25608d47d"
+    },
+    {
+      "file": "review_history.py",
+      "bytes": 4103,
+      "sha256": "693b07cea9632ef221d5e266d55fad47ea7178251a94b0a5a45cf21495da1347"
+    },
+    {
+      "file": "field_mapping.py",
+      "bytes": 1274,
+      "sha256": "3dde8aace2a408679c1ad1f7c0691a56dc5ed9dc89b7262954d04b1d0c23c32b"
+    },
+    {
+      "file": "workbook_export.py",
+      "bytes": 104,
+      "sha256": "d0ccde0da1cc8e808c50c14366c5bc8f80bdbbd69069c85f2f7c45ef16fb2c60"
+    },
+    {
+      "file": "demo_data.py",
+      "bytes": 3502,
+      "sha256": "de3b14a6cb1df4ece99ccff59f22b08f36f8198b449f41acce0c79ba09dc29c9"
+    },
+    {
+      "file": "requirements.txt",
+      "bytes": 43,
+      "sha256": "5ffe17f0f23fc026c95ad6e3ed46465428a4611fb2d0b400423a62e93c6252da"
+    },
+    {
+      "file": "requirements-build.txt",
+      "bytes": 55,
+      "sha256": "1a414555d2b78a71de0ae1e907c84d7ec3c2d69f1a65cb989c3fd239019d9989"
+    },
+    {
+      "file": "설치.cmd",
+      "bytes": 525,
+      "sha256": "f00658ddee07a72d5127a95582a178a0ff36dad1a0ccb0a793413f1c4c735611"
+    },
+    {
+      "file": "변환실행.cmd",
+      "bytes": 248,
+      "sha256": "a2d27acc0c3206fc2cfc49a6ce6f682aaef7b54a426e90ea6e3004f766d90d3e"
+    },
+    {
+      "file": "core/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "core/aggregation.py",
+      "bytes": 1077,
+      "sha256": "4c52370287b5583f178af60f0fcae8665e3f079cf75c80879fe576e55aef6206"
+    },
+    {
+      "file": "core/bridge.py",
+      "bytes": 1587,
+      "sha256": "20bc24519d957ec1398106a3e867d1fc617b6c86fd7bad107cd9a1e63f51e2af"
+    },
+    {
+      "file": "core/catalog.py",
+      "bytes": 2113,
+      "sha256": "504d23eaa1d73b203d0a85a231b2aaaea643f4dfa4c0a7b913dbdcbf0c00a38d"
+    },
+    {
+      "file": "core/constants.py",
+      "bytes": 211,
+      "sha256": "3315766b9d599562f143c5481147fe9497dfb42d92881821f874619ad8bbbe67"
+    },
+    {
+      "file": "core/errors.py",
+      "bytes": 41,
+      "sha256": "e925a185242744e45310919aa4f169250c511fa5faa581ecffa55cd4cd39744c"
+    },
+    {
+      "file": "core/financial.py",
+      "bytes": 1779,
+      "sha256": "c2a6c239a9ef44e56bd3b5682dc04761ac60491dfbf200b5645413d66e4c75c1"
+    },
+    {
+      "file": "core/ledger.py",
+      "bytes": 2161,
+      "sha256": "a40dd7a422eae5f5ce97d7fbc7a2e748a5b216ed912a866e1cb5b52d1fbefaa5"
+    },
+    {
+      "file": "core/mapping_engine.py",
+      "bytes": 3620,
+      "sha256": "f1a9f457bad9380d012e7f6a89f355434b3962d8d5ea4088a0efa2e43c8382dc"
+    },
+    {
+      "file": "core/values.py",
+      "bytes": 1824,
+      "sha256": "d3953c6c91a90f55d4888df42f4883d00d0764da2204e5cb132d0c739e107638"
+    },
+    {
+      "file": "application/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "application/configuration.py",
+      "bytes": 890,
+      "sha256": "44e87de3811cd22c4bb989a4a1a7aad551a2dca56404e4741601587bf4ddff20"
+    },
+    {
+      "file": "application/exporting.py",
+      "bytes": 1282,
+      "sha256": "61684f9a64f8324f8868a9f1924784457d0006be0f7a691125d093712aa91fe4"
+    },
+    {
+      "file": "application/loading.py",
+      "bytes": 612,
+      "sha256": "610bc8f03ee84c94525649f147ca2477e5a813883ef63d3493fead7ee0cbcbe3"
+    },
+    {
+      "file": "application/paths.py",
+      "bytes": 545,
+      "sha256": "294c86f8a5d700fb8cda2f49314fee57e4ce300e7a4fa86fad71ee5ba896e5ab"
+    },
+    {
+      "file": "application/reviews.py",
+      "bytes": 2183,
+      "sha256": "f05b41074ad98b0967e2e2b5dbee5e8acec5dba1f0b47e13743d77e6fb8c289a"
+    },
+    {
+      "file": "application/session.py",
+      "bytes": 302,
+      "sha256": "57b8c984bf7feeeb3bae79cdf9e6a47cf3097290de15ea782fb157729e6c6f13"
+    },
+    {
+      "file": "desktop/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/components/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/components/badge.py",
+      "bytes": 531,
+      "sha256": "19f44886d361a2906aeea8195060c2ba0bad46004c217bf3623d87ab8d1519b5"
+    },
+    {
+      "file": "desktop/components/buttons.py",
+      "bytes": 315,
+      "sha256": "1a82e4bf12ac24cd4cb94a75ff33183ee7718abfbd7496dc2db2e089e7b265e0"
+    },
+    {
+      "file": "desktop/components/card.py",
+      "bytes": 529,
+      "sha256": "6a7e99dfa295790f2d50516df150bf99e83bb84b1a9fb7b769d218cc8d86ee61"
+    },
+    {
+      "file": "desktop/components/confirmation.py",
+      "bytes": 449,
+      "sha256": "2a45e4203641839a267961ad86e800af701fb8a7338c89ff571ce420f568625d"
+    },
+    {
+      "file": "desktop/components/drop_zone.py",
+      "bytes": 2032,
+      "sha256": "f365ab11feeabca254d9b8b1387ae6ac7b72040f1b1e231b416cebb3602784c1"
+    },
+    {
+      "file": "desktop/components/field_selector.py",
+      "bytes": 2658,
+      "sha256": "1d7882bcfbebe890fc63e8f136960c29dd0ebb69b05decc89631ced1876e8829"
+    },
+    {
+      "file": "desktop/components/metric.py",
+      "bytes": 498,
+      "sha256": "8d658d5e97174ad589b2aa015699bd061772242236a88ab12f090070a77d81f5"
+    },
+    {
+      "file": "desktop/components/notice.py",
+      "bytes": 680,
+      "sha256": "a04d69f7be49a63ffb33897042080f02b48f45f239a7dc6308e9660143fb85ba"
+    },
+    {
+      "file": "desktop/components/review_editor.py",
+      "bytes": 2938,
+      "sha256": "4997670a541e2ddda17d87899d738c892967c6bd88c258086f9f46675a0e434e"
+    },
+    {
+      "file": "desktop/components/sidebar.py",
+      "bytes": 1775,
+      "sha256": "6134990e56f440d3813c24391e3e9eca8be26d304d6cda93b32e396f97d3c864"
+    },
+    {
+      "file": "desktop/components/table.py",
+      "bytes": 1072,
+      "sha256": "44033224344c69a2bc348400df6cc3da399bce9ea27ce3a92aaed85b4ec92678"
+    },
+    {
+      "file": "desktop/components/text.py",
+      "bytes": 270,
+      "sha256": "fa9553a5e3c53078a2978c39faffbe3d3d854466a242f38ee22c3a330d3d500a"
+    },
+    {
+      "file": "desktop/controllers/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/controllers/app.py",
+      "bytes": 7855,
+      "sha256": "f05abc065c5c91701aa05932b74511ff92638f69b312226b7cdb9575df9ad161"
+    },
+    {
+      "file": "desktop/controllers/jobs.py",
+      "bytes": 775,
+      "sha256": "bd5128638e0c706ac397cb1717e9734c9caa750bd6c1992588f9ae3bf082f528"
+    },
+    {
+      "file": "desktop/models/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/models/table.py",
+      "bytes": 1446,
+      "sha256": "3dde67e3967ea2682b5d5b23cb9f9f0e89c3019254742392651cdcf22f6e9d66"
+    },
+    {
+      "file": "desktop/screens/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/screens/columns.py",
+      "bytes": 1969,
+      "sha256": "b9eae3588058e5b03d823a151f8c9dcf1aa854dacf2aa3620f0775ef1a6fefce"
+    },
+    {
+      "file": "desktop/screens/help.py",
+      "bytes": 1880,
+      "sha256": "e979ed2a850b8e24102878b9840d4515e181d26fb9e2972879bc41d18d9398bf"
+    },
+    {
+      "file": "desktop/screens/mapping.py",
+      "bytes": 3710,
+      "sha256": "0b76cc9d3be2c8dfd9721f83c9244af632dd6f2034775c3329e618fec4da97e1"
+    },
+    {
+      "file": "desktop/screens/overview.py",
+      "bytes": 3985,
+      "sha256": "a55c13944466b2112fba3c59630919d5fcf08bc71321f6a20ddbf9f3b51edfde"
+    },
+    {
+      "file": "desktop/screens/results.py",
+      "bytes": 3821,
+      "sha256": "378c6208613cc65aef94cacc0b387e77b2e7e8163f7b24ff942610b6d0ced798"
+    },
+    {
+      "file": "desktop/theme/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "desktop/theme/styles.py",
+      "bytes": 3850,
+      "sha256": "a955d5111b39a191c25814074f629f2ff9dd96d29bfe5f39c2fd772d65c441ad"
+    },
+    {
+      "file": "desktop/theme/tokens.py",
+      "bytes": 321,
+      "sha256": "c8159d5bef9faa44e6e980ec8141e4eb510acc7762484ebd56b6e45878476824"
+    },
+    {
+      "file": "desktop/window.py",
+      "bytes": 4505,
+      "sha256": "cc5e62f9002342f34dda26c7f94c59c0d803fab63a4cbded0031be197d28f773"
+    },
+    {
+      "file": "io_xlsx/__init__.py",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "io_xlsx/inspection.py",
+      "bytes": 871,
+      "sha256": "eee95320cdafd8676acadccbdf16f58f61c37ef76ea676db164a0adfacc91505"
+    },
+    {
+      "file": "io_xlsx/package_guard.py",
+      "bytes": 2866,
+      "sha256": "0d58e9aeb1e7a1db66de2283285e9f704369c3f8ab65a8817a126743fe8eaf90"
+    },
+    {
+      "file": "io_xlsx/reader.py",
+      "bytes": 5577,
+      "sha256": "1901893ad563b68216b375aa25d4e1b1a16e94a9cb45159c61aab656e36a21f3"
+    },
+    {
+      "file": "io_xlsx/styling.py",
+      "bytes": 2149,
+      "sha256": "f086a5102198b29eb05113873396957bafe3e29d088db75a0055cd83907e076c"
+    },
+    {
+      "file": "io_xlsx/writer.py",
+      "bytes": 5974,
+      "sha256": "0b58b63cbf2004c7461078b4b051d82cf16443e217f7b382e7342ba59003cf29"
+    },
+    {
+      "file": "config/catalog.json",
+      "bytes": 2686,
+      "sha256": "e658d16471b2b890f0b1061eb5ae1d964d74ff1a76b679e4efe2261759c83214"
+    },
+    {
+      "file": "config/column_mapping.example.json",
+      "bytes": 237,
+      "sha256": "e6f7cfa96d04c774dc296d525cc7a969b137f794a69469dbc793cbd01a6f7d2a"
+    },
+    {
+      "file": "config/profile.json",
+      "bytes": 908,
+      "sha256": "a848a1a863307704e4b7ef1b3d44dbd020d76498f024fac8f7b14f2b0b7f8f45"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "bytes": 2605,
+      "sha256": "fdeefe02b9f2a07a2ded5de60a2fff0ac5eec1e713a265a57f07765ca7e06c4a"
+    },
+    {
+      "file": "docs/MANUAL_VALIDATION.md",
+      "bytes": 4261,
+      "sha256": "7ca2a45859696fe00a6f0be977ba75413848ff05ca68e611024dd65919346887"
+    },
+    {
+      "file": "docs/RELEASE_NOTES.md",
+      "bytes": 1526,
+      "sha256": "b48a6bfc4e893442addc1b6699736648b4aacab872dedcf9186176449ea4ab68"
+    },
+    {
+      "file": "docs/THIRD_PARTY_NOTICES.md",
+      "bytes": 1928,
+      "sha256": "72452f7f04bfca0f858d49c072ee5cb5f0771c540c6428613931369d09ac419e"
+    },
+    {
+      "file": "docs/UI_DESIGN.md",
+      "bytes": 1763,
+      "sha256": "7b750d316ce538b56ea026a7cc17730000727dcac79b6404cd335d5818e0016f"
+    },
+    {
+      "file": "tests/test_mapping_workflow.py",
+      "bytes": 4443,
+      "sha256": "b53139a3b04fde329035be9f521f247d3ce13e6c633ebfd5440c7a9f73997e9e"
+    },
+    {
+      "file": "tests/test_normalizer.py",
+      "bytes": 5551,
+      "sha256": "da449b12172da6a45ea269d3c93ab93345a26ec698b14063c519b31b6f756ee9"
+    },
+    {
+      "file": "tools/create_demo.py",
+      "bytes": 914,
+      "sha256": "aab5551aea40b84da725f126780025c26c7882bc11d7e45416df5f3d9b164afd"
+    },
+    {
+      "file": "tools/verify_roundtrip.py",
+      "bytes": 1983,
+      "sha256": "c7df45ce333cf7f8ff5c1efdab8562b3474e3be3e8eeb66f73b4f22cf5b0bf0b"
+    },
+    {
+      "file": "tools/build_windows.py",
+      "bytes": 4692,
+      "sha256": "a075916893fbe44a373c5515d37039c0fc1e3f03d0999675b81475dbe627d3df"
+    },
+    {
+      "file": "tools/package_release.py",
+      "bytes": 4592,
+      "sha256": "2f6dd54dae2161b0accdc734a0405d856c22ba740793ea4c28e2c50cd82104e2"
+    },
+    {
+      "file": "samples/계정매핑_합성입력.xlsx",
+      "bytes": 22998,
+      "sha256": "cb720f4d40d5f43a5dcbde43d6d3c70d0e92d3691eb466b3c7f7b44fc6256198"
+    },
+    {
+      "file": "assets/app-icon.svg",
+      "bytes": 429,
+      "sha256": "707944cb9ea0c44721628a6c05811336dcd58f78475f829facdf872058ff558e"
+    },
+    {
+      "file": "assets/fonts/NotoSansKR.ttf",
+      "bytes": 10414588,
+      "sha256": "194018e6b2b293a7964f037b25c0249ce1418bc9ab3c971060a03aa57861e252"
+    },
+    {
+      "file": "assets/fonts/OFL.txt",
+      "bytes": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "file": "assets/licenses/GPL-3.0-only.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "file": "assets/licenses/LGPL-3.0-only.txt",
+      "bytes": 7651,
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768"
+    },
+    {
+      "file": "assets/licenses/Qt-GPL-exception-1.0.txt",
+      "bytes": 965,
+      "sha256": "40678d338ce53cd93f8b22b281a2ecbcaa3ee65ce60b25ffb0c462b0530846b2"
+    },
+    {
+      "file": "docs/게시글_양식.txt",
+      "bytes": 1108,
+      "sha256": "944c38952bc143f3c23531cb6e12872dc5e5cbe17a5bd5bf27d6e11d792880a9"
+    },
+    {
+      "file": "docs/프로젝트_소개글.txt",
+      "bytes": 1185,
+      "sha256": "cb2cc8558ff66a63ceb64bf4f1069cce473b7929f77968366d5eb001d6a1b9e1"
+    }
+  ]
+}

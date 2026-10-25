@@ -1,0 +1,12 @@
+{
+  "gl": {
+    "company": "법인ID",
+    "date": "기표일",
+    "journal": "문서번호",
+    "line": "라인번호",
+    "account": "G/L코드",
+    "name": "G/L명",
+    "debit": "차변원화",
+    "credit": "대변원화"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+outputs/
+user_data/
+.venv/
+dist/
+build/
+배포/
+*.log
+.build-tools/
+.build-cache/

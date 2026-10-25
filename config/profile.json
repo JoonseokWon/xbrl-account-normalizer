@@ -1,0 +1,25 @@
+{
+  "sourceSystem": "사용자엑셀",
+  "companyCode": null,
+  "currency": "KRW",
+  "ledgerUnit": "원",
+  "blankSingleSideIsZero": true,
+  "columnMappings": {},
+  "sheets": {"gl": ["원장", "총계정원장", "분개장"], "fs": ["재무제표", "원본재무제표"], "mapping": "매핑표"},
+  "columns": {
+    "company": ["회사코드", "회사"],
+    "account": ["계정코드", "계정과목코드"],
+    "name": ["계정명", "계정과목"],
+    "date": ["전기일", "일자", "회계일자"],
+    "journal": ["전표ID", "전표번호"],
+    "line": ["행ID", "순번", "전표순번"],
+    "debit": ["차변", "차변금액"],
+    "credit": ["대변", "대변금액"],
+    "description": ["적요", "거래내용"],
+    "author": ["작성자", "입력자"],
+    "amount": ["금액", "당기금액"],
+    "unit": ["단위"],
+    "rowType": ["행구분"],
+    "statement": ["표시구분"]
+  }
+}
