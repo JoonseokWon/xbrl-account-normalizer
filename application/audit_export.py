@@ -10,6 +10,7 @@ from core.errors import InputError
 from io_xlsx.tables import read_tables
 from io_xlsx.styling import make_sheet_builder
 from .support_preparation import SupportBundle
+from core.limits import AUDIT_ROWS,SUPPORT_ROWS
 
 
 def prepare_audit_tables(session,support_path):
@@ -32,7 +33,9 @@ def prepare_audit_tables(session,support_path):
         if code in mapping and mapping[code]!=row:raise InputError('확인한 원장 매핑과 보조 매핑이 충돌합니다: '+str(code))
         if code not in mapping:mapping[code]=row
     converted['계정매핑']=list(mapping.values());tables.update(converted)
-    if any(len(rows)>10000 for rows in tables.values()):raise InputError('통합감사 입력은 시트당 10,000행 이내가 필요합니다.')
+    for name,rows in tables.items():
+        limit=AUDIT_ROWS if name=='총계정원장' else SUPPORT_ROWS
+        if len(rows)>limit:raise InputError(f'{name}: {limit:,}행 한도 초과')
     summary=validate_audit_tables(tables)
     return tables,source,summary
 
@@ -42,14 +45,18 @@ def export_audit_input(session,support_path,folder):
     tables,support,summary=prepare_audit_tables(session,support_path)
     target=Path(folder)/datetime.now().strftime('통합감사입력_%Y%m%d_%H%M%S_%f')
     target.mkdir(parents=True,exist_ok=False)
-    workbook=Workbook();workbook.remove(workbook.active);add=make_sheet_builder(workbook)
     widths={'값':85,'계정명':30,'리드명':30,'적요':65,'작성자':22,'추출근거':90,'추출일시':34,'근거':65}
-    for name,fields in SCHEMA.items():add(name,fields,[[row[field] for field in fields] for row in tables[name]],widths=widths)
     output=target/'통합감사_원장입력.xlsx'
-    with output.open('xb') as stream:workbook.save(stream)
+    if len(tables['총계정원장'])>10000:
+        from io_xlsx.audit_writer import write_audit
+        write_audit(output,tables,SCHEMA,widths)
+    else:
+        workbook=Workbook();workbook.remove(workbook.active);add=make_sheet_builder(workbook)
+        for name,fields in SCHEMA.items():add(name,fields,[[row[field] for field in fields] for row in tables[name]],widths=widths)
+        with output.open('xb') as stream:workbook.save(stream)
     used={(r['company'],r['system'],r['originalCode']) for r in session.result['ledger']}
     mappings=[r for r in session.result['mappings'] if r['입력종류']=='원장' and (r['회사코드'],r['원천시스템'],r['원본계정코드']) in used]
-    provenance={'target':'통합감사프로그램 원장·리드 7시트 입력 (v2.1.0 계약)',
+    provenance={'target':'통합감사프로그램 원장·리드 7시트 입력 (큰 원장은 v2.3.0 이상)',
                 'source':session.source,'support':support,'summary':summary,
                 'mappings':mappings,'catalogVersion':session.catalog['version'],
                 'rowSources':[{'company':r['company'],'journal':r['journalId'],'line':r['lineId'],'source':r['source']} for r in session.result['ledger']],

@@ -13,6 +13,7 @@ from application.support_preparation import prepare_support
 from application.audit_export import export_audit_input,prepare_audit_tables
 from application.workfiles import save_work,load_work
 from core.errors import InputError
+from core.limits import AUDIT_ROWS
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--out',required=True);parser.add_argument('--large-rows',type=int,default=100004)
@@ -49,7 +50,7 @@ def main():
     finally:wb.close()
     report={'compoundPortableWork':portable,'largeCsv':{'rows':rows,'files':2,'journals':rows//2,'debitTotal':rows//2,'creditTotal':rows//2,
             'pendingRows':0,'conversionErrors':0,'loadSeconds':round(loaded,3),'exportSeconds':round(exported,3),'savedExcelRows':count,
-            'streamingReviewExport':True,'leadingZerosPreserved':True},'auditContractLimit':10000}
+            'streamingReviewExport':True,'leadingZerosPreserved':True},'auditContractLimit':AUDIT_ROWS}
     (folder/'company-workflow-check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report,ensure_ascii=False))
 
 if __name__=='__main__':main()

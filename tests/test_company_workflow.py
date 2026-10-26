@@ -136,5 +136,13 @@ class CompanyWorkflowTests(unittest.TestCase):
         provenance=json.loads((target/'변환출처.json').read_text(encoding='utf-8'))
         self.assertEqual({r['원본계정코드'] for r in provenance['mappings']},{'001','002','003'})
         self.assertTrue(all(r['상태']=='확인' and r['확인자'] for r in provenance['mappings']))
+    def test_audit_ledger_ceiling_is_checked_without_truncating(self):
+        s=session(self.folder,True);bundle=prepare_support(support_config(self.folder))
+        with patch('application.audit_export.AUDIT_ROWS',2):
+            with self.assertRaises(InputError):prepare_audit_tables(s,bundle)
+    def test_larger_ledger_does_not_relax_supplementary_table_limits(self):
+        s=session(self.folder,True);bundle=prepare_support(support_config(self.folder))
+        with patch('application.audit_export.SUPPORT_ROWS',2):
+            with self.assertRaises(InputError):prepare_audit_tables(s,bundle)
 
 if __name__=='__main__':unittest.main()

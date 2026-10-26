@@ -30,7 +30,7 @@ def main():
                                       'samples/계정매핑_합성입력.xlsx','assets/app-icon.svg','assets/fonts/NotoSansKR.ttf','assets/fonts/OFL.txt'))
     files.extend(sorted((ROOT/'assets/licenses').glob('*.txt')))
     files.extend(sorted((ROOT/'docs').glob('*.txt')))
-    files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py','tools/verify_company_workflow.py','tools/verify_company_import.py','tools/verify_desktop.py'))
+    files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py','tools/verify_company_workflow.py','tools/verify_company_import.py','tools/verify_desktop.py','tools/verify_large_audit_export.py'))
     files.extend(sorted(path for path in (ROOT/'samples/새회사변환예제').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
     entries=[]
     for path in files:

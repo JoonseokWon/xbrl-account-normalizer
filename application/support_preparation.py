@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from core.audit_contract import SCHEMA
 from core.errors import InputError
 from core.values import money,day,identifier
-from core.limits import AUDIT_ROWS
+from core.limits import SUPPORT_ROWS
 from io_xlsx.records import read_records
 
 @dataclass
@@ -13,7 +13,7 @@ class SupportBundle:
 
 def mapped_table(spec,fields,defaults=None):
     records,matrix,source=read_records(spec['path'],spec.get('sheet'),int(spec.get('headerRow',1)))
-    if len(records)>AUDIT_ROWS:raise InputError('감사 보조자료는 표당 10,000행 이내여야 합니다.')
+    if len(records)>SUPPORT_ROWS:raise InputError('감사 보조자료는 표당 10,000행 이내여야 합니다.')
     columns=spec.get('columns',{});constants=dict(defaults or {})|spec.get('constants',{})
     chosen=list(columns.values())
     if len(set(chosen))!=len(chosen) or any(c not in matrix[0] for c in chosen):raise InputError('보조자료 열 중복·누락을 확인해 주세요.')
