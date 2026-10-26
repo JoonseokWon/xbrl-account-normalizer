@@ -6,7 +6,7 @@ import sys
 from core.errors import InputError
 from io_xlsx.reader import read_input
 from application.configuration import read_json
-from application.loading import load_session
+from application.loading import load_session,load_batch
 from application.exporting import export_session,json_value as safe_json
 from application.paths import resources,history_file,default_outputs
 from version import VERSION
@@ -26,6 +26,8 @@ def main():
     parser.add_argument('--company')
     parser.add_argument('--system')
     parser.add_argument('--out')
+    parser.add_argument('--add-input',action='append',default=[],help='같은 회사·양식의 추가 원본 파일')
+    parser.add_argument('--save-work',help='검토 상태를 .acwork로 보관')
     args=parser.parse_args()
     try:
         if not args.input:
@@ -40,7 +42,10 @@ def main():
         if args.system:profile['sourceSystem']=args.system
         if args.inspect:
             print(json.dumps(read_input(args.input,profile,True),ensure_ascii=False,indent=2,default=safe_json));return 0
-        session=load_session(args.input,profile,read_json(args.catalog),not args.no_history,args.history)
+        session=load_batch([args.input]+args.add_input,profile,read_json(args.catalog),not args.no_history,args.history)
+        if args.save_work:
+            from application.workfiles import save_work
+            save_work(session,args.save_work)
         target=export_session(session,Path(args.out).resolve() if args.out else default_outputs(),args.history,bool(args.out))
         print(json.dumps({'status':session.result['status'],'counts':session.result['counts'],'output':str(target)},ensure_ascii=False,indent=2))
         return 2 if session.result['counts']['errors'] else 0

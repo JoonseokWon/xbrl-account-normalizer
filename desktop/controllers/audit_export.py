@@ -5,7 +5,8 @@ from application.paths import default_outputs
 
 def choose_and_export(controller):
     if controller.window.busy or not controller.session:return
-    support,_=QFileDialog.getOpenFileName(controller.window,'시산표·통제가 있는 보조파일 선택','','엑셀 통합문서 (*.xlsx)')
+    support=controller.session.support_bundle
+    if support is None:support,_=QFileDialog.getOpenFileName(controller.window,'시산표·통제가 있는 보조파일 선택','','엑셀 통합문서 (*.xlsx)')
     if not support:return
     folder=QFileDialog.getExistingDirectory(controller.window,'통합감사 입력을 저장할 위치 선택',str(default_outputs().parent))
     if not folder:return

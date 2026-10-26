@@ -20,6 +20,12 @@
     "amount": ["금액", "당기금액"],
     "unit": ["단위"],
     "rowType": ["행구분"],
-    "statement": ["표시구분"]
+    "statement": ["표시구분"],
+    "bank": ["은행", "은행명", "Bank"],
+    "bankAccount": ["계좌번호", "은행계좌", "BankAccount"],
+    "counterparty": ["거래처", "거래처코드", "Vendor"],
+    "department": ["부서", "부서코드", "Department"],
+    "project": ["프로젝트", "프로젝트코드", "Project"],
+    "document": ["증빙번호", "Document"]
   }
 }

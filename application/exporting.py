@@ -4,6 +4,7 @@ import json
 from core.bridge import audit_bridge
 from workbook_export import export_review
 from .paths import history_file
+from core.reconciliation import conversion_checks,trial_balance_checks
 
 def json_value(value):
     if isinstance(value,(date,datetime)):
@@ -14,11 +15,13 @@ def export_session(session,folder,history_path=None,exact_folder=False):
     base=Path(folder)
     target=base if exact_folder else base/datetime.now().strftime('변환_%Y%m%d_%H%M%S_%f')
     target.mkdir(parents=True,exist_ok=False)
-    for name,data in [('standardized.json',session.result),('audit_bridge.json',audit_bridge(session.result,session.catalog)),
+    result=dict(session.result,reconciliation=conversion_checks(session))
+    if session.support_bundle:result['reconciliation']+=trial_balance_checks(session,session.support_bundle.tables['시산표'])
+    for name,data in [('standardized.json',result),('audit_bridge.json',audit_bridge(session.result,session.catalog)),
                       ('input-profile.json',session.profile)]:
         with (target/name).open('x',encoding='utf-8',newline='\n') as output:
             json.dump(data,output,ensure_ascii=False,indent=2,default=json_value)
-    export_review(target/'계정표준화_검토.xlsx',session.result,session.matrices,session.catalog)
+    export_review(target/'계정표준화_검토.xlsx',result,session.matrices,session.catalog)
     if session.history_enabled and session.result['counts']['errors']==0:
         session.history.record_current_rules(session.mappings,session.raw,session.profile,session.catalog)
         session.history.save(history_path or history_file())

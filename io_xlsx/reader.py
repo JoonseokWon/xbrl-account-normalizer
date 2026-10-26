@@ -5,8 +5,12 @@ from core.errors import InputError
 from core.constants import MAPPING_HEADERS
 from field_mapping import resolve_fields
 from .package_guard import check_package
+from core.limits import MAX_ROWS
 
 def read_input(path, profile, inspect_only=False):
+    if Path(path).suffix.lower() in ('.csv','.tsv'):
+        from .delimited import read_csv_input
+        return read_csv_input(path,profile,inspect_only)
     from openpyxl import load_workbook
     path=Path(path)
     check_package(path)
@@ -44,7 +48,7 @@ def read_input(path, profile, inspect_only=False):
                 raise InputError('헤더 행은 1~100행 범위가 필요합니다.')
             matrix, records, headers = [], [], None
             for line_no, cells in enumerate(ws.iter_rows(), 1):
-                if len(cells) > 80 or line_no > 50001:
+                if len(cells) > 80 or len(records)>MAX_ROWS:
                     raise InputError('시트 행·열 한도 초과')
                 values = []
                 for cell in cells:
@@ -75,6 +79,7 @@ def read_input(path, profile, inspect_only=False):
                 values += [None] * (len(headers) - len(values))
                 matrix.append(values)
                 records.append(dict(zip(headers, values)) | {'_source':f'{path.name} / {name}!{line_no}'})
+                if len(records)>MAX_ROWS:raise InputError('시트당 100,000행 한도 초과')
             if headers is None:
                 raise InputError(f'{name}: 헤더 행이 없습니다.')
             matrices[role] = matrix
@@ -93,6 +98,7 @@ def read_input(path, profile, inspect_only=False):
         if not any(raw.values()):
             raise InputError('변환할 원본 데이터 행이 없습니다.')
         source['ignoredSheets'] = [name for name in wb.sheetnames if name not in selected.values()]
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=source['sha256']:raise InputError('읽는 중 원본이 변경되었습니다.')
         return raw, mapping, matrices, source
     finally:
         wb.close()

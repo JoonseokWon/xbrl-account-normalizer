@@ -13,7 +13,7 @@ from desktop.screens.results import ResultsScreen
 from desktop.screens.help import HelpScreen
 from application.paths import resources
 
-TITLES=[('엑셀 파일로 작업을 시작해요','파일을 열고 회사 정보와 원본 열을 연결해 주세요.'),
+TITLES=[('자료 파일로 업무를 시작해요','회사·기간을 확인하고 원본 열을 연결해 주세요.'),
         ('원본의 열을 연결해요','원장과 재무상태표에서 사용할 열을 선택해 주세요.'),
         ('계정 연결을 확인해요','후보의 근거를 보고 연결할 표준 계정을 정해요.'),
         ('변환 결과를 살펴봐요','원본 코드와 검토 내용을 함께 저장할 수 있어요.'),

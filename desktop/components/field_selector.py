@@ -3,7 +3,9 @@ from desktop.components.text import label
 
 FIELDS={'company':'회사코드','date':'전기일 / 기준일','journal':'전표번호','line':'행ID',
         'account':'계정코드','name':'계정명','debit':'차변','credit':'대변','description':'적요',
-        'author':'작성자','amount':'금액','unit':'금액 단위','rowType':'행구분','statement':'BS / PL 구분'}
+        'author':'작성자','amount':'금액','unit':'금액 단위','rowType':'행구분','statement':'BS / PL 구분',
+        'bank':'은행 (선택)','bankAccount':'계좌번호 (선택)','counterparty':'거래처 (선택)',
+        'department':'부서 (선택)','project':'프로젝트 (선택)','document':'증빙번호 (선택)'}
 class FieldSelector(QWidget):
     def __init__(self,role,profile):
         super().__init__();self.role=role;self.profile=profile;self.controls={}
@@ -11,6 +13,7 @@ class FieldSelector(QWidget):
         self.sheet=QComboBox();box.addWidget(label('사용할 시트'));box.addWidget(self.sheet)
         self.form=QFormLayout();self.form.setSpacing(11)
         keys=['company','date','journal','line','account','name','debit','credit','description','author'] if role=='gl' else ['company','date','account','name','amount','unit','rowType','statement']
+        if role=='gl':keys += ['bank','bankAccount','counterparty','department','project','document']
         for key in keys:
             combo=QComboBox();combo.setMinimumWidth(130);self.controls[key]=combo;self.form.addRow(FIELDS[key],combo)
         box.addLayout(self.form);box.addStretch()
@@ -40,3 +43,12 @@ class FieldSelector(QWidget):
     def reset(self):
         self.sheet.blockSignals(True);self.sheet.clear();self.sheet.blockSignals(False);self.sheets=[]
         for combo in self.controls.values():combo.clear()
+    def apply_profile(self,profile):
+        self.profile=profile
+        names=profile['sheets'].get(self.role,[]);names=[names] if isinstance(names,str) else names
+        selected=next((n for n in names if self.sheet.findData(n)>=0),None)
+        if not selected and self.sheet.findData('CSV')>=0 and profile.get('delimitedRole','gl')==self.role:selected='CSV'
+        self.sheet.setCurrentIndex(self.sheet.findData(selected) if selected else 0)
+        self.change_sheet()
+        for key,header in profile.get('columnMappings',{}).get(self.role,{}).items():
+            if key in self.controls and self.controls[key].findData(header)>=0:self.controls[key].setCurrentIndex(self.controls[key].findData(header))

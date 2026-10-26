@@ -1,27 +1,54 @@
 {
-  "version": "0.4.1-preview.1",
-  "validationStatus": "새 합성 원장 변환·감사 입력 검증 완료; 전체 실사용 확인 필요",
+  "version": "0.5.0-preview.1",
+  "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.4.1-preview.1",
+    "version": "0.5.0-preview.1",
     "unitTestsPassed": true,
-    "unitTestCount": 35,
-    "dummyConversion": {
-      "company": "NOVA_DEMO",
-      "sourceRows": 28,
-      "sourceAccounts": 8,
-      "standardAccounts": 7,
-      "initialPendingRows": 28,
-      "finalPendingRows": 0,
-      "conversionErrors": 0,
-      "debitTotal": 26700000,
-      "creditTotal": 26700000,
-      "leadingZerosPreserved": true,
-      "mappingMethod": "명시된 합성 시나리오 설정 8개 적용. 실제 사용자 승인·감사의견 아님.",
-      "reviewFolder": "표준화결과",
-      "auditInput": "감사입력/통합감사입력_20261025_204215_734013/통합감사_원장입력.xlsx"
+    "unitTestCount": 58,
+    "companyWorkflow": {
+      "compoundPortableWork": {
+        "pendingRows": 0,
+        "supportSources": 2,
+        "auditInput": "compound\\audit\\통합감사입력_20261026_102503_015561\\통합감사_원장입력.xlsx"
+      },
+      "largeCsv": {
+        "rows": 100004,
+        "files": 2,
+        "journals": 50002,
+        "debitTotal": 50002,
+        "creditTotal": 50002,
+        "pendingRows": 0,
+        "conversionErrors": 0,
+        "loadSeconds": 1.69,
+        "exportSeconds": 69.362,
+        "savedExcelRows": 100004,
+        "streamingReviewExport": true,
+        "leadingZerosPreserved": true
+      },
+      "auditContractLimit": 10000
     },
-    "auditImport": {
+    "compoundAuditImport": {
+      "auditSuiteVersion": "2.1.0",
+      "pythonVersion": "3.14.8",
+      "company": "A",
+      "ledgerRows": 3,
+      "compoundDebitRows": 2,
+      "compoundCreditRows": 1,
+      "blockingIssues": 0,
+      "reviewIssues": 1,
+      "controlChecks": 27,
+      "matchedChecks": 27,
+      "workspaceReopened": true,
+      "sourceIntegrity": true,
+      "resultHash": "c9d13be1469a151acb3b872fb8598dbf608be41211efe3618ba7e5d1be8fbdc5",
+      "engineSourceHashes": {
+        "ledger.py": "76c5db7c33e8a3891daf676dc1ccd76c3f062f7ba1178589307233fc475b8f48",
+        "adapters.py": "3ac345b17fe4d0e84708e4aa8733ab16da8ab756a82a1064cfcfee17e30c4fc5",
+        "workspace.py": "4dc4561e88bb57777602458ea020a8e4783b9389be7f916fbd779894b47f2e62"
+      }
+    },
+    "novaAuditImport": {
       "auditSuiteVersion": "2.1.0",
       "pythonVersion": "3.14.8",
       "module": "원장·리드",
@@ -34,8 +61,8 @@
       "sourceAccounts": 8,
       "leadGroups": 7,
       "revenueBinding": 12900000,
-      "runId": "ef48ac31978a43c985dbea0250b141ae",
-      "resultHash": "5b3525606a12351bb2c73f695cf99c49b4cef2fdff62d6f69d9a0903b6ac020f",
+      "runId": "76d2beb92e6a47ea98ce0456b7953b5b",
+      "resultHash": "487e2dd64bec8d192645c96efd17c9611ecb768b49d2f2ee3a2918755a45b318",
       "workspaceReopened": true,
       "sourceIntegrity": true,
       "reviewMessages": [
@@ -53,35 +80,36 @@
       },
       "scope": "새 합성 업무의 원장·리드 입력·수치 대사·저장·재열기만 확인. 실제 독립 감사증거·감사결론·다른 모듈 수행은 아님."
     },
-    "journalView": {
-      "journalViewRows": 14,
-      "rawLedgerRows": 28,
-      "viewMatchesLedger": true,
-      "sourceAmountsDatesCodesUnchanged": true,
-      "sourceLeadingZerosPreserved": true,
-      "bankDebit": "신한은행",
-      "bankCredit": "국민은행",
-      "bankAmount": 2000000,
-      "costDebit": "매출원가",
-      "costCredit": "재고자산",
-      "costAmounts": [
-        1200000,
-        700000
+    "sourceDesktop": {
+      "sourceWidgetsExercised": true,
+      "mappingButtonsClicked": 3,
+      "compoundDebitRows": 2,
+      "compoundCreditRows": 1,
+      "supportMappingDialog": true,
+      "reconciliationMatched": true,
+      "presetSavedAndLoaded": true,
+      "workSavedAndReopened": true,
+      "catalogEditedAndMappingsInvalidated": true,
+      "auditSaveButtonClicked": true,
+      "auditWorkbookCreated": true,
+      "minimumWindowRendered": [
+        1070,
+        740
       ],
-      "removedPrefixesAbsent": true,
-      "auditInputDescriptionsMatch": true,
-      "unrelatedSupportValuesUnchanged": true
-    },
-    "guiExport": {
-      "rerunThisVersion": false,
-      "lastCheckedVersion": "0.4.0-preview.1",
-      "reason": "예제·재현 도구의 표기 변경. GUI 저장 로직 변경 없음.",
+      "nativeFileDialogsMocked": true,
       "actualOsFilePickerExercised": false
+    },
+    "limits": {
+      "perFileRows": 100000,
+      "perWorkRows": 250000,
+      "files": 24,
+      "perFileMB": 50,
+      "auditRows": 10000
     }
   },
   "initialUiRendered": true,
   "exeStartup": {
-    "version": "0.4.1-preview.1",
+    "version": "0.5.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -97,12 +125,12 @@
     },
     "scope": "startup and resource discovery only; no conversion run"
   },
-  "sourceFileCount": 108,
-  "pythonModuleCount": 76,
+  "sourceFileCount": 132,
+  "pythonModuleCount": 99,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "966b420a6cfee02b692a8656d1cd071ba36dab19a93fa8d7e142cb522a66f5fa",
-    "bytes": 3082003
+    "sha256": "5fd4e7e4d3561d742fb36580f3ef4795a0d0cd83f4846902c88f4a82c4dfe855",
+    "bytes": 3150539
   },
   "files": [
     {
@@ -112,13 +140,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 8423,
-      "sha256": "529b812e78b2062223962517c586be55dff008bb89742892127aa76cacb7619a"
+      "bytes": 10069,
+      "sha256": "6b9fafab3b4ae63ed1243c6a53058d3db06c2f9e3b10466450d50032861f7558"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "2b114cea7c40b9b69ee824c7f6658bee632cefa98dc18404579013672ee1d098"
+      "sha256": "d355044c339a1729924403b3643eeb2060de4c63a9ffb9b9662dabf1cff910d1"
     },
     {
       "file": "main.py",
@@ -127,13 +155,13 @@
     },
     {
       "file": "convert.py",
-      "bytes": 2618,
-      "sha256": "dc274a6c527883ad56c1e77fd47c643012d300728659075f7e573d3188d8ef06"
+      "bytes": 2973,
+      "sha256": "37b28527535dfe49c559beb4fe54da27c89781b800e66771ceee33988cdade23"
     },
     {
       "file": "normalizer.py",
-      "bytes": 2673,
-      "sha256": "0c7f804b2fd6f0a9762844563272bbda31d5a0715fea4454fe9ed016fa3a711a"
+      "bytes": 3091,
+      "sha256": "81f4ce709a565e3e365ebe4405bd2f28469de99692daad2f5336b09df669eb1d"
     },
     {
       "file": "suggestions.py",
@@ -226,14 +254,29 @@
       "sha256": "c2a6c239a9ef44e56bd3b5682dc04761ac60491dfbf200b5645413d66e4c75c1"
     },
     {
+      "file": "core/journals.py",
+      "bytes": 780,
+      "sha256": "39db093f5066100925a08a6a6c5b1ff7b16f545be203761062fd77040e7b6594"
+    },
+    {
       "file": "core/ledger.py",
-      "bytes": 2161,
-      "sha256": "a40dd7a422eae5f5ce97d7fbc7a2e748a5b216ed912a866e1cb5b52d1fbefaa5"
+      "bytes": 3196,
+      "sha256": "620a87d82647a84662fdcf3a1dfd12681bc5c06e88466a0f53415158a063a780"
+    },
+    {
+      "file": "core/limits.py",
+      "bytes": 140,
+      "sha256": "121071b14c688425277c0e9c1c3937b579ca9a0f50e719c5cf7fbaac9e258ef8"
     },
     {
       "file": "core/mapping_engine.py",
-      "bytes": 3620,
-      "sha256": "f1a9f457bad9380d012e7f6a89f355434b3962d8d5ea4088a0efa2e43c8382dc"
+      "bytes": 3859,
+      "sha256": "50549c791985a986c5f66f789480faa459ae625f84d7fa2f18eea3ec7c7912dc"
+    },
+    {
+      "file": "core/reconciliation.py",
+      "bytes": 2269,
+      "sha256": "8d994b2a2499b3a49ba4ebdb57faa7251e47c0d95c7a96d8c24d0104fc7f1602"
     },
     {
       "file": "core/values.py",
@@ -247,28 +290,43 @@
     },
     {
       "file": "application/audit_export.py",
-      "bytes": 3265,
-      "sha256": "7d9df36d52d329f31036e85f666f2aaac58c1179c45f6d9b5998b5fa763a672f"
+      "bytes": 4234,
+      "sha256": "9f0babe829761c36e4521485654c97dae59622ba2222b2d22c8acd68abe25c80"
+    },
+    {
+      "file": "application/catalogs.py",
+      "bytes": 2800,
+      "sha256": "b15b108963e7422da8a1ffceead05110a9e85f50cd542b584904c10702a53ffa"
     },
     {
       "file": "application/configuration.py",
-      "bytes": 890,
-      "sha256": "44e87de3811cd22c4bb989a4a1a7aad551a2dca56404e4741601587bf4ddff20"
+      "bytes": 1193,
+      "sha256": "3728e1f57a2c4de57356a0151007298de9ac777e9d24040e1856f03fafc61e29"
     },
     {
       "file": "application/exporting.py",
-      "bytes": 1298,
-      "sha256": "d147677b3b4f0ef1584d610647d6523e389cea20d624d73e867fab1a3b69e91c"
+      "bytes": 1556,
+      "sha256": "e799ab582ef2011239d73ab3e06e81e4138f6172217e0de3ca02301cdb67b8c6"
+    },
+    {
+      "file": "application/json_store.py",
+      "bytes": 443,
+      "sha256": "d4e5998a7b9c1dc9c0ae117afe23600438a1888cbfd30f2d41f0212089dba3e1"
     },
     {
       "file": "application/loading.py",
-      "bytes": 612,
-      "sha256": "610bc8f03ee84c94525649f147ca2477e5a813883ef63d3493fead7ee0cbcbe3"
+      "bytes": 2792,
+      "sha256": "47c660ccc06311fd23b73ee2826112ce79b0999f0ad3bd70346c3c381a0e4520"
     },
     {
       "file": "application/paths.py",
       "bytes": 545,
       "sha256": "294c86f8a5d700fb8cda2f49314fee57e4ce300e7a4fa86fad71ee5ba896e5ab"
+    },
+    {
+      "file": "application/presets.py",
+      "bytes": 1641,
+      "sha256": "ae6d6b2283b54f61487ccd5dadf51f652570f80455a1ce7f2f1a0b7d37ac5aa4"
     },
     {
       "file": "application/reviews.py",
@@ -277,8 +335,18 @@
     },
     {
       "file": "application/session.py",
-      "bytes": 302,
-      "sha256": "57b8c984bf7feeeb3bae79cdf9e6a47cf3097290de15ea782fb157729e6c6f13"
+      "bytes": 497,
+      "sha256": "08348e55b11848103b4b1a329152dfbe577d562a4f1f8f5a4fb62cdac9598958"
+    },
+    {
+      "file": "application/support_preparation.py",
+      "bytes": 3672,
+      "sha256": "47280a4a05e0543a12db2a98efe9127239344eb783d2641eb3ae4f2b50932436"
+    },
+    {
+      "file": "application/workfiles.py",
+      "bytes": 7208,
+      "sha256": "95cf1f147d1401d10b4c8ec96ab085a6406ed82ffd65541d8760bb1f8782b94f"
     },
     {
       "file": "desktop/__init__.py",
@@ -312,13 +380,18 @@
     },
     {
       "file": "desktop/components/drop_zone.py",
-      "bytes": 2047,
-      "sha256": "d46aec1ee3834aaf17b16012611192608c71be1774d8bbdd07f807f8d9781f1a"
+      "bytes": 2071,
+      "sha256": "3122e20241c161ad3c0f3c2edce18ed9389b56a2ec7acae549273fdaf4d9dab0"
     },
     {
       "file": "desktop/components/field_selector.py",
-      "bytes": 2840,
-      "sha256": "61a4f22f4824d15f20ac93fbc813f6ecb3580df7e4b3d9649ddfea3eb06e0a57"
+      "bytes": 3873,
+      "sha256": "4b46881c05f3211fef2d6ae088e66d6530e585022755c6f33dafcf828ae4eeb9"
+    },
+    {
+      "file": "desktop/components/journal_view.py",
+      "bytes": 3108,
+      "sha256": "e79955cedde0e5e550ba057fd4b9e4b4faa9e81240ee3ead30e7ddefda71415d"
     },
     {
       "file": "desktop/components/metric.py",
@@ -342,8 +415,8 @@
     },
     {
       "file": "desktop/components/table.py",
-      "bytes": 1072,
-      "sha256": "e46836050e0dbe5bdbb7e8ff0de296928a52fa658f5e7770baac48eb25148e24"
+      "bytes": 1136,
+      "sha256": "b2baf61b447305bc03a6c3760dc08f81fa0831bdd34af79adf9378d0eb008a03"
     },
     {
       "file": "desktop/components/text.py",
@@ -357,18 +430,48 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 8399,
-      "sha256": "f1096e41396bfb62daea4d3b09f315d40c1871f4efd7eaf4715a5aec753fd5d3"
+      "bytes": 10961,
+      "sha256": "e3a9539173f472fbfd9f6dcac2833ebd8800d3e97c0bbce1b02b5348b4eb0485"
     },
     {
       "file": "desktop/controllers/audit_export.py",
-      "bytes": 861,
-      "sha256": "615cbff0067bf35910347c8aab10011e4f745296b2eb34bd8d588693ebea74a5"
+      "bytes": 926,
+      "sha256": "88e02cb76f34a4fc884e31ce230216101d607f0fd19e5320780d3a5c97abb3d5"
     },
     {
       "file": "desktop/controllers/jobs.py",
       "bytes": 775,
       "sha256": "bd5128638e0c706ac397cb1717e9734c9caa750bd6c1992588f9ae3bf082f528"
+    },
+    {
+      "file": "desktop/controllers/work_actions.py",
+      "bytes": 5348,
+      "sha256": "2c052625762803a34f131909eb4b3cf5f0eed987c68186b2f7565103ced35480"
+    },
+    {
+      "file": "desktop/dialogs/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "desktop/dialogs/catalog.py",
+      "bytes": 3822,
+      "sha256": "c84f7bc18f44a9737f1ca950de1cd7e8c7fe24ceb5a9bbeabb752d49f5c8ef91"
+    },
+    {
+      "file": "desktop/dialogs/mapped_table.py",
+      "bytes": 4308,
+      "sha256": "365b10133ece7a59954fab31ef71ee72fa006247e6a7e8946919ce7bda3c0be4"
+    },
+    {
+      "file": "desktop/dialogs/source.py",
+      "bytes": 1047,
+      "sha256": "377691272915bd2f9148aba2b1041d3ba7646c16b5197fa4210836241b588fb3"
+    },
+    {
+      "file": "desktop/dialogs/support.py",
+      "bytes": 3308,
+      "sha256": "1fc584255ebe727f64b5d29886799c379201b1da9f352b3b355c636c09aea559"
     },
     {
       "file": "desktop/models/__init__.py",
@@ -387,13 +490,13 @@
     },
     {
       "file": "desktop/screens/columns.py",
-      "bytes": 2087,
-      "sha256": "7662bb8c7079c4036e6ff5ffdea842c844d7bf96c82821d895e41d1c5094eda8"
+      "bytes": 2571,
+      "sha256": "5ac43fc21835578c493af7170a04d6eded91edc0ea3946d402440b2262cde76a"
     },
     {
       "file": "desktop/screens/help.py",
-      "bytes": 1969,
-      "sha256": "b405169e8500a946584acf392c25c9a8494c7fb41b233e6816270e3dc1095da8"
+      "bytes": 2552,
+      "sha256": "48b9e97e4f289b400b0c993ad986bcb90217ef8368073afa8fda643189211ba7"
     },
     {
       "file": "desktop/screens/mapping.py",
@@ -402,13 +505,13 @@
     },
     {
       "file": "desktop/screens/overview.py",
-      "bytes": 4163,
-      "sha256": "43ff46a58ffd27e1aabfede7f3ba8e666187ddbe51372dc25bfa8939798d8497"
+      "bytes": 4729,
+      "sha256": "d6f0fda5924f10b57b0a8f57f6b89696d794ddd949204016b5de4c2dde250f86"
     },
     {
       "file": "desktop/screens/results.py",
-      "bytes": 4663,
-      "sha256": "23085bb7a0284937cce2d34663c1ffc4f8d1f9625a644297e6205cd63ab9179a"
+      "bytes": 6972,
+      "sha256": "8a3beea2128635236ca2ea2c2f1e20eb171c9094b23285079ea4b11995e0aeee"
     },
     {
       "file": "desktop/theme/__init__.py",
@@ -432,8 +535,8 @@
     },
     {
       "file": "desktop/window.py",
-      "bytes": 4852,
-      "sha256": "c62c1cb06a5f4ccbb4a5cd7157582e3cf38e529671187d82ded74153951c7613"
+      "bytes": 4849,
+      "sha256": "6c5a144cd243987316660345f86555987efac5dfc83677bd03247f0631afc172"
     },
     {
       "file": "io_xlsx/__init__.py",
@@ -441,19 +544,34 @@
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
     },
     {
+      "file": "io_xlsx/delimited.py",
+      "bytes": 3315,
+      "sha256": "aee20112dddfc723ce14845df3781ee1f842491390ddfa5267726da3a9cd9dc4"
+    },
+    {
       "file": "io_xlsx/inspection.py",
-      "bytes": 871,
-      "sha256": "eee95320cdafd8676acadccbdf16f58f61c37ef76ea676db164a0adfacc91505"
+      "bytes": 1076,
+      "sha256": "19474b9604205051505521bcad07bffb136ec7bea82c5bdaa7b148badea82e2d"
     },
     {
       "file": "io_xlsx/package_guard.py",
-      "bytes": 2866,
-      "sha256": "0d58e9aeb1e7a1db66de2283285e9f704369c3f8ab65a8817a126743fe8eaf90"
+      "bytes": 2953,
+      "sha256": "b57b4562c54103625ec8e07f77e1d123f22762c2486febbca2804c2962e23974"
     },
     {
       "file": "io_xlsx/reader.py",
-      "bytes": 5577,
-      "sha256": "1901893ad563b68216b375aa25d4e1b1a16e94a9cb45159c61aab656e36a21f3"
+      "bytes": 6013,
+      "sha256": "1a2180847bd9dc641565b4f61571b73e092d59e470c7f741148e561c51c60e58"
+    },
+    {
+      "file": "io_xlsx/records.py",
+      "bytes": 2896,
+      "sha256": "e9cc3176fbdda4b9055e79ff5768b1145f7d8a9e210e6653ba2f316cfeb3edef"
+    },
+    {
+      "file": "io_xlsx/streaming.py",
+      "bytes": 3951,
+      "sha256": "ccfc83518cf2fe45394aea26d0be199cd7779481f1139f56395e16fd500427c3"
     },
     {
       "file": "io_xlsx/styling.py",
@@ -467,8 +585,8 @@
     },
     {
       "file": "io_xlsx/writer.py",
-      "bytes": 5974,
-      "sha256": "0b58b63cbf2004c7461078b4b051d82cf16443e217f7b382e7342ba59003cf29"
+      "bytes": 6957,
+      "sha256": "f8c6aba71e41e6c4797e88d10533957bcdb433d6cad2b316186dd9aaa3a7f01b"
     },
     {
       "file": "config/catalog.json",
@@ -482,33 +600,38 @@
     },
     {
       "file": "config/profile.json",
-      "bytes": 908,
-      "sha256": "a848a1a863307704e4b7ef1b3d44dbd020d76498f024fac8f7b14f2b0b7f8f45"
+      "bytes": 1257,
+      "sha256": "9211ec7ac7c8cf4b4dfc8019e19b0c7bc11324dd277cf90a71e11b4a0a8a23b2"
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 3071,
-      "sha256": "465efdc446839afb26fcf61ccd1cba291a1edef7381a5dba8490e9cbf7ba8e4c"
+      "bytes": 4256,
+      "sha256": "bfc2b3546793c13c45bf91293a581fa7ab868de6727b2abb6c79151a6c4723d6"
     },
     {
       "file": "docs/AUDIT_EXPORT.md",
-      "bytes": 3605,
-      "sha256": "17b25ff60273a8b00c3dc23eae01c98deeca348f04cdcdc2dd8ac03401bb221d"
+      "bytes": 4482,
+      "sha256": "5d68e63d68d67204be023e54ec3db50c96d646dd25441909eaf98e359e89c4f6"
+    },
+    {
+      "file": "docs/COMPANY_WORKFLOW.md",
+      "bytes": 3460,
+      "sha256": "36d860b5dde23c356c5ba819fd1506f7853967a2dbc90ca3770b83ca52b8d3e3"
     },
     {
       "file": "docs/DEMO_RESULT.md",
-      "bytes": 2359,
-      "sha256": "a1889194dcef7dd18f12a2ef8adb0ce7db3c776425bc555a232451b8e0252fe1"
+      "bytes": 3681,
+      "sha256": "918a5518e40a5e08d1ee97096b3efb07ff56e61a1542ca1212bcacb7ce3702a0"
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 5420,
-      "sha256": "6c1b385868b22deab9fca41fb3127cf628b2ba6479e4357b45382e723ecb8629"
+      "bytes": 6730,
+      "sha256": "74750f702950c1272258ebd3102b5f4e4d930063ae7eeb221a2db13a0b7a2784"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 2434,
-      "sha256": "a4c9faf767e07f990441c71984fa2938613cb452a1ec1492e8e1716def4da588"
+      "bytes": 4389,
+      "sha256": "b1148b6b5ed7e0862b81d2ea502f3d152b9915987518b2d08103e6e423a63a3e"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -517,13 +640,18 @@
     },
     {
       "file": "docs/UI_DESIGN.md",
-      "bytes": 3369,
-      "sha256": "d069e9731160034b5b9fc85ea00adbc89e1170004346b9944fdaa7cc99b7541c"
+      "bytes": 3807,
+      "sha256": "257d5bc42060d0706546ee10b53cf85077aa7ca47770a7b7a3bd815c1fba5c5b"
     },
     {
       "file": "tests/test_audit_export.py",
       "bytes": 4680,
       "sha256": "395d8900bdfd153f2ae9bc933112fe27205ed9aff15f2cab6c0a230d2bb2ebc3"
+    },
+    {
+      "file": "tests/test_company_workflow.py",
+      "bytes": 10409,
+      "sha256": "d4385f5c33f379c0ee7529f509f3580f9f7796030299fd5ca539e27fd53745c7"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -534,6 +662,11 @@
       "file": "tests/test_normalizer.py",
       "bytes": 5551,
       "sha256": "da449b12172da6a45ea269d3c93ab93345a26ec698b14063c519b31b6f756ee9"
+    },
+    {
+      "file": "tests/workflow_fixtures.py",
+      "bytes": 2682,
+      "sha256": "12ffef4a787d2ba95efc5f94433f226ca1464028dda476389b1786ccf0d4af64"
     },
     {
       "file": "tools/create_demo.py",
@@ -547,13 +680,13 @@
     },
     {
       "file": "tools/build_windows.py",
-      "bytes": 4698,
-      "sha256": "ec9c49f3b82a01c658d260b4a842d4caf05d8070d9d6e919b443c921b1132230"
+      "bytes": 4887,
+      "sha256": "cf5ea905ee38549e4d996e41be2eef68dd4e45ef538b0a7ee0d8564a56769714"
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 5498,
-      "sha256": "3c08cf0694bf71a0be027008c945594be3b864db9fb423bbfb1676c5b7c71cf5"
+      "bytes": 5786,
+      "sha256": "67f5414046bf448c22c625b26bfa30ca0e3693cc099fc908dc88a11d1813a025"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -597,8 +730,8 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 1281,
-      "sha256": "0f693b0e05f4b2cb90d487751340906f8f0f99f393f4457dcd8ed460e74dce87"
+      "bytes": 1479,
+      "sha256": "8d8965cfaf2d4ecefcffa169d1fb94c8f53b658b4b19b3b4028c708b39f16218"
     },
     {
       "file": "tools/run_audit_demo.py",
@@ -609,6 +742,21 @@
       "file": "tools/verify_audit_demo_import.py",
       "bytes": 2801,
       "sha256": "f8817ec28ba3998d0032e84116d3f35e22340cbe09c2347a575cdfa343bf7958"
+    },
+    {
+      "file": "tools/verify_company_workflow.py",
+      "bytes": 4028,
+      "sha256": "e55792a8538b8fa3c7b06e3e5f8215a9a3d57ccd5010e756e6603aec55bd5c1b"
+    },
+    {
+      "file": "tools/verify_company_import.py",
+      "bytes": 2182,
+      "sha256": "4309f473625689da013cf30276c0752c2a59c02b39c1e2bf07cb441306d31cb7"
+    },
+    {
+      "file": "tools/verify_desktop.py",
+      "bytes": 8065,
+      "sha256": "890acece49fa4f76ff28255ac9ad98887b9ed90f560767bafd31f278973a8f88"
     },
     {
       "file": "samples/새회사변환예제/01_노바부품_원본원장.xlsx",

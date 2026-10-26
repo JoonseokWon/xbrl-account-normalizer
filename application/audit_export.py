@@ -9,12 +9,16 @@ from core.bridge import audit_bridge
 from core.errors import InputError
 from io_xlsx.tables import read_tables
 from io_xlsx.styling import make_sheet_builder
+from .support_preparation import SupportBundle
 
 
 def prepare_audit_tables(session,support_path):
     bridge=audit_bridge(session.result,session.catalog)
     if bridge['status']!='부분입력':raise InputError(bridge.get('reason','확인된 원장 계정 연결이 필요합니다.'))
-    tables,source=read_tables(support_path,SUPPORT_SCHEMA,{'계정매핑':SCHEMA['계정매핑']})
+    if isinstance(support_path,SupportBundle):
+        if not support_path.tables.get('독립통제'):raise InputError('독립통제 원본 자료를 먼저 연결해 주세요. 시산표 대사는 확인할 수 있어요.')
+        tables,source=deepcopy(support_path.tables),deepcopy(support_path.source)
+    else:tables,source=read_tables(support_path,SUPPORT_SCHEMA,{'계정매핑':SCHEMA['계정매핑']})
     settings={row['항목']:row['값'] for row in tables['설정']}
     company=settings.get('회사코드')
     if set(bridge['companies'])!={company}:raise InputError('보조파일과 같은 회사의 원장만 한 번에 내보내 주세요.')
@@ -43,9 +47,13 @@ def export_audit_input(session,support_path,folder):
     for name,fields in SCHEMA.items():add(name,fields,[[row[field] for field in fields] for row in tables[name]],widths=widths)
     output=target/'통합감사_원장입력.xlsx'
     with output.open('xb') as stream:workbook.save(stream)
+    used={(r['company'],r['system'],r['originalCode']) for r in session.result['ledger']}
+    mappings=[r for r in session.result['mappings'] if r['입력종류']=='원장' and (r['회사코드'],r['원천시스템'],r['원본계정코드']) in used]
     provenance={'target':'통합감사프로그램 원장·리드 7시트 입력 (v2.1.0 계약)',
                 'source':session.source,'support':support,'summary':summary,
-                'mappings':session.mappings,'catalogVersion':session.catalog['version'],
+                'mappings':mappings,'catalogVersion':session.catalog['version'],
+                'rowSources':[{'company':r['company'],'journal':r['journalId'],'line':r['lineId'],'source':r['source']} for r in session.result['ledger']],
+                'rowDimensions':[{'company':r['company'],'journal':r['journalId'],'line':r['lineId'],'dimensions':r['dimensions'],'source':r['source']} for r in session.result['ledger'] if r.get('dimensions')],
                 'outputSha256':hashlib.sha256(output.read_bytes()).hexdigest(),
                 'note':'시산표·통제·감사조정·모듈연결은 보조파일 제공값을 사용했습니다. 승인·감사결론을 생성하지 않습니다.'}
     (target/'변환출처.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2),encoding='utf-8')

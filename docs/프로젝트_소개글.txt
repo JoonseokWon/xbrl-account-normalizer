@@ -3,19 +3,21 @@
 엑셀 원장과 재무상태표의 계정을 공통 코드에 연결하고, 감사 자동화에 활용할 수 있는 표준 데이터와 검토 엑셀을 만드는 Windows 앱입니다.
 
 • 새 파일 열기로 회사별 엑셀을 선택하고 시트·열을 표준 항목에 연결
+• 회사·ERP별 입력 설정 재사용, CSV·여러 파일 입력, 업무 저장·다시 열기
+• 표준 계정 사전 관리, 전표별 복합분개·시산표 대사·원본 행 확인
 • 계정명·별칭 기반 표준 계정 후보와 추천 근거 확인
 • 사용자 확인·거절 이력 저장 및 다음 작업에 재사용
 • 검토 엑셀·JSON 저장과 통합감사 원장·리드용 7시트 입력 변환
 • 토스 UX 가이드를 참고한 벤토 그리드 UI와 Windows EXE
 
-상태: 공개 저장소 / v0.4.1-preview.1 / 새 더미 원장 변환·통합감사 입력 검증 완료
+상태: 공개 저장소 / v0.5.0-preview.1 / 회사별 반복 업무·복합분개·대용량 입력 지원
 현재 범위: 원장·재무상태표(BS). 공식 XBRL 출력은 향후 확장 항목입니다.
 
 🔗 GitHub
 https://github.com/JoonseokWon/xbrl-account-normalizer
 
 📦 Windows EXE 다운로드
-https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.4.1-preview.1
+https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.5.0-preview.1
 
 사용 방법: Windows 실행팩 ZIP을 모두 풀고 AccountDataNormalizer.exe를 실행하세요.
 Python 설치가 필요하지 않습니다. _internal 폴더는 EXE와 함께 보관하세요.

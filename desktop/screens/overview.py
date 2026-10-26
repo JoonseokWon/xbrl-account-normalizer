@@ -1,5 +1,5 @@
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QWidget,QVBoxLayout,QGridLayout,QHBoxLayout,QLineEdit,QCheckBox
+from PySide6.QtWidgets import QWidget,QVBoxLayout,QGridLayout,QHBoxLayout,QLineEdit,QCheckBox,QComboBox,QFormLayout
 from desktop.components.card import Card
 from desktop.components.text import label
 from desktop.components.drop_zone import DropZone
@@ -12,7 +12,7 @@ class OverviewScreen(QWidget):
         super().__init__()
         root=QVBoxLayout(self);root.setContentsMargins(0,0,0,0);root.setSpacing(18)
         grid=QGridLayout();grid.setSpacing(18);grid.setColumnStretch(0,7);grid.setColumnStretch(1,5)
-        self.source=Card('새 작업에 사용할 파일','회사별 원장이나 재무상태표 엑셀 파일을 열어요.')
+        self.source=Card('새 업무에 사용할 파일','같은 회사·양식의 XLSX·CSV·TSV 파일을 여러 개 선택할 수 있어요.')
         self.drop=DropZone();self.source.body.addWidget(self.drop)
         self.drop.chooseRequested.connect(self.chooseRequested);self.drop.fileDropped.connect(self.fileDropped)
         self.source.body.addWidget(label('어느 회사의 자료든 파일을 열고 원본 열을 연결해요.','Muted',True))
@@ -21,8 +21,13 @@ class OverviewScreen(QWidget):
         self.company=QLineEdit();self.company.setPlaceholderText('예: COMPANY-A')
         self.system=QLineEdit('사용자엑셀');self.system.setPlaceholderText('예: 더존 / ERP-A')
         self.reviewer=QLineEdit();self.reviewer.setPlaceholderText('계정을 확인할 사람의 이름')
+        form=QFormLayout();form.setSpacing(12);settings.body.addLayout(form)
         for title,field in [('회사코드',self.company),('원천시스템',self.system),('확인자',self.reviewer)]:
-            settings.body.addWidget(label(title));settings.body.addWidget(field)
+            form.addRow(label(title),field)
+        self.period_start=QLineEdit();self.period_end=QLineEdit()
+        for title,field in [('시작일 (선택)',self.period_start),('기준일 (선택)',self.period_end)]:
+            field.setPlaceholderText('YYYY-MM-DD');form.addRow(label(title),field)
+        self.unit=QComboBox();self.unit.addItems(['원','천원','백만원']);form.addRow(label('원장 금액 단위'),self.unit)
         settings.body.addWidget(label('회사 열이 있으면 엑셀의 회사코드를 사용해요.','Muted',True))
         self.history=QCheckBox('이전에 확인한 연결을 다시 사용해요');self.history.setChecked(True)
         settings.body.addWidget(self.history)
@@ -48,6 +53,7 @@ class OverviewScreen(QWidget):
     def begin_file(self,path,reset_details=False):
         if reset_details:
             self.company.clear();self.system.setText('사용자엑셀');self.reviewer.clear()
+            self.period_start.clear();self.period_end.clear();self.unit.setCurrentText('원')
         self.set_file(path)
         for metric in (self.row_count,self.account_count,self.pending_count):metric.update_value('—')
     def set_session(self,session):

@@ -8,6 +8,7 @@ class DataTable(QTableView):
         self.verticalHeader().hide();self.verticalHeader().setDefaultSectionSize(48)
         self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self.horizontalHeader().setStretchLastSection(True)
+        self.horizontalHeader().setResizeContentsPrecision(120)
         self.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)

@@ -2,15 +2,16 @@ from pathlib import Path
 from zipfile import ZipFile, BadZipFile
 from xml.parsers import expat
 from core.errors import InputError
+from core.limits import MAX_FILE_BYTES,MAX_EXPANDED_BYTES,MAX_ROWS
 
 def check_package(path):
     path = Path(path)
-    if path.suffix.lower() != '.xlsx' or path.stat().st_size > 20*1024**2:
-        raise InputError('20MB 이하 .xlsx 파일을 선택하세요.')
+    if path.suffix.lower() != '.xlsx' or path.stat().st_size > MAX_FILE_BYTES:
+        raise InputError('50MB 이하 .xlsx 파일을 선택하세요.')
     try:
         with ZipFile(path) as zipped:
             entries = zipped.infolist()
-            if len(entries) > 1000 or sum(e.file_size for e in entries) > 100*1024**2:
+            if len(entries) > 1000 or sum(e.file_size for e in entries) > MAX_EXPANDED_BYTES:
                 raise InputError('압축해제 크기·파일 수 한도 초과')
             for entry in entries:
                 lower = entry.filename.lower()
@@ -28,8 +29,8 @@ def check_package(path):
                     if lower.startswith('xl/worksheets/'):
                         def start_element(tag, attrs):
                             local = tag.rsplit('}', 1)[-1]
-                            if local == 'row' and int(attrs.get('r', 0)) > 50001:
-                                raise InputError('입력 시트의 최대 50,000행 한도 초과')
+                            if local == 'row' and int(attrs.get('r', 0)) > MAX_ROWS+100:
+                                raise InputError('입력 시트의 최대 100,000행 한도 초과')
                             if local == 'c':
                                 coordinate = attrs.get('r', '')
                                 column = ''.join(ch for ch in coordinate if ch.isalpha())

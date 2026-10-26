@@ -7,6 +7,7 @@ from review_history import review_key
 def make_mapper(index,mappings,history,profile,catalog,note):
     system=identifier(profile.get("sourceSystem"),"원천시스템")
     discovered={}
+    candidate_cache={}
     def mapped(row, kind):
             company = identifier(row.get('company') or profile.get('companyCode'), '회사코드')
             account = identifier(row.get('account'), '원본계정코드')
@@ -39,7 +40,10 @@ def make_mapper(index,mappings,history,profile,catalog,note):
                         selected = previous
                         basis = '동일 회사·시스템·계정명·사전 버전의 승인 이력'
                         discovered[key].update({'표준계정코드':previous['code'],'상태':'확인','확인자':accepted['reviewer']})
-            details = suggest_accounts(name,kind,index.values(),rejected,row.get('statement'))
+            candidate_key=(name,kind,tuple(sorted(rejected)),row.get('statement'))
+            if candidate_key not in candidate_cache:
+                candidate_cache[candidate_key]=suggest_accounts(name,kind,index.values(),rejected,row.get('statement'))
+            details=candidate_cache[candidate_key]
             candidates = [item['code'] for item in details]
             if selected is None:
                 note('UNMAPPED', '표준계정 매핑 미확정' + (f". 이름 기준 후보: {', '.join(candidates)}" if candidates else ''), row['_source'])

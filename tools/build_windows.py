@@ -61,6 +61,9 @@ collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNo
     for name in ('README.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
         destination=portable/Path(name).name
         shutil.copy2(ROOT/name,destination)
+    (portable/'docs').mkdir(exist_ok=True)
+    for path in (ROOT/'docs').iterdir():
+        if path.is_file() and path.suffix in ('.md','.txt'):shutil.copy2(path,portable/'docs'/path.name)
     licenses=portable/'licenses';licenses.mkdir(exist_ok=True)
     for name in ('PySide6-Essentials','shiboken6','openpyxl','et_xmlfile','Pillow','PyInstaller'):
         package=distribution(name)

@@ -5,6 +5,10 @@ from .package_guard import check_package
 
 def inspect_workbook(path,header_row=1):
     path=Path(path)
+    if path.suffix.lower() in ('.csv','.tsv'):
+        from .delimited import read_delimited
+        _,matrix,_=read_delimited(path,int(header_row))
+        return [{'name':'CSV','headers':matrix[0]}]
     check_package(path)
     if not 1<=int(header_row)<=100:
         raise InputError('제목 행은 1~100행으로 입력해 주세요.')

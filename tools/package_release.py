@@ -30,7 +30,7 @@ def main():
                                       'samples/계정매핑_합성입력.xlsx','assets/app-icon.svg','assets/fonts/NotoSansKR.ttf','assets/fonts/OFL.txt'))
     files.extend(sorted((ROOT/'assets/licenses').glob('*.txt')))
     files.extend(sorted((ROOT/'docs').glob('*.txt')))
-    files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py'))
+    files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py','tools/verify_company_workflow.py','tools/verify_company_import.py','tools/verify_desktop.py'))
     files.extend(sorted(path for path in (ROOT/'samples/새회사변환예제').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
     entries=[]
     for path in files:
@@ -41,6 +41,9 @@ def main():
     # Documentation may finish after the binary build. Copy the final versions.
     for name in ('README.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
         shutil.copy2(ROOT/name,runtime/Path(name).name)
+    (runtime/'docs').mkdir(exist_ok=True)
+    for path in (ROOT/'docs').iterdir():
+        if path.is_file() and path.suffix in ('.md','.txt'):shutil.copy2(path,runtime/'docs'/path.name)
     diagnostics=release/'exe-startup.json'
     subprocess.run([str(executable),'--diagnostics',str(diagnostics)],cwd=ROOT,
                    check=True,timeout=30,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
@@ -50,7 +53,7 @@ def main():
     evidence_path=release/'validation-summary.json'
     evidence=json.loads(evidence_path.read_text(encoding='utf-8')) if evidence_path.exists() else None
     if evidence and evidence.get('version')!=VERSION:raise ValueError('다른 버전의 검증 기록입니다.')
-    manifest={'version':VERSION,'validationStatus':'새 합성 원장 변환·감사 입력 검증 완료; 전체 실사용 확인 필요' if evidence else '사용자 검증 대기',
+    manifest={'version':VERSION,'validationStatus':'회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요' if evidence else '사용자 검증 대기',
               'applicationTestsRun':bool(evidence and evidence.get('unitTestsPassed')),'validation':evidence,
               'initialUiRendered':(release/'화면_초안.png').is_file(),'exeStartup':startup,
               'sourceFileCount':len(entries),'pythonModuleCount':sum(path.suffix=='.py' for path in files),

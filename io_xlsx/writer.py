@@ -5,6 +5,9 @@ from core.constants import MAPPING_HEADERS
 from .styling import make_sheet_builder
 
 def export_review(path, result, matrices, catalog):
+    if result['counts']['sourceGlRows']+result['counts']['sourceFsRows']>10000:
+        from .streaming import export_streaming
+        return export_streaming(path,result,matrices,catalog)
     wb=Workbook()
     wb.remove(wb.active)
     add=make_sheet_builder(wb)
@@ -27,6 +30,10 @@ def export_review(path, result, matrices, catalog):
             ('journalId','전표ID'),('lineId','행ID'),('debit','차변_원'),('credit','대변_원'),
             ('netMovement','당기순변동_원'),('module','분석대상'),('source','원본출처')]
     add('표준원장',[h for k,h in fields],[[r.get(k) for k,h in fields] for r in result['ledger']],widths={'매핑근거':55,'원본출처':70,'표준계정명':30})
+    add('전표별분개',['회사','전표','행','전기일','차변 계정','차변','대변 계정','대변','원본출처'],
+        [[r['company'],r['journalId'],r['lineId'],r['postingDate'],r['originalName'] if r['debit'] else '',r['debit'],r['originalName'] if r['credit'] else '',r['credit'],r['source']] for r in result['ledger']])
+    add('세부정보',['회사','전표','행','구분','값','원본출처'],[[r['company'],r['journalId'],r['lineId'],k,v,r['source']] for r in result['ledger'] for k,v in r.get('dimensions',{}).items()])
+    add('변환대사',['확인 항목','원본 / 시산표','변환 원장','차이','상태','원본출처'],[[r[k] for k in ('label','source','converted','difference','status','reference')] for r in result.get('reconciliation',[])])
     group_fields=['company','standardCode','standardName','leadCode','originalCodes','rowCount','debit','credit','netMovement']
     add('표준계정집계',['회사코드','표준계정코드','표준계정명','리드코드','원본계정코드들','원장행수','차변_원','대변_원','당기순변동_원'],
         [[', '.join(r[k]) if k=='originalCodes' else r[k] for k in group_fields] for r in result['movements']])

@@ -44,3 +44,14 @@ workbook_export.py              이전 Excel export import 호환
 ```
 
 UI는 원본 계정코드를 바꾸지 않으며 application 서비스를 통해서만 작업 상태를 변경합니다. 작업 중 화면 입력을 잠그고 백그라운드에서 파일을 처리합니다. 결과 엑셀과 JSON은 새 폴더에 저장합니다. EXE에 포함한 읽기 전용 리소스와 `%LOCALAPPDATA%/AccountDataNormalizer`의 로컬 이력·로그를 구분합니다.
+
+v0.5 추가 모듈:
+
+- application/presets.py, catalogs.py, workfiles.py, json_store.py: 회사·ERP 설정, 버전 사전, 원본 포함 업무와 원자적 저장
+- application/support_preparation.py: 회사별 보조자료 열 연결과 제공값 정규화
+- core/journals.py, reconciliation.py, limits.py: 복합분개 그룹, 읽기 전용 대사와 공유 한도
+- io_xlsx/delimited.py, records.py, streaming.py: CSV·TSV, 임의 보조표 확정값 읽기와 큰 검토 엑셀 저장
+- desktop/dialogs/: 사전·보조자료·원본 행. components/journal_view.py: 전표와 차대변 상세
+- desktop/controllers/work_actions.py: 업무 저장·복원·사전·입력 설정 동작
+
+입력 설정은 기간·실제 보조파일 경로를 재사용하지 않습니다. 업무 파일은 원본 바이트를 포함하며 복원 시 해시를 확인하고 외부 승인 이력 없이 재계산합니다. 사전 변경은 승인 이력의 새 버전 범위를 만들며 현재 매핑을 미확정으로 바꿉니다. 보조자료 금액은 원장으로 생성하지 않습니다. 표준화의 25만 행 한도와 감사 엔진 계약의 1만 행 한도를 나눠 검사합니다.

@@ -15,6 +15,10 @@ def normalize(raw,mapping_rows,catalog,profile,source,history=None):
     if profile.get('currency')!='KRW' or profile.get('ledgerUnit') not in UNITS:
         raise InputError('현재 버전은 KRW와 원/천원/백만원 단위를 지원합니다.')
     system=identifier(profile.get('sourceSystem'),'원천시스템')
+    for key in ('periodStart','periodEnd'):
+        if profile.get(key) and not '1900-01-01'<=day(profile[key])<='2100-12-31':raise InputError('업무 기간은 1900~2100년 범위가 필요합니다.')
+    if profile.get('periodStart') and profile.get('periodEnd') and day(profile['periodStart'])>day(profile['periodEnd']):
+        raise InputError('업무 시작일은 기준일보다 늦을 수 없습니다.')
     index=catalog_index(catalog)
     mappings=mapping_index(mapping_rows,index)
     history=history or ReviewHistory()
