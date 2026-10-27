@@ -1,0 +1,19 @@
+{
+  "version": "AUDIT-COA-DEMO-0.2",
+  "description": "감사 입력 표준화 실험용 자체 코드. DART/IFRS 공식 택사노미 코드가 아닙니다.",
+  "accounts": [
+    {"code":"A1100","name":"현금및현금성자산","kind":"group","parent":null,"lead":"CASH","statement":"BS","module":"현금분석","aliases":["현금및현금성자산","Cash and cash equivalents"]},
+    {"code":"A1101","name":"현금","kind":"account","parent":"A1100","lead":"CASH","statement":"BS","module":"현금분석","aliases":["현금","소액현금","Cash on hand","Petty cash"]},
+    {"code":"A1102","name":"현금성 예금","kind":"account","parent":"A1100","lead":"CASH","statement":"BS","module":"현금분석","aliases":["보통예금","당좌예금","Cash at bank","Current account"]},
+    {"code":"A1200","name":"매출채권","kind":"group","parent":null,"lead":"AR","statement":"BS","module":"대손충당금","aliases":["매출채권","Trade receivables"]},
+    {"code":"A1201","name":"외상매출금","kind":"account","parent":"A1200","lead":"AR","statement":"BS","module":"대손충당금","aliases":["외상매출금","Accounts receivable"]},
+    {"code":"A1291","name":"매출채권 대손충당금","kind":"account","parent":"A1200","lead":"AR","statement":"BS","module":"대손충당금","aliases":["매출채권대손충당금"]},
+    {"code":"A1300","name":"재고자산","kind":"group","parent":null,"lead":"INV","statement":"BS","module":"재고평가","aliases":["재고자산","Inventories"]},
+    {"code":"A1301","name":"상품","kind":"account","parent":"A1300","lead":"INV","statement":"BS","module":"재고평가","aliases":["상품","Merchandise"]},
+    {"code":"A1302","name":"제품","kind":"account","parent":"A1300","lead":"INV","statement":"BS","module":"재고평가","aliases":["제품","Finished goods"]},
+    {"code":"L2101","name":"외상매입금","kind":"account","parent":null,"lead":"AP","statement":"BS","module":"미기록부채·비용이연","aliases":["외상매입금","Accounts payable","Trade payables"]},
+    {"code":"R4101","name":"매출","kind":"account","parent":null,"lead":"REV","statement":"PL","module":"매출","aliases":["매출","상품매출","제품매출","Revenue","Sales"]},
+    {"code":"E5101","name":"매출원가","kind":"account","parent":null,"lead":"COGS","statement":"PL","module":"원장·리드","aliases":["매출원가","상품매출원가","제품매출원가","Cost of sales","Cost of goods sold"]},
+    {"code":"E5204","name":"판매관리비 지급수수료","kind":"account","parent":null,"lead":"SGA","statement":"PL","module":"원장·리드","aliases":["지급수수료","수수료","Service fees"]}
+  ]
+}

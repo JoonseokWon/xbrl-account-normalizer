@@ -32,6 +32,9 @@ def main():
     files.extend(sorted((ROOT/'docs').glob('*.txt')))
     files.extend(ROOT/name for name in ('tools/run_audit_demo.py','tools/verify_audit_demo_import.py','tools/verify_company_workflow.py','tools/verify_company_import.py','tools/verify_desktop.py','tools/verify_large_audit_export.py'))
     files.extend(sorted(path for path in (ROOT/'samples/새회사변환예제').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
+    files.extend(ROOT/name for name in ('tools/company_cases.py','tools/prepare_company_cases.py','tools/create_company_workbooks.mjs',
+                                      'tools/verify_company_mapping.py','tools/verify_multi_audit_import.py'))
+    files.extend(sorted(path for path in (ROOT/'samples/여러회사매핑').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')

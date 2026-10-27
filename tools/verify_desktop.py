@@ -75,13 +75,14 @@ def main():
             with patch('desktop.controllers.audit_export.QFileDialog.getExistingDirectory',return_value=str(output/'audit-output')):
                 controller.results.audit_save.click();wait(controller)
             assert controller.results.output_path and (controller.results.output_path/'통합감사_원장입력.xlsx').is_file()
+            initial_accounts=len(controller.catalog['accounts'])
             editor=CatalogDialog(controller.catalog,window);editor.setAttribute(Qt.WidgetAttribute.WA_DontShowOnScreen);editor.add_row()
             values=['X999','사용자 추가 계정','상세계정','','CUSTOM','BS','원장·리드','별도 계정']
             for col,value in enumerate(values):editor.table.setItem(editor.table.rowCount()-1,col,QTableWidgetItem(value))
             editor.show();shot(editor,'catalog')
             with patch('desktop.controllers.work_actions.CatalogDialog',return_value=editor):
                 QTimer.singleShot(0,editor.submit);controller.work_actions.catalog();wait(controller)
-            assert len(controller.catalog['accounts'])==14 and controller.session.result['counts']['pendingRows']==3
+            assert len(controller.catalog['accounts'])==initial_accounts+1 and controller.session.result['counts']['pendingRows']==3
             window.show_page(4);shot(window,'help')
             controller.force_close=True;window.close();controller.jobs.pool.waitForDone();controller.session._restored_temp.cleanup()
     report={'sourceWidgetsExercised':True,'mappingButtonsClicked':3,'compoundDebitRows':2,'compoundCreditRows':1,

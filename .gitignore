@@ -9,3 +9,5 @@ build/
 *.log
 .build-tools/
 .build-cache/
+검증/
+*.inspect.ndjson

@@ -1,19 +1,1101 @@
 {
-  "version": "AUDIT-COA-DEMO-0.2",
+  "version": "USER-f4a60cab790ba1f6",
   "description": "감사 입력 표준화 실험용 자체 코드. DART/IFRS 공식 택사노미 코드가 아닙니다.",
   "accounts": [
-    {"code":"A1100","name":"현금및현금성자산","kind":"group","parent":null,"lead":"CASH","statement":"BS","module":"현금분석","aliases":["현금및현금성자산","Cash and cash equivalents"]},
-    {"code":"A1101","name":"현금","kind":"account","parent":"A1100","lead":"CASH","statement":"BS","module":"현금분석","aliases":["현금","소액현금","Cash on hand","Petty cash"]},
-    {"code":"A1102","name":"현금성 예금","kind":"account","parent":"A1100","lead":"CASH","statement":"BS","module":"현금분석","aliases":["보통예금","당좌예금","Cash at bank","Current account"]},
-    {"code":"A1200","name":"매출채권","kind":"group","parent":null,"lead":"AR","statement":"BS","module":"대손충당금","aliases":["매출채권","Trade receivables"]},
-    {"code":"A1201","name":"외상매출금","kind":"account","parent":"A1200","lead":"AR","statement":"BS","module":"대손충당금","aliases":["외상매출금","Accounts receivable"]},
-    {"code":"A1291","name":"매출채권 대손충당금","kind":"account","parent":"A1200","lead":"AR","statement":"BS","module":"대손충당금","aliases":["매출채권대손충당금"]},
-    {"code":"A1300","name":"재고자산","kind":"group","parent":null,"lead":"INV","statement":"BS","module":"재고평가","aliases":["재고자산","Inventories"]},
-    {"code":"A1301","name":"상품","kind":"account","parent":"A1300","lead":"INV","statement":"BS","module":"재고평가","aliases":["상품","Merchandise"]},
-    {"code":"A1302","name":"제품","kind":"account","parent":"A1300","lead":"INV","statement":"BS","module":"재고평가","aliases":["제품","Finished goods"]},
-    {"code":"L2101","name":"외상매입금","kind":"account","parent":null,"lead":"AP","statement":"BS","module":"미기록부채·비용이연","aliases":["외상매입금","Accounts payable","Trade payables"]},
-    {"code":"R4101","name":"매출","kind":"account","parent":null,"lead":"REV","statement":"PL","module":"매출","aliases":["매출","상품매출","제품매출","Revenue","Sales"]},
-    {"code":"E5101","name":"매출원가","kind":"account","parent":null,"lead":"COGS","statement":"PL","module":"원장·리드","aliases":["매출원가","상품매출원가","제품매출원가","Cost of sales","Cost of goods sold"]},
-    {"code":"E5204","name":"판매관리비 지급수수료","kind":"account","parent":null,"lead":"SGA","statement":"PL","module":"원장·리드","aliases":["지급수수료","수수료","Service fees"]}
+    {
+      "code": "A1100",
+      "name": "현금및현금성자산",
+      "kind": "group",
+      "parent": null,
+      "lead": "CASH",
+      "statement": "BS",
+      "module": "현금분석",
+      "aliases": [
+        "현금및현금성자산",
+        "Cash and cash equivalents"
+      ]
+    },
+    {
+      "code": "A1101",
+      "name": "현금",
+      "kind": "account",
+      "parent": "A1100",
+      "lead": "CASH",
+      "statement": "BS",
+      "module": "현금분석",
+      "aliases": [
+        "현금",
+        "소액현금",
+        "Cash on hand",
+        "Petty cash",
+        "현금시재",
+        "시재현금",
+        "매장현금"
+      ]
+    },
+    {
+      "code": "A1102",
+      "name": "현금성 예금",
+      "kind": "account",
+      "parent": "A1100",
+      "lead": "CASH",
+      "statement": "BS",
+      "module": "현금분석",
+      "aliases": [
+        "보통예금",
+        "당좌예금",
+        "Cash at bank",
+        "Current account",
+        "국민 보통예금",
+        "신한은행 보통예금",
+        "신한 당좌예금",
+        "운영통장",
+        "은행보통예금",
+        "기업자유예금"
+      ]
+    },
+    {
+      "code": "A1200",
+      "name": "매출채권",
+      "kind": "group",
+      "parent": null,
+      "lead": "AR",
+      "statement": "BS",
+      "module": "대손충당금",
+      "aliases": [
+        "매출채권",
+        "Trade receivables"
+      ]
+    },
+    {
+      "code": "A1201",
+      "name": "외상매출금",
+      "kind": "account",
+      "parent": "A1200",
+      "lead": "AR",
+      "statement": "BS",
+      "module": "대손충당금",
+      "aliases": [
+        "외상매출금",
+        "Accounts receivable",
+        "받을외상대금",
+        "거래처매출채권",
+        "외상매출채권",
+        "Trade debtors",
+        "매출외상금"
+      ]
+    },
+    {
+      "code": "A1291",
+      "name": "매출채권 대손충당금",
+      "kind": "account",
+      "parent": "A1200",
+      "lead": "AR",
+      "statement": "BS",
+      "module": "대손충당금",
+      "aliases": [
+        "매출채권대손충당금",
+        "외상대손충당금",
+        "매출채권충당금",
+        "매출대손충당금",
+        "Allowance for trade receivables",
+        "AR allowance"
+      ]
+    },
+    {
+      "code": "A1300",
+      "name": "재고자산",
+      "kind": "group",
+      "parent": null,
+      "lead": "INV",
+      "statement": "BS",
+      "module": "재고평가",
+      "aliases": [
+        "재고자산",
+        "Inventories"
+      ]
+    },
+    {
+      "code": "A1301",
+      "name": "상품",
+      "kind": "account",
+      "parent": "A1300",
+      "lead": "INV",
+      "statement": "BS",
+      "module": "재고평가",
+      "aliases": [
+        "상품",
+        "Merchandise",
+        "판매상품",
+        "매입상품재고",
+        "Merchandise inventory",
+        "상품재고",
+        "보유상품"
+      ]
+    },
+    {
+      "code": "A1302",
+      "name": "제품",
+      "kind": "account",
+      "parent": "A1300",
+      "lead": "INV",
+      "statement": "BS",
+      "module": "재고평가",
+      "aliases": [
+        "제품",
+        "Finished goods",
+        "완제품",
+        "완제품재고",
+        "제조제품"
+      ]
+    },
+    {
+      "code": "L2101",
+      "name": "외상매입금",
+      "kind": "account",
+      "parent": null,
+      "lead": "AP",
+      "statement": "BS",
+      "module": "미기록부채·비용이연",
+      "aliases": [
+        "외상매입금",
+        "Accounts payable",
+        "Trade payables",
+        "거래처외상매입금",
+        "매입외상금",
+        "외상매입채무",
+        "Trade creditors",
+        "상품매입채무"
+      ]
+    },
+    {
+      "code": "R4101",
+      "name": "매출",
+      "kind": "account",
+      "parent": null,
+      "lead": "REV",
+      "statement": "PL",
+      "module": "매출",
+      "aliases": [
+        "매출",
+        "상품매출",
+        "제품매출",
+        "Revenue",
+        "Sales",
+        "제품매출액",
+        "상품매출액",
+        "용역매출액",
+        "Service revenue",
+        "영업매출"
+      ]
+    },
+    {
+      "code": "E5101",
+      "name": "매출원가",
+      "kind": "account",
+      "parent": null,
+      "lead": "COGS",
+      "statement": "PL",
+      "module": "원장·리드",
+      "aliases": [
+        "매출원가",
+        "상품매출원가",
+        "제품매출원가",
+        "Cost of sales",
+        "Cost of goods sold",
+        "판매상품원가"
+      ]
+    },
+    {
+      "code": "E5204",
+      "name": "판매관리비 지급수수료",
+      "kind": "account",
+      "parent": null,
+      "lead": "SGA",
+      "statement": "PL",
+      "module": "원장·리드",
+      "aliases": [
+        "지급수수료",
+        "Service fees",
+        "플랫폼수수료",
+        "은행수수료",
+        "결제대행수수료",
+        "업무수수료"
+      ]
+    },
+    {
+      "code": "A1110",
+      "name": "단기금융상품",
+      "lead": "STFI",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "단기정기예금",
+        "정기예적금",
+        "6개월정기예금",
+        "Short term deposits",
+        "단기금융예치금"
+      ]
+    },
+    {
+      "code": "A1202",
+      "name": "받을어음",
+      "lead": "AR",
+      "statement": "BS",
+      "kind": "account",
+      "parent": "A1200",
+      "module": "원장·리드",
+      "aliases": [
+        "매출어음",
+        "수취어음",
+        "받을전자어음",
+        "Notes receivable",
+        "어음채권",
+        "거래처받을어음"
+      ]
+    },
+    {
+      "code": "A1210",
+      "name": "미수금",
+      "lead": "OREC",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "비영업미수금",
+        "기타미수금",
+        "자산매각미수금",
+        "Other receivables",
+        "기타받을금액",
+        "처분대금미수금"
+      ]
+    },
+    {
+      "code": "A1220",
+      "name": "미수수익",
+      "lead": "AINC",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "미수이자",
+        "받을이자",
+        "이자미수수익",
+        "Accrued interest income",
+        "미수이자수익"
+      ]
+    },
+    {
+      "code": "A1230",
+      "name": "선급금",
+      "lead": "ADVPAID",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "구매선급금",
+        "원재료선급금",
+        "선지급매입금",
+        "Supplier advances",
+        "공급자선급금",
+        "상품선급금"
+      ]
+    },
+    {
+      "code": "A1240",
+      "name": "선급비용",
+      "lead": "PREPAID",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "보험료선급액",
+        "기간선급비용",
+        "선급보험료",
+        "Prepaid expenses",
+        "선급임차료",
+        "선급경비"
+      ]
+    },
+    {
+      "code": "A1250",
+      "name": "부가세대급금",
+      "lead": "VATIN",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "매입부가세",
+        "부가세매입세액",
+        "부가가치세대급금",
+        "Input VAT",
+        "매입세액"
+      ]
+    },
+    {
+      "code": "A1303",
+      "name": "원재료",
+      "lead": "INV",
+      "statement": "BS",
+      "kind": "account",
+      "parent": "A1300",
+      "module": "원장·리드",
+      "aliases": [
+        "주원료",
+        "원재료재고",
+        "원료재고"
+      ]
+    },
+    {
+      "code": "A1304",
+      "name": "재공품",
+      "lead": "INV",
+      "statement": "BS",
+      "kind": "account",
+      "parent": "A1300",
+      "module": "원장·리드",
+      "aliases": [
+        "공정재고",
+        "재공재고"
+      ]
+    },
+    {
+      "code": "A1305",
+      "name": "저장품",
+      "lead": "INV",
+      "statement": "BS",
+      "kind": "account",
+      "parent": "A1300",
+      "module": "원장·리드",
+      "aliases": [
+        "보조자재재고",
+        "소모자재재고",
+        "Supplies inventory",
+        "저장품재고",
+        "저장소모품"
+      ]
+    },
+    {
+      "code": "A1401",
+      "name": "토지",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "사업용토지",
+        "공장부지",
+        "Land",
+        "사옥부지",
+        "토지취득원가"
+      ]
+    },
+    {
+      "code": "A1402",
+      "name": "건물",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "공장건물",
+        "사옥건물",
+        "Buildings",
+        "사업용건물",
+        "창고건물"
+      ]
+    },
+    {
+      "code": "A1403",
+      "name": "기계장치",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "생산설비",
+        "공장기계",
+        "기계장치원가"
+      ]
+    },
+    {
+      "code": "A1404",
+      "name": "차량운반구",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "업무용차량",
+        "배송차량",
+        "보유차량운반구",
+        "Motor vehicles",
+        "운송차량",
+        "차량운반구원가"
+      ]
+    },
+    {
+      "code": "A1405",
+      "name": "비품",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "사무용비품",
+        "전산비품",
+        "집기비품",
+        "Office equipment",
+        "사무집기",
+        "비품취득원가"
+      ]
+    },
+    {
+      "code": "A1491",
+      "name": "유형자산 감가상각누계액",
+      "lead": "PPE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "유형자산상각누계",
+        "감가누계액",
+        "유형감가상각누계액",
+        "Accumulated depreciation",
+        "감가상각누계액",
+        "유형자산감가누계"
+      ]
+    },
+    {
+      "code": "A1501",
+      "name": "소프트웨어",
+      "lead": "INTANG",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "취득소프트웨어",
+        "전산소프트웨어자산",
+        "소프트웨어자산",
+        "Software asset",
+        "구매프로그램자산",
+        "업무용소프트웨어"
+      ]
+    },
+    {
+      "code": "A1502",
+      "name": "무형자산 상각누계액",
+      "lead": "INTANG",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "무형상각누계",
+        "소프트웨어상각누계액",
+        "무형자산상각누계",
+        "Accumulated amortisation",
+        "무형상각누계액",
+        "무형감가상각누계"
+      ]
+    },
+    {
+      "code": "A1601",
+      "name": "임차보증금",
+      "lead": "DEPOSIT",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "사무실보증금",
+        "임대차보증금",
+        "임차보증예치금",
+        "Rental deposits",
+        "점포보증금",
+        "사업장임차보증금"
+      ]
+    },
+    {
+      "code": "A1701",
+      "name": "사용권자산",
+      "lead": "ROU",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "리스사용권",
+        "임차사용권자산",
+        "사용권자산원가",
+        "Right of use assets",
+        "리스자산사용권"
+      ]
+    },
+    {
+      "code": "L2102",
+      "name": "지급어음",
+      "lead": "AP",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "매입지급어음",
+        "발행어음채무",
+        "지급전자어음",
+        "Notes payable",
+        "거래처지급어음"
+      ]
+    },
+    {
+      "code": "L2201",
+      "name": "미지급금",
+      "lead": "OPAY",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "설비미지급금",
+        "기타미지급금",
+        "미지급구입대금",
+        "Other payables",
+        "자산매입미지급금"
+      ]
+    },
+    {
+      "code": "L2202",
+      "name": "미지급비용",
+      "lead": "ACCRUAL",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "비용미지급액",
+        "미지급경비",
+        "발생비용미지급",
+        "Accrued expenses",
+        "경과비용미지급"
+      ]
+    },
+    {
+      "code": "L2203",
+      "name": "선수금",
+      "lead": "ADVREC",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "고객선수금",
+        "판매선수금",
+        "선수계약금",
+        "Customer advances",
+        "수주선수금",
+        "선수대금"
+      ]
+    },
+    {
+      "code": "L2204",
+      "name": "부가세예수금",
+      "lead": "VATOUT",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "매출부가세",
+        "부가세매출세액",
+        "부가가치세예수금",
+        "Output VAT",
+        "매출세액"
+      ]
+    },
+    {
+      "code": "L2205",
+      "name": "예수금",
+      "lead": "WITHHOLD",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "급여예수금",
+        "원천세예수금",
+        "근로소득세예수금",
+        "Payroll withholding",
+        "원천징수예수금",
+        "제세예수금"
+      ]
+    },
+    {
+      "code": "L2206",
+      "name": "단기차입금",
+      "lead": "STDEBT",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "단기은행차입금",
+        "운전자금차입금",
+        "단기차입원금",
+        "Short term borrowings",
+        "단기대출금",
+        "은행단기차입"
+      ]
+    },
+    {
+      "code": "L2207",
+      "name": "미지급법인세",
+      "lead": "TAXPAY",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "미납법인세",
+        "법인세미지급금",
+        "Income tax payable",
+        "당기법인세부채",
+        "납부할법인세"
+      ]
+    },
+    {
+      "code": "L2301",
+      "name": "장기차입금",
+      "lead": "LTDEBT",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "장기은행차입금",
+        "시설자금장기차입",
+        "장기차입원금",
+        "Long term borrowings",
+        "장기대출금",
+        "은행장기차입"
+      ]
+    },
+    {
+      "code": "L2302",
+      "name": "리스부채",
+      "lead": "LEASE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "리스계약부채",
+        "금융리스부채",
+        "리스미지급원금",
+        "Lease liabilities",
+        "임차리스부채"
+      ]
+    },
+    {
+      "code": "L2303",
+      "name": "퇴직급여부채",
+      "lead": "RETIRE",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "퇴직급여충당부채",
+        "퇴직급여충당금",
+        "퇴직부채",
+        "Retirement benefit obligations",
+        "확정급여부채",
+        "퇴직급여미지급부채"
+      ]
+    },
+    {
+      "code": "Q3101",
+      "name": "자본금",
+      "lead": "CAPITAL",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "보통주자본금",
+        "납입자본금",
+        "주식자본",
+        "Share capital",
+        "보통주납입자본"
+      ]
+    },
+    {
+      "code": "Q3201",
+      "name": "이익잉여금",
+      "lead": "RETAINED",
+      "statement": "BS",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "미처분이익잉여금",
+        "이월이익잉여금",
+        "누적이익잉여금",
+        "Retained earnings",
+        "전기이월이익"
+      ]
+    },
+    {
+      "code": "R4201",
+      "name": "이자수익",
+      "lead": "FININC",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "수입이자",
+        "예금이자수익",
+        "금융이자수익",
+        "Interest income",
+        "이자수입"
+      ]
+    },
+    {
+      "code": "R4202",
+      "name": "잡이익",
+      "lead": "OTHERINC",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "기타잡이익",
+        "영업외잡이익",
+        "소액잡이익",
+        "Miscellaneous income",
+        "기타수익잡이익"
+      ]
+    },
+    {
+      "code": "E5201",
+      "name": "급여",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "직원급여",
+        "사무직급료",
+        "판관급여",
+        "Salaries",
+        "임직원급여",
+        "급료와임금"
+      ]
+    },
+    {
+      "code": "E5202",
+      "name": "복리후생비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "직원복리비",
+        "복리후생경비",
+        "임직원복리후생비",
+        "Employee welfare",
+        "후생복리비"
+      ]
+    },
+    {
+      "code": "E5203",
+      "name": "지급임차료",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "사무실월세",
+        "단기임차료",
+        "지급월임차료",
+        "Rent expense",
+        "지급임대료",
+        "임차료"
+      ]
+    },
+    {
+      "code": "E5205",
+      "name": "여비교통비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "출장교통비",
+        "교통출장비",
+        "직원여비",
+        "Travel expenses",
+        "출장여비"
+      ]
+    },
+    {
+      "code": "E5206",
+      "name": "접대비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "기업업무추진비",
+        "거래처접대비",
+        "업무추진접대비",
+        "Business entertainment",
+        "대외접대비"
+      ]
+    },
+    {
+      "code": "E5207",
+      "name": "통신비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "전화요금",
+        "인터넷통신료",
+        "전화통신비",
+        "Telecommunication expense",
+        "통신요금"
+      ]
+    },
+    {
+      "code": "E5208",
+      "name": "수도광열비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "전기수도료",
+        "수도전기요금",
+        "전력광열비",
+        "Utilities expense",
+        "가스수도광열비"
+      ]
+    },
+    {
+      "code": "E5209",
+      "name": "감가상각비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "유형감가상각비",
+        "판관감가상각비",
+        "유형자산상각비",
+        "Depreciation expense",
+        "당기감가상각비"
+      ]
+    },
+    {
+      "code": "E5210",
+      "name": "광고선전비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "온라인광고비",
+        "광고홍보비",
+        "광고선전경비",
+        "Advertising expense",
+        "매체광고비"
+      ]
+    },
+    {
+      "code": "E5211",
+      "name": "소모품비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "사무소모품비",
+        "사용소모품비",
+        "소모품구입비",
+        "Consumables expense",
+        "사무용품비"
+      ]
+    },
+    {
+      "code": "E5212",
+      "name": "운반비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "배송운임",
+        "택배운송비",
+        "판매운반비",
+        "Freight expense",
+        "출고배송비"
+      ]
+    },
+    {
+      "code": "E5213",
+      "name": "보험료",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "당기보험료",
+        "손해보험료",
+        "사업장보험료",
+        "Insurance expense",
+        "경과보험료"
+      ]
+    },
+    {
+      "code": "E5214",
+      "name": "세금과공과",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "제세공과금",
+        "세금공과금",
+        "재산세공과금",
+        "Taxes and dues",
+        "지방세공과"
+      ]
+    },
+    {
+      "code": "E5215",
+      "name": "수선비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "설비수선비",
+        "경상수리비",
+        "기계수선유지비",
+        "Repairs expense",
+        "보수수선비"
+      ]
+    },
+    {
+      "code": "E5216",
+      "name": "대손상각비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "매출채권대손상각비",
+        "채권대손비용",
+        "영업대손상각비",
+        "Bad debt expense",
+        "매출대손비"
+      ]
+    },
+    {
+      "code": "E5217",
+      "name": "무형자산상각비",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "소프트웨어상각비",
+        "무형상각비",
+        "당기무형자산상각비",
+        "Amortisation expense",
+        "무형자산상각경비"
+      ]
+    },
+    {
+      "code": "E5218",
+      "name": "퇴직급여",
+      "lead": "SGA",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "퇴직급여비용",
+        "퇴직급여전입액",
+        "당기퇴직급여",
+        "Retirement benefit expense",
+        "퇴직급여경비"
+      ]
+    },
+    {
+      "code": "E5301",
+      "name": "이자비용",
+      "lead": "FINCOST",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "지급이자",
+        "차입금이자비용",
+        "금융이자비용",
+        "Interest expense",
+        "차입이자"
+      ]
+    },
+    {
+      "code": "E5302",
+      "name": "법인세비용",
+      "lead": "TAX",
+      "statement": "PL",
+      "kind": "account",
+      "parent": null,
+      "module": "원장·리드",
+      "aliases": [
+        "당기법인세비용",
+        "법인세등",
+        "법인세부담액",
+        "Income tax expense",
+        "당기법인세"
+      ]
+    }
   ]
 }

@@ -16,7 +16,7 @@ def main():
     from PySide6.QtGui import QFontInfo
     from PySide6.QtCore import QTimer,Qt
     from application.paths import resources
-    from application.configuration import default_profile
+    from application.configuration import default_profile,default_catalog
     from desktop.theme.styles import stylesheet
     from desktop.theme.typography import configure_typography
     from desktop.window import MainWindow
@@ -26,14 +26,19 @@ def main():
     app.setStyle('Fusion');font_family=configure_typography(app);app.setStyleSheet(stylesheet(font_family))
     window=MainWindow(default_profile());controller=AppController(window);window.controller=controller
     if args.diagnostics:
+        from suggestions import suggest_accounts
+        catalog=default_catalog()
+        checks={name:suggest_accounts(name,'원장',catalog['accounts'])[0]['code']==target for name,target in
+                [('관리부 / 전산소프트웨어자산','A1501'),('원천세예수금 (본점)','L2205'),('온라인광고비 - 국내사업','E5210')]}
         paths=['config/profile.json','config/catalog.json','assets/app-icon.svg','samples/계정매핑_합성입력.xlsx']
         data={'version':VERSION,'frozen':bool(getattr(sys,'frozen',False)),
               'resources':{path:(resources()/path).is_file() for path in paths},
               'display':{'platform':app.platformName(),'devicePixelRatio':window.devicePixelRatioF(),
                          'fontFamily':QFontInfo(app.font()).family(),'pointSize':app.font().pointSizeF()},
-              'scope':'startup and resource discovery only; no conversion run'}
+                'catalogVersion':catalog['version'],'catalogEntries':len(catalog['accounts']),'candidateSmokeChecks':checks,
+                'scope':'startup, resource discovery and three dictionary candidates only; no conversion run'}
         Path(args.diagnostics).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
-        return 0 if all(data['resources'].values()) else 1
+        return 0 if all(data['resources'].values()) and all(checks.values()) else 1
     if args.render_preview:window.setAttribute(Qt.WidgetAttribute.WA_DontShowOnScreen)
     window.show()
     if args.render_preview:

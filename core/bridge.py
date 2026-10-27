@@ -6,14 +6,18 @@ def audit_bridge(result,catalog=None):
         return {'status':'연결보류','reason':'기존 원장 입력으로 연결할 원장행이 없습니다.','tables':{}}
     by_company = {}
     entries={row['code']:row for row in (catalog or {}).get('accounts',[])}
+    lead_groups={}
+    for account in entries.values():
+        if account.get('kind')=='group':lead_groups.setdefault(account['lead'],[]).append(account['name'])
+    lead_names={lead:names[0] for lead,names in lead_groups.items() if len(names)==1}
     for row in result['ledger']:
         tables = by_company.setdefault(row['company'], {'총계정원장':[], '계정매핑':[]})
         tables['총계정원장'].append(dict(zip(
             ['회사코드','전표ID','행ID','전기일','계정코드','차변','대변','적요','작성자'],
             [row['company'],row['journalId'],row['lineId'],row['postingDate'],row['originalCode'],row['debit'],row['credit'],row['description'],row['author']])))
-        account=entries.get(row['standardCode'],{})
-        parent=entries.get(account.get('parent'),account)
-        lead_name=parent.get('name') if parent.get('lead')==row['leadCode'] else row['leadCode']
+        # A shared lead must have one name even when several detailed accounts
+        # have no parent group (e.g. salaries and rent both belong to SGA).
+        lead_name=lead_names.get(row['leadCode'],row['leadCode'])
         entry = dict(zip(['계정코드','리드코드','리드명','표시구분'],
                          [row['originalCode'],row['leadCode'],lead_name or row['leadCode'],row['statement']]))
         if entry not in tables['계정매핑']:
