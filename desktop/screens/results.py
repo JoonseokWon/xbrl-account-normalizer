@@ -18,6 +18,7 @@ class ResultsScreen(QWidget):
     xbrlInspectRequested=Signal()
     openReportRequested=Signal()
     supportRequested=Signal()
+    filingRequested=Signal()
     def __init__(self):
         super().__init__();self.output_path=None;self.session=None;self.checks=[]
         root=QVBoxLayout(self);root.setContentsMargins(0,0,0,0);root.setSpacing(18)
@@ -42,6 +43,7 @@ class ResultsScreen(QWidget):
         self.support=button('시산표·통제자료 열 연결');self.support.setEnabled(False);self.support.clicked.connect(self.supportRequested);save.body.addWidget(self.support)
         self.audit_save=button('통합감사 입력 저장');self.audit_save.setEnabled(False);self.audit_save.clicked.connect(self.auditExportRequested);save.body.addWidget(self.audit_save)
         self.xbrl_save=button('XBRL GL XML 저장');self.xbrl_save.setEnabled(False);self.xbrl_save.clicked.connect(self.xbrlExportRequested);save.body.addWidget(self.xbrl_save)
+        self.filing_save=button('IFRS/DART 공시 XML');self.filing_save.clicked.connect(self.filingRequested);save.body.addWidget(self.filing_save)
         self.xbrl_check=button('저장한 XML 다시 검사');self.xbrl_check.clicked.connect(self.xbrlInspectRequested);save.body.addWidget(self.xbrl_check)
         self.open_report=button('검사 보고서 열기');self.open_report.setEnabled(False);self.open_report.clicked.connect(self.openReportRequested);save.body.addWidget(self.open_report)
         save.body.addWidget(label('원장·BS를 공식 XBRL GL 규격으로 저장하고 스키마를 확인해요. DART 공시 제출용은 아니에요.','Muted',True))

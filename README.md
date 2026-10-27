@@ -2,11 +2,13 @@
 
 XLSX·CSV·TSV 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 앱입니다. 회사·ERP별 입력 설정, 계정 사전 관리, 전표별 분개와 대사, 업무 저장·다시 열기를 지원합니다.
 
-**v0.8.0-preview.1 — 저장 결과 재검사, 한국어 검사 화면·HTML 보고서, 페이지별 출력 행·원본 연결, XML 저장 진행률·취소를 추가했습니다. [외부 도구 조사와 적용](docs/XBRL_TOOL_RESEARCH.md), [XML 사용법](docs/XBRL_GL.md)을 참고하세요.**
+**v0.9.0-preview.1 — 확정 재무제표의 공시 개념 연결·비교기간·차원·승인, 로컬 공식 DTS의 XBRL 2.1 XML 출력과 Arelle 검사, DART 공식 엑셀의 개념 검색·입력 대사표를 추가했습니다. [IFRS/DART 사용법과 검증 범위](docs/IFRS_DART.md)를 먼저 확인하세요.**
+
+공식 XSD 경로는 실제 스키마를 읽어 XML을 만들고, DART 엑셀 참조 경로는 XML을 생성하지 않는 입력·대사표입니다. DART 접수용 최종 파일은 금융감독원 공식 작성기에서 생성·검사해야 합니다. IFRS/DART 택사노미 원본은 재배포하지 않으며 이용 권한이 있는 로컬 공식 파일을 선택합니다.
 
 ## Windows에서 시작하기
 
-1. [GitHub v0.8.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.8.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub v0.9.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.9.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -73,6 +75,9 @@ python convert.py "원본.xlsx" --inspect
 python convert.py "원본.xlsx" --column-map config/column_mapping.example.json
 python convert.py "확인한업무.acwork" --xbrl --out "결과폴더"
 python convert.py --check-xbrl "XBRL_결과폴더" --out "검사보고서폴더"
+python convert.py --filing-template "공시입력양식.xlsx"
+python convert.py "확정공시.json" --filing --taxonomy "공식택사노미/진입점.xsd" --approve-filing "확인자" --out "결과폴더"
+python convert.py "확정공시.json" --dart-reference "DART공식택사노미.xlsx" --approve-filing "확인자" --out "대사표폴더"
 ```
 
 시트명·기본 별칭은 `config/profile.json`, 계정 사전은 `config/catalog.json`에서 설정합니다. CLI의 `--no-history`는 이력 읽기·저장을 모두 끄며 `--history`로 다른 이력을 지정할 수 있습니다.
@@ -85,7 +90,7 @@ python tools/build_windows.py
 python tools/package_release.py
 ```
 
-[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. v0.8 자동 검사 133개 중 131개가 통과했고, Windows 심볼릭 링크 생성 권한이 필요한 2개는 건너뛰었습니다. 10개 회사 원장과 BS, 250,000행 원장의 XML 출력·공식 XSD·원본 보존·저장 결과 재검사·첫/끝 페이지와 취소를 확인합니다. 소스와 EXE의 버전별 실행 기록, Arelle 2.47.3 독립 검사 결과는 릴리스의 `validation-summary.json`에 담습니다. GUI 시험의 OS 파일선택창은 경로로 대체하고 취소 버튼 연결 시험은 저장 함수를 대체했습니다. 실제 저장 취소는 별도의 소스·EXE 검사에서 확인합니다. 실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
+[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. GL의 250,000행 처리와 공시 팩트의 재무제표·비교기간·단위·차원·승인·합계 오류 차단을 별도로 검사합니다. 소스·EXE·GUI·단위 검사의 버전별 결과와 제외 사유는 릴리스의 `validation-summary.json`에 담습니다. 실제 DART DTS는 이번 개발 환경에서 확보하지 못했으며 DART 엑셀 대사표를 공식 XSD·접수 검사로 해석하지 않습니다. GUI 시험에서 OS 파일선택창은 경로로 대체합니다. 실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
 
 ## 참고 자료
 

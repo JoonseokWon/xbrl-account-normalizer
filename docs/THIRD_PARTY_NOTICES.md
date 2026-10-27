@@ -12,4 +12,5 @@
 
 - **lxml 6.1.3:** XML 출력·공식 XSD 검증에 사용합니다. 배포 라이선스와 libxml2/libxslt 관련 고지를 실행팩 `licenses/lxml/`에 포함합니다. https://lxml.de/ 및 https://github.com/lxml/lxml
 - **XBRL International GL 2015 COR+BUS:** 공식 스키마와 링크베이스 원본 30개를 수정 없이 `vendor/xbrl-gl-2015/`에 포함합니다. 원본 저작권 고지와 legal 링크를 유지하며 출처·SHA256은 manifest에 기록합니다. 오프라인 패키지의 구성만 프로젝트에서 추가했습니다. https://specifications.xbrl.org/work-product-index-xbrl-gl-xbrl-gl-2015.html 및 https://www.xbrl.org/legal/
-- **Arelle 2.47.3:** 릴리스 검증용으로 별도 사용했습니다. Windows 앱에는 포함하지 않습니다. https://github.com/Arelle/Arelle
+- **Arelle 2.47.3:** v0.9부터 로컬 공시 택사노미·XBRL 2.1 검사 엔진으로 Windows 앱에 포함합니다. Apache-2.0 라이선스와 저작권 문서를 실행팩에 포함하며, 공개 소스는 https://github.com/Arelle/Arelle 입니다. attrs·bottle·certifi·filelock·isodate·jaconv·jsonschema·pyparsing·python-dateutil·referencing·regex·rpds·six·truststore·typing-extensions 등 함께 배포하는 의존성의 원문 라이선스도 `licenses/`에서 확인할 수 있습니다.
+- **IFRS/DART 공시 택사노미:** 공식 파일·표시명·링크베이스·엑셀 데이터는 실행팩·공개 소스에 포함하지 않습니다. 사용자가 이용 권한이 있는 공식 배포 파일을 로컬에서 선택합니다. 공개 다운로드 가능 여부와 제품 내 재배포 허용은 구분합니다. https://www.ifrs.org/digital-financial-reporting/ 및 https://filer.fss.or.kr/raaf001/search.do

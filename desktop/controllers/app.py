@@ -13,6 +13,7 @@ from desktop.components.confirmation import confirm
 from .audit_export import choose_and_export
 from .xbrl_export import choose_and_export_xbrl
 from .xbrl_inspection import choose_and_inspect
+from .filing import open_filing
 from .work_actions import WorkActions
 from application.catalogs import load_catalog
 from application.support_preparation import prepare_support
@@ -36,6 +37,7 @@ class AppController(QObject):
         self.results.auditExportRequested.connect(lambda:choose_and_export(self))
         self.results.xbrlExportRequested.connect(lambda:choose_and_export_xbrl(self))
         self.results.xbrlInspectRequested.connect(lambda:choose_and_inspect(self))
+        self.results.filingRequested.connect(lambda:open_filing(self))
         self.results.openReportRequested.connect(self.open_report)
         self.results.supportRequested.connect(self.connect_support)
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
@@ -159,6 +161,9 @@ class AppController(QObject):
         self.window.set_busy(False)
         if self.close_after_work:QTimer.singleShot(0,self.window.close)
     def can_close(self):
+        filing=getattr(self,'_filing_dialog',None)
+        if filing is not None:
+            filing.raise_();filing.activateWindow();return False
         if self.force_close:return not self.window.busy
         if self.window.busy:
             if confirm(self.window,'작업을 마친 뒤 닫을까요?','현재 파일 처리를 마친 뒤 앱을 닫아요. 저장하지 않은 계정 연결은 닫으면 사라져요.','작업 후 앱 닫기'):

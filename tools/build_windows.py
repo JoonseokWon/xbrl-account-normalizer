@@ -37,13 +37,15 @@ def main():
     os.environ['PYINSTALLER_CONFIG_DIR']=str(ROOT/'.build-cache/pyinstaller')
     excluded=['numpy','pandas','matplotlib','scipy','IPython','PyQt5','PyQt6','PySide2','tkinter']
     spec=f'''from pathlib import Path
-from PyInstaller.utils.hooks import copy_metadata
+from PyInstaller.utils.hooks import copy_metadata,collect_data_files,collect_submodules
 root=Path({str(ROOT)!r})
 data=[(str(root/name),name) for name in ('config','assets','samples','vendor')]
-for package in ('PySide6-Essentials','shiboken6','openpyxl','lxml'):
+for package in ('PySide6-Essentials','shiboken6','openpyxl','lxml','arelle-release'):
     data+=copy_metadata(package)
+data+=collect_data_files('arelle',includes=['config/**','resources/**','locale/**','images/**','*.md'])
+hidden=['PySide6.QtSvg']+collect_submodules('arelle',filter=lambda name:not any(name.startswith(prefix) for prefix in ('arelle.plugin','arelle.conformance','arelle.webserver')))
 a=Analysis([str(root/'main.py')],pathex={[str(ROOT),str(DEPS)]!r},
-           binaries=[],datas=data,hiddenimports=['PySide6.QtSvg'],
+           binaries=[],datas=data,hiddenimports=hidden,
            hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes={excluded!r},noarchive=False)
 # Qt uses the Windows ICU API. Do not shadow it with another Python package's
 # incompatible, identically named ICU DLL.
@@ -56,7 +58,7 @@ exe=EXE(pyz,a.scripts,[],exclude_binaries=True,name='AccountDataNormalizer',
 collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNormalizer')
 '''
     spec_path=specs/'AccountDataNormalizer.spec';spec_path.write_text(spec,encoding='utf-8')
-    PyInstaller.__main__.run([str(spec_path),'--distpath',str(target),'--workpath',str(work/'analysis-isolated')])
+    PyInstaller.__main__.run([str(spec_path),'--clean','--distpath',str(target),'--workpath',str(work/'analysis-isolated')])
     portable=target/'AccountDataNormalizer'
     for name in ('README.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
         destination=portable/Path(name).name
@@ -65,7 +67,7 @@ collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNo
     for path in (ROOT/'docs').iterdir():
         if path.is_file() and path.suffix in ('.md','.txt'):shutil.copy2(path,portable/'docs'/path.name)
     licenses=portable/'licenses';licenses.mkdir(exist_ok=True)
-    for name in ('PySide6-Essentials','shiboken6','openpyxl','et_xmlfile','Pillow','PyInstaller','lxml'):
+    for name in ('PySide6-Essentials','shiboken6','openpyxl','et_xmlfile','Pillow','PyInstaller','lxml','arelle-release','attrs','bottle','certifi','filelock','isodate','jaconv','jsonschema','jsonschema-specifications','pyparsing','python-dateutil','referencing','regex','rpds-py','six','truststore','typing-extensions'):
         package=distribution(name)
         for item in package.files or []:
             lower=str(item).lower()

@@ -31,8 +31,29 @@ def main():
     parser.add_argument('--save-work',help='검토 상태를 .acwork로 보관')
     parser.add_argument('--xbrl',action='store_true',help='확정된 원장·BS를 XBRL GL 2015 XML로 저장')
     parser.add_argument('--check-xbrl',metavar='FOLDER',help='저장한 XBRL 결과 폴더를 읽기 전용으로 다시 검사')
+    parser.add_argument('--filing',action='store_true',help='확정 공시 재무제표를 로컬 공식 DTS의 XBRL 2.1 인스턴스로 변환')
+    parser.add_argument('--taxonomy',metavar='XSD',help='공식 택사노미의 로컬 XSD 진입점')
+    parser.add_argument('--dart-reference',metavar='XLSX',help='DART 공식 엑셀로 개념·기간을 확인한 입력 대사표 저장 (XML 아님)')
+    parser.add_argument('--approve-filing',metavar='REVIEWER',help='입력된 개념·값·기간·차원을 확인하고 현재 택사노미로 명시 승인')
+    parser.add_argument('--filing-template',metavar='XLSX',help='회사를 특정하지 않는 공시 재무제표 엑셀 양식 생성')
     args=parser.parse_args()
     try:
+        if args.filing_template:
+            from application.filing import create_filing_template
+            print(str(create_filing_template(args.filing_template)));return 0
+        if args.filing or args.dart_reference:
+            if not args.input or not args.out:raise InputError('공시 입력 파일과 --out 저장 위치가 필요합니다.')
+            if args.filing and args.dart_reference:raise InputError('--filing XML과 --dart-reference 대사표 중 하나를 선택해 주세요.')
+            from application.filing import read_filing_input,load_filing_work,load_taxonomy,load_dart_reference,export_filing,export_dart_handoff
+            report=load_filing_work(args.input) if Path(args.input).suffix.lower()=='.acfiling' else read_filing_input(args.input)
+            if args.filing and not args.taxonomy:raise InputError('--taxonomy로 공식 로컬 XSD 진입점을 선택해 주세요.')
+            catalog=load_dart_reference(args.dart_reference) if args.dart_reference else load_taxonomy(args.taxonomy)
+            if args.approve_filing:
+                if not args.approve_filing.strip():raise InputError('공시 확인자 이름이 필요합니다.')
+                for fact in report['facts']:fact.update(approved=True,reviewer=args.approve_filing.strip())
+                report.update(taxonomyFingerprint=catalog['fingerprint'],taxonomyEntryPoint=catalog['entryPoint'])
+            target=(export_dart_handoff if args.dart_reference else export_filing)(report,catalog,args.out)
+            print(json.dumps({'output':str(target),'mode':'DART 대사표' if args.dart_reference else 'XBRL 2.1 공시 XML','dartSubmissionValidated':False},ensure_ascii=False));return 0
         if args.check_xbrl:
             from application.xbrl_inspection import inspect_export
             from xbrl_gl.reporting import write_report

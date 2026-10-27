@@ -12,7 +12,18 @@ def main():
     parser.add_argument('--diagnostics',help=argparse.SUPPRESS)
     parser.add_argument('--self-test-xbrl',help=argparse.SUPPRESS)
     parser.add_argument('--xbrl-check-rows',type=int,default=0,help=argparse.SUPPRESS)
+    parser.add_argument('--filing-worker',nargs=2,help=argparse.SUPPRESS)
+    parser.add_argument('--self-test-filing',help=argparse.SUPPRESS)
+    parser.add_argument('--filing-taxonomy',help=argparse.SUPPRESS)
+    parser.add_argument('--filing-dart-reference',help=argparse.SUPPRESS)
     args=parser.parse_args()
+    if args.filing_worker:
+        from xbrl_filing.runtime import worker_main
+        return worker_main(*args.filing_worker)
+    if args.self_test_filing:
+        from tools.verify_filing import run_checks
+        run_checks(args.self_test_filing,args.filing_taxonomy,args.filing_dart_reference)
+        return 0
     if args.self_test_xbrl:
         from tools.verify_xbrl import run_checks
         run_checks(args.self_test_xbrl,args.xbrl_check_rows)
@@ -32,6 +43,10 @@ def main():
     app.setStyle('Fusion');font_family=configure_typography(app);app.setStyleSheet(stylesheet(font_family))
     window=MainWindow(default_profile());controller=AppController(window);window.controller=controller
     if args.diagnostics:
+        from desktop.dialogs.filing import FilingDialog
+        from importlib.metadata import version as package_version
+        filing_dialog=FilingDialog(None,window)
+        filing_editor_limit=filing_dialog.fact_value.maxLength();filing_dialog.deleteLater()
         from suggestions import suggest_accounts
         catalog=default_catalog()
         checks={name:suggest_accounts(name,'원장',catalog['accounts'])[0]['code']==target for name,target in
@@ -45,6 +60,7 @@ def main():
                          'fontFamily':QFontInfo(app.font()).family(),'pointSize':app.font().pointSizeF()},
                 'catalogVersion':catalog['version'],'catalogEntries':len(catalog['accounts']),'candidateSmokeChecks':checks,
                 'xbrlTaxonomyFiles':len(taxonomy['files']),'xbrlEntryPoint':taxonomy['entryPoint'],
+                'filingValidator':package_version('arelle-release'),'filingNoteEditorLimit':filing_editor_limit,
                 'scope':'startup, resource discovery and three dictionary candidates only; no conversion run'}
         Path(args.diagnostics).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
         return 0 if all(data['resources'].values()) and all(checks.values()) else 1

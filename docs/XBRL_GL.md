@@ -1,6 +1,6 @@
 # XBRL GL XML 저장
 
-v0.8.0-preview.1은 XBRL International의 **XBRL GL 2015 COR+BUS** 택사노미에 맞는 **XBRL 2.1 XML 인스턴스**를 저장하고 결과를 다시 검사합니다. 원장·전표와 BS 표시값을 교환하기 위한 규격입니다. 재무제표 공시용 IFRS·DART 택사노미와 DART 제출 형식은 지원 범위가 아닙니다.
+v0.9.0-preview.1의 GL 출력은 XBRL International의 **XBRL GL 2015 COR+BUS** 택사노미에 맞는 **XBRL 2.1 XML 인스턴스**를 저장하고 결과를 다시 검사합니다. 원장·전표와 BS 표시값을 교환하기 위한 규격입니다. 이 GL 경로는 공시 재무제표를 생성하지 않습니다. 별도 공시 XML·DART 대사표 기능은 [IFRS/DART 사용법](IFRS_DART.md)을 참고하세요.
 
 ## 사용하는 방법
 

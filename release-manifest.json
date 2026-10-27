@@ -1,807 +1,498 @@
 {
-  "version": "0.8.0-preview.1",
+  "version": "0.9.0-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.8.0-preview.1",
-    "unitTestsPassed": 131,
+    "version": "0.9.0-preview.1",
+    "unitTestsPassed": 225,
     "unitTests": {
-      "run": 133,
+      "run": 227,
       "failures": 0,
       "errors": 0,
       "skipped": 2,
-      "passed": 131
+      "passed": 225
     },
     "skippedReason": "Windows symlink creation privilege unavailable (2 tests); path traversal checks passed.",
-    "sourceXml": {
-      "version": "0.8.0-preview.1",
+    "filingSource": {
+      "version": "0.9.0-preview.1",
       "frozen": false,
-      "totalRows": 251291,
-      "seconds": 83.035,
-      "cancelledOutputDiscarded": true,
-      "documents": [
-        {
-          "company": "HANUL_MFG",
-          "rows": 136,
-          "seconds": 0.531,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "2dedb6dc709d68e43a65a0e22a0ad1fc04131e6c669da2e5ec4eaecd7c3e057d",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2911,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+      "syntheticOnly": true,
+      "ok": true,
+      "facts": 30,
+      "statements": [
+        "BS",
+        "PL",
+        "CF",
+        "CE",
+        "NOTE"
+      ],
+      "comparativePeriods": 1,
+      "explicitDimensions": 1,
+      "xmlOutput": "exports/공시_XML_20261028_001756_510888",
+      "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
+      "templateCreated": true,
+      "workRoundtrip": true,
+      "unapprovedBlocked": true,
+      "calculationMismatchBlocked": true,
+      "validation": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "checks": [
+          {
+            "code": "XBRL_21_DTS",
+            "status": "pass",
+            "message": "Arelle의 XBRL 2.1·팩트 자료형·기간·차원 검사를 수행했습니다."
+          },
+          {
+            "code": "CALCULATION_COMPLETE_BINDINGS",
+            "status": "pass",
+            "message": "계산망 완전 연결 8건. 필요한 하위 팩트가 모두 있는 경우만 계산 검사합니다."
+          },
+          {
+            "code": "CALCULATION_MISSING_FACTS",
+            "status": "skipped",
+            "message": "하위 팩트가 없는 계산 연결 42건은 합계 일치를 확인한 것이 아닙니다."
+          },
+          {
+            "code": "FORMULA",
+            "status": "skipped",
+            "message": "Formula·회사별 주석 완전성·공시 접수 규칙은 이 검사에 포함하지 않습니다."
+          },
+          {
+            "code": "DART_ACCEPTANCE",
+            "status": "skipped",
+            "message": "DART 편집기 가져오기·최종 접수 검증은 별도 확인이 필요합니다."
+          },
+          {
+            "code": "BALANCE_EQUALITY",
+            "status": "pass",
+            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
+            "factIds": [
+              "f000001",
+              "f000006"
+            ]
+          },
+          {
+            "code": "BALANCE_COMPONENTS",
+            "status": "pass",
+            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
+            "factIds": [
+              "f000001",
+              "f000004",
+              "f000005"
+            ]
+          },
+          {
+            "code": "BALANCE_EQUALITY",
+            "status": "pass",
+            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
+            "factIds": [
+              "f000015",
+              "f000020"
+            ]
+          },
+          {
+            "code": "BALANCE_COMPONENTS",
+            "status": "pass",
+            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
+            "factIds": [
+              "f000015",
+              "f000018",
+              "f000019"
+            ]
+          }
+        ],
+        "validator": "Arelle",
+        "version": "2.47.3",
+        "offline": true,
+        "calculationCoverage": {
+          "networks": 335,
+          "completeBindings": 8,
+          "incompleteBindings": 42
         },
-        {
-          "company": "BARAM_SHOP",
-          "rows": 128,
-          "seconds": 0.173,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "b6d7a1c8b90fc29e2bb39c6509959fae655ffb9729e19f0ca4a7727453bd0365",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2751,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+        "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
+        "schema": "account-normalizer-filing-export/1",
+        "applicationVersion": "0.9.0-preview.1",
+        "entity": {
+          "name": "입력 예제 회사",
+          "identifier": "EXAMPLE-001",
+          "scheme": "urn:account-normalizer:example"
         },
-        {
-          "company": "LUMI_TECH",
-          "rows": 120,
-          "seconds": 0.17,
-          "xml": [
+        "reporting": {
+          "periodStart": "2026-01-01",
+          "periodEnd": "2026-12-31",
+          "consolidation": "연결",
+          "comparativePeriods": [
             {
-              "file": "journal-001.xbrl",
-              "sha256": "3aed6458122a21fcfdd026fc454dcc30c9840608e726073dc77c25fb2c61cb4a",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
+              "periodStart": "2025-01-01",
+              "periodEnd": "2025-12-31"
             }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+          ]
         },
-        {
-          "company": "GREEN_LOG",
-          "rows": 128,
-          "seconds": 0.181,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "f285911217a5d80a1142fb2ee2eacb5bf1db99cb0c3351085fd7f082fda0baff",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2757,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+        "factCount": 30,
+        "dartSubmission": {
+          "status": "not-performed",
+          "message": "금융감독원 공식 XBRL 작성기에서 제출용 파일 생성·검사와 DART 편집기 삽입·제출이 필요합니다."
         },
-        {
-          "company": "MORU_FOOD",
-          "rows": 136,
-          "seconds": 0.186,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "430be5c15b89301d5c7b429e17c7fa1eeeb1d2fa870088a1409dad96b3f8aaa6",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+        "completeness": {
+          "status": "not-performed",
+          "message": "회사별 필수 공시 항목·주석의 완전성과 회계 적정성은 별도 확인 대상입니다."
         },
-        {
-          "company": "DAON_BUILD",
-          "rows": 136,
-          "seconds": 0.214,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "5eb2ecbb9208e6b5fac665bb1f0d640dfeb17373890f25cb5564dbe8d507cd58",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "HANEUL_RETAIL",
-          "rows": 128,
-          "seconds": 0.209,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "13e52e3fe8ce52bae9524b0994848b0b4389a2995ea62f679ad8ffcbe6b63235",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2751,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "ONDA_CLOUD",
-          "rows": 120,
-          "seconds": 0.187,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "3af957cc1a75de651a4d6fd851dac81e62ef25381c80f3fa4bf9117fa59f061f",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "SOL_EXPORT",
-          "rows": 136,
-          "seconds": 0.192,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "0e0992e7ed0d7a572bccaa463a423a7f8d05ea0b16ee29897ac20d6dcf617eaf",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "NURI_SERVICE",
-          "rows": 120,
-          "seconds": 0.205,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "7e2d4dab3f64812113afc8bd7a109270a06c225cb423dbbfa4c7378d3a0cd328",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "BS_DEMO",
-          "rows": 3,
-          "seconds": 0.132,
-          "xml": [
-            {
-              "file": "balance-001.xbrl",
-              "sha256": "7cf6f5ab3055e13d70266dc4f630428a952f2327836a10f2c274eeeb49de65bf",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 3,
-                "facts": 48,
-                "debitTotal": null,
-                "creditTotal": null,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "BS balances"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 3,
-          "lastPageRows": 3
-        },
-        {
-          "company": "LARGE_GL",
-          "rows": 250000,
-          "seconds": 67.373,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "40c302d2a38ce5183ece85e3920b4bc1ba80ed89482fc0c5b2bf92e87963a589",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 250000,
-                "facts": 3750007,
-                "debitTotal": 125000,
-                "creditTotal": 125000,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
+        "files": {
+          "DART_입력대사.csv": {
+            "bytes": 5511,
+            "sha256": "eeddd479541df241472291d9ee1311368c99c91332056badbe3e7fcfd9af2ba4"
+          },
+          "facts.json": {
+            "bytes": 15984,
+            "sha256": "7e9bc1564c8b57609343d914a2b9e26babbd51334842a606d24ecdaeb2583f71"
+          },
+          "financial-report.xbrl": {
+            "bytes": 10692,
+            "sha256": "6f597f2410898bb253425bd108f9733431e52afd848b1f51bf4ed0e4a5518583"
+          },
+          "taxonomy-reference.json": {
+            "bytes": 85553,
+            "sha256": "cc49c0142f76d30eddc3b2f2f6a4c4ae183c668791e185343604e1947ec0510b"
+          }
         }
-      ]
+      },
+      "seconds": 75.079
     },
-    "frozenXml": {
-      "version": "0.8.0-preview.1",
+    "filingFrozen": {
+      "version": "0.9.0-preview.1",
       "frozen": true,
-      "totalRows": 251291,
-      "seconds": 90.581,
-      "cancelledOutputDiscarded": true,
-      "documents": [
-        {
-          "company": "HANUL_MFG",
-          "rows": 136,
-          "seconds": 0.822,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "d4eea949b102d3d74cf8c3dc134bf672177034d995d2880f06c6e00719837631",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2911,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "BARAM_SHOP",
-          "rows": 128,
-          "seconds": 0.175,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "94a11e2ff1cdc5b2b17548d5e229efdf233a533eef979d631c7429fc200659a8",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2751,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "LUMI_TECH",
-          "rows": 120,
-          "seconds": 0.172,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "b23d893e4e1673b4eab784a04b5887dc4476f01a3422a282c5ba545a9bdd6694",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "GREEN_LOG",
-          "rows": 128,
-          "seconds": 0.177,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "c3eb722b154884cf89c4babcd4aaa9bb8b65390dd3d1541ab736a6ff153250be",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2757,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "MORU_FOOD",
-          "rows": 136,
-          "seconds": 0.176,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "cafdcf569e7ff2a74056544663a661b73ec9a03659460ce89d6bbc9c07f3a067",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "DAON_BUILD",
-          "rows": 136,
-          "seconds": 0.188,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "0f5fe21929b2b29b95d375eb76168b6c1d72ddda0eb2b2862f1c21e9f631a348",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "HANEUL_RETAIL",
-          "rows": 128,
-          "seconds": 0.172,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "956bcd19be8e364cfdbd8c7d61a65440b40dd1ffd3f3bae3aaf8be13427d0a07",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 128,
-                "facts": 2751,
-                "debitTotal": 1270200,
-                "creditTotal": 1270200,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "ONDA_CLOUD",
-          "rows": 120,
-          "seconds": 0.175,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "b2b6ea95cb29e078956dde39caaf24c7705083cd1055506acaf93abdadb1e595",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "SOL_EXPORT",
-          "rows": 136,
-          "seconds": 0.179,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "602d4fac1c7b2339a1b3e31bdc3a3c067f4a11c9cab9f9433ff4f1187c0bb6bc",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 136,
-                "facts": 2917,
-                "debitTotal": 1343600,
-                "creditTotal": 1343600,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "NURI_SERVICE",
-          "rows": 120,
-          "seconds": 0.167,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "9593db34bac1436f06f1adff6157d09aaa9ec929c1524e039b679867ca28cf1e",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 120,
-                "facts": 2609,
-                "debitTotal": 1198400,
-                "creditTotal": 1198400,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        },
-        {
-          "company": "BS_DEMO",
-          "rows": 3,
-          "seconds": 0.118,
-          "xml": [
-            {
-              "file": "balance-001.xbrl",
-              "sha256": "90e5a158e0f959be3a8d3361116f74ab5477666795d065feae236769c0ef3d3f",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 3,
-                "facts": 48,
-                "debitTotal": null,
-                "creditTotal": null,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "BS balances"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 3,
-          "lastPageRows": 3
-        },
-        {
-          "company": "LARGE_GL",
-          "rows": 250000,
-          "seconds": 75.504,
-          "xml": [
-            {
-              "file": "journal-001.xbrl",
-              "sha256": "93e79ea1a0352ada3605451a19f4c73393ec76b6daeaa6344ec3059db02f6166",
-              "validation": {
-                "officialSchemaValid": true,
-                "rowPreservationValid": true,
-                "rows": 250000,
-                "facts": 3750007,
-                "debitTotal": 125000,
-                "creditTotal": 125000,
-                "scope": "공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님."
-              },
-              "type": "journal"
-            }
-          ],
-          "reinspectionPassed": true,
-          "previewRows": 100,
-          "lastPageRows": 100
-        }
-      ]
-    },
-    "arelleSource": {
-      "validator": "Arelle",
-      "version": "2.47.3",
+      "syntheticOnly": true,
       "ok": true,
-      "documents": [
-        {
-          "file": "BARAM_SHOP/XBRL_GL_20261027_233122_463478/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+      "facts": 30,
+      "statements": [
+        "BS",
+        "PL",
+        "CF",
+        "CE",
+        "NOTE"
+      ],
+      "comparativePeriods": 1,
+      "explicitDimensions": 1,
+      "xmlOutput": "exports/공시_XML_20261028_003139_364585",
+      "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
+      "templateCreated": true,
+      "workRoundtrip": true,
+      "unapprovedBlocked": true,
+      "calculationMismatchBlocked": true,
+      "validation": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "checks": [
+          {
+            "code": "XBRL_21_DTS",
+            "status": "pass",
+            "message": "Arelle의 XBRL 2.1·팩트 자료형·기간·차원 검사를 수행했습니다."
+          },
+          {
+            "code": "CALCULATION_COMPLETE_BINDINGS",
+            "status": "pass",
+            "message": "계산망 완전 연결 8건. 필요한 하위 팩트가 모두 있는 경우만 계산 검사합니다."
+          },
+          {
+            "code": "CALCULATION_MISSING_FACTS",
+            "status": "skipped",
+            "message": "하위 팩트가 없는 계산 연결 42건은 합계 일치를 확인한 것이 아닙니다."
+          },
+          {
+            "code": "FORMULA",
+            "status": "skipped",
+            "message": "Formula·회사별 주석 완전성·공시 접수 규칙은 이 검사에 포함하지 않습니다."
+          },
+          {
+            "code": "DART_ACCEPTANCE",
+            "status": "skipped",
+            "message": "DART 편집기 가져오기·최종 접수 검증은 별도 확인이 필요합니다."
+          },
+          {
+            "code": "BALANCE_EQUALITY",
+            "status": "pass",
+            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
+            "factIds": [
+              "f000001",
+              "f000006"
+            ]
+          },
+          {
+            "code": "BALANCE_COMPONENTS",
+            "status": "pass",
+            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
+            "factIds": [
+              "f000001",
+              "f000004",
+              "f000005"
+            ]
+          },
+          {
+            "code": "BALANCE_EQUALITY",
+            "status": "pass",
+            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
+            "factIds": [
+              "f000015",
+              "f000020"
+            ]
+          },
+          {
+            "code": "BALANCE_COMPONENTS",
+            "status": "pass",
+            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
+            "factIds": [
+              "f000015",
+              "f000018",
+              "f000019"
+            ]
+          }
+        ],
+        "validator": "Arelle",
+        "version": "2.47.3",
+        "offline": true,
+        "calculationCoverage": {
+          "networks": 335,
+          "completeBindings": 8,
+          "incompleteBindings": 42
         },
-        {
-          "file": "BS_DEMO/XBRL_GL_20261027_233127_011379/balance-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+        "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
+        "schema": "account-normalizer-filing-export/1",
+        "applicationVersion": "0.9.0-preview.1",
+        "entity": {
+          "name": "입력 예제 회사",
+          "identifier": "EXAMPLE-001",
+          "scheme": "urn:account-normalizer:example"
         },
-        {
-          "file": "DAON_BUILD/XBRL_GL_20261027_233124_453561/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+        "reporting": {
+          "periodStart": "2026-01-01",
+          "periodEnd": "2026-12-31",
+          "consolidation": "연결",
+          "comparativePeriods": [
+            {
+              "periodStart": "2025-01-01",
+              "periodEnd": "2025-12-31"
+            }
+          ]
         },
-        {
-          "file": "GREEN_LOG/XBRL_GL_20261027_233123_447108/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+        "factCount": 30,
+        "dartSubmission": {
+          "status": "not-performed",
+          "message": "금융감독원 공식 XBRL 작성기에서 제출용 파일 생성·검사와 DART 편집기 삽입·제출이 필요합니다."
         },
-        {
-          "file": "HANEUL_RETAIL/XBRL_GL_20261027_233125_023145/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+        "completeness": {
+          "status": "not-performed",
+          "message": "회사별 필수 공시 항목·주석의 완전성과 회계 적정성은 별도 확인 대상입니다."
         },
-        {
-          "file": "HANUL_MFG/XBRL_GL_20261027_233121_657987/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "LUMI_TECH/XBRL_GL_20261027_233122_908206/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "MORU_FOOD/XBRL_GL_20261027_233123_952507/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "NURI_SERVICE/XBRL_GL_20261027_233126_798260/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "ONDA_CLOUD/XBRL_GL_20261027_233125_552519/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "SOL_EXPORT/XBRL_GL_20261027_233126_236888/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
+        "files": {
+          "DART_입력대사.csv": {
+            "bytes": 5511,
+            "sha256": "eeddd479541df241472291d9ee1311368c99c91332056badbe3e7fcfd9af2ba4"
+          },
+          "facts.json": {
+            "bytes": 15984,
+            "sha256": "7e9bc1564c8b57609343d914a2b9e26babbd51334842a606d24ecdaeb2583f71"
+          },
+          "financial-report.xbrl": {
+            "bytes": 10692,
+            "sha256": "6f597f2410898bb253425bd108f9733431e52afd848b1f51bf4ed0e4a5518583"
+          },
+          "taxonomy-reference.json": {
+            "bytes": 85553,
+            "sha256": "cc49c0142f76d30eddc3b2f2f6a4c4ae183c668791e185343604e1947ec0510b"
+          }
         }
-      ]
-    },
-    "arelleFrozen": {
-      "validator": "Arelle",
-      "version": "2.47.3",
-      "ok": true,
-      "documents": [
-        {
-          "file": "BARAM_SHOP/XBRL_GL_20261027_234101_794681/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "BS_DEMO/XBRL_GL_20261027_234105_978416/balance-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "DAON_BUILD/XBRL_GL_20261027_234103_751994/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "GREEN_LOG/XBRL_GL_20261027_234102_794595/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "HANEUL_RETAIL/XBRL_GL_20261027_234104_248729/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "HANUL_MFG/XBRL_GL_20261027_234100_894232/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "LUMI_TECH/XBRL_GL_20261027_234102_238218/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "MORU_FOOD/XBRL_GL_20261027_234103_292283/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "NURI_SERVICE/XBRL_GL_20261027_234105_795305/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "ONDA_CLOUD/XBRL_GL_20261027_234104_721822/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        },
-        {
-          "file": "SOL_EXPORT/XBRL_GL_20261027_234105_317779/journal-001.xbrl",
-          "errors": [],
-          "warnings": [],
-          "validated": true,
-          "offline": true
-        }
-      ]
+      },
+      "seconds": 102.131,
+      "dartHandoff": "dart-exports/DART_공시대사_20261028_003250_907540_c666f52c",
+      "dartFacts": 7,
+      "dartMetadataOnly": true
     },
     "sourceDesktop": {
-      "xmlSavedFromHeader": true,
-      "htmlReportCreated": true,
-      "savedExportReinspected": true,
-      "pageRows": 3,
-      "sourceLinkClicked": true,
-      "reinspectionHtmlSaved": true,
-      "cancelButtonExercised": true,
-      "workPreservedOnCancel": true,
-      "standaloneInspectionMenu": true,
+      "version": "0.9.0-preview.1",
+      "ok": true,
+      "syntheticOnly": true,
       "nativeFileDialogsMocked": true,
-      "xmlCancelFunctionMocked": true
+      "exportFunctionsMocked": false,
+      "currentGlSession": null,
+      "glSessionPreserved": true,
+      "ifrsFactsApprovedThroughUi": 30,
+      "workSavedAndReopened": true,
+      "sameTaxonomyApprovalsRestored": true,
+      "xmlOutput": "xml-exports/공시_XML_20261028_001928_451667",
+      "validator": "Arelle",
+      "validatorVersion": "2.47.3",
+      "actualDtsValidated": true,
+      "dartSubmissionValidated": false,
+      "scope": "실제 Qt 입력/승인/업무/출력 서비스 확인. OS 파일선택창만 시험 경로로 대체. 공시 접수·회계 적정성·실사용 자료 검증은 아님.",
+      "dartFactsApprovedThroughUi": 7,
+      "dartRoleChoices": 2005,
+      "dartMetadataOnly": true,
+      "dartXmlGenerated": false,
+      "dartOutput": "dart-exports/DART_공시대사_20261028_001956_832325_5f51aecd",
+      "seconds": 54.359,
+      "steps": [
+        {
+          "step": "input-loaded",
+          "seconds": 0.14
+        },
+        {
+          "step": "official-dts-loaded",
+          "seconds": 13.562
+        },
+        {
+          "step": "rows-approved-30",
+          "seconds": 13.828
+        },
+        {
+          "step": "work-saved",
+          "seconds": 13.859
+        },
+        {
+          "step": "work-reopened",
+          "seconds": 13.922
+        },
+        {
+          "step": "export-xml-exports",
+          "seconds": 36.922
+        },
+        {
+          "step": "input-loaded",
+          "seconds": 37.047
+        },
+        {
+          "step": "dart-reference-loaded",
+          "seconds": 45.968
+        },
+        {
+          "step": "rows-approved-7",
+          "seconds": 46.047
+        },
+        {
+          "step": "export-dart-exports",
+          "seconds": 54.297
+        }
+      ]
     },
-    "cli": {
-      "validExitCode": 0,
-      "tamperedExitCode": 2,
-      "htmlReports": 2,
-      "tamperingDetected": true
+    "embeddedSourceCheck": {
+      "checked": 106,
+      "mismatches": []
     },
-    "officialTaxonomy": "XBRL GL 2015 COR+BUS",
-    "offline": true,
-    "regulatoryFilingValidated": false,
-    "scope": "공식 GL XSD·저장 결과 일치·원본 보존 검사와 별도 Arelle XBRL 2.1 검사. 계정 분류의 회계 적정성·IFRS/DART 개념 매핑·공시 수리 검증은 아님."
+    "glFrozen": {
+      "version": "0.9.0-preview.1",
+      "frozen": true,
+      "ok": true,
+      "totalRows": 251291,
+      "seconds": 95.154,
+      "cancelledOutputDiscarded": true
+    },
+    "glDocuments": [
+      {
+        "company": "HANUL_MFG",
+        "rows": 136,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "BARAM_SHOP",
+        "rows": 128,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "LUMI_TECH",
+        "rows": 120,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "GREEN_LOG",
+        "rows": 128,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "MORU_FOOD",
+        "rows": 136,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "DAON_BUILD",
+        "rows": 136,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "HANEUL_RETAIL",
+        "rows": 128,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "ONDA_CLOUD",
+        "rows": 120,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "SOL_EXPORT",
+        "rows": 136,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "NURI_SERVICE",
+        "rows": 120,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      },
+      {
+        "company": "BS_DEMO",
+        "rows": 3,
+        "reinspectionPassed": true,
+        "previewRows": 3,
+        "lastPageRows": 3
+      },
+      {
+        "company": "LARGE_GL",
+        "rows": 250000,
+        "reinspectionPassed": true,
+        "previewRows": 100,
+        "lastPageRows": 100
+      }
+    ],
+    "dartReference": {
+      "source": {
+        "name": "DART_Taxonomy_20260630.xlsx",
+        "sha256": "d7135781ed425bb2e43a7dafffc3189435bbd16a70fae3d98c258ea8dc9845e7"
+      },
+      "concepts": 9449,
+      "roles": 2004,
+      "validationScope": "concept-metadata-only",
+      "dtsObtained": false,
+      "officialListing": "https://filer.fss.or.kr/raaf001/search.do",
+      "officialPublishedDate": "2026-06-30"
+    },
+    "officialTaxonomyRedistributed": false,
+    "dartSubmissionValidated": false,
+    "scope": "IFRS 2025 로컬 DTS·30개 시험 공시 팩트의 XBRL 2.1/차원/계산 검사. DART는 2026 공식 엑셀 개념 연결·대사표만 확인. 실제 DART DTS·공식 작성기 최종 파일·접수·회사별 공시 완전성·회계 적정성은 미검증."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.8.0-preview.1",
+    "version": "0.9.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -825,14 +516,16 @@
     },
     "xbrlTaxonomyFiles": 30,
     "xbrlEntryPoint": "http://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-plt-all-2015-03-25.xsd",
+    "filingValidator": "2.47.3",
+    "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 216,
-  "pythonModuleCount": 131,
+  "sourceFileCount": 240,
+  "pythonModuleCount": 154,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "3d6dbc2a0e8714a471350716afc2ec366934423b1eb04dd4d8262f30e19f6509",
-    "bytes": 4444754
+    "sha256": "8935d83f9dfacdc08bc9179897bcfb823e5247be35ba9892b09b84fe499ccc04",
+    "bytes": 7569852
   },
   "files": [
     {
@@ -842,23 +535,23 @@
     },
     {
       "file": "README.md",
-      "bytes": 11535,
-      "sha256": "98c9c29e73429aa6bb0e11444ce289efe5d14f69d14cf250a5061c5738fc2fd9"
+      "bytes": 12142,
+      "sha256": "49c68f5cc4785129d411fda02a033c08841e7d79fd28bc7d3bc056a417aed863"
     },
     {
       "file": "version.py",
       "bytes": 74,
-      "sha256": "647dcd8689ba7571ce1feda2ed3129c3ce9ac5156014f3b0f13e510fb6ca1100"
+      "sha256": "222637d40cbde98b43d0a82a05e85b630054838a01be60e71fb7dc969423bdaf"
     },
     {
       "file": "main.py",
-      "bytes": 3703,
-      "sha256": "860d7565252820dabfa650a2f1eb6a3085a0a65f512302e773b90c48d18ebf09"
+      "bytes": 4679,
+      "sha256": "288d5421558eb45f632ae1c5c2e919996fd7a24aeb4bd7c84e6f65bba5a377fd"
     },
     {
       "file": "convert.py",
-      "bytes": 4366,
-      "sha256": "8a6ec83d036c4ddc1b04c3e21401839ec06abf03f9bf46ae7aba677902963d5b"
+      "bytes": 6770,
+      "sha256": "0713c7ecd93d417bcdc104dcd718349760edd4a279fa41539cea48acaad0e686"
     },
     {
       "file": "normalizer.py",
@@ -892,8 +585,8 @@
     },
     {
       "file": "requirements.txt",
-      "bytes": 55,
-      "sha256": "7e66ee0bb3e02005bff8e33b895cec4bec0af0154c306552d0d6a6eb8979e04a"
+      "bytes": 78,
+      "sha256": "95b4c6c695f3dc9b88cd6f4a80889496aa286de6a27f507418e98f95502f52f4"
     },
     {
       "file": "requirements-build.txt",
@@ -1009,6 +702,11 @@
       "file": "application/exporting.py",
       "bytes": 1556,
       "sha256": "e799ab582ef2011239d73ab3e06e81e4138f6172217e0de3ca02301cdb67b8c6"
+    },
+    {
+      "file": "application/filing.py",
+      "bytes": 9927,
+      "sha256": "fda75493019d6f6d19212f97d5146f738254056feb060ea735a64115cf4a55be"
     },
     {
       "file": "application/json_store.py",
@@ -1162,13 +860,18 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 12464,
-      "sha256": "f23081eda8769bc621375c88fac501d599e15f62679534fac35d6fe272b29cae"
+      "bytes": 12714,
+      "sha256": "4021e341e2cf0901d25345b2db63662bf56fa60f3895adb49f75da06934b33e9"
     },
     {
       "file": "desktop/controllers/audit_export.py",
       "bytes": 926,
       "sha256": "88e02cb76f34a4fc884e31ce230216101d607f0fd19e5320780d3a5c97abb3d5"
+    },
+    {
+      "file": "desktop/controllers/filing.py",
+      "bytes": 576,
+      "sha256": "81c5eb166daecd634b8c7b861c6df1b862597e8603901ebbfc46e230a188e2aa"
     },
     {
       "file": "desktop/controllers/jobs.py",
@@ -1177,8 +880,8 @@
     },
     {
       "file": "desktop/controllers/work_actions.py",
-      "bytes": 5466,
-      "sha256": "7394c919af599813115482a1bcb135b13912e30745544e7d5d59348506d03c39"
+      "bytes": 5554,
+      "sha256": "0ac984c5941ded1d0b4fb345093b69dbe20afe9b68161704fc68945c3d89d4c0"
     },
     {
       "file": "desktop/controllers/xbrl_export.py",
@@ -1199,6 +902,11 @@
       "file": "desktop/dialogs/catalog.py",
       "bytes": 3822,
       "sha256": "c84f7bc18f44a9737f1ca950de1cd7e8c7fe24ceb5a9bbeabb752d49f5c8ef91"
+    },
+    {
+      "file": "desktop/dialogs/filing.py",
+      "bytes": 30447,
+      "sha256": "46be3a0626b8c02bade9d778dd7f5147d1d844ea0849b5c8a38b230dfe8c5a68"
     },
     {
       "file": "desktop/dialogs/mapped_table.py",
@@ -1257,8 +965,8 @@
     },
     {
       "file": "desktop/screens/results.py",
-      "bytes": 8077,
-      "sha256": "f42a9cb574be78d15ea00a8bbdfaa8fc331f86930d302d1da8779b72cd873d83"
+      "bytes": 8255,
+      "sha256": "8f6e75f858bff9351ffb1c720d84d4611b04c56efdd3f0d4ed79009966c6a2ca"
     },
     {
       "file": "desktop/theme/__init__.py",
@@ -1371,6 +1079,56 @@
       "sha256": "d5ca3a61c3c6f4d4fabfdaa302e9b96a90028a15d88fd97465fea8cb5bc5401c"
     },
     {
+      "file": "xbrl_filing/__init__.py",
+      "bytes": 75,
+      "sha256": "e1265b1233ee979b05bda3102caf851481bf4a008a328ce1bf58cd283bacbcae"
+    },
+    {
+      "file": "xbrl_filing/dart_excel.py",
+      "bytes": 13711,
+      "sha256": "306f8209587b752ec1c65f94a4490067a0a37624578105b987f820c8aa7813f4"
+    },
+    {
+      "file": "xbrl_filing/dart_handoff.py",
+      "bytes": 16154,
+      "sha256": "6c4a69a8ce0450f0365cc2f010c1663e0e8710f016cb7c42f40388731970ac1d"
+    },
+    {
+      "file": "xbrl_filing/inputs.py",
+      "bytes": 26060,
+      "sha256": "aa7001e1ce0e3868e4a6b689b91bfcd3bb17fce2a77905a26b9ae488cdc9c4b3"
+    },
+    {
+      "file": "xbrl_filing/model.py",
+      "bytes": 13889,
+      "sha256": "39c186a945feb62229032a92bffe881c009e4b479e2f653a87fccbcadc4a08cc"
+    },
+    {
+      "file": "xbrl_filing/reconciliation.py",
+      "bytes": 1940,
+      "sha256": "423e4f8e5e61170c72b2e6453bf11d0f2d57a2c64fd53a05bdc05dcd2d244a75"
+    },
+    {
+      "file": "xbrl_filing/reporting.py",
+      "bytes": 5051,
+      "sha256": "6cfcb097478fd0472d56a3c0d8225d3221c07a2b23c0b532086ee30dd27d30e1"
+    },
+    {
+      "file": "xbrl_filing/runtime.py",
+      "bytes": 3999,
+      "sha256": "a7692002416c2df04ccb2658f4da5042988459738df2fc149429520f15a71e07"
+    },
+    {
+      "file": "xbrl_filing/taxonomy.py",
+      "bytes": 22215,
+      "sha256": "f9254b75932ae44fd7e9a9617cd581461dfa14e68565d7900932455e0d808bdb"
+    },
+    {
+      "file": "xbrl_filing/writer.py",
+      "bytes": 3998,
+      "sha256": "79ea52e9df388d9194d0de58dc2f1b0d2fa323e423ecfce3cf17572d2375f240"
+    },
+    {
       "file": "config/catalog.json",
       "bytes": 26467,
       "sha256": "13612bb18fea7b864cdcbffa74434455f1455950eca89ad97c4bd97ecc2ea7da"
@@ -1387,8 +1145,8 @@
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 7017,
-      "sha256": "101caa351c5dec9d40d1ac1d0ce207197005c42c5db8bd90f416b14074e3f4a8"
+      "bytes": 9607,
+      "sha256": "3e5be6372711e3c16f14b88277d59eecdc046ef19737a8d7f7b68d30f96f1f77"
     },
     {
       "file": "docs/AUDIT_EXPORT.md",
@@ -1406,9 +1164,14 @@
       "sha256": "918a5518e40a5e08d1ee97096b3efb07ff56e61a1542ca1212bcacb7ce3702a0"
     },
     {
+      "file": "docs/IFRS_DART.md",
+      "bytes": 10108,
+      "sha256": "b7f31760d8b99520bb884153d88db439fff2891ea17bebdd9ecb238cf7ca86aa"
+    },
+    {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 11061,
-      "sha256": "97884f9d65b3916523f1d41838b76037086edc28d667763da36fcc1213679a70"
+      "bytes": 15488,
+      "sha256": "79e10efe95744881319f0adee7342bc5734720f1145331deadc526f242c78de3"
     },
     {
       "file": "docs/MULTI_COMPANY_MAPPING.md",
@@ -1417,13 +1180,13 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 7711,
-      "sha256": "292adf411ea6365e694df6028c3b27692d6b79110b3f71682e643e96da92d1c0"
+      "bytes": 9191,
+      "sha256": "08e90f009dd9ed3e67508832875e7d10c59a7f5c0c6cd6b0db575a6180a3e290"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
-      "bytes": 2917,
-      "sha256": "0e53a6b56a59352c610d55885704edd082bceb65e67a6bedcc695ddef0ba8389"
+      "bytes": 3706,
+      "sha256": "14b74d992803aca7112ecce6628cf1cf135045592c87ad7cec8d8a5c5322ede0"
     },
     {
       "file": "docs/UI_DESIGN.md",
@@ -1432,8 +1195,8 @@
     },
     {
       "file": "docs/XBRL_GL.md",
-      "bytes": 8050,
-      "sha256": "43bcd2d73e3ce051fc08c3b214b6afc25add49acd2f3767db95a9f60ff95795a"
+      "bytes": 8127,
+      "sha256": "91078b6cf86d10bdc9b0bd8e096d8ce94c5ea03b69b040547d1c4905d48cec79"
     },
     {
       "file": "docs/XBRL_TOOL_RESEARCH.md",
@@ -1454,6 +1217,46 @@
       "file": "tests/test_company_workflow.py",
       "bytes": 11012,
       "sha256": "f8d52f4a0cfa03e3597ea7fe69eb586fc86c9af87eae8ad171557db377c6f421"
+    },
+    {
+      "file": "tests/test_filing_application.py",
+      "bytes": 3219,
+      "sha256": "3ab251da723eeffcedf0af436b41f0e7efbe1a3d703cf1ac479a63d3803e533e"
+    },
+    {
+      "file": "tests/test_filing_dart_excel.py",
+      "bytes": 8284,
+      "sha256": "60f3bda36374fa11fa36b6e20d8db2252b2f615e21a17860ee9f8254885105cf"
+    },
+    {
+      "file": "tests/test_filing_dart_handoff.py",
+      "bytes": 10241,
+      "sha256": "e2cbd46bc416d4ed337469160dbfd6cd50d71b8540f4cbee8fac6895015bd878"
+    },
+    {
+      "file": "tests/test_filing_inputs.py",
+      "bytes": 9936,
+      "sha256": "67e83b83fae36eb6e610b4e6d104ee6e702777ee209bf2c943fb267a8fa29719"
+    },
+    {
+      "file": "tests/test_filing_model.py",
+      "bytes": 10947,
+      "sha256": "62a802329f9349b6cbb6f7c57783efe8649ec3f748bc9527557be9b3591c27fe"
+    },
+    {
+      "file": "tests/test_filing_taxonomy.py",
+      "bytes": 15944,
+      "sha256": "700ac6ddb2be4fb5f7653d2f9836766a8c265377e6acf1a0e62aa9bdd6697fdb"
+    },
+    {
+      "file": "tests/test_filing_ui_contract.py",
+      "bytes": 5505,
+      "sha256": "f417a9ecd5c19b2921e6b8b57ce0d668903b08a1d1b5b6306bc60552b93d0e8d"
+    },
+    {
+      "file": "tests/test_filing_writer.py",
+      "bytes": 6205,
+      "sha256": "7aa3b3209a8ca13c96c157935c452f7eaf90231a86f3a979582d82a7c3bca858"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -1512,13 +1315,13 @@
     },
     {
       "file": "tools/build_windows.py",
-      "bytes": 4870,
-      "sha256": "9637168756a4cbbc29b5151958d939c87573126f96926eb1aee3ddf64549aa95"
+      "bytes": 5422,
+      "sha256": "89cdf318eb10e3c8491c987ccd78d003d71e55818ae289f3570cf8abadc9ccbb"
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 6506,
-      "sha256": "f5e376aa540acb2d3811d2c9d701c3912762c2c684d0d7ff6caa07e89702ac9c"
+      "bytes": 6619,
+      "sha256": "e337b005661625ab16fcaf6f7ebcc3fa15f3f65c4eaeb7e9d6292624b8fef4e3"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -1562,8 +1365,8 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 2268,
-      "sha256": "952f5c382d6e1af3ea7e942b76960c7fac4bafa852fc149a48207a1098ea7b65"
+      "bytes": 3349,
+      "sha256": "171d2d02885eb73d2cf89c25cf97649471639ad7f68b8d4f174a5512b1553671"
     },
     {
       "file": "tools/run_audit_demo.py",
@@ -1914,6 +1717,16 @@
       "file": "tools/verify_xbrl_ui.py",
       "bytes": 5667,
       "sha256": "5b336547ea4927b2f77acce2a2882eb10cfa928a6c0c5cce5f1a95d744c4cd30"
+    },
+    {
+      "file": "tools/verify_filing.py",
+      "bytes": 6624,
+      "sha256": "09f7f398371837531f4d5ffcc918ec7222c9942a10d9b2c78b5dbcd5b9133723"
+    },
+    {
+      "file": "tools/verify_filing_ui.py",
+      "bytes": 9420,
+      "sha256": "66c317204ffb426cf81c6e54bae531e32e90580faaa2164b703b9b97524b2735"
     }
   ]
 }
