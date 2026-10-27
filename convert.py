@@ -3,6 +3,7 @@ import argparse
 import json
 from pathlib import Path
 import sys
+from datetime import datetime
 from core.errors import InputError
 from io_xlsx.reader import read_input
 from application.configuration import read_json
@@ -29,8 +30,19 @@ def main():
     parser.add_argument('--add-input',action='append',default=[],help='같은 회사·양식의 추가 원본 파일')
     parser.add_argument('--save-work',help='검토 상태를 .acwork로 보관')
     parser.add_argument('--xbrl',action='store_true',help='확정된 원장·BS를 XBRL GL 2015 XML로 저장')
+    parser.add_argument('--check-xbrl',metavar='FOLDER',help='저장한 XBRL 결과 폴더를 읽기 전용으로 다시 검사')
     args=parser.parse_args()
     try:
+        if args.check_xbrl:
+            from application.xbrl_inspection import inspect_export
+            from xbrl_gl.reporting import write_report
+            result=inspect_export(args.check_xbrl)
+            if args.out:
+                destination=Path(args.out).resolve();destination.mkdir(parents=True,exist_ok=True)
+                report_path=destination/datetime.now().strftime('XBRL_검사_%Y%m%d_%H%M%S_%f.html')
+                write_report(report_path,dict(result,linkFiles=False));result['savedHtml']=str(report_path)
+            print(json.dumps(result,ensure_ascii=False,indent=2,default=safe_json))
+            return 0 if result.get('passed') else 2
         if not args.input:
             parser.error('원본 .xlsx 경로를 입력하거나 main.py로 데스크톱 앱을 실행해 주세요.')
         profile=read_json(args.profile)

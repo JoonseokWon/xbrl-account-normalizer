@@ -3,14 +3,18 @@ from decimal import Decimal
 from lxml import etree as ET
 from core.errors import InputError
 from .taxonomy import q,schema,manifest,ENTITY_SCHEME,NS
+from .control import ExportCancelled
 
 def require(value,message):
     if not value:raise InputError('XBRL GL 확인 실패: '+message)
 
-def validate_instance(path,rows,company,end,balance=False):
+def validate_instance(path,rows,company,end,balance=False,control=None):
     visited=set();facts=0;debit=credit=0;contexts=units=references=0;header_debit=header_credit=0
+    stream=None
     try:
-        reader=ET.iterparse(str(path),events=('start','end'),schema=schema(),resolve_entities=False,
+        if control:control.update('내용 확인',0,len(rows))
+        stream=open(path,'rb')
+        reader=ET.iterparse(stream,events=('start','end'),schema=schema(),resolve_entities=False,
                             no_network=True,load_dtd=False,huge_tree=False)
         for event,node in reader:
             if event=='start':
@@ -38,6 +42,7 @@ def validate_instance(path,rows,company,end,balance=False):
                 identity=node.get('id','');require(identity.startswith('d') and identity[1:].isdigit(),'원본 행 식별자')
                 index=int(identity[1:])-1;require(0<=index<len(rows) and index not in visited,'행 중복·범위')
                 visited.add(index);row=rows[index]
+                if control and (len(visited)%500==0 or len(visited)==len(rows)):control.update('내용 확인',len(visited),len(rows))
                 def value(name):return node.findtext(q('gl-cor',name))
                 account=node.find(q('gl-cor','account'));require(account is not None,'원본 계정')
                 require(account.findtext(q('gl-cor','accountMainID'))==row['originalCode'],'원본 계정코드')
@@ -70,8 +75,11 @@ def validate_instance(path,rows,company,end,balance=False):
                 node.getparent().remove(node)
         require(contexts==units==references==1,'context·통화·schemaRef 누락 또는 중복')
         require(len(visited)==len(rows),'행 누락')
+    except ExportCancelled:raise
     except (ET.XMLSyntaxError,ET.XMLSchemaError,ValueError,TypeError) as exc:
         raise InputError('공식 XBRL GL 스키마 또는 내용 확인 실패: '+str(exc)[:700]) from exc
+    finally:
+        if stream is not None:stream.close()
     return {'officialSchemaValid':True,'rowPreservationValid':True,'rows':len(visited),'facts':facts,
             'debitTotal':None if balance else debit,'creditTotal':None if balance else credit,
             'scope':'공식 XSD 및 생성 프로필의 행·금액·코드·통화·context 확인. 공시 제출 수리·인증은 아님.'}

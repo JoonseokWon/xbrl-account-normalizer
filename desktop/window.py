@@ -22,6 +22,7 @@ TITLES=[('자료 파일로 업무를 시작해요','회사·기간을 확인하�
 class MainWindow(QMainWindow):
     actionRequested=Signal(int)
     fileRequested=Signal()
+    cancelRequested=Signal()
     def __init__(self,profile):
         super().__init__();self.setWindowTitle('회계데이터 표준화');self.setWindowIcon(QIcon(str(resources()/'assets/app-icon.svg')))
         self.resize(1420,960);self.setMinimumSize(1070,740);self.busy=False;self.has_file=False;self.has_session=False;self.close_guard=None
@@ -32,7 +33,8 @@ class MainWindow(QMainWindow):
         self.new_file=button('새 파일 열기');self.new_file.clicked.connect(self.fileRequested);header.addWidget(self.new_file)
         header.addWidget(Badge('미리보기','neutral'));self.action=button('열 연결 설정','primary');self.action.clicked.connect(lambda:self.actionRequested.emit(self.stack.currentIndex()));header.addWidget(self.action);main.addLayout(header)
         self.notice=Notice();main.addWidget(self.notice)
-        self.progress=QProgressBar();self.progress.setRange(0,0);self.progress.setTextVisible(False);self.progress.hide();main.addWidget(self.progress)
+        progress_row=QHBoxLayout();self.progress=QProgressBar();self.progress.setRange(0,0);self.progress.setTextVisible(False);self.progress.hide();progress_row.addWidget(self.progress,1)
+        self.cancel_export=button('XML 저장 취소');self.cancel_export.hide();self.cancel_export.clicked.connect(self.cancelRequested);progress_row.addWidget(self.cancel_export);main.addLayout(progress_row)
         self.stack=QStackedWidget();self.pages=[OverviewScreen(),ColumnsScreen(profile),MappingScreen(),ResultsScreen(),HelpScreen()]
         for page in self.pages:
             page.setObjectName('Page')
@@ -57,9 +59,18 @@ class MainWindow(QMainWindow):
         self.new_file.setVisible(index!=0 or self.has_file);self.new_file.setEnabled(not self.busy)
     def set_busy(self,busy,message=''):
         self.busy=busy;self.progress.setVisible(busy)
+        self.progress.setRange(0,0)
+        if not busy:self.cancel_export.hide()
         for page in self.pages:page.setEnabled(not busy)
         self.refresh_action()
         if message:self.notice.set_message(message)
+    def export_progress(self,value):
+        if not self.busy:return
+        current,total=value.get('completed',0),value.get('total',0)
+        self.progress.setRange(0,total);self.progress.setValue(current)
+        text=value.get('stage','처리 중')
+        if total>1:text+=f' · {current:,} / {total:,}행'
+        self.notice.set_message(text)
     def closeEvent(self,event):
         if self.close_guard and not self.close_guard():event.ignore()
         else:event.accept()

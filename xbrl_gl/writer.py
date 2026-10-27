@@ -47,9 +47,13 @@ def account_detail(row,number,balance=False):
     if row.get('description'):fact(item,'detailComment',row['description'])
     return item
 
-def write_instance(path,rows,company,start,end,balance=False,row_map=None):
+def write_instance(path,rows,company,start,end,balance=False,row_map=None,control=None):
     numbered=list(enumerate(rows,1));journals=defaultdict(list)
-    for number,row in numbered:journals[('BS',end) if balance else (row['system'],row['journalId'])].append((number,row))
+    for number,row in numbered:
+        if control and number%1000==0:control.check()
+        journals[('BS',end) if balance else (row['system'],row['journalId'])].append((number,row))
+    written=0
+    if control:control.update('XML 저장',0,len(rows))
     with ET.xmlfile(str(path),encoding='utf-8') as xml:
         xml.write_declaration()
         with xml.element(q('xbrli','xbrl'),nsmap=NS):
@@ -81,4 +85,6 @@ def write_instance(path,rows,company,start,end,balance=False,row_map=None):
                         for number,row in items:
                             xml.write(account_detail(row,number,balance))
                             if row_map is not None:row_map(number,row)
+                            written+=1
+                            if control and (written%500==0 or written==len(rows)):control.update('XML 저장',written,len(rows))
     return len(journals)

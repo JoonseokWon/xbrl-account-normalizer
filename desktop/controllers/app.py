@@ -12,6 +12,7 @@ from .jobs import Jobs
 from desktop.components.confirmation import confirm
 from .audit_export import choose_and_export
 from .xbrl_export import choose_and_export_xbrl
+from .xbrl_inspection import choose_and_inspect
 from .work_actions import WorkActions
 from application.catalogs import load_catalog
 from application.support_preparation import prepare_support
@@ -19,7 +20,7 @@ from desktop.dialogs.support import SupportDialog
 
 class AppController(QObject):
     def __init__(self,window):
-        super().__init__(window);self.window=window;self.jobs=Jobs();self.path=None;self.pending_path=None;self.session=None;self.profile=default_profile();self.catalog=default_catalog();self.close_after_work=False;self.force_close=False
+        super().__init__(window);self.window=window;self.jobs=Jobs();self.path=None;self.pending_path=None;self.session=None;self.profile=default_profile();self.catalog=default_catalog();self.close_after_work=False;self.force_close=False;self.export_cancel=None
         window.close_guard=self.can_close
         self.home,self.columns,self.mapping,self.results,self.help=window.pages
         self.paths=[];self.pending_paths=[];self.pending_preset=None;self.support_preset={}
@@ -27,12 +28,15 @@ class AppController(QObject):
         except Exception as exc:window.notice.set_message('저장한 사전을 읽지 못해 기본 사전을 열었어요: '+str(exc),True)
         self.home.chooseRequested.connect(self.choose_file);self.home.fileDropped.connect(self.open_file)
         window.fileRequested.connect(self.choose_file)
+        window.cancelRequested.connect(self.cancel_xbrl_export)
         self.columns.inspectRequested.connect(self.inspect)
         self.columns.loadRequested.connect(self.load);self.mapping.resultsRequested.connect(lambda:window.show_page(3))
         self.mapping.editor.decisionRequested.connect(self.review)
         self.results.exportRequested.connect(self.export);self.results.openFolderRequested.connect(self.open_results)
         self.results.auditExportRequested.connect(lambda:choose_and_export(self))
         self.results.xbrlExportRequested.connect(lambda:choose_and_export_xbrl(self))
+        self.results.xbrlInspectRequested.connect(lambda:choose_and_inspect(self))
+        self.results.openReportRequested.connect(self.open_report)
         self.results.supportRequested.connect(self.connect_support)
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
         self.work_actions=WorkActions(self)
@@ -121,9 +125,19 @@ class AppController(QObject):
         self.window.notice.set_message('통합감사 입력 엑셀을 저장했어요. 통합감사프로그램의 원장·리드에서 등록해 주세요.')
     def open_results(self):
         if self.results.output_path:QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.results.output_path)))
+    def open_report(self):
+        if self.results.output_path:
+            path=self.results.output_path/'검사결과.html'
+            if path.is_file():QDesktopServices.openUrl(QUrl.fromLocalFile(str(path)))
     def xbrl_export_ready(self,path):
         self.finish_job();self.results.exported(path);self.window.show_page(3)
         self.window.notice.set_message('XBRL GL XML을 저장했어요. 공식 스키마·행수·금액 확인 결과도 함께 보관했어요.')
+    def cancel_xbrl_export(self):
+        if self.window.busy and self.export_cancel:
+            self.export_cancel.set();self.window.cancel_export.setEnabled(False)
+            self.window.notice.set_message('XML 저장을 취소하고 있어요. 현재 업무는 그대로 유지해요.')
+    def xbrl_export_cancelled(self):
+        self.finish_job();self.window.notice.set_message('XML 저장을 취소했어요. 완료되지 않은 결과는 보관하지 않았어요.')
     def open_data(self):
         path=user_data();path.mkdir(parents=True,exist_ok=True);QDesktopServices.openUrl(QUrl.fromLocalFile(str(path)))
     def connect_support(self):
@@ -141,6 +155,7 @@ class AppController(QObject):
         folder=user_data()/'logs';folder.mkdir(parents=True,exist_ok=True)
         with (folder/'desktop.log').open('a',encoding='utf-8') as output:output.write(trace+'\n')
     def finish_job(self):
+        self.export_cancel=None
         self.window.set_busy(False)
         if self.close_after_work:QTimer.singleShot(0,self.window.close)
     def can_close(self):

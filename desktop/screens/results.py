@@ -15,6 +15,8 @@ class ResultsScreen(QWidget):
     openFolderRequested=Signal()
     auditExportRequested=Signal()
     xbrlExportRequested=Signal()
+    xbrlInspectRequested=Signal()
+    openReportRequested=Signal()
     supportRequested=Signal()
     def __init__(self):
         super().__init__();self.output_path=None;self.session=None;self.checks=[]
@@ -40,6 +42,8 @@ class ResultsScreen(QWidget):
         self.support=button('시산표·통제자료 열 연결');self.support.setEnabled(False);self.support.clicked.connect(self.supportRequested);save.body.addWidget(self.support)
         self.audit_save=button('통합감사 입력 저장');self.audit_save.setEnabled(False);self.audit_save.clicked.connect(self.auditExportRequested);save.body.addWidget(self.audit_save)
         self.xbrl_save=button('XBRL GL XML 저장');self.xbrl_save.setEnabled(False);self.xbrl_save.clicked.connect(self.xbrlExportRequested);save.body.addWidget(self.xbrl_save)
+        self.xbrl_check=button('저장한 XML 다시 검사');self.xbrl_check.clicked.connect(self.xbrlInspectRequested);save.body.addWidget(self.xbrl_check)
+        self.open_report=button('검사 보고서 열기');self.open_report.setEnabled(False);self.open_report.clicked.connect(self.openReportRequested);save.body.addWidget(self.open_report)
         save.body.addWidget(label('원장·BS를 공식 XBRL GL 규격으로 저장하고 스키마를 확인해요. DART 공시 제출용은 아니에요.','Muted',True))
         save.body.addWidget(label('회사 양식의 보조자료를 연결하거나 기존 7시트용 보조파일을 선택할 수 있어요.','Muted',True))
         self.open_folder=button('결과 폴더 열기');self.open_folder.setEnabled(False);self.open_folder.clicked.connect(self.openFolderRequested);save.body.addWidget(self.open_folder)
@@ -74,9 +78,11 @@ class ResultsScreen(QWidget):
         if self.session and index.row()<len(self.session.result['issues']):SourceDialog(self.session,self.session.result['issues'][index.row()]['source'],self).exec()
     def exported(self,path):
         self.output_path=Path(path);self.open_folder.setEnabled(True)
+        self.open_report.setEnabled((self.output_path/'검사결과.html').is_file())
         self.save_text.setText(f'새 폴더에 저장했어요.\n{Path(path).name}')
     def reset_export(self):
         self.output_path=None;self.open_folder.setEnabled(False)
+        self.open_report.setEnabled(False)
     def reset(self):
         self.session=None;self.checks=[];self.journals.reset();self.reconciliation.set_rows([]);self.support.setEnabled(False)
         self.reset_export();self.save.setEnabled(False);self.audit_save.setEnabled(False)

@@ -8,11 +8,12 @@ from application.paths import default_outputs
 from io_xlsx.inspection import inspect_workbook
 from desktop.dialogs.catalog import CatalogDialog
 from desktop.components.confirmation import confirm
+from .xbrl_inspection import choose_and_inspect
 
 class WorkActions:
     def __init__(self,controller):
         self.c=controller;menu=controller.window.menuBar().addMenu('업무')
-        for title,callback in [('새 파일 열기',controller.choose_file),('저장한 업무 열기',self.open_work),('업무 저장',self.save_work),('표준 계정 사전 관리',self.catalog)]:
+        for title,callback in [('새 파일 열기',controller.choose_file),('저장한 업무 열기',self.open_work),('업무 저장',self.save_work),('저장한 XML 다시 검사',lambda:choose_and_inspect(controller)),('표준 계정 사전 관리',self.catalog)]:
             action=QAction(title,controller.window);action.triggered.connect(callback);menu.addAction(action)
         controller.columns.presetSaveRequested.connect(self.save_preset);controller.columns.presetLoadRequested.connect(self.load_preset)
     def error(self,error):self.c.window.notice.set_message(str(error),True)

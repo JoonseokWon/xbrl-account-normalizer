@@ -2,11 +2,11 @@
 
 XLSX·CSV·TSV 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 앱입니다. 회사·ERP별 입력 설정, 계정 사전 관리, 전표별 분개와 대사, 업무 저장·다시 열기를 지원합니다.
 
-**v0.7.0-preview.1 — 원장·BS를 공식 XBRL GL 2015 XML로 저장하고 오프라인 스키마·원본 보존 검사를 수행합니다. [XML 사용법](docs/XBRL_GL.md)과 [여러 회사 매핑 결과](docs/MULTI_COMPANY_MAPPING.md)를 참고하세요.**
+**v0.8.0-preview.1 — 저장 결과 재검사, 한국어 검사 화면·HTML 보고서, 페이지별 출력 행·원본 연결, XML 저장 진행률·취소를 추가했습니다. [외부 도구 조사와 적용](docs/XBRL_TOOL_RESEARCH.md), [XML 사용법](docs/XBRL_GL.md)을 참고하세요.**
 
 ## Windows에서 시작하기
 
-1. [GitHub v0.7.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.7.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub v0.8.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.8.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -72,6 +72,7 @@ python convert.py "원본.xlsx" --company "COMPANY-A" --system "ERP-A"
 python convert.py "원본.xlsx" --inspect
 python convert.py "원본.xlsx" --column-map config/column_mapping.example.json
 python convert.py "확인한업무.acwork" --xbrl --out "결과폴더"
+python convert.py --check-xbrl "XBRL_결과폴더" --out "검사보고서폴더"
 ```
 
 시트명·기본 별칭은 `config/profile.json`, 계정 사전은 `config/catalog.json`에서 설정합니다. CLI의 `--no-history`는 이력 읽기·저장을 모두 끄며 `--history`로 다른 이력을 지정할 수 있습니다.
@@ -84,7 +85,7 @@ python tools/build_windows.py
 python tools/package_release.py
 ```
 
-[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. 단위 테스트 85개가 통과했고, 10개 회사 원장과 BS의 XML 11개를 Arelle 2.47.3에서 오프라인 검사해 오류·경고 0건을 확인했습니다. 250,000행 원장도 분할 없이 XML 출력과 공식 XSD·원본 대사를 확인했습니다. GUI 시험의 OS 파일선택창은 경로로 대체했으며 실제 독립 통제·실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
+[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. v0.8 자동 검사 133개 중 131개가 통과했고, Windows 심볼릭 링크 생성 권한이 필요한 2개는 건너뛰었습니다. 10개 회사 원장과 BS, 250,000행 원장의 XML 출력·공식 XSD·원본 보존·저장 결과 재검사·첫/끝 페이지와 취소를 확인합니다. 소스와 EXE의 버전별 실행 기록, Arelle 2.47.3 독립 검사 결과는 릴리스의 `validation-summary.json`에 담습니다. GUI 시험의 OS 파일선택창은 경로로 대체하고 취소 버튼 연결 시험은 저장 함수를 대체했습니다. 실제 저장 취소는 별도의 소스·EXE 검사에서 확인합니다. 실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
 
 ## 참고 자료
 

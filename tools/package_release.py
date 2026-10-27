@@ -37,6 +37,7 @@ def main():
     files.extend(sorted(path for path in (ROOT/'samples/여러회사매핑').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
     files.extend(sorted(path for path in (ROOT/'vendor/xbrl-gl-2015').rglob('*') if path.is_file()))
     files.extend(ROOT/name for name in ('tools/fetch_xbrl_taxonomy.py','tools/verify_xbrl.py','tools/verify_xbrl_arelle.py'))
+    files.append(ROOT/'tools/verify_xbrl_ui.py')
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')

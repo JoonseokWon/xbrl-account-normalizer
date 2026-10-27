@@ -7,6 +7,10 @@ from application.paths import resources
 from application.configuration import default_profile,default_catalog
 from application.loading import load_session,load_batch
 from application.xbrl_export import export_xbrl
+from application.xbrl_inspection import inspect_export
+from application.xbrl_preview import preview_rows
+from xbrl_gl.control import ExportCancelled
+from threading import Event
 from normalizer import normalize
 from version import VERSION
 
@@ -51,10 +55,16 @@ def run_checks(folder,large_rows=0):
     def save(session,parent):
         before=time.perf_counter();target=export_xbrl(session,parent)
         detail=json.loads((target/'validation-report.json').read_text(encoding='utf-8'))
+        checked=inspect_export(target);assert checked['passed'],checked['errors']
+        assert (target/'검사결과.html').is_file()
+        file=detail['documents'][0]['file'];total=detail['documents'][0]['validation']['rows']
+        first=preview_rows(target,file);last=preview_rows(target,file,max(0,total-100))
+        assert len(first['rows'])==min(100,total) and not last['hasMore']
         report['documents'].append({'output':target.relative_to(output).as_posix(),'company':detail['documents'][0]['company'],
                                     'rows':sum(d['validation']['rows'] for d in detail['documents']),
                                     'xml':[{k:d[k] for k in ('file','sha256','validation','type')} for d in detail['documents']],
                                     'seconds':round(time.perf_counter()-before,3)})
+        report['documents'][-1].update(reinspectionPassed=True,previewRows=len(first['rows']),lastPageRows=len(last['rows']))
         print(json.dumps({k:report['documents'][-1][k] for k in ('company','rows','seconds')},ensure_ascii=False),flush=True)
     for case in payload['companies']:
         profile=default_profile();profile.update(companyCode=case['company'],sourceSystem=case['system'],periodStart='2026-01-01',periodEnd='2026-01-31');profile['sheets']['fs']=[]
@@ -62,7 +72,16 @@ def run_checks(folder,large_rows=0):
         session=confirm(load_session(source,profile,default_catalog(),False),{a['code']:a['target'] for a in case['accounts']})
         save(session,output/case['company'])
     save(balance_case(output/'bs-input'),output/'BS_DEMO')
-    if large_rows:save(large_case(output/'large-input',large_rows),output/'LARGE_GL')
+    if large_rows:
+        session=large_case(output/'large-input',large_rows);event=Event()
+        def cancel_first(value):
+            if value['stage']=='XML 저장':event.set()
+        try:export_xbrl(session,output/'cancel-test',cancel_first,event)
+        except ExportCancelled:pass
+        else:raise AssertionError('저장을 취소하지 못했습니다.')
+        assert not list((output/'cancel-test').iterdir())
+        report['cancelledOutputDiscarded']=True
+        save(session,output/'LARGE_GL')
     report.update(ok=True,seconds=round(time.perf_counter()-start,3),totalRows=sum(d['rows'] for d in report['documents']))
     (output/'report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return report

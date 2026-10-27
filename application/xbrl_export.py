@@ -10,31 +10,37 @@ from version import VERSION
 from xbrl_gl.taxonomy import verify_taxonomy,package_taxonomy
 from xbrl_gl.writer import write_instance
 from xbrl_gl.validation import validate_instance
+from xbrl_gl.control import ExportControl
+from xbrl_gl.reporting import write_report
 
-def digest(path):
+def digest(path,control=None):
     value=hashlib.sha256()
     with Path(path).open('rb') as stream:
-        while data:=stream.read(1024*1024):value.update(data)
+        while data:=stream.read(1024*1024):
+            if control:control.check()
+            value.update(data)
     return value.hexdigest()
 
-def verify_inputs(session):
+def verify_inputs(session,control=None):
     paths=session.input_paths or (session.input_path,)
     sources=session.source.get('files',[session.source])
     if len(paths)!=len(sources):raise InputError('원본 파일 출처 수를 확인해 주세요.')
     for path,source in zip(paths,sources):
-        if digest(path)!=source.get('sha256'):raise InputError('원본이 불러온 뒤 변경되었습니다. 다시 열어 주세요.')
+        if digest(path,control)!=source.get('sha256'):raise InputError('원본이 불러온 뒤 변경되었습니다. 다시 열어 주세요.')
 
-def prepare_documents(session):
+def prepare_documents(session,control=None):
     result=session.result;counts=result['counts']
     if result['status']!='계정매핑완료' or counts['errors'] or counts['pendingRows']:
         raise InputError('XBRL XML을 저장하려면 오류와 미확정 계정을 먼저 해결해 주세요.')
     index=catalog_index(session.catalog);documents=[];ledger=defaultdict(list);balances=defaultdict(list)
     seen=set();journals=defaultdict(int)
-    for row in result['ledger']+result['financial']:
+    for number,row in enumerate(result['ledger']+result['financial'],1):
+        if control and number%1000==0:control.check()
         target=index.get(row.get('standardCode'))
         if row.get('mappingStatus')!='확인' or not target or row['standardName']!=target['name']:
             raise InputError('확정한 계정 연결과 현재 사전을 다시 확인해 주세요.')
-    for row in result['ledger']:
+    for number,row in enumerate(result['ledger'],1):
+        if control and number%1000==0:control.check()
         if row['mappingStatus']!='확인' or index[row['standardCode']]['kind']!='account':raise InputError('원장 상세 계정 연결 필요')
         key=(row['company'],row['system'],row['journalId'],row['lineId'])
         if key in seen:raise InputError('XBRL 출력 원장에 중복 전표 행이 있습니다.')
@@ -43,7 +49,8 @@ def prepare_documents(session):
             raise InputError('차변·대변 정수 금액을 확인해 주세요.')
         day(row['postingDate']);journals[key[:3]]+=row['debit']-row['credit'];ledger[row['company']].append(row)
     if any(journals.values()):raise InputError('전표별 차변·대변 합계가 다릅니다.')
-    for row in result['financial']:
+    for number,row in enumerate(result['financial'],1):
+        if control and number%1000==0:control.check()
         if row['statement']!='BS':raise InputError('재무제표 XML 입력은 재무상태표 BS를 지원합니다.')
         if isinstance(row['amount'],bool) or not isinstance(row['amount'],int):raise InputError('BS 원 단위 정수 금액 필요')
         if row['rowType'] not in ('상세','소계','합계'):raise InputError('BS 행 구분 필요')
@@ -59,8 +66,9 @@ def prepare_documents(session):
     if sum(len(d['rows']) for d in documents)!=counts['normalizedGlRows']+counts['normalizedFsRows']:raise InputError('변환 행 수가 다릅니다.')
     return documents
 
-def export_xbrl(session,folder):
-    documents=prepare_documents(session);verify_inputs(session);taxonomy=verify_taxonomy()
+def export_xbrl(session,folder,progress=None,cancel=None):
+    control=ExportControl(progress,cancel);control.update('원본 확인')
+    documents=prepare_documents(session,control);verify_inputs(session,control);taxonomy=verify_taxonomy();control.check()
     base=Path(folder).resolve();base.mkdir(parents=True,exist_ok=True)
     target=base/datetime.now().strftime('XBRL_GL_%Y%m%d_%H%M%S_%f')
     with tempfile.TemporaryDirectory(prefix='.xbrl-build-',dir=base) as temporary:
@@ -69,23 +77,25 @@ def export_xbrl(session,folder):
                 'entryPoint':taxonomy['entryPoint'],'catalogVersion':session.catalog['version'],'source':session.source,
                 'officialFinancialReportingTaxonomyMapping':False,'regulatoryFilingValidated':False,
                 'accountCodeMeaning':'accountMainID는 원본 코드. accountSub의 app-standard-account는 자체 공통 코드이며 IFRS/DART 개념 코드가 아님.',
-                'documents':[],'taxonomyPackage':'xbrl-gl-2015-taxonomy.zip','rowMap':'row-map.jsonl'}
+                'documents':[],'taxonomyPackage':'xbrl-gl-2015-taxonomy.zip','rowMap':'row-map.jsonl','humanReport':'검사결과.html'}
         with (staging/'row-map.jsonl').open('x',encoding='utf-8',newline='\n') as row_map:
             for spec in documents:
                 def record(number,row):
                     entry={'file':spec['file'],'detailId':f'd{number:07d}','company':row['company'],'system':row['system'],
                            'originalCode':row['originalCode'],'originalName':row['originalName'],'standardCode':row['standardCode'],'source':row['source']}
-                    for key in ('journalId','lineId','author','debit','credit','amount','rowType'):
+                    for key in ('journalId','lineId','author','debit','credit','amount','rowType','standardName','postingDate','asOfDate','dimensions','leadCode'):
                         if key in row:entry[key]=row[key]
                     row_map.write(json.dumps(entry,ensure_ascii=False,separators=(',',':'))+'\n')
                 output=staging/spec['file']
-                headers=write_instance(output,spec['rows'],spec['company'],spec['start'],spec['end'],spec['balance'],record)
-                check=validate_instance(output,spec['rows'],spec['company'],spec['end'],spec['balance'])
+                headers=write_instance(output,spec['rows'],spec['company'],spec['start'],spec['end'],spec['balance'],record,control)
+                check=validate_instance(output,spec['rows'],spec['company'],spec['end'],spec['balance'],control)
                 report['documents'].append({'file':spec['file'],'company':spec['company'],'type':'BS balances' if spec['balance'] else 'journal',
-                                            'start':spec['start'],'end':spec['end'],'headers':headers,'sha256':digest(output),'validation':check})
-        package_taxonomy(staging/report['taxonomyPackage']);verify_inputs(session)
-        report['taxonomyPackageSha256']=digest(staging/report['taxonomyPackage']);report['rowMapSha256']=digest(staging/'row-map.jsonl')
+                                            'start':spec['start'],'end':spec['end'],'headers':headers,'sha256':digest(output,control),'validation':check})
+        control.update('검사 보고서 저장')
+        package_taxonomy(staging/report['taxonomyPackage']);verify_inputs(session,control)
+        report['taxonomyPackageSha256']=digest(staging/report['taxonomyPackage'],control);report['rowMapSha256']=digest(staging/'row-map.jsonl',control)
         report['status']='공식 스키마·원본 보존 확인 완료'
+        write_report(staging/'검사결과.html',report)
         (staging/'validation-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         (staging/'읽어주세요.txt').write_text('XBRL GL 2015 COR+BUS 규격의 XBRL 2.1 인스턴스입니다.\n'
             '원장과 재무상태표 표시값을 구분해 저장했습니다. BS 상세·소계·합계는 중복 합산하지 않습니다.\n'
@@ -94,5 +104,9 @@ def export_xbrl(session,folder):
             'Arelle 예: arelleCmdLine --file journal-001.xbrl --packages xbrl-gl-2015-taxonomy.zip --workOffline --validate\n'
             '자체 계정코드 A1102 등은 공식 IFRS/DART 개념 코드가 아닙니다. 이 파일은 DART 공시 제출용이 아닙니다.\n',encoding='utf-8')
         if target.exists():raise InputError('같은 이름의 결과 폴더가 있습니다.')
+        control.check()
         os.replace(staging,target)
+    # Cancellation is cooperative before commit; a published completed folder
+    # always reports success even if a late click arrives after the atomic move.
+    if progress:progress({'stage':'완료','completed':1,'total':1})
     return target
