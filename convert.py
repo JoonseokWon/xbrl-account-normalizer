@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--out')
     parser.add_argument('--add-input',action='append',default=[],help='같은 회사·양식의 추가 원본 파일')
     parser.add_argument('--save-work',help='검토 상태를 .acwork로 보관')
+    parser.add_argument('--xbrl',action='store_true',help='확정된 원장·BS를 XBRL GL 2015 XML로 저장')
     args=parser.parse_args()
     try:
         if not args.input:
@@ -42,11 +43,18 @@ def main():
         if args.system:profile['sourceSystem']=args.system
         if args.inspect:
             print(json.dumps(read_input(args.input,profile,True),ensure_ascii=False,indent=2,default=safe_json));return 0
-        session=load_batch([args.input]+args.add_input,profile,read_json(args.catalog),not args.no_history,args.history)
+        if Path(args.input).suffix.lower()=='.acwork':
+            from application.workfiles import load_work
+            if args.add_input:raise InputError('업무 파일은 한 번에 하나만 열어 주세요.')
+            session=load_work(args.input)
+        else:session=load_batch([args.input]+args.add_input,profile,read_json(args.catalog),not args.no_history,args.history)
         if args.save_work:
             from application.workfiles import save_work
             save_work(session,args.save_work)
-        target=export_session(session,Path(args.out).resolve() if args.out else default_outputs(),args.history,bool(args.out))
+        if args.xbrl:
+            from application.xbrl_export import export_xbrl
+            target=export_xbrl(session,Path(args.out).resolve() if args.out else default_outputs())
+        else:target=export_session(session,Path(args.out).resolve() if args.out else default_outputs(),args.history,bool(args.out))
         print(json.dumps({'status':session.result['status'],'counts':session.result['counts'],'output':str(target)},ensure_ascii=False,indent=2))
         return 2 if session.result['counts']['errors'] else 0
     except (InputError,OSError,ValueError,ImportError) as error:

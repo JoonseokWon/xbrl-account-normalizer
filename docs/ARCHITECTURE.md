@@ -18,8 +18,14 @@ application/
   session.py                    하나의 작업 상태
   loading.py                    원본 읽기와 표준화 시작
   reviews.py                    계정 확인·거절·미확정 변경
+  xbrl_export.py                원본 해시·매핑 확인, 원자적 XML 결과 저장
   exporting.py                  새 결과 폴더 저장과 이력 보관
   audit_export.py               확인 원장과 별도 보조자료로 통합감사 입력 생성
+xbrl_gl/
+  taxonomy.py                   공식 스키마 고정·오프라인 참조·택사노미 패키지
+  writer.py                     GL journal/balance XML 순차 출력
+  validation.py                 공식 XSD·원본 행·금액·코드·context 대사
+vendor/xbrl-gl-2015/             수정하지 않은 공식 스키마·링크베이스 30개
 core/
   values.py                     코드·일자·금액 규칙
   catalog.py                    사전·명시적 매핑 규칙

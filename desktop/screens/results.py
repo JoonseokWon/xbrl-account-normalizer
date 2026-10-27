@@ -14,6 +14,7 @@ class ResultsScreen(QWidget):
     exportRequested=Signal()
     openFolderRequested=Signal()
     auditExportRequested=Signal()
+    xbrlExportRequested=Signal()
     supportRequested=Signal()
     def __init__(self):
         super().__init__();self.output_path=None;self.session=None;self.checks=[]
@@ -38,6 +39,8 @@ class ResultsScreen(QWidget):
         self.save=button('검토 엑셀 저장','primary');self.save.setEnabled(False);self.save.clicked.connect(self.exportRequested);save.body.addWidget(self.save)
         self.support=button('시산표·통제자료 열 연결');self.support.setEnabled(False);self.support.clicked.connect(self.supportRequested);save.body.addWidget(self.support)
         self.audit_save=button('통합감사 입력 저장');self.audit_save.setEnabled(False);self.audit_save.clicked.connect(self.auditExportRequested);save.body.addWidget(self.audit_save)
+        self.xbrl_save=button('XBRL GL XML 저장');self.xbrl_save.setEnabled(False);self.xbrl_save.clicked.connect(self.xbrlExportRequested);save.body.addWidget(self.xbrl_save)
+        save.body.addWidget(label('원장·BS를 공식 XBRL GL 규격으로 저장하고 스키마를 확인해요. DART 공시 제출용은 아니에요.','Muted',True))
         save.body.addWidget(label('회사 양식의 보조자료를 연결하거나 기존 7시트용 보조파일을 선택할 수 있어요.','Muted',True))
         self.open_folder=button('결과 폴더 열기');self.open_folder.setEnabled(False);self.open_folder.clicked.connect(self.openFolderRequested);save.body.addWidget(self.open_folder)
         save.body.addStretch();bottom.addWidget(save,4);root.addLayout(bottom)
@@ -54,6 +57,7 @@ class ResultsScreen(QWidget):
         self.support.setEnabled(bool(result['ledger']))
         self.save.setEnabled(True)
         self.audit_save.setEnabled(bool(result['ledger']) and not counts['pendingRows'] and not counts['errors'])
+        self.xbrl_save.setEnabled(bool(result['ledger'] or result['financial']) and not counts['pendingRows'] and not counts['errors'])
         if counts['pendingRows'] or counts['errors']:
             self.save_text.setText('검토본은 저장할 수 있어요. 미확정·오류 행을 해결하면 감사 연결 데이터를 만들어요.')
         else:self.save_text.setText('계정 연결을 확인했어요. 검토 엑셀과 부분 연결 데이터를 새 폴더에 저장해요.')
@@ -76,6 +80,7 @@ class ResultsScreen(QWidget):
     def reset(self):
         self.session=None;self.checks=[];self.journals.reset();self.reconciliation.set_rows([]);self.support.setEnabled(False)
         self.reset_export();self.save.setEnabled(False);self.audit_save.setEnabled(False)
+        self.xbrl_save.setEnabled(False)
         self.save_text.setText('엑셀 검토본과 연결 데이터를 새 폴더에 저장해요.')
         for metric in (self.loaded,self.pending,self.errors):metric.update_value('—')
         for table in (self.gl,self.fs,self.issues):table.set_rows([])

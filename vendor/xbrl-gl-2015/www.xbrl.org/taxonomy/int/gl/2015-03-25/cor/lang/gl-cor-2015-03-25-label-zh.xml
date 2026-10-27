@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountingEntries" xlink:label="accountingEntries"/>
+<label xlink:type="resource" xlink:label="label_accountingEntries" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountingEntries">XBRL GL的根。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="label_accountingEntries"/>
+<label xlink:type="resource" xlink:label="label_accountingEntries_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountingEntries_2">会计分录</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="label_accountingEntries_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentInfo">关于所在“会计分录”（accountingEntries）部分的描述性信息的父级标签。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentInfo_2">文档信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesType" xlink:label="entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entriesType">列举值包括：
+account：科目表。填写在会计科目表文件中的信息。
+balance：余额表。在特定期间里，对一个科目（或者一个科目列表）中一个完整的并且经过验证的分录列表进行累积的结果。有时又称为总分类账。
+entries：分录表。单一会计分录的列表，可以是已过账/已验证的，也可以是未过账/未验证的。
+journal：日记账。特定期间的分录的自平衡（借项=贷项）列表，包含这个期间的期初余额。
+ledger：分类账。特定期间的特定科目（或者科目列表）的完整分录列表。注：借项不必等于贷项。
+asset：资产表。未结应收、应付、存货、固定资产或者其他信息的清单，这些信息可以从一个日记账分录中抽取，但不必作为该日记账分录的组成部分而包含在其中。
+trialBalance：试算平衡表。在特定期间里，对一个完整的科目列表中的一个完整并且经过验证的分录列表进行累积的自平衡（借项=贷项）结果。taxtables：税费表。用于自动解释那些描述税费表的实例；使用多个“税费信息”（taxes）结构定义税费表，汇集代码、机构和费率；通过在“税费信息”（taxes）结构中的“税费报表代码”（taxTableCode）交叉引用，可以引用这些“主文件”税费表。
+mapping：映射。在相互关联的数据集之间映射的一个集合，比如，一家本地公司的标准会计科目表与关联公司的标准会计科目表，或者映射到汇总报告概念的明细数据。
+versioning：版本。同类信息的两个版本之间差异的一个集合，比如，对诸如会计科目表之类的一个主文件的更新。   
+master_file：主文件。主文件的一个集合，比如，客户主文件或者存货主文件。
+trade_documents：交易文档。交易文档/事务文档的一个集合，比如，供应商发票或者客户订单。
+profile_compliant：符合概要文件。这个信息集合的含义取决于对一个公认概要文件的理解，特别是对一个XBRL GL概要文件的理解。通过命名空间的声明、schemaRef以及那些概要文件的规范来确定概要文件。
+other
+通常按日期或者按科目排序，在不同的领域，这些术语有特定的含义，有时有不同的含义。实际惯例会促成会计方法/术语的匹配。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entriesType_2">文档类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_uniqueID" xlink:label="uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_uniqueID">本文件的唯一标识符。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_uniqueID_2">审计号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_revisesUniqueID" xlink:label="revisesUniqueID"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_revisesUniqueID">如果这一批信息修改了前一批信息，这个域就用来标识被修改的前一批信息。此处记录前一批信息的“审计号”（uniqueID）。开发人员应该考虑例外报告。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueID" xlink:to="label_revisesUniqueID"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_revisesUniqueID_2">修改前的审计号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueID" xlink:to="label_revisesUniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_revisesUniqueIDAction" xlink:label="revisesUniqueIDAction"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueIDAction" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_revisesUniqueIDAction">对前一批数据采取的举措指导：
+supplement：追加。旧数据视同新数据的一部分；
+supersede：替换。应考虑废弃/改写旧数据。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueIDAction" xlink:to="label_revisesUniqueIDAction"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueIDAction_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_revisesUniqueIDAction_2">对以往数据采取的举措</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueIDAction" xlink:to="label_revisesUniqueIDAction_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_language" xlink:label="language"/>
+<label xlink:type="resource" xlink:label="label_language" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_language">记录内容采用的主要语言。实际应用时，这个域的内容应该遵守ISO 639-1988语言代码规范。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language"/>
+<label xlink:type="resource" xlink:label="label_language_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_language_2">语言</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_creationDate" xlink:label="creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_creationDate">创建文件的日期/时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_creationDate_2">创建日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesComment" xlink:label="entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entriesComment">对整个文档的文字说明。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entriesComment_2">文档说明</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredStart" xlink:label="periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_periodCoveredStart">时间跨度的起始日期时间。是与数据相关的诸多假设前提的基础。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_periodCoveredStart_2">所涵盖期间的起始</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredEnd" xlink:label="periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_periodCoveredEnd">时间跨度的终止日期时间。是与数据相关的诸多假设前提的基础。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_periodCoveredEnd_2">所涵盖期间的终止</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entityInformation" xlink:label="entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entityInformation">包含有关报告组织的实体信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entityInformation_2">实体信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryHeader">分录标头/日记账分录标头的父级标签。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryHeader_2">分录信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postedDate" xlink:label="postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_postedDate">本分录过账（验证）到总分类账的日期时间。可以不表示会计意义的日期，而用“分录明细”（entryDetail）一级的“过账日期”（postingDate）表示会计意义的日期。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_postedDate_2">分录过账日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredBy" xlink:label="enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_enteredBy">最初录入分录的操作人员的姓名首字母/姓名。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_enteredBy_2">分录创建人</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredDate" xlink:label="enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_enteredDate">表示分录输入计算机的实际日期/时间（自动取自系统日期，常常会因为修改系统时钟而误记）。单独另行维护过账日期。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_enteredDate_2">分录日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_sourceJournalID" xlink:label="sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_sourceJournalID">在其中处理本分录的那个日记账的代码。这个代码必须是一个日记账的唯一标识。代码取自如下列举值列表：
+cd：现金支出（给供应商支票）
+cr：现金收入（收到他方的支票）
+fa：固定资产
+gi：银行直接转账/其它银行调整
+gj：普通日记账im：存货管理
+jc：作业成本
+pj：采购日记账（源于采购的负债）
+pl：薪资日记账
+sj：销售日记账
+se：标准分录
+ud：用户自定义
+ot：分录的其它来源</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_sourceJournalID_2">源日记账</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryType" xlink:label="entryType"/>
+<label xlink:type="resource" xlink:label="label_entryType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryType">下列列举值列表中的一项：
+adjusting：调整
+budget：预算
+comparative：比较
+external-accountant：外部会计人员
+standard：标准
+passed-adjusting：已通过的调整
+eliminating：抵消
+proposed：推荐
+recurring：经常性
+reclassifying：再分类
+simulated：模拟
+tax：税费
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryType" xlink:to="label_entryType"/>
+<label xlink:type="resource" xlink:label="label_entryType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryType_2">类型标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryType" xlink:to="label_entryType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumber" xlink:label="entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryNumber">源日记账内部的标识符。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryNumber_2">分录标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryComment" xlink:label="entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryComment">由本分录标头所描述的分录（例如，期初余额）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryComment_2">分录描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_qualifierEntry" xlink:label="qualifierEntry"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_qualifierEntry">一个限定分录类型的列举域。当从报告日期开始对所表示的数值进行汇总时，这个域对于总分类账和试算平衡表特别有用，必须说明是期初余额还是期末余额。在会计系统中，通常称之为BBF（承上期余额）。可用的列举值是：
+standard：标准
+balance-brought-forward：承上期余额
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntry" xlink:to="label_qualifierEntry"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_qualifierEntry_2">分录限定符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntry" xlink:to="label_qualifierEntry_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_qualifierEntryDescription" xlink:label="qualifierEntryDescription"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntryDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_qualifierEntryDescription">对分录限定符的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntryDescription" xlink:to="label_qualifierEntryDescription"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntryDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_qualifierEntryDescription_2">分录限定符描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntryDescription" xlink:to="label_qualifierEntryDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_bookTaxDifference" xlink:label="bookTaxDifference"/>
+<label xlink:type="resource" xlink:label="label_bookTaxDifference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_bookTaxDifference">表明记账和纳税会计方法之间差异的类型，省略本列举域则视同取值为“none”。列举值包括：
+permanent：永久
+temporary：临时
+none：无</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="bookTaxDifference" xlink:to="label_bookTaxDifference"/>
+<label xlink:type="resource" xlink:label="label_bookTaxDifference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_bookTaxDifference_2">记账与纳税之间差异的类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="bookTaxDifference" xlink:to="label_bookTaxDifference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumberCounter" xlink:label="entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryNumberCounter">对分录的唯一引用，是一个数值计数器。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryNumberCounter_2">分录号计数器</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryDetail" xlink:label="entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_entryDetail">分录明细信息的父级标签。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_entryDetail_2">分录明细</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumber" xlink:label="lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_lineNumber">一个特定分录明细的标识符。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_lineNumber_2">行号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumberCounter" xlink:label="lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_lineNumberCounter">对行的唯一引用，是一个数值计数器。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_lineNumberCounter_2">行号计数器</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_account" xlink:label="account"/>
+<label xlink:type="resource" xlink:label="label_account" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_account">元组：科目号和标识符的父级容器。此处不设分录，但为了按不同的公认会计准则报告，向合并系统传送有关本地科目与合并科目相对应的信息，每一个明细行可以指定有多个科目。例如，科目4783HG-QOWI-192837-1000可以表达成：
+/account/accountMainID 1000   
+/account/accountMainDescription Cash   
+/account/accountSub/accountSubID 4783HG   
+/account/accountSub/accountSubDescription Department   
+/account/accountSub/accountSubID QOWI   
+/account/accountSub/accountSubDescription Branch   
+/account/accountSub/accountSubID 192837   
+/account/accountSub/accountSubDescription Division</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account"/>
+<label xlink:type="resource" xlink:label="label_account_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_account_2">科目标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainID" xlink:label="accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountMainID">主科目。用于标识已经为本分录指定的会计对象的代码。例如，1000代表现金，567GAAZ代表销售费用，Z代表税费支出。在“子科目标识符”（accountSubID）区域中标记诸如部门、分支机构、分部或者其它标识符。在需要过账之前，科目不是必须的。向总分类账过账时，通常都需要这里的一个分录。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountMainID_2">主科目号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainDescription" xlink:label="accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountMainDescription">对“主科目号”（accountMainID）的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountMainDescription_2">主科目描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_mainAccountType" xlink:label="mainAccountType"/>
+<label xlink:type="resource" xlink:label="label_mainAccountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_mainAccountType">科目类型：《美国财务会计准则委员会第6号概念公告》以及类似的国际化设计。当使用“XBRL信息”（xbrlInfo）来关联其它XBRL报告数据项时，这个域更适于展现现有的系统（审计），而不是进行数据交换。列举值包括：
+asset：资产
+liability：负债
+equity：权益
+income：收益
+gain：利得
+expense：费用
+loss：损失
+contr-to-equity：权益增加
+distr-from-equity：权益减少
+comprehensive-income：全面收益
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountType" xlink:to="label_mainAccountType"/>
+<label xlink:type="resource" xlink:label="label_mainAccountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_mainAccountType_2">科目分类</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountType" xlink:to="label_mainAccountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_mainAccountTypeDescription" xlink:label="mainAccountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_mainAccountTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_mainAccountTypeDescription">对科目分类的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountTypeDescription" xlink:to="label_mainAccountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_mainAccountTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_mainAccountTypeDescription_2">科目分类描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountTypeDescription" xlink:to="label_mainAccountTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentAccountMainID" xlink:label="parentAccountMainID"/>
+<label xlink:type="resource" xlink:label="label_parentAccountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_parentAccountMainID">从子级自然科目向父级自然科目的上卷数据项。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentAccountMainID" xlink:to="label_parentAccountMainID"/>
+<label xlink:type="resource" xlink:label="label_parentAccountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_parentAccountMainID_2">父级科目号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentAccountMainID" xlink:to="label_parentAccountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountPurposeCode" xlink:label="accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountPurposeCode">与科目合计用法相关的代码。这个域如果置空，则执行实体的默认会计方法。列举值包括：
+consolidating：合并
+european：欧洲标准
+ifrs：国际财务报告准则
+offsetting：冲销
+primary：主要的
+tax：纳税
+usgaap：美国公认会计准则
+japanese：日本标准
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountPurposeCode_2">科目目的</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountPurposeDescription" xlink:label="accountPurposeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountPurposeDescription">对合计科目用法的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeDescription" xlink:to="label_accountPurposeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountPurposeDescription_2">科目目的描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeDescription" xlink:to="label_accountPurposeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountType" xlink:label="accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountType">科目的类型，列举值包括：
+account：科目
+bank：银行
+employee：员工
+customer：客户
+job：作业
+vendor：供应商
+measurable：可度量
+statistical：统计
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountType_2">科目类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountTypeDescription" xlink:label="accountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountTypeDescription">对科目类型的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountTypeDescription" xlink:to="label_accountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountTypeDescription_2">科目类型描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountTypeDescription" xlink:to="label_accountTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSub" xlink:label="accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountSub">包含多个“子科目标识符”（accountSubID）及其描述的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountSub_2">子科目信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubDescription" xlink:label="accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountSubDescription">对此处“子科目标识符”（accountSubID）的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountSubDescription_2">子科目描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubID" xlink:label="accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountSubID">把初级科目置于“主科目号”（accountMainID）的情况下，每一个利润中心、分部、业务单位、基金、计划、分支机构、项目、类别、子类或者其它修饰符所使用的代码放在这里。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountSubID_2">子科目标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubType" xlink:label="accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountSubType">子科目的类型：利润中心、分部、业务单位、基金、计划、分支机构、项目、类别、子类或者其它修饰符放在这里。例如：责任中心、业务单位、等级、部门、项目、基金、计划、作业、利润中心、分支机构、设置等级、分部、单位。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountSubType_2">子科目类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_segmentParentTuple" xlink:label="segmentParentTuple"/>
+<label xlink:type="resource" xlink:label="label_segmentParentTuple" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_segmentParentTuple">显示从一个分段（子科目的类型）向另一个分段上卷所必需的明细的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="segmentParentTuple" xlink:to="label_segmentParentTuple"/>
+<label xlink:type="resource" xlink:label="label_segmentParentTuple_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_segmentParentTuple_2">分段父级信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="segmentParentTuple" xlink:to="label_segmentParentTuple_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountCode" xlink:label="parentSubaccountCode"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_parentSubaccountCode">本子科目上卷到的那个子科目的标识符，还要参照上卷到的那个子科目类型。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountCode" xlink:to="label_parentSubaccountCode"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_parentSubaccountCode_2">父级子科目代码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountCode" xlink:to="label_parentSubaccountCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountType" xlink:label="parentSubaccountType"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_parentSubaccountType">本子科目上卷到的那个分段的类型。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountType" xlink:to="label_parentSubaccountType"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_parentSubaccountType_2">父级子科目类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountType" xlink:to="label_parentSubaccountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_reportingTreeIdentifier" xlink:label="reportingTreeIdentifier"/>
+<label xlink:type="resource" xlink:label="label_reportingTreeIdentifier" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_reportingTreeIdentifier">用于表示对报告树的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingTreeIdentifier" xlink:to="label_reportingTreeIdentifier"/>
+<label xlink:type="resource" xlink:label="label_reportingTreeIdentifier_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_reportingTreeIdentifier_2">报告树标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingTreeIdentifier" xlink:to="label_reportingTreeIdentifier_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountProportion" xlink:label="parentSubaccountProportion"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountProportion" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_parentSubaccountProportion">对于将额度部分地分配给不同父级的情况，表明子级科目分配给一个父级科目的百分率。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountProportion" xlink:to="label_parentSubaccountProportion"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountProportion_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_parentSubaccountProportion_2">父级子科目百分率</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountProportion" xlink:to="label_parentSubaccountProportion_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountActive" xlink:label="accountActive"/>
+<label xlink:type="resource" xlink:label="label_accountActive" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_accountActive">表明科目是有效（="true"）抑或无效（="false"）的布尔值。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountActive" xlink:to="label_accountActive"/>
+<label xlink:type="resource" xlink:label="label_accountActive_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_accountActive_2">科目有效性</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountActive" xlink:to="label_accountActive_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_amount" xlink:label="amount"/>
+<label xlink:type="resource" xlink:label="label_amount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_amount">表示与“分录明细”（entryDetail）行的对象相关的主要金额的域。每个“分录明细”（entryDetail）结构都有一个主要金额。例如，可以表示为一个日记账分录的一行的额度、一份文档上的余额、或者一份发票上一个行项的应收额度。如果明细的分录是用于非财务工作并且增加了其它元素，特别是“可度量数量”（measurableQuantity），则不需要额度。额度域是一个带符号的数（本身或为正或为负），连同一个单独的“额度的符号”（signOfAmount）和一个单独的“借项/贷项标识符”（debitCreditCode）一起使用，要综合起来理解这个金额。由“币种”（amountCurrency）确定计量的单位，如果没有出现“币种”（amountCurrency）则由默认的或者本币确定计量的单位。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount"/>
+<label xlink:type="resource" xlink:label="label_amount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_amount_2">金额</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_signOfAmount" xlink:label="signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_signOfAmount">度量的符号。只有在与“借项/贷项标识符”（debitCreditCode）联合使用时，提供四种可能的域；主要用于修正分录，保证在一个分录出错后，借项与贷项的合计不扩大。D+：增加借项；D-：减少借项；C+：增加贷项；C-：减少贷项。列举值包括：
++：加
+-：减
+plus：加
+minus：减</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_signOfAmount_2">额度的符号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_debitCreditCode" xlink:label="debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_debitCreditCode">本额度是借项、贷项抑或是未定义的可选标识符。列举值包括：
+D：借项
+C：贷项
+debit：借项
+credit：贷项
+undefined：未定义 </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_debitCreditCode_2">借项/贷项标识符</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingDate" xlink:label="postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_postingDate">在明细一级，表示会计意义日期。不管文档接收、输入、或者过账的日期是哪天，这里表示分录的会计日期。如果要看到2002年3月5日的财务结果，并且本分录给定的就是那个日期的话，分录就是2002年3月5日结果的一部分。本过账日期不同于“分录信息”（entryHeader）一级上的“分录过账日期”（postedDate）。如果要为会计意义设定一个特定的日期，就在这里设定。单个分录可以表示多个日期，但过账日期只有一个。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_postingDate_2">过账日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierReference" xlink:label="identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierReference">包含客户、供应商或者员工的标识符信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierReference_2">标识符参考结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierCode" xlink:label="identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierCode">与“标识符参考结构”（identifierReference）相关的内部标识符号。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierCode_2">（内部）标识符号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierExternalReference" xlink:label="identifierExternalReference"/>
+<label xlink:type="resource" xlink:label="label_identifierExternalReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierExternalReference">包含与标识符相关的外部机构信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierExternalReference" xlink:to="label_identifierExternalReference"/>
+<label xlink:type="resource" xlink:label="label_identifierExternalReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierExternalReference_2">外部机构结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierExternalReference" xlink:to="label_identifierExternalReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthorityCode" xlink:label="identifierAuthorityCode"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierAuthorityCode">与“标识符参考结构”（identifierReference）相关的外部机构（例如，税务局）的标识符号。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityCode" xlink:to="label_identifierAuthorityCode"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierAuthorityCode_2">外部机构标识符号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityCode" xlink:to="label_identifierAuthorityCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthority" xlink:label="identifierAuthority"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthority" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierAuthority">外部机构的名称（例如，税务局）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthority" xlink:to="label_identifierAuthority"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthority_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierAuthority_2">外部机构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthority" xlink:to="label_identifierAuthority_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthorityVerificationDate" xlink:label="identifierAuthorityVerificationDate"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityVerificationDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierAuthorityVerificationDate">外部机构最后一次执行核查的日期。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityVerificationDate" xlink:to="label_identifierAuthorityVerificationDate"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityVerificationDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierAuthorityVerificationDate_2">外部机构核查日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityVerificationDate" xlink:to="label_identifierAuthorityVerificationDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierOrganizationType" xlink:label="identifierOrganizationType"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierOrganizationType">标识符的组织类型，列举值包括：
+individual：个人
+organization：组织
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationType" xlink:to="label_identifierOrganizationType"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierOrganizationType_2">标识符组织类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationType" xlink:to="label_identifierOrganizationType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierOrganizationTypeDescription" xlink:label="identifierOrganizationTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierOrganizationTypeDescription">对标识符组织类型的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationTypeDescription" xlink:to="label_identifierOrganizationTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierOrganizationTypeDescription_2">标识符组织类型描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationTypeDescription" xlink:to="label_identifierOrganizationTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierDescription" xlink:label="identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierDescription">对“标识符参考结构”（identifierReferenc）的文字描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierDescription_2">标识符描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierType" xlink:label="identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierType">标识符类型，列举值包括： 
+C：客户
+customer：客户
+E：员工
+employee：员工
+V：供应商
+vendor：供应商
+O：其它
+other：其他
+I：内部销售人员
+salesperson-internal：内部销售人员
+X：外部销售人员
+salesperson-external：外部销售人员
+N：承包商
+contractor：承包商</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierType_2">标识符类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierCategory" xlink:label="identifierCategory"/>
+<label xlink:type="resource" xlink:label="label_identifierCategory" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierCategory">对客户、供应商或者员工分类（诸如居民/商业/机构/政府，或者零售/批发，或者其他按照业务进行的分类）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCategory" xlink:to="label_identifierCategory"/>
+<label xlink:type="resource" xlink:label="label_identifierCategory_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierCategory_2">标识符类别</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCategory" xlink:to="label_identifierCategory_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEMail" xlink:label="identifierEMail"/>
+<label xlink:type="resource" xlink:label="label_identifierEMail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierEMail">包含标识符的电子邮件地址信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEMail" xlink:to="label_identifierEMail"/>
+<label xlink:type="resource" xlink:label="label_identifierEMail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierEMail_2">标识符电子邮件地址结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEMail" xlink:to="label_identifierEMail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEmailAddressUsage" xlink:label="identifierEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddressUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierEmailAddressUsage">标识符电子邮件地址的用途（例如，订货、总部、投资者关系）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="label_identifierEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddressUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierEmailAddressUsage_2">标识符电子邮件地址用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="label_identifierEmailAddressUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEmailAddress" xlink:label="identifierEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierEmailAddress">标识符的电子邮件地址。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="label_identifierEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierEmailAddress_2">标识符电子邮件地址</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="label_identifierEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhoneNumber" xlink:label="identifierPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierPhoneNumber">包含与标识符有关的电话号码信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="label_identifierPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierPhoneNumber_2">标识符电话号码结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="label_identifierPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhoneNumberDescription" xlink:label="identifierPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierPhoneNumberDescription">标识符电话号码的用途，列举值包括： 
+bookkeeper：记账员
+controller：会计主管
+direct：直通fax：传真
+investor-relations：投资者关系
+main：总机
+switchboard：交换台
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="label_identifierPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierPhoneNumberDescription_2">标识符电话号码用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="label_identifierPhoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhone" xlink:label="identifierPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierPhone" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierPhone">标识符的电话号码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhone" xlink:to="label_identifierPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierPhone_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierPhone_2">标识符电话号码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhone" xlink:to="label_identifierPhone_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFaxNumber" xlink:label="identifierFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierFaxNumber">包含与标识符有关的传真号码信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="label_identifierFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierFaxNumber_2">标识符传真号码结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="label_identifierFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFaxNumberUsage" xlink:label="identifierFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumberUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierFaxNumberUsage">标识符传真号码的用途（例如，订货、总部、投资者关系）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="label_identifierFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumberUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierFaxNumberUsage_2">标识符传真号码用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="label_identifierFaxNumberUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFax" xlink:label="identifierFax"/>
+<label xlink:type="resource" xlink:label="label_identifierFax" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierFax">标识符的传真号码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFax" xlink:to="label_identifierFax"/>
+<label xlink:type="resource" xlink:label="label_identifierFax_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierFax_2">标识符传真号码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFax" xlink:to="label_identifierFax_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactInformationStructure" xlink:label="identifierContactInformationStructure"/>
+<label xlink:type="resource" xlink:label="label_identifierContactInformationStructure" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactInformationStructure">标识符联系方式信息的结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactInformationStructure" xlink:to="label_identifierContactInformationStructure"/>
+<label xlink:type="resource" xlink:label="label_identifierContactInformationStructure_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactInformationStructure_2">标识符联系信息结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactInformationStructure" xlink:to="label_identifierContactInformationStructure_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPrefix" xlink:label="identifierContactPrefix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPrefix" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactPrefix">标识符联系方式的尊称（例如博士、先生、女士）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPrefix" xlink:to="label_identifierContactPrefix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPrefix_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactPrefix_2">标识符联系尊称</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPrefix" xlink:to="label_identifierContactPrefix_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactLastName" xlink:label="identifierContactLastName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactLastName" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactLastName">标识符联系方式的姓氏。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactLastName" xlink:to="label_identifierContactLastName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactLastName_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactLastName_2">标识符联系姓氏</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactLastName" xlink:to="label_identifierContactLastName_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFirstName" xlink:label="identifierContactFirstName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFirstName" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactFirstName">标识符联系方式的名字。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFirstName" xlink:to="label_identifierContactFirstName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFirstName_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactFirstName_2">标识符联系名字</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFirstName" xlink:to="label_identifierContactFirstName_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactSuffix" xlink:label="identifierContactSuffix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactSuffix" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactSuffix">标识符联系方式的后缀（例如，MD、CPA、Jr.）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactSuffix" xlink:to="label_identifierContactSuffix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactSuffix_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactSuffix_2">标识符联系后缀</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactSuffix" xlink:to="label_identifierContactSuffix_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactAttentionLine" xlink:label="identifierContactAttentionLine"/>
+<label xlink:type="resource" xlink:label="label_identifierContactAttentionLine" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactAttentionLine">标识符联系方式的经办人。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactAttentionLine" xlink:to="label_identifierContactAttentionLine"/>
+<label xlink:type="resource" xlink:label="label_identifierContactAttentionLine_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactAttentionLine_2">标识符联系经办人</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactAttentionLine" xlink:to="label_identifierContactAttentionLine_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPositionRole" xlink:label="identifierContactPositionRole"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPositionRole" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactPositionRole">标识符联系方式的职位或者职务。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPositionRole" xlink:to="label_identifierContactPositionRole"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPositionRole_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactPositionRole_2">标识符联系职位/职务</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPositionRole" xlink:to="label_identifierContactPositionRole_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhone" xlink:label="identifierContactPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhone" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactPhone">包含标识符联系电话号码信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhone" xlink:to="label_identifierContactPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhone_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactPhone_2">标识符联系电话号码结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhone" xlink:to="label_identifierContactPhone_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhoneNumberDescription" xlink:label="identifierContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactPhoneNumberDescription">标识符联系电话号码的用途，列举值包括： 
+bookkeeper：记账员
+controller：会计主管
+direct：直通fax：传真
+investor-relations：投资者关系
+main：总机
+switchboard：交换台
+other：其它</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="label_identifierContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactPhoneNumberDescription_2">标识符联系电话号码用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="label_identifierContactPhoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhoneNumber" xlink:label="identifierContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactPhoneNumber">标识符联系电话号码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="label_identifierContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactPhoneNumber_2">标识符联系电话号码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="label_identifierContactPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFax" xlink:label="identifierContactFax"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFax" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactFax">包含标识符联系传真号码信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFax" xlink:to="label_identifierContactFax"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFax_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactFax_2">标识符联系传真号码结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFax" xlink:to="label_identifierContactFax_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFaxNumberUsage" xlink:label="identifierContactFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumberUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactFaxNumberUsage">标识符联系传真号码的用途（例如，订货、总部、投资者关系）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="label_identifierContactFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumberUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactFaxNumberUsage_2">标识符联系传真号码用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="label_identifierContactFaxNumberUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFaxNumber" xlink:label="identifierContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactFaxNumber">标识符联系传真号码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="label_identifierContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactFaxNumber_2">标识符联系传真号码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="label_identifierContactFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmail" xlink:label="identifierContactEmail"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactEmail">包含标识符联系电子邮件地址信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmail" xlink:to="label_identifierContactEmail"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactEmail_2">标识符联系电子邮件地址结构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmail" xlink:to="label_identifierContactEmail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmailAddressUsage" xlink:label="identifierContactEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddressUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactEmailAddressUsage">标识符联系电子邮件地址的用途（例如，订货、总部、投资者关系）。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="label_identifierContactEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddressUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactEmailAddressUsage_2">标识符联系电子邮件地址用途</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="label_identifierContactEmailAddressUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmailAddress" xlink:label="identifierContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactEmailAddress">标识符联系电子邮件地址。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="label_identifierContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactEmailAddress_2">标识符联系电子邮件地址</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="label_identifierContactEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactType" xlink:label="identifierContactType"/>
+<label xlink:type="resource" xlink:label="label_identifierContactType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierContactType">标识符联系方式的类型。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactType" xlink:to="label_identifierContactType"/>
+<label xlink:type="resource" xlink:label="label_identifierContactType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierContactType_2">标识符联系类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactType" xlink:to="label_identifierContactType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierActive" xlink:label="identifierActive"/>
+<label xlink:type="resource" xlink:label="label_identifierActive" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_identifierActive">表明标识符是有效（="true"）抑或无效（="false"）的布尔值。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierActive" xlink:to="label_identifierActive"/>
+<label xlink:type="resource" xlink:label="label_identifierActive_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_identifierActive_2">标识符有效性</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierActive" xlink:to="label_identifierActive_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentType" xlink:label="documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentType">描述原始源文件的列举域，列举值包括：
+check：支票
+debit-memo：借项通知单
+credit-memo：贷项通知单
+finance-charge：财务费用单据
+invoice：发票
+order-customer：客户订单
+order-vendor：供应商订单
+payment-other：其他支付单据
+reminder：催缴单
+tegata：本票
+voucher：凭证
+shipment：装运单
+receipt：收据
+manual-adjustment：手工调整单
+other：其他</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentType_2">原始文件类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentTypeDescription" xlink:label="documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentTypeDescription">对原始文件类型的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentTypeDescription_2">原始文件类型描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_invoiceType" xlink:label="invoiceType"/>
+<label xlink:type="resource" xlink:label="label_invoiceType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_invoiceType">发票类型，列举值包括：
+ePos：电子支付终端发票
+self-billed：自用发票</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="invoiceType" xlink:to="label_invoiceType"/>
+<label xlink:type="resource" xlink:label="label_invoiceType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_invoiceType_2">发票类型</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="invoiceType" xlink:to="label_invoiceType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentNumber" xlink:label="documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentNumber">发票、支票、凭证，或者其他源文件的标识符。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentNumber_2">原始文件号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentApplyToNumber" xlink:label="documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentApplyToNumber">主要发票的文件号，用于冲销支付、借项和贷项；对于发票而言，通常与“原始文件号”（documentNumber）相同。在计算一张发票的未结清余额，或者在计算提前支付或不完全支付的未结清额度时，允许计算未结清项。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentApplyToNumber_2">应用号</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentReference" xlink:label="documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentReference">上述原始文件的内部参考；用于跟踪本原始文件的内部指定编号。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentReference_2">原始文件参考</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentDate" xlink:label="documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_documentDate">实际的原始文件上的日期时间（发票、凭证、支票日期）。不太可能是纸质文件上的时间，而可能是电子文件上的时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_documentDate_2">文件日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingStatus" xlink:label="postingStatus"/>
+<label xlink:type="resource" xlink:label="label_postingStatus" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_postingStatus">
+deferred：递延。虽然已经输入，但是直到以后的某个时间才能过账
+posted：已过账。已经过账
+proposed：提议。一个必须经过批准的提议项
+simulated：模拟。一个做假设分析用的模拟项
+tax：纳税。专门的纳税分录
+unposted：未过账。已经输入，但还没有过账或者还没有验证
+cancelled：撤销。已经输入，并且后来撤销了
+other：其它。其它状态，应在“过账状态描述”（postingStatusDescription）中说明</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatus" xlink:to="label_postingStatus"/>
+<label xlink:type="resource" xlink:label="label_postingStatus_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_postingStatus_2">过账状态</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatus" xlink:to="label_postingStatus_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingStatusDescription" xlink:label="postingStatusDescription"/>
+<label xlink:type="resource" xlink:label="label_postingStatusDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_postingStatusDescription">对过账状态的描述，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatusDescription" xlink:to="label_postingStatusDescription"/>
+<label xlink:type="resource" xlink:label="label_postingStatusDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_postingStatusDescription_2">过账状态描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatusDescription" xlink:to="label_postingStatusDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_xbrlInfo" xlink:label="xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_xbrlInfo">这会上卷到XBRL报告信息。可以重复多次使用的父级标签，从而可以通过许多个分类标准报告同一项。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_xbrlInfo_2">XBRL信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_xbrlInclude" xlink:label="xbrlInclude"/>
+<label xlink:type="resource" xlink:label="label_xbrlInclude" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_xbrlInclude">表明给定的信息是：
+beginning_balance：期初余额
+ending_balance：期末余额
+period_change：期间变更</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInclude" xlink:to="label_xbrlInclude"/>
+<label xlink:type="resource" xlink:label="label_xbrlInclude_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_xbrlInclude_2">XBRL分配</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInclude" xlink:to="label_xbrlInclude_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_summaryReportingElement" xlink:label="summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_summaryReportingElement">在一个XML分类标准内部相关的XBRL元素或者XML元素，映射到一个XBRL概念。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_summaryReportingElement_2">汇总报告元素</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailMatchingElement" xlink:label="detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_detailMatchingElement">在XBRL-GL实例中相关的XBRL元素。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_detailMatchingElement_2">明细匹配元素</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailComment" xlink:label="detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_detailComment">仅对本明细行的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_detailComment_2">明细描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_dateAcknowledged" xlink:label="dateAcknowledged"/>
+<label xlink:type="resource" xlink:label="label_dateAcknowledged" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_dateAcknowledged">装运/接收商品/服务的承认日期时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dateAcknowledged" xlink:to="label_dateAcknowledged"/>
+<label xlink:type="resource" xlink:label="label_dateAcknowledged_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_dateAcknowledged_2">承认日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dateAcknowledged" xlink:to="label_dateAcknowledged_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_confirmedDate" xlink:label="confirmedDate"/>
+<label xlink:type="resource" xlink:label="label_confirmedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_confirmedDate">装运/接收的确认日期时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="confirmedDate" xlink:to="label_confirmedDate"/>
+<label xlink:type="resource" xlink:label="label_confirmedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_confirmedDate_2">确认日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="confirmedDate" xlink:to="label_confirmedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_shipFrom" xlink:label="shipFrom"/>
+<label xlink:type="resource" xlink:label="label_shipFrom" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_shipFrom">如果用到了，就参照“组织位置标识符”（organizationAddressLocationIdentifier）。否则，不限格式。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipFrom" xlink:to="label_shipFrom"/>
+<label xlink:type="resource" xlink:label="label_shipFrom_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_shipFrom_2">装运自</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipFrom" xlink:to="label_shipFrom_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_shipReceivedDate" xlink:label="shipReceivedDate"/>
+<label xlink:type="resource" xlink:label="label_shipReceivedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_shipReceivedDate">装运/接收商品/服务的日期时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipReceivedDate" xlink:to="label_shipReceivedDate"/>
+<label xlink:type="resource" xlink:label="label_shipReceivedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_shipReceivedDate_2">装运/接收日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipReceivedDate" xlink:to="label_shipReceivedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_maturityDate" xlink:label="maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_maturityDate">到期日期时间。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_maturityDate_2">到期日期</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_terms" xlink:label="terms"/>
+<label xlink:type="resource" xlink:label="label_terms" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_terms">折扣/支付条款。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms"/>
+<label xlink:type="resource" xlink:label="label_terms_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_terms_2">支付条款</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxes" xlink:label="taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxes">包含与税费有关的信息的元组。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxes_2">税费信息</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxAuthority" xlink:label="taxAuthority"/>
+<label xlink:type="resource" xlink:label="label_taxAuthority" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxAuthority">相关税务机构的名称。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAuthority" xlink:to="label_taxAuthority"/>
+<label xlink:type="resource" xlink:label="label_taxAuthority_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxAuthority_2">税务机构</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAuthority" xlink:to="label_taxAuthority_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxTableCode" xlink:label="taxTableCode"/>
+<label xlink:type="resource" xlink:label="label_taxTableCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxTableCode">相关税务机构使用的税费报表代码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxTableCode" xlink:to="label_taxTableCode"/>
+<label xlink:type="resource" xlink:label="label_taxTableCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxTableCode_2">税费报表代码</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxTableCode" xlink:to="label_taxTableCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxDescription" xlink:label="taxDescription"/>
+<label xlink:type="resource" xlink:label="label_taxDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxDescription">对税务机构的描述。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxDescription" xlink:to="label_taxDescription"/>
+<label xlink:type="resource" xlink:label="label_taxDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxDescription_2">税费描述</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxDescription" xlink:to="label_taxDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxAmount" xlink:label="taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxAmount">税费额度。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxAmount_2">税额</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxBasis" xlink:label="taxBasis"/>
+<label xlink:type="resource" xlink:label="label_taxBasis" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxBasis">税额的基准。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxBasis" xlink:to="label_taxBasis"/>
+<label xlink:type="resource" xlink:label="label_taxBasis_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxBasis_2">税额基准</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxBasis" xlink:to="label_taxBasis_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxExchangeRate" xlink:label="taxExchangeRate"/>
+<label xlink:type="resource" xlink:label="label_taxExchangeRate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxExchangeRate">[弃用。“税费兑换比率”（taxExchangeRate）应该用在gl-muc调色板中。]用原始币种跟踪外币的额度。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxExchangeRate" xlink:to="label_taxExchangeRate"/>
+<label xlink:type="resource" xlink:label="label_taxExchangeRate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxExchangeRate_2">税费兑换比率</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxExchangeRate" xlink:to="label_taxExchangeRate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxPercentageRate" xlink:label="taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxPercentageRate">增值税或者其它税费的百分比率，通常是0与1.0之间的一个数。例如，用0.5表示50%。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxPercentageRate_2">税费百分比率</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCode" xlink:label="taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxCode">税费的等级或者类别。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxCode_2">税费类别</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCommentExemption" xlink:label="taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="zh" id="label_taxCommentExemption">描述免税理由或者其它说明的附加文字/代码。</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="zh" id="label_taxCommentExemption_2">税费说明/免税原因</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption_2"/>
+  </labelLink>
+</linkbase>

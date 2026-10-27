@@ -1,0 +1,192 @@
+{
+  "entryPoint": "http://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-plt-all-2015-03-25.xsd",
+  "version": "2015-03-25",
+  "modules": [
+    "COR",
+    "BUS"
+  ],
+  "source": "https://specifications.xbrl.org/work-product-index-xbrl-gl-xbrl-gl-2015.html",
+  "originalFilesUnmodified": true,
+  "files": [
+    {
+      "file": "www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd",
+      "source": "https://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd",
+      "sha256": "5dbad94cecf42918b976449a8e1cb800d57e96442a9d0f5c00ca77e4da831827",
+      "bytes": 23637
+    },
+    {
+      "file": "www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd",
+      "source": "https://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd",
+      "sha256": "f906cd30bc47a81bd1c97e24447f4917b21eb3d8a8b4fc520129ce2534ac5bca",
+      "bytes": 16088
+    },
+    {
+      "file": "www.xbrl.org/2003/xl-2003-12-31.xsd",
+      "source": "https://www.xbrl.org/2003/xl-2003-12-31.xsd",
+      "sha256": "e28b0965d34f4879833b433a62d0d1e86e8b1f22e6b7642bab861983f5bb5818",
+      "bytes": 8734
+    },
+    {
+      "file": "www.xbrl.org/2003/xlink-2003-12-31.xsd",
+      "source": "https://www.xbrl.org/2003/xlink-2003-12-31.xsd",
+      "sha256": "5ffa8cb747ccd11e0d6420cf5668b60e3b7a64e20915d0e1774e5559d3343971",
+      "bytes": 3350
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/gl-bus-2015-03-25-presentation.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/gl-bus-2015-03-25-presentation.xml",
+      "sha256": "676727318a4ce33501f16a9543adc3cbd9713f20c8edfffc1f247028518b32e1",
+      "bytes": 87083
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/gl-bus-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/gl-bus-2015-03-25.xsd",
+      "sha256": "49867905e5c8c32cde12ca5a5ec4b23d7b3452283e30f4393903db1157635484",
+      "bytes": 39207
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-es.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-es.xml",
+      "sha256": "c184f4ddc02d7b8fab1ef397c1be8419cd0df17bc3cd0d7bc502bdc5e3c6c198",
+      "bytes": 170642
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-fi.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-fi.xml",
+      "sha256": "1ba5c0aed57df836d7d7208ddb0df109bdb4426ac785f99789709d15b818fc6c",
+      "bytes": 17464
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-fr-CA.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-fr-CA.xml",
+      "sha256": "7b8fe48858c1e2c26125d6ef72e50ae1e25e64fb416ea816cd77c11e06841273",
+      "bytes": 176593
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-it.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-it.xml",
+      "sha256": "f496df8718400359d86d5fc7fb528903b742460b9e5dbafb5ddc5cb1bf6018ee",
+      "bytes": 176603
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-ja.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-ja.xml",
+      "sha256": "57e0d28998ee60fc19f7db9e988732513d45d60b30c445e709b9fb51a303fa82",
+      "bytes": 176597
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-pt-BR.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-pt-BR.xml",
+      "sha256": "31e8e60394fa0f235195f64398335a7fcde01f1ecac553f72b2ed9dee7c298d1",
+      "bytes": 174591
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-tr.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-tr.xml",
+      "sha256": "49e8e94a761eaba7290fd93bdcce1a51533ae1b3b89bfead96729aac3399654f",
+      "bytes": 48914
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-zh.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label-zh.xml",
+      "sha256": "6b75f8aeb5df903d15e2489e0b8df6c3a5a975c515d4bd3564813956e637ce12",
+      "bytes": 169362
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/bus/lang/gl-bus-2015-03-25-label.xml",
+      "sha256": "175f8d3569b6169ee07ba3af9f0e5b19c5f6cf7eb1963b69d143ea37ac87a037",
+      "bytes": 177703
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/gl-cor-2015-03-25-presentation.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/gl-cor-2015-03-25-presentation.xml",
+      "sha256": "cbe29e290d2e1444918b83db4777b0ba53be9d4a7efb278cfda8d74a691e20d8",
+      "bytes": 53958
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/gl-cor-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/gl-cor-2015-03-25.xsd",
+      "sha256": "01f49cff4c9af0354c0ea38197f1fc21aaea50bbcd2a89666064aa2ceab255d7",
+      "bytes": 22420
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-es.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-es.xml",
+      "sha256": "fc66a58af53595707b8ce40e990e53264f41744f7ea3003365e6a038c47365c2",
+      "bytes": 115627
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-fi.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-fi.xml",
+      "sha256": "37d7793a6b9166a6ac02778d1643b63011c8f9da1a8200ecf190e594bca17386",
+      "bytes": 40037
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-fr-CA.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-fr-CA.xml",
+      "sha256": "1a7e994bd4e21eb2085507bd9fa2a0d7ae2d96737667e6569ae5eee833920023",
+      "bytes": 120269
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-it.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-it.xml",
+      "sha256": "91264f21fea005a49303778016200981f620c5881c0be3b440200cb499deb01d",
+      "bytes": 122361
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-ja.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-ja.xml",
+      "sha256": "84a74d0addb2ef9da526cdc7a0c989978cd6db9d4d3c8609e58b2a9adfcf3577",
+      "bytes": 120247
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-pt-BR.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-pt-BR.xml",
+      "sha256": "5678b2b590972173a08429f086e258ed88876c314b8d5fb80bcfc2a45b4c300d",
+      "bytes": 118735
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-tr.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-tr.xml",
+      "sha256": "c4f0212a63de241e410fa64b0c67f43c2dceb6afa434c3182386c8136fccd2b3",
+      "bytes": 32647
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-zh.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label-zh.xml",
+      "sha256": "da9ea74d4be810873a1440b16833cb4957b0f341c05c199ae7aa3ce84af4065b",
+      "bytes": 114007
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label.xml",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/cor/lang/gl-cor-2015-03-25-label.xml",
+      "sha256": "fcf9768b8daa9c9c45a2c6883c91c40b52d31f6f4cd8ccca2f1d639abc0465ff",
+      "bytes": 115880
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/gen/gl-gen-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/gen/gl-gen-2015-03-25.xsd",
+      "sha256": "21d62a9046aa2f8c4f7ee7858391b18fca4b387831306af4946abb55a63cc410",
+      "bytes": 9557
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-bus-content-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-bus-content-2015-03-25.xsd",
+      "sha256": "bf578295848cb379a18e1f85115cf7f81d8b57ece435d9c5c241a68ea9efaaa0",
+      "bytes": 37118
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-cor-content-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-cor-content-2015-03-25.xsd",
+      "sha256": "5d2de6b9f7c7836f78758af0a2b8ca89832710ef8d6c3269630197b86f8379ff",
+      "bytes": 30647
+    },
+    {
+      "file": "www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-plt-all-2015-03-25.xsd",
+      "source": "https://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-plt-all-2015-03-25.xsd",
+      "sha256": "b04eb554cf893c6990f4a5cee3346f61b08b5871044c1bd3f64a723671fe8baa",
+      "bytes": 5296
+    }
+  ]
+}

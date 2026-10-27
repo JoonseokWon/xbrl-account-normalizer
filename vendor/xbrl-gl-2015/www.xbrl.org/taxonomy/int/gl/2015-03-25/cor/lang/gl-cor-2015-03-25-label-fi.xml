@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+<labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_documentInfo">Vienteihin liittyvän tositteen tiedot.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_documentInfo_2">Tositetiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesType" xlink:label="entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entriesType">account: Tili, tieto jolla täydennetään tilikarttaa. 
+balance: Saldo, tilin vientien summa ajanjaksolta
+entries: Viennit, luettelo yksittäisistä kirjanpidon vienneistä 
+journal: Päiväkirja, täsmäävä (Dr = Kr) lista vienneistä jollekin ajanjaksolle sisältäen aloittavan saldon.  
+ledger: Pääkirja, luettelo tapahtumista tilille (tileille) valitulla ajanjaksolla. Debit-saldojen ei tarvitse olla samansuuruisia credit-saldojen kanssa.   
+assets: Varat, listaus avoimista saamisista, varastosta, pysyvistä vastaavista tai muusta saman luonteisista.  
+trialBalance:"Jäännöstase", kauden tapahtumien kullekkin tilille kerryttämien saldojen summa, Dr=Kr
+taxtables:  verotaulukoita esittävien tietueiden tulkitsemisen helpottamiseksi.
+Järjestetään usein päivämäärän tai tilin mukaisesti. Termeillä voi olla  eri merkityksiä eri tilanteissa.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entriesType_2">Tositelaji</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_uniqueID" xlink:label="uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_uniqueID">Kirjanpitotositteen yksilöivä tunniste. Yhtä kuin tositenumero.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_uniqueID_2">Lähdetositenumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesComment" xlink:label="entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entriesComment">Koko tositetta koskeva selite.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entriesComment_2">Tositeselite </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entityInformation" xlink:label="entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entityInformation">Ylätason elementti. Sisältää tietoa raportoivasta yrityksestä.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entityInformation_2">Yrityksen tiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entryHeader">Viennin yleistiedot.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entryHeader_2">Viennin yleistiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postedDate" xlink:label="postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_postedDate">Päivämäärä, jona kyseinen vienti on vahvistettu pääkirjaan. Ei välttämättä ole sama kuin kirjanpidon kannalta merkitsevä päivämäärä "Kirjauspäivä"</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_postedDate_2">Kirjauksen luomispäivä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredBy" xlink:label="enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_enteredBy">Alkuperäisen kirjauksen tekijän nimi tai nimikirjaimet</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_enteredBy_2">Kirjauksen tekijä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredDate" xlink:label="enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_enteredDate">Ilmaisee ajankohdan, jolloin vientiä on viimeksi muokattu.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_enteredDate_2">Viimeisin muokkauspäivämäärä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_sourceJournalID" xlink:label="sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_sourceJournalID">Lähdejärjestelmän tunnus, jonka vientiä käsitellään. Tunnuksen täytyy olla jokin seuraavista kirjainlyhenteistä:
+cd    maksut kassasta (cash disbursements)
+cr     kassaan maksut (cash receipts)
+fa     käyttöomaisuus (fixed assets)
+gi     tilisiirto tai muiden rahatapahtumien oikaisut (giro/other bank adjustments)
+gj     kirjanpidon päiväkirja (general journal)
+im    varastokirjanpito (inventory management)
+jc     projektiseuranta (job cost)
+pj     ostoreskontra (purchase journal)
+pl     palkkahallinto (payroll journal)
+sj     myyntireskontra (sales journal)
+se     vakiotapahtumat (standard entries)
+ud    käyttäjän itse määrittelemä (user defined)
+ot     muu  (other sources of entries)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_sourceJournalID_2">Lähdejärjestelmä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumber" xlink:label="entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entryNumber">Tunniste lähdejärjestelmässä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entryNumber_2">Laskunnumero </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryComment" xlink:label="entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entryComment">Rivitason yksityiskohtaisempi selitys viennille.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entryComment_2">Vientiselite</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryDetail" xlink:label="entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_entryDetail">Vientiin liittyvät tiedot.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_entryDetail_2">Viennin tiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumber" xlink:label="lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_lineNumber">Tunniste tietylle viennille.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_lineNumber_2">Vientirivinnumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_account" xlink:label="account"/>
+<label xlink:type="resource" xlink:label="label_account" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_account">Vientiin liittyvien tilitietojen esittämiseen.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account"/>
+<label xlink:type="resource" xlink:label="label_account_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_account_2">Tilitiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainID" xlink:label="accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountMainID">Kirjanpidon pääkirjatili, voidaan käyttää myös Raportointikoodiston tiliä vastaavan koodin esittämiseen.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountMainID_2">Tilinumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainDescription" xlink:label="accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountMainDescription">Tilin nimi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountMainDescription_2">Tilin nimi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountPurposeCode" xlink:label="accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountPurposeCode">Esimerkiksi kirjanpidon pääkirjatili tai raportointikoodi, katso enumeration</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountPurposeCode_2">Pääkirjatilin tyyppi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountType" xlink:label="accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountType">Tililuokittelu, sallitut arvot:
+account: tili
+bank: pankki
+employee: työntekijä
+customer: asiakas
+job: työtehtävä
+vendor: myyjä
+measurable: mitattava
+statistical: tilastollinen
+other: muu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountType_2">Tililuokka</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSub" xlink:label="accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountSub">Seurantakohteiden tiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountSub_2">Seurantakohteiden tiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubDescription" xlink:label="accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountSubDescription">Seurantakohteen tunnukseen liittyvä ihmisluettava kuvaus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountSubDescription_2">Seurantakohteen kuvaus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubID" xlink:label="accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountSubID">Dimensiot, kustannuspaikat, projektit (tunnus)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountSubID_2">Seurantakohde</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubType" xlink:label="accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_accountSubType">Esimerkiksi osasto, kustannuspaikka, projekti tai muu vastaava.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_accountSubType_2">Seurantakohteen tyyppi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_amount" xlink:label="amount"/>
+<label xlink:type="resource" xlink:label="label_amount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_amount">Tällä elementillä esitetään pääasiallinen rahamäärä, joka muodostaa kyseisen viennin. Ohjeistus: selvyyden vuoksi etumerkki olisi hyvä esittää vain yhdessä paikassa (sisällä summassa, Rahamäärän etumerkki-elementissä, Debit/credit-tunniste).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount"/>
+<label xlink:type="resource" xlink:label="label_amount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_amount_2">Rahamäärä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_signOfAmount" xlink:label="signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_signOfAmount">Rahamäärän etumerkki "+" tai "-"</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_signOfAmount_2">Rahamäärän etumerkki</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_debitCreditCode" xlink:label="debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_debitCreditCode">Valinnainen tunniste määrittämään, onko rahamäärä (D)debit, (C)kredit vai määrittelemätön (undefined)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_debitCreditCode_2">Debit/kredit-tunniste</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingDate" xlink:label="postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_postingDate">Tarkoittaa kirjanpidon kannalta merkitsevää päivämäärää eli kirjauspäivää.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_postingDate_2">Tositepäivä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierReference" xlink:label="identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierReference">Osapuoliin liittyvien tietojen esittämiseen.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierReference_2">Osapuolitiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierCode" xlink:label="identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierCode">Sisäinen tunniste.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierCode_2">Asiakasnumero/toimittaja</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierDescription" xlink:label="identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierDescription">Esim. asiaakkaan tai toimittajan nimi.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierDescription_2">Osapuolen nimi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierType" xlink:label="identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierType">Osapuolen tyyppi: esim. asiakas-, toimittaja tai työntekijä. 
+C asiakas 
+E työntekijä 
+V myyjä 
+O muu
+I myyjä-sisäinen
+X myyjä-ulkoinen 
+N urakoitsija</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierType_2">Osapuolen tyyppi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentType" xlink:label="documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_documentType">Kuvaa alkuperäistä lähdeasiakirjan tyyppiä. Sallitut arvot:
+check: shekki
+debit-memo: veloitusmuistio
+credit-memo: hyvitysmuistio
+finance-charge: rahatapahtuma
+invoice: lasku
+order-customer: myyntitilaus
+order-vendor: ostotilaus
+payment-other: muu maksu
+reminder: muistutus
+tegata: lasku
+voucher: tosite
+shipment: lähetys
+receipt: kuitti
+manual-adjustment: jaksotus
+other: muu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_documentType_2">Alkuperäinen lähdeasiakirja</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentNumber" xlink:label="documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_documentNumber">Lasku, kuponki tai muu asiakirjatunniste</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_documentNumber_2">Alkuperäisen lähdeasiakirjan tunniste</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentApplyToNumber" xlink:label="documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_documentApplyToNumber">Esimerkiksi laskun osasuorituksiin liittyen.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_documentApplyToNumber_2">Alkuperäisen laskun numero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentDate" xlink:label="documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_documentDate">Asiakirjan päivämäärä.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_documentDate_2">Alkuperäisen lähdeasiakirjan päivämäärä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_xbrlInfo" xlink:label="xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_xbrlInfo">Ylätason elementti XBRL-raportointiin liitettäviä tietoja varten. Elementtiä voi toistaa useampaan kertaan, jotta viennit voidaan linkittää useampaan taksonomiaan. Kirjaukset tietylle tilille pitäisi liittää johdonmukaisesti samaan XBRL-elementtiin taksonomiassa.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_xbrlInfo_2">XBRL-tiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_summaryReportingElement" xlink:label="summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_summaryReportingElement">Liitetty XBRL- tai XML-elementti taksonomiassa.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_summaryReportingElement_2">Summaavan raportoinnin elementti</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailMatchingElement" xlink:label="detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_detailMatchingElement">Liitetty XBRL-elementti tapahtumatietojen dokumentissa (XBRL-GL instanssidokumentti)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_detailMatchingElement_2">Tiedot sisältävä elementti</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_maturityDate" xlink:label="maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_maturityDate">Eräpäivä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_maturityDate_2">Eräpäivä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_terms" xlink:label="terms"/>
+<label xlink:type="resource" xlink:label="label_terms" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_terms">Maskuehdot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms"/>
+<label xlink:type="resource" xlink:label="label_terms_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_terms_2">Maksuehdot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxes" xlink:label="taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_taxes">Verotukseen liittyvien tietojen esittäminen</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_taxes_2">Verotiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxAmount" xlink:label="taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_taxAmount">Viennistä kirjatun arvonlisäveron määrä (informatiivinen).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_taxAmount_2">ALV:n rahamäärä</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxPercentageRate" xlink:label="taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_taxPercentageRate">Veroprosentti ALV- tai muulle verolle. Ilmaistaan desimaalilukuna, jossa käytetään erottimena pistettä. Arvo väliltä 0 - 1.0. Esimerkiksi 24% ilmaistaan 0.24.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_taxPercentageRate_2">ALV-prosentti</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCode" xlink:label="taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_taxCode">Tarvitaan verokohtelukoodeja. EU-määrittely keskeneräinen (astuu voimaan voimaan 1.1.2017), toistaiseksi käytetään OVT(EDI):ssa käytettyjä koodeja.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_taxCode_2">Verokohtelukoodi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCommentExemption" xlink:label="taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_taxCommentExemption">Veroon liittyvä kommentti tai esimerkiksi poikkeuskäsittelyn syy</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_taxCommentExemption_2">Veroon liittyvä kommentti</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption_2"/>
+  </labelLink>
+</linkbase>

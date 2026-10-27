@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
     def refresh_action(self):
         index=self.stack.currentIndex();texts=['열 연결 설정','계정 후보 불러오기','변환 결과 보기','검토 엑셀 저장','']
         if index==0 and not self.has_file:texts[0]='새 파일 열기'
+        if index==3 and self.pages[3].xbrl_save.isEnabled():texts[3]='XBRL GL XML 저장'
         self.action.setText(texts[index]);self.action.setVisible(index!=4)
         self.action.setEnabled(not self.busy and (True if index==0 else self.has_file if index==1 else self.has_session))
         self.new_file.setVisible(index!=0 or self.has_file);self.new_file.setEnabled(not self.busy)

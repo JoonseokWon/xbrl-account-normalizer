@@ -22,7 +22,7 @@ def main():
            'review_history.py','field_mapping.py','workbook_export.py','demo_data.py','requirements.txt',
            'requirements-build.txt','설치.cmd','변환실행.cmd']
     files=[ROOT/name for name in names]
-    for folder in ('core','application','desktop','io_xlsx'):
+    for folder in ('core','application','desktop','io_xlsx','xbrl_gl'):
         files.extend(sorted((ROOT/folder).rglob('*.py')))
     for folder in ('config','docs','tests'):
         files.extend(sorted(path for path in (ROOT/folder).rglob('*') if path.is_file() and path.suffix in ('.json','.md','.py')))
@@ -35,6 +35,8 @@ def main():
     files.extend(ROOT/name for name in ('tools/company_cases.py','tools/prepare_company_cases.py','tools/create_company_workbooks.mjs',
                                       'tools/verify_company_mapping.py','tools/verify_multi_audit_import.py'))
     files.extend(sorted(path for path in (ROOT/'samples/여러회사매핑').glob('*') if path.is_file() and path.suffix in ('.xlsx','.json','.md')))
+    files.extend(sorted(path for path in (ROOT/'vendor/xbrl-gl-2015').rglob('*') if path.is_file()))
+    files.extend(ROOT/name for name in ('tools/fetch_xbrl_taxonomy.py','tools/verify_xbrl.py','tools/verify_xbrl_arelle.py'))
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')

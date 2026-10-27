@@ -1,0 +1,16 @@
+XBRL GL 2015 COR+BUS offline bundle
+
+The schema and linkbase files listed in manifest.json are unmodified files from
+XBRL International, downloaded from the official URLs recorded with their SHA256.
+Copyright XBRL International. Original copyright and legal references are retained.
+
+This app assembles an offline taxonomy package. It does not claim that the app,
+this package, an individual export, or its account classification is certified
+by XBRL International or accepted by a filing authority.
+
+Official recommendation and technical architecture:
+https://specifications.xbrl.org/work-product-index-xbrl-gl-xbrl-gl-2015.html
+https://www.xbrl.org/legal
+
+The app's shared chart of accounts remains its own chart. Those codes are values
+inside standard GL fields and are not IFRS/DART financial-reporting concepts.

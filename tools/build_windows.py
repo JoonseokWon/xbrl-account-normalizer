@@ -35,18 +35,18 @@ def main():
     specs.mkdir(parents=True,exist_ok=True)
     icon=work/'app.ico';make_icon(icon)
     os.environ['PYINSTALLER_CONFIG_DIR']=str(ROOT/'.build-cache/pyinstaller')
-    excluded=['numpy','pandas','matplotlib','scipy','IPython','PyQt5','PyQt6','PySide2','tkinter','lxml']
+    excluded=['numpy','pandas','matplotlib','scipy','IPython','PyQt5','PyQt6','PySide2','tkinter']
     spec=f'''from pathlib import Path
 from PyInstaller.utils.hooks import copy_metadata
 root=Path({str(ROOT)!r})
-data=[(str(root/name),name) for name in ('config','assets','samples')]
-for package in ('PySide6-Essentials','shiboken6','openpyxl'):
+data=[(str(root/name),name) for name in ('config','assets','samples','vendor')]
+for package in ('PySide6-Essentials','shiboken6','openpyxl','lxml'):
     data+=copy_metadata(package)
 a=Analysis([str(root/'main.py')],pathex={[str(ROOT),str(DEPS)]!r},
            binaries=[],datas=data,hiddenimports=['PySide6.QtSvg'],
            hookspath=[],hooksconfig={{}},runtime_hooks=[],excludes={excluded!r},noarchive=False)
 # Qt uses the Windows ICU API. Do not shadow it with another Python package's
-# incompatible, identically named ICU DLL. Optional lxml is excluded above.
+# incompatible, identically named ICU DLL.
 a.binaries=[entry for entry in a.binaries if not
             (Path(entry[0]).name.lower().startswith('icu') and Path(entry[0]).suffix.lower()=='.dll')]
 pyz=PYZ(a.pure)
@@ -65,7 +65,7 @@ collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNo
     for path in (ROOT/'docs').iterdir():
         if path.is_file() and path.suffix in ('.md','.txt'):shutil.copy2(path,portable/'docs'/path.name)
     licenses=portable/'licenses';licenses.mkdir(exist_ok=True)
-    for name in ('PySide6-Essentials','shiboken6','openpyxl','et_xmlfile','Pillow','PyInstaller'):
+    for name in ('PySide6-Essentials','shiboken6','openpyxl','et_xmlfile','Pillow','PyInstaller','lxml'):
         package=distribution(name)
         for item in package.files or []:
             lower=str(item).lower()

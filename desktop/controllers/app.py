@@ -11,6 +11,7 @@ from io_xlsx.inspection import inspect_workbook
 from .jobs import Jobs
 from desktop.components.confirmation import confirm
 from .audit_export import choose_and_export
+from .xbrl_export import choose_and_export_xbrl
 from .work_actions import WorkActions
 from application.catalogs import load_catalog
 from application.support_preparation import prepare_support
@@ -31,6 +32,7 @@ class AppController(QObject):
         self.mapping.editor.decisionRequested.connect(self.review)
         self.results.exportRequested.connect(self.export);self.results.openFolderRequested.connect(self.open_results)
         self.results.auditExportRequested.connect(lambda:choose_and_export(self))
+        self.results.xbrlExportRequested.connect(lambda:choose_and_export_xbrl(self))
         self.results.supportRequested.connect(self.connect_support)
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
         self.work_actions=WorkActions(self)
@@ -41,7 +43,9 @@ class AppController(QObject):
             else:self.choose_file()
         elif index==1:self.load()
         elif index==2:self.window.show_page(3)
-        elif index==3:self.export()
+        elif index==3:
+            if self.results.xbrl_save.isEnabled():choose_and_export_xbrl(self)
+            else:self.export()
     def choose_file(self):
         if self.window.busy:return
         folder=self.path.parent if self.path else Path.home()/'Documents'
@@ -117,6 +121,9 @@ class AppController(QObject):
         self.window.notice.set_message('통합감사 입력 엑셀을 저장했어요. 통합감사프로그램의 원장·리드에서 등록해 주세요.')
     def open_results(self):
         if self.results.output_path:QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.results.output_path)))
+    def xbrl_export_ready(self,path):
+        self.finish_job();self.results.exported(path);self.window.show_page(3)
+        self.window.notice.set_message('XBRL GL XML을 저장했어요. 공식 스키마·행수·금액 확인 결과도 함께 보관했어요.')
     def open_data(self):
         path=user_data();path.mkdir(parents=True,exist_ok=True);QDesktopServices.openUrl(QUrl.fromLocalFile(str(path)))
     def connect_support(self):

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_creator" xlink:label="creator"/>
+<label xlink:type="resource" xlink:label="label_creator" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_creator">XBRL GL dokümanını oluşturan kişinin adı soyadı yazılacaktır.
+Kullanım: XBRL GL dokümanını oluşturan kişinin adı soyadı serbest metin biçiminde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creator" xlink:to="label_creator"/>
+<label xlink:type="resource" xlink:label="label_creator_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_creator_2">Oluşturan</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creator" xlink:to="label_creator_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_sourceApplication" xlink:label="sourceApplication"/>
+<label xlink:type="resource" xlink:label="label_sourceApplication" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_sourceApplication">Dokümanı oluşturmada kullanılan ve e-Defter uygulaması kapsamında uyumluluk testini geçmiş olan yazılım ya da paket programın adı yazılacaktır.
+Kullanım: Dokümanı    oluşturmada    kullanılan    ve    e-Defter    uygulaması kapsamında  uyumluluk  testini  geçmiş  olan  yazılım  ya  da  paket.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceApplication" xlink:to="label_sourceApplication"/>
+<label xlink:type="resource" xlink:label="label_sourceApplication_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_sourceApplication_2">Kaynak Uygulama</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceApplication" xlink:to="label_sourceApplication_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityPhoneNumber" xlink:label="entityPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_entityPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityPhoneNumber">İşletmenin telefon bilgisini içeren veri grubudur.
+Kullanım: 
+Bknz: phoneNumberDescription
+Bknz: phoneNumber</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPhoneNumber" xlink:to="label_entityPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_entityPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityPhoneNumber_2">İşletme Telefon Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPhoneNumber" xlink:to="label_entityPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_phoneNumberDescription" xlink:label="phoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_phoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_phoneNumberDescription">İşletme telefon bilgisinin nasıl tanımlandığı açıklanacaktır.
+Kullanım:Bu alana sadece sınırlı biçimde sayılmış olan kavramlar yazılabilecektir.
+bookkeeper: muhasebeci
+controller: denetim birimi
+direct: Direkt numara
+fax: faks
+investor-relations: yatırımcı ilişkileri
+main: merkez
+switchboard: telefon santrali
+other: diğer</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="phoneNumberDescription" xlink:to="label_phoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_phoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_phoneNumberDescription_2">İşletme Telefon Numarası Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="phoneNumberDescription" xlink:to="label_phoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_phoneNumber" xlink:label="phoneNumber"/>
+<label xlink:type="resource" xlink:label="label_phoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_phoneNumber">phoneNumberDescription alanında tanımlanan telefon numarası yazılacaktır.
+Kullanım: Üç hane şehirlerarası kod numarası ve yedi hane telefon numarası olmak üzere 10 haneli telefon numarası yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="phoneNumber" xlink:to="label_phoneNumber"/>
+<label xlink:type="resource" xlink:label="label_phoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_phoneNumber_2">İşletme Telefon Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="phoneNumber" xlink:to="label_phoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityFaxNumberStructure" xlink:label="entityFaxNumberStructure"/>
+<label xlink:type="resource" xlink:label="label_entityFaxNumberStructure" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityFaxNumberStructure">İşletme faks numarası bilgisini bulunduran veri grubudur.
+Kullanım: Bknz. entityFaxNumber</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityFaxNumberStructure" xlink:to="label_entityFaxNumberStructure"/>
+<label xlink:type="resource" xlink:label="label_entityFaxNumberStructure_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityFaxNumberStructure_2">İşletme Faks Numarası Yapısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityFaxNumberStructure" xlink:to="label_entityFaxNumberStructure_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityFaxNumber" xlink:label="entityFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_entityFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityFaxNumber">İşletme faks numarası yazılacaktır.
+Kullanım: Üç hane şehirlerarası kod numarası ve yedi hane telefon numarası olmak üzere on haneli faks numarası yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityFaxNumber" xlink:to="label_entityFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_entityFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityFaxNumber_2">İşletme Faks Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityFaxNumber" xlink:to="label_entityFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityEmailAddressStructure" xlink:label="entityEmailAddressStructure"/>
+<label xlink:type="resource" xlink:label="label_entityEmailAddressStructure" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityEmailAddressStructure">İşletmenin e-posta adresi bilgilerini bulunduran veri grubudur.
+Kullanım: Bknz. entityEmailAddress</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityEmailAddressStructure" xlink:to="label_entityEmailAddressStructure"/>
+<label xlink:type="resource" xlink:label="label_entityEmailAddressStructure_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityEmailAddressStructure_2">İşletme e-Posta Adres Yapısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityEmailAddressStructure" xlink:to="label_entityEmailAddressStructure_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityEmailAddress" xlink:label="entityEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_entityEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityEmailAddress">İşletmeye ait e-posta adresi yazılacaktır.
+Kullanım: İşletmeye ait e-posta adresi yazılacaktır. Gerçek kişi mükellefler şahıslarına ait e-posta adresini de yazabilirler.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityEmailAddress" xlink:to="label_entityEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_entityEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityEmailAddress_2">İşletme e-Posta Adresi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityEmailAddress" xlink:to="label_entityEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationIdentifiers" xlink:label="organizationIdentifiers"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifiers" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationIdentifiers">İşletme için çeşitli tanımlayıcıları içeren veri grubudur.
+Kullanım: 
+Bknz.organizationIdentifier 
+Bknz.organizationDescription</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifiers" xlink:to="label_organizationIdentifiers"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifiers_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationIdentifiers_2">Tanımlayıcılar</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifiers" xlink:to="label_organizationIdentifiers_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationIdentifier" xlink:label="organizationIdentifier"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifier" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationIdentifier">İşletmeyi tanıtmaya yarayan bir referans verisinin girildiği alandır.
+Kullanım: Tüzel kişiler için unvan ticaret sicil gazetesinde yer aldığı biçimde kısaltma yapılmaksızın eksiksiz biçimde yazılacaktır. Gerçek kişiler için ad soyad adı soyadı sırasına uygun biçimde yazılacaktır.Şubeli paket yüklenmek istendiğinde Şube ismi+“Şubesi” şeklinde yazılmalıdır. Şubeli paket yüklendiğinde şube ismine ek olarak şube numarası 4 hane olarak girilmelidir.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="label_organizationIdentifier"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifier_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationIdentifier_2">Kurum Tanımlayıcısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="label_organizationIdentifier_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationDescription" xlink:label="organizationDescription"/>
+<label xlink:type="resource" xlink:label="label_organizationDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationDescription">organizationIdentifier alanına yazılan tanıtıcı referansın açıklamasının yapıldığı alandır.
+Kullanım: Gerçek kişiler için “Adı Soyadı” tüzel kişiler  için “Kurum Unvanı” ifadesi yazılacaktır. Şubeli paket yüklendiğinde “Şube Adı” ve ek olarak sonrasında “Şube No” ifadeleri yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationDescription" xlink:to="label_organizationDescription"/>
+<label xlink:type="resource" xlink:label="label_organizationDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationDescription_2">KurumTanımlayıcı Açıklaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationDescription" xlink:to="label_organizationDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddress" xlink:label="organizationAddress"/>
+<label xlink:type="resource" xlink:label="label_organizationAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddress">e-Defter sahibinin adres bilgisini bulunduran veri grubudur.
+Kullanım:
+Bknz.organizationBuildingNumber 
+Bknz.organizationAddressStreet 
+Bknz.organizationStreetAddress2 
+Bknz.organizationAddressCity 
+Bknz.organizationAddressZipOrPostalCode 
+Bknz.organizationAddressCountry</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddress" xlink:to="label_organizationAddress"/>
+<label xlink:type="resource" xlink:label="label_organizationAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddress_2">Adres</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddress" xlink:to="label_organizationAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationBuildingNumber" xlink:label="organizationBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_organizationBuildingNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationBuildingNumber">Bina ve kapı numarası yazılacaktır.
+Kullanım: İşletme  adresindeki  bina  ve  kapı  numarası  “/”  ile  ayrılarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationBuildingNumber" xlink:to="label_organizationBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_organizationBuildingNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationBuildingNumber_2">Bina / Kapı Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationBuildingNumber" xlink:to="label_organizationBuildingNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddressStreet" xlink:label="organizationAddressStreet"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressStreet" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddressStreet">Cadde ismi yazılacaktır.
+Kullanım: Cadde ismi serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressStreet" xlink:to="label_organizationAddressStreet"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressStreet_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddressStreet_2">Cadde</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressStreet" xlink:to="label_organizationAddressStreet_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddressStreet2" xlink:label="organizationAddressStreet2"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressStreet2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddressStreet2">Adresin diğer detayları yazılacaktır.
+Kullanım: Adresin detayları serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressStreet2" xlink:to="label_organizationAddressStreet2"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressStreet2_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddressStreet2_2">Adres Detayı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressStreet2" xlink:to="label_organizationAddressStreet2_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddressCity" xlink:label="organizationAddressCity"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressCity" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddressCity">Şehir ismi yazılacaktır.
+Kullanım: Şehir ismi serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressCity" xlink:to="label_organizationAddressCity"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressCity_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddressCity_2">Şehir</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressCity" xlink:to="label_organizationAddressCity_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddressZipOrPostalCode" xlink:label="organizationAddressZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressZipOrPostalCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddressZipOrPostalCode">Posta kodu yazılacaktır.
+Kullanım: Posta kodu numerik olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressZipOrPostalCode" xlink:to="label_organizationAddressZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressZipOrPostalCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddressZipOrPostalCode_2">Posta Kodu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressZipOrPostalCode" xlink:to="label_organizationAddressZipOrPostalCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationAddressCountry" xlink:label="organizationAddressCountry"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressCountry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_organizationAddressCountry">Ülke ismi yazılacaktır.
+Kullanım: Ülke ismi serbest metin olarak kısaltma yapılmaksızın yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressCountry" xlink:to="label_organizationAddressCountry"/>
+<label xlink:type="resource" xlink:label="label_organizationAddressCountry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_organizationAddressCountry_2">Ülke</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationAddressCountry" xlink:to="label_organizationAddressCountry_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_entityWebSite" xlink:label="entityWebSite"/>
+<label xlink:type="resource" xlink:label="label_entityWebSite" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entityWebSite">e-Defter sahibine ait web sitesi bilgilerini bulunduran veri grubudur.
+Kullanım: Bknz. webSiteURL</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityWebSite" xlink:to="label_entityWebSite"/>
+<label xlink:type="resource" xlink:label="label_entityWebSite_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityWebSite_2">İşletme Web Sitesi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityWebSite" xlink:to="label_entityWebSite_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_webSiteURL" xlink:label="webSiteURL"/>
+<label xlink:type="resource" xlink:label="label_webSiteURL" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_webSiteURL">İşletme web sitesinin URL’si yazılacaktır.
+Kullanım: Web sitesinin geçerli URL(Uniform Resource Locator- Standart Kaynak Bulucu)adı bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="webSiteURL" xlink:to="label_webSiteURL"/>
+<label xlink:type="resource" xlink:label="label_webSiteURL_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_webSiteURL_2">Web Sitesi Adresi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="webSiteURL" xlink:to="label_webSiteURL_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_businessDescription" xlink:label="businessDescription"/>
+<label xlink:type="resource" xlink:label="label_businessDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_businessDescription">İşletmenin faaliyeti ile ilgili tanıtıcı bilgi yazılacaktır.
+Kullanım: İşletmenin faaliyet konusunu gösteren “NACE” kodu yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="businessDescription" xlink:to="label_businessDescription"/>
+<label xlink:type="resource" xlink:label="label_businessDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_businessDescription_2">İşletme Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="businessDescription" xlink:to="label_businessDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_fiscalYearStart" xlink:label="fiscalYearStart"/>
+<label xlink:type="resource" xlink:label="label_fiscalYearStart" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_fiscalYearStart">Dokümanın ilgili olduğu hesap dönemi başlangıç tarihi yazılacaktır.
+Kullanım: Hesap dönemi başlangıç tarihi 4 hane yıl 2 hane ay ve 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="fiscalYearStart" xlink:to="label_fiscalYearStart"/>
+<label xlink:type="resource" xlink:label="label_fiscalYearStart_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_fiscalYearStart_2">Hesap Dönemi Başlangıcı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="fiscalYearStart" xlink:to="label_fiscalYearStart_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_fiscalYearEnd" xlink:label="fiscalYearEnd"/>
+<label xlink:type="resource" xlink:label="label_fiscalYearEnd" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_fiscalYearEnd">Dokümanın ilgili olduğu hesap döneminin bittiği tarih yazılacaktır.
+Kullanım: Hesap dönemi bitimi 4 hane yıl 2 hane ay ve 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="fiscalYearEnd" xlink:to="label_fiscalYearEnd"/>
+<label xlink:type="resource" xlink:label="label_fiscalYearEnd_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_fiscalYearEnd_2">Hesap Dönemi Sonu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="fiscalYearEnd" xlink:to="label_fiscalYearEnd_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantInformation" xlink:label="accountantInformation"/>
+<label xlink:type="resource" xlink:label="label_accountantInformation" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantInformation">Bu alana SM/SMMM/YMM bilgileri yazılacaktır.
+Kullanım: accountantInformation veri grubu çoklanabilir bir alandır. SM/SMMM’nin yanında YMM ile sözleşme yapılmışsa bu alan çoklanarak YMM bilgileri de girilecektir.
+Bknz. accountantName
+Bknz. accountantAddress
+Bknz. accountantEngagementTypeDescription 
+Bknz. accountantContactInformation</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantInformation" xlink:to="label_accountantInformation"/>
+<label xlink:type="resource" xlink:label="label_accountantInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantInformation_2">SM/SMMM/YMM Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantInformation" xlink:to="label_accountantInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantName" xlink:label="accountantName"/>
+<label xlink:type="resource" xlink:label="label_accountantName" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantName">SM/SMMM veya YMMnin adı soyadı ve unvanı yazılacaktır.
+Kullanım: SM/SMMM veya YMMnin adı soyadı ve unvanı serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantName" xlink:to="label_accountantName"/>
+<label xlink:type="resource" xlink:label="label_accountantName_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantName_2">SM/SMMM/YMM Adı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantName" xlink:to="label_accountantName_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantAddress" xlink:label="accountantAddress"/>
+<label xlink:type="resource" xlink:label="label_accountantAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantAddress">SM/SMMM veya YMMninadres bilgilerinin yer aldığı veri grubudur.
+Kullanım: SM/SMMM veya YMMninadres bilgileri bu veri grubuna yazılacaktır. 
+Bknz.accountantBuildingNumber
+Bknz.accountantStreet 
+Bknz.accountantStreetAddress2 
+Bknz.accountantAddressCity
+Bknz.accountantAddressCountry
+Bknz.accountantAddressZipOrPostalCode</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddress" xlink:to="label_accountantAddress"/>
+<label xlink:type="resource" xlink:label="label_accountantAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantAddress_2">SM/SMMM/YMM Adresi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddress" xlink:to="label_accountantAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantBuildingNumber" xlink:label="accountantBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantBuildingNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantBuildingNumber">SM/SMMM/YMMadresinin bulunduğu bina ve kapı numarası yazılacaktır.
+Kullanım: SM/SMMM/YMMadresinin bulunduğu bina ve kapı numarası “/” ile ayrılarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantBuildingNumber" xlink:to="label_accountantBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantBuildingNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantBuildingNumber_2">SM/SMMM/YMM Bina Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantBuildingNumber" xlink:to="label_accountantBuildingNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantStreet" xlink:label="accountantStreet"/>
+<label xlink:type="resource" xlink:label="label_accountantStreet" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantStreet">SM/SMMM/YMMadresindeki cadde ismi yazılacaktır.
+Kullanım: SM/SMMM/YMMadresindeki cadde ismi serbest metin olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStreet" xlink:to="label_accountantStreet"/>
+<label xlink:type="resource" xlink:label="label_accountantStreet_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantStreet_2">SM/SMMM/YMM Cadde</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStreet" xlink:to="label_accountantStreet_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantAddressStreet2" xlink:label="accountantAddressStreet2"/>
+<label xlink:type="resource" xlink:label="label_accountantAddressStreet2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantAddressStreet2">SM/SMMM/YMMadresinin diğer detayları yazılacaktır.
+Kullanım: SM/SMMM/YMMadresinin detayları serbest metin olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddressStreet2" xlink:to="label_accountantAddressStreet2"/>
+<label xlink:type="resource" xlink:label="label_accountantAddressStreet2_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantAddressStreet2_2">SM/SMMM/YMM Adres Detayı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddressStreet2" xlink:to="label_accountantAddressStreet2_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantCity" xlink:label="accountantCity"/>
+<label xlink:type="resource" xlink:label="label_accountantCity" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantCity">SM/SMMM/YMMadresinin bulunduğu şehir ismi yazılacaktır.
+Kullanım: SM/SMMM/YMMadresinin bulunduğu şehir ismi serbest metin olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCity" xlink:to="label_accountantCity"/>
+<label xlink:type="resource" xlink:label="label_accountantCity_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantCity_2">SM/SMMM/YMM Şehir</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCity" xlink:to="label_accountantCity_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantCountry" xlink:label="accountantCountry"/>
+<label xlink:type="resource" xlink:label="label_accountantCountry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantCountry">SM/SMMM/YMMadresinin bulunduğu ülke ismi yazılacaktır.
+Kullanım: SM/SMMM/YMMadresinin bulunduğu ülke ismi serbest metin olarak kısaltma yapılmaksızın bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCountry" xlink:to="label_accountantCountry"/>
+<label xlink:type="resource" xlink:label="label_accountantCountry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantCountry_2">SM/SMMM/YMM Ülke</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCountry" xlink:to="label_accountantCountry_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantZipOrPostalCode" xlink:label="accountantZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_accountantZipOrPostalCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantZipOrPostalCode">SM/SMMM/YMMadresine ait posta kodu yazılacaktır.
+Kullanım: SM/SMMM/YMMadresine ait posta kodunumerik olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantZipOrPostalCode" xlink:to="label_accountantZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_accountantZipOrPostalCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantZipOrPostalCode_2">SM/SMMM/YMM Posta Kodu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantZipOrPostalCode" xlink:to="label_accountantZipOrPostalCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantEngagementTypeDescription" xlink:label="accountantEngagementTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountantEngagementTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantEngagementTypeDescription">Sözleşme ile ilgili açıklamalar bu alana yazılacaktır.
+Kullanım: Sözleşme açıklaması,Sözleşme çeşidi, sözleşme tarihi ve numarası aralarına “,”işareti konularak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantEngagementTypeDescription" xlink:to="label_accountantEngagementTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountantEngagementTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantEngagementTypeDescription_2">SM/SMMM/YMMSözleşme Tipi Açıklaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantEngagementTypeDescription" xlink:to="label_accountantEngagementTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactInformation" xlink:label="accountantContactInformation"/>
+<label xlink:type="resource" xlink:label="label_accountantContactInformation" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactInformation">SM/SMMM/YMM irtibat bilgilerinin yer aldığı veri grubudur.
+Kullanım: SM/SMMM/YMM irtibat bilgileri bu veri grubuna yazılacaktır. 
+Bknz. acountantContactPhone
+Bknz. acountantContactFax 
+Bknz. acountantContactEmail</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactInformation" xlink:to="label_accountantContactInformation"/>
+<label xlink:type="resource" xlink:label="label_accountantContactInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactInformation_2">SM/SMMM/YMM İrtibat Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactInformation" xlink:to="label_accountantContactInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactPhone" xlink:label="accountantContactPhone"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhone" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactPhone">SM/SMMM/YMM irtibat telefon bilgilerinin bulunduğu veri grubudur.
+Kullanım: SM/SMMM/YMM irtibat telefon bilgileri tanımlamaları bu veri grubuna yapılacaktır.
+Bknz.accountantContactPhoneNumberDescription 
+Bknz.accountantContactPhoneNumber</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhone" xlink:to="label_accountantContactPhone"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhone_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactPhone_2">SM/SMMM/YMM İrtibat Telefon Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhone" xlink:to="label_accountantContactPhone_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactPhoneNumberDescription" xlink:label="accountantContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactPhoneNumberDescription">SM/SMMM/YMM irtibat telefon numarası tanımlamasının yapıldığı veri grubudur.
+Kullanım: SM/SMMM/YMM irtibat telefon numarası tanımlaması bu veri grubuna yapılacaktır.Bu alana sadece sınırlı biçimde sayılmış olan kavramlar yazılabilecektir.bookkeeper: muhasebecicontroller: denetim birimidirect: Direkt numarafax: faksinvestor-relations: yatırımcı ilişkilerimain: merkezswitchboard: telefon santraliother: diğer</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumberDescription" xlink:to="label_accountantContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactPhoneNumberDescription_2">SM/SMMM/YMM İrtibat Telefon Numarası Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumberDescription" xlink:to="label_accountantContactPhoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactPhoneNumber" xlink:label="accountantContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactPhoneNumber">SM/SMMM/YMMirtibat telefon numarası bu alana yazılacaktır.
+Kullanım: SM/SMMM/YMMirtibat telefon numarası 3 hane alan kodu 7 hane telefon numarası numerik olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumber" xlink:to="label_accountantContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantContactPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactPhoneNumber_2">SM/SMMM/YMM İrtibat Telefon Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumber" xlink:to="label_accountantContactPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactFax" xlink:label="accountantContactFax"/>
+<label xlink:type="resource" xlink:label="label_accountantContactFax" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactFax">SM/SMMM/YMM irtibat faks numarası bilgilerin bulunduğu veri grubudur.
+Kullanım: SM/SMMM/YMM irtibat faks numarası bilgileri bu veri grubuna yazılacaktır.
+Bknz.AccountantContactFaxNumber</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFax" xlink:to="label_accountantContactFax"/>
+<label xlink:type="resource" xlink:label="label_accountantContactFax_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactFax_2">SM/SMMM/YMM İrtibat Faks Numarası yapısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFax" xlink:to="label_accountantContactFax_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactFaxNumber" xlink:label="accountantContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantContactFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactFaxNumber">SM/SMMM/YMM irtibat faks numarasınınbulunduğu alandır.
+Kullanım: SM/SMMM/YMM irtibat faks numarası 3 hane alan kodu 7 hane telefon numarası numerik olarak bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumber" xlink:to="label_accountantContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_accountantContactFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactFaxNumber_2">SM/SMMM/YMM İrtibat Faks Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumber" xlink:to="label_accountantContactFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactEmail" xlink:label="accountantContactEmail"/>
+<label xlink:type="resource" xlink:label="label_accountantContactEmail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactEmail">SM/SMMM/YMM irtibat e-postabilgilerin bulunduğu veri grubudur.
+Kullanım: SM/SMMM/YMM irtibat e-posta bilgileri bu veri grubuna yazılacaktır. 
+Bknz.accountantContactEmail</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmail" xlink:to="label_accountantContactEmail"/>
+<label xlink:type="resource" xlink:label="label_accountantContactEmail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactEmail_2">SM/SMMM/YMM İrtibat e-Posta Adresi Yapısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmail" xlink:to="label_accountantContactEmail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_accountantContactEmailAddress" xlink:label="accountantContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_accountantContactEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountantContactEmailAddress">SM/SMMM/YMM irtibat e-postaadresinin bulunduğu alandır.
+Kullanım: SM/SMMM/YMM irtibat e-postaadresini bu alana yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddress" xlink:to="label_accountantContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_accountantContactEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountantContactEmailAddress_2">SM/SMMM/YMM İrtibat e-Posta Adresi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddress" xlink:to="label_accountantContactEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_batchID" xlink:label="batchID"/>
+<label xlink:type="resource" xlink:label="label_batchID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_batchID">Şube numarası bu elemanda tutulacaktır.
+Kullanım: Şube numarası 4 haneli girilecektir.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="batchID" xlink:to="label_batchID"/>
+<label xlink:type="resource" xlink:label="label_batchID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_batchID_2">Şube No</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="batchID" xlink:to="label_batchID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_batchDescription" xlink:label="batchDescription"/>
+<label xlink:type="resource" xlink:label="label_batchDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_batchDescription">Şube adı bu elemanda tutulacaktır.
+Kullanım: Şube adı şubenin adı ve “Şubesi” şeklinde tutulacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="batchDescription" xlink:to="label_batchDescription"/>
+<label xlink:type="resource" xlink:label="label_batchDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_batchDescription_2">Şube Adı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="batchDescription" xlink:to="label_batchDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_totalDebit" xlink:label="totalDebit"/>
+<label xlink:type="resource" xlink:label="label_totalDebit" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_totalDebit">Yevmiye maddesi toplam borç tutarı yazılacaktır.
+Kullanım: Toplam borç tutarı parasal olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="totalDebit" xlink:to="label_totalDebit"/>
+<label xlink:type="resource" xlink:label="label_totalDebit_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_totalDebit_2">Toplam Borç</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="totalDebit" xlink:to="label_totalDebit_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_totalCredit" xlink:label="totalCredit"/>
+<label xlink:type="resource" xlink:label="label_totalCredit" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_totalCredit">Yevmiye maddesi toplam alacaktutarı yazılacaktır.
+Kullanım: Yevmiye maddesinin toplamalacaktutarı parasal olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="totalCredit" xlink:to="label_totalCredit"/>
+<label xlink:type="resource" xlink:label="label_totalCredit_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_totalCredit_2">Toplam Alacak</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="totalCredit" xlink:to="label_totalCredit_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_paymentMethod" xlink:label="paymentMethod"/>
+<label xlink:type="resource" xlink:label="label_paymentMethod" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_paymentMethod">Ödeme yöntemi yazılacaktır.
+Kullanım: İşletmenin yaptığı ödemeler yanında işletmeye yapılan ödemelere de bu alanda yer verilecektir. Ödeme yöntemi bilgisi serbest metin biçiminde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="paymentMethod" xlink:to="label_paymentMethod"/>
+<label xlink:type="resource" xlink:label="label_paymentMethod_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_paymentMethod_2">Ödeme Yöntemi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="paymentMethod" xlink:to="label_paymentMethod_2"/>
+  </labelLink>
+</linkbase>

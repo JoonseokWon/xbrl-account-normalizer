@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomyPackage xmlns="http://xbrl.org/2016/taxonomy-package" xml:lang="en">
+ <identifier>urn:account-data-normalizer:xbrl-gl-2015:cor-bus</identifier>
+ <name>XBRL GL 2015 COR+BUS offline bundle</name>
+ <description>Unmodified official schemas and linkbases, assembled for offline use by AccountDataNormalizer. This packaging is not an XBRL International certification.</description>
+ <version>2015-03-25</version>
+ <publisher>AccountDataNormalizer project</publisher>
+ <entryPoints><entryPoint><name>XBRL GL 2015 COR+BUS</name>
+ <entryPointDocument href="http://www.xbrl.org/taxonomy/int/gl/2015-03-25/plt/case-c-b/gl-plt-all-2015-03-25.xsd"/>
+ </entryPoint></entryPoints>
+</taxonomyPackage>

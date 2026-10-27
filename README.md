@@ -2,11 +2,11 @@
 
 XLSX·CSV·TSV 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 앱입니다. 회사·ERP별 입력 설정, 계정 사전 관리, 전표별 분개와 대사, 업무 저장·다시 열기를 지원합니다.
 
-**v0.6.0-preview.1 — 10개 더미 회사의 624개 계정·1,288행을 연결했습니다. 기본 사전은 67개 항목이며, 정의가 명확한 별칭 322개를 추가했습니다. [여러 회사 매핑 결과](docs/MULTI_COMPANY_MAPPING.md)를 참고하세요.**
+**v0.7.0-preview.1 — 원장·BS를 공식 XBRL GL 2015 XML로 저장하고 오프라인 스키마·원본 보존 검사를 수행합니다. [XML 사용법](docs/XBRL_GL.md)과 [여러 회사 매핑 결과](docs/MULTI_COMPANY_MAPPING.md)를 참고하세요.**
 
 ## Windows에서 시작하기
 
-1. [GitHub v0.6.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.6.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub v0.7.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.7.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -57,7 +57,9 @@ EXE의 로컬 이력과 오류 기록은 `%LOCALAPPDATA%/AccountDataNormalizer`�
 
 재무제표는 **BS 재무상태표**를 지원합니다. PL에는 기간 시작·종료 규격이 추가로 필요합니다. 상세·소계·합계를 구분하고 중복 합산하지 않습니다. 원장 당기순변동을 기말잔액으로 대체하지 않습니다.
 
-검토 결과에는 검토 엑셀·표준 JSON·부분 연결 JSON·입력 프로필이 있습니다. 검토 엑셀에는 전표별 분개·세부정보·대사도 들어갑니다. **시산표·통제자료 열 연결**에서 회사 양식의 파일을 연결하거나 기존 보조 양식을 사용해 **통합감사 입력 저장**으로 7시트 입력을 만듭니다. 출처 JSON에 각 전표 행의 원본 위치와 세부정보를 남깁니다. 통제 금액과 행 수는 원본 열에서만 읽으며 원장으로 채우지 않습니다. [보조자료 연결 사용법](docs/AUDIT_EXPORT.md)을 참고하세요. 공식 XBRL GL 출력은 향후 확장 항목입니다.
+검토 결과에는 검토 엑셀·표준 JSON·부분 연결 JSON·입력 프로필이 있습니다. 검토 엑셀에는 전표별 분개·세부정보·대사도 들어갑니다. **시산표·통제자료 열 연결**에서 회사 양식의 파일을 연결하거나 기존 보조 양식을 사용해 **통합감사 입력 저장**으로 7시트 입력을 만듭니다. 출처 JSON에 각 전표 행의 원본 위치와 세부정보를 남깁니다. 통제 금액과 행 수는 원본 열에서만 읽으며 원장으로 채우지 않습니다. [보조자료 연결 사용법](docs/AUDIT_EXPORT.md)을 참고하세요.
+
+**XBRL GL XML 저장**은 계정 검토를 마친 원장·BS를 공식 COR+BUS 태그로 저장하고, 공식 XSD와 원본 행·금액·코드·차대·통화를 다시 확인합니다. 원장은 journal, BS는 balance 자료로 구분합니다. 스키마 패키지·행 출처·검사 보고서를 함께 저장하며 인터넷 없이 실행됩니다. 자체 공통 코드의 IFRS/DART 개념 매핑과 DART 공시 제출은 포함하지 않습니다. [XML 출력의 의미와 검사 범위](docs/XBRL_GL.md)를 확인하세요.
 
 ## 소스로 실행·빌드하기
 
@@ -69,6 +71,7 @@ python main.py
 python convert.py "원본.xlsx" --company "COMPANY-A" --system "ERP-A"
 python convert.py "원본.xlsx" --inspect
 python convert.py "원본.xlsx" --column-map config/column_mapping.example.json
+python convert.py "확인한업무.acwork" --xbrl --out "결과폴더"
 ```
 
 시트명·기본 별칭은 `config/profile.json`, 계정 사전은 `config/catalog.json`에서 설정합니다. CLI의 `--no-history`는 이력 읽기·저장을 모두 끄며 `--history`로 다른 이력을 지정할 수 있습니다.
@@ -81,10 +84,10 @@ python tools/build_windows.py
 python tools/package_release.py
 ```
 
-[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. 단위 테스트 70개가 통과했습니다. 이전 버전에서 100,004행 CSV 처리·저장, 원본 포함 업무 복원, 소스 Qt 화면의 버튼·배경 작업, 250,000행 통합감사 연계를 확인했습니다. GUI 시험의 OS 파일선택창은 경로로 대체했으며 실제 독립 통제·실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
+[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. 단위 테스트 85개가 통과했고, 10개 회사 원장과 BS의 XML 11개를 Arelle 2.47.3에서 오프라인 검사해 오류·경고 0건을 확인했습니다. 250,000행 원장도 분할 없이 XML 출력과 공식 XSD·원본 대사를 확인했습니다. GUI 시험의 OS 파일선택창은 경로로 대체했으며 실제 독립 통제·실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
 
 ## 참고 자료
 
-외부 프로젝트 코드를 복사하지 않고 구조를 참고했습니다: [account-standardizer](https://github.com/gimjunhyeon87-maker/account-standardizer)의 한글·영문 계정명 후보, [semantic-account-mapper](https://github.com/farhatparvin/semantic-account-mapper)의 승인·거절 피드백, [audit_standardizer](https://github.com/MartinMans/audit_standardizer)의 명시적 열 연결입니다. [global_ledger_translator](https://github.com/GenAICPA/global_ledger_translator)와 [Arelle](https://github.com/Arelle/Arelle)는 향후 XBRL GL 출력·검증 참고 자료입니다.
+외부 프로젝트 코드를 복사하지 않고 구조를 참고했습니다: [account-standardizer](https://github.com/gimjunhyeon87-maker/account-standardizer)의 한글·영문 계정명 후보, [semantic-account-mapper](https://github.com/farhatparvin/semantic-account-mapper)의 승인·거절 피드백, [audit_standardizer](https://github.com/MartinMans/audit_standardizer)의 명시적 열 연결입니다. GL 출력은 [XBRL 공식 택사노미](https://specifications.xbrl.org/work-product-index-xbrl-gl-xbrl-gl-2015.html)를 사용하고, [Arelle](https://github.com/Arelle/Arelle)로 독립 검증합니다.
 
 배포 라이브러리·글꼴의 라이선스는 [서드파티 안내](docs/THIRD_PARTY_NOTICES.md)와 실행팩 `licenses/`에서 확인할 수 있습니다.

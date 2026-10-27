@@ -75,6 +75,13 @@ def main():
             with patch('desktop.controllers.audit_export.QFileDialog.getExistingDirectory',return_value=str(output/'audit-output')):
                 controller.results.audit_save.click();wait(controller)
             assert controller.results.output_path and (controller.results.output_path/'통합감사_원장입력.xlsx').is_file()
+            assert controller.results.xbrl_save.isEnabled()
+            assert window.action.text()=='XBRL GL XML 저장'
+            with patch('desktop.controllers.xbrl_export.QFileDialog.getExistingDirectory',return_value=str(output/'xbrl-output')):
+                window.action.click();wait(controller)
+            assert (controller.results.output_path/'validation-report.json').is_file()
+            assert len(list(controller.results.output_path.glob('*.xbrl')))==1
+            shot(window,'xbrl-result')
             initial_accounts=len(controller.catalog['accounts'])
             editor=CatalogDialog(controller.catalog,window);editor.setAttribute(Qt.WidgetAttribute.WA_DontShowOnScreen);editor.add_row()
             values=['X999','사용자 추가 계정','상세계정','','CUSTOM','BS','원장·리드','별도 계정']
@@ -89,6 +96,7 @@ def main():
             'supportMappingDialog':True,'reconciliationMatched':True,'presetSavedAndLoaded':True,'workSavedAndReopened':True,
             'catalogEditedAndMappingsInvalidated':True,
             'auditSaveButtonClicked':True,'auditWorkbookCreated':True,'minimumWindowRendered':[1070,740],
+            'xbrlSaveButtonClicked':True,'xbrlInstanceCreated':True,
             'nativeFileDialogsMocked':True,'actualOsFilePickerExercised':False}
     (output/'desktop-check.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report,ensure_ascii=False))
 

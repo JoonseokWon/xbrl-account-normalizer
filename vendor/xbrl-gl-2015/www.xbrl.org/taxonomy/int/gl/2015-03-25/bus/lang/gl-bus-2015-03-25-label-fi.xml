@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationIdentifiers" xlink:label="organizationIdentifiers"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifiers" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_organizationIdentifiers">Yritystunnisteiden ylätason elementti.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifiers" xlink:to="label_organizationIdentifiers"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifiers_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_organizationIdentifiers_2">Tunnisteet</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifiers" xlink:to="label_organizationIdentifiers_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_organizationIdentifier" xlink:label="organizationIdentifier"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifier" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_organizationIdentifier">Yrityksen Y-tunnus.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="label_organizationIdentifier"/>
+<label xlink:type="resource" xlink:label="label_organizationIdentifier_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_organizationIdentifier_2">Y-tunnus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="label_organizationIdentifier_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_enteredByModified" xlink:label="enteredByModified"/>
+<label xlink:type="resource" xlink:label="label_enteredByModified" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_enteredByModified">Viimeisen kirjausta muokanneen henkilön nimi tai nimikirjaimet</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredByModified" xlink:to="label_enteredByModified"/>
+<label xlink:type="resource" xlink:label="label_enteredByModified_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_enteredByModified_2">Kirjauksen viimeisin muokkaaja</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredByModified" xlink:to="label_enteredByModified_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_sourceJournalDescription" xlink:label="sourceJournalDescription"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_sourceJournalDescription">Lähdejärjestelmän seliteteksti, esimerkiksi "Ostot", "Myynnit", "Kassa"</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalDescription" xlink:to="label_sourceJournalDescription"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_sourceJournalDescription_2">Lähdejärjestelmäselite</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalDescription" xlink:to="label_sourceJournalDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierAddress" xlink:label="identifierAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierAddress">Osapuolen osoitetietojen ylätason elementti</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddress" xlink:to="label_identifierAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierAddress_2">Osapuolen osoitetiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddress" xlink:to="label_identifierAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierAddressDescription" xlink:label="identifierAddressDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierAddressDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierAddressDescription">Käytettäväksi silloin, kun  selite tälle osoitteelle on eri kuin osapuolen ensisijaisissa tiedoissa.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddressDescription" xlink:to="label_identifierAddressDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierAddressDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierAddressDescription_2">Osapuolen osoitteen selite</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddressDescription" xlink:to="label_identifierAddressDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierBuildingNumber" xlink:label="identifierBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierBuildingNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierBuildingNumber">Esimerkiksi talon numero.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierBuildingNumber" xlink:to="label_identifierBuildingNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierBuildingNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierBuildingNumber_2">Osoitenumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierBuildingNumber" xlink:to="label_identifierBuildingNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierStreet" xlink:label="identifierStreet"/>
+<label xlink:type="resource" xlink:label="label_identifierStreet" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierStreet">Katu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStreet" xlink:to="label_identifierStreet"/>
+<label xlink:type="resource" xlink:label="label_identifierStreet_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierStreet_2">Katu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStreet" xlink:to="label_identifierStreet_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierCity" xlink:label="identifierCity"/>
+<label xlink:type="resource" xlink:label="label_identifierCity" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierCity">Postitoimipaikka</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCity" xlink:to="label_identifierCity"/>
+<label xlink:type="resource" xlink:label="label_identifierCity_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierCity_2">Postitoimipaikka</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCity" xlink:to="label_identifierCity_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierStateOrProvince" xlink:label="identifierStateOrProvince"/>
+<label xlink:type="resource" xlink:label="label_identifierStateOrProvince" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierStateOrProvince">Maakunta</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStateOrProvince" xlink:to="label_identifierStateOrProvince"/>
+<label xlink:type="resource" xlink:label="label_identifierStateOrProvince_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierStateOrProvince_2">Maakunta</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStateOrProvince" xlink:to="label_identifierStateOrProvince_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierCountry" xlink:label="identifierCountry"/>
+<label xlink:type="resource" xlink:label="label_identifierCountry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierCountry">Maa</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCountry" xlink:to="label_identifierCountry"/>
+<label xlink:type="resource" xlink:label="label_identifierCountry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierCountry_2">Maa</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCountry" xlink:to="label_identifierCountry_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_identifierZipOrPostalCode" xlink:label="identifierZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_identifierZipOrPostalCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_identifierZipOrPostalCode">Postinumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierZipOrPostalCode" xlink:to="label_identifierZipOrPostalCode"/>
+<label xlink:type="resource" xlink:label="label_identifierZipOrPostalCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_identifierZipOrPostalCode_2">Postinumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierZipOrPostalCode" xlink:to="label_identifierZipOrPostalCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurable" xlink:label="measurable"/>
+<label xlink:type="resource" xlink:label="label_measurable" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurable">Vientiin liittyvien, määrällisesti mitattavien tietojen esittämiseen.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurable" xlink:to="label_measurable"/>
+<label xlink:type="resource" xlink:label="label_measurable_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurable_2">Määrätiedot</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurable" xlink:to="label_measurable_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableCode" xlink:label="measurableCode"/>
+<label xlink:type="resource" xlink:label="label_measurableCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableCode">Koodi mitattaville kohteille: 
+BP: Liiketoimintaprosessit, 
+FA: Käyttöomaisuus / Aktivoidut, 
+IN: Varasto, 
+KPI: suorituskykymittarit, 
+NT: Aineeton, 
+SP: tarvikkeet, 
+SV-P: suorituskyky; työntekijä, myyjä tai urakoitsija, 
+SV-M: suorituskyky; laitteet tai koneet,
+OT: Muut</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableCode" xlink:to="label_measurableCode"/>
+<label xlink:type="resource" xlink:label="label_measurableCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableCode_2">Mittauksen kohde</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableCode" xlink:to="label_measurableCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableID" xlink:label="measurableID"/>
+<label xlink:type="resource" xlink:label="label_measurableID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableID">Esim. EAN-koodi tai tuotenumero</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableID" xlink:to="label_measurableID"/>
+<label xlink:type="resource" xlink:label="label_measurableID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableID_2">Mitattavan kohteen yksilöivä tunniste</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableID" xlink:to="label_measurableID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableDescription" xlink:label="measurableDescription"/>
+<label xlink:type="resource" xlink:label="label_measurableDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableDescription">Esim. tuotekuvaus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableDescription" xlink:to="label_measurableDescription"/>
+<label xlink:type="resource" xlink:label="label_measurableDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableDescription_2">Mitattavan kohteen kuvaus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableDescription" xlink:to="label_measurableDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableQuantity" xlink:label="measurableQuantity"/>
+<label xlink:type="resource" xlink:label="label_measurableQuantity" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableQuantity">Vientiin liittyvien yksiköiden määrä (ei esitä rahallisia arvoja), esimerkiksi paino kilogrammoissa, henkilöiden määrä, jne.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableQuantity" xlink:to="label_measurableQuantity"/>
+<label xlink:type="resource" xlink:label="label_measurableQuantity_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableQuantity_2">Määrä </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableQuantity" xlink:to="label_measurableQuantity_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableUnitOfMeasure" xlink:label="measurableUnitOfMeasure"/>
+<label xlink:type="resource" xlink:label="label_measurableUnitOfMeasure" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableUnitOfMeasure"> Mittayksikön tunnus, suositellaan kansainvälisiä merkintöjä, esim. 
+UN/ECE Suositus Nro 20 
+C62 One, unit  
+Kappale 
+KGM Kilogram  
+Kilogramma 
+LTR Litre  
+Litra 
+MTQ Cubic metre  
+Kuutiometri 
+TNE Tonne  
+Tonni...</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableUnitOfMeasure" xlink:to="label_measurableUnitOfMeasure"/>
+<label xlink:type="resource" xlink:label="label_measurableUnitOfMeasure_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableUnitOfMeasure_2">Yksikkö</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableUnitOfMeasure" xlink:to="label_measurableUnitOfMeasure_2"/>
+<loc xlink:type="locator" xlink:href="../gl-bus-2015-03-25.xsd#gl-bus_measurableCostPerUnit" xlink:label="measurableCostPerUnit"/>
+<label xlink:type="resource" xlink:label="label_measurableCostPerUnit" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fi" id="label_measurableCostPerUnit">Mitattavan kohteen yksikkökustannus tai -hinta.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableCostPerUnit" xlink:to="label_measurableCostPerUnit"/>
+<label xlink:type="resource" xlink:label="label_measurableCostPerUnit_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fi" id="label_measurableCostPerUnit_2">Yksikkökustannus/-hinta</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="measurableCostPerUnit" xlink:to="label_measurableCostPerUnit_2"/>
+  </labelLink>
+</linkbase>

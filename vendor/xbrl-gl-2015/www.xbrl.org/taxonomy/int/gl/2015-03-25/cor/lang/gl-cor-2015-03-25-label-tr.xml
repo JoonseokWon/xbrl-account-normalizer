@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentInfo_2">Doküman Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesType" xlink:label="entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entriesType">XBRL dokümanlarından hangisinin düzenlendiğini işaret eder.
+Kullanım:DocumentType etiketli “entriesType” elemanına sadece sınırlı biçimde sayılmış olan (Enumerated) kavramlar kısaltma yapmaksızın aynen yazılacaktır.
+Bunlar;
+account (hesap planı),
+balance (bilanço),
+entries (kayıtlar),
+journal (yevmiye),
+ledger (büyük defter),
+assets (varlıklar),
+trialBalance (mizan),
+taxtables (vergi cetveli) kavramlarıdır.
+XBRL GL Türkiye uygulamasında bu alanda sadece yevmiye defteri için journal veya büyük defter için ledger sınırlandırılmış kavramları kullanılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entriesType_2">Doküman Tipi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_uniqueID" xlink:label="uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_uniqueID">İlgili dokümana ait kontrol numarası yazılacaktır. Kontrol numarası, birbirinden ayrı olarak oluşturulan defter dosyalarının müteselsilliğini ve birbirleri ile bağlanabilmelerini sağlamaya yönelik bir numaradır.
+Kullanım: 3 haneli harf grubunu ifade eden doküman kodu ile 10 haneli numaranın birleşiminden meydana gelen uniqueID bu elemana yazılacaktır. 10 haneli numaranın ilk 4 hanesi dokümanın düzenlendiği yılı kalan 6 hane ise müteselsil numarayı ifade etmektedir. 3 haneli doküman koduna, yevmiye defteri için “YEV”, büyük defter için “KEB” yazılacaktır. Dokümanı düzenleyen bünyesinde aynı uniqueID birden fazla kullanılamaz.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_uniqueID_2">Kontrol Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_language" xlink:label="language"/>
+<label xlink:type="resource" xlink:label="label_language" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_language">e-Defterlerin tutulduğu dile ait kod yazılacaktır.
+Kullanım: Kod numaraları ISO 639-1988 dil kodlarıyla uyuşmalıdır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language"/>
+<label xlink:type="resource" xlink:label="label_language_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_language_2">Dil</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_creationDate" xlink:label="creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_creationDate">Dokümanın oluşturulduğu tarih yazılacaktır.
+Kullanım: Dokümanın oluşturulduğu tarih 4 hane yıl, 2 hane ay ve 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_creationDate_2">Oluşturma Tarihi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesComment" xlink:label="entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entriesComment">Doküman için genel bir açıklama yapılmak istendiği takdirde bu alan kullanılabilecektir.
+Kullanım: Doküman için genel bir açıklama yapılmak istendiği takdirde bu açıklama serbest metin olarak girilecektir.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entriesComment_2">Doküman Açıklaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredStart" xlink:label="periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_periodCoveredStart">XBRL dokümanının kapsadığı dönemin başlangıç tarihi yazılacaktır.
+Kullanım: Dokümanın kapsadığı dönem başlangıç tarihi 4 hane yıl 2 hane ay ve 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_periodCoveredStart_2">Dönem Başlangıcı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredEnd" xlink:label="periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_periodCoveredEnd">XBRL dokümanının kapsadığı dönemin bitiş tarihi yazılacaktır.
+Kullanım: Dokümanın kapsadığı dönem bitiş tarihi 4 hane yıl 2 hane ay ve 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_periodCoveredEnd_2">Dönem Sonu</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entityInformation" xlink:label="entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entityInformation_2">İşletme Bilgileri Bölümü</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entryHeader_2">Kayıt Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredBy" xlink:label="enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_enteredBy">Yevmiye kaydınıoluşturan operatör bilgisine yer verilecektir.
+Kullanım: Yevmiye kaydınıoluşturan operatörün adı soyadının baş harfleri ya da adı yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_enteredBy_2">Girişi Yapan Kişi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredDate" xlink:label="enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_enteredDate">Yevmiye tarihi yazılacaktır.
+Kullanım: Yevmiye tarihi 4 hane yıl 2 hane ay 2 hane gün olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_enteredDate_2">Kayıt Tarihi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumber" xlink:label="entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entryNumber">Kaydın dayandığı muhasebe fiş numarası yazılacaktır. 
+Kullanım: Muhasebe fiş numarası kullanıcı tarafından serbest metin olarak girilecektir.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entryNumber_2">Kayıt Tanıtıcısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryComment" xlink:label="entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entryComment">Kayıt açıklaması bu elemanda yer alacaktır.
+Kullanım: Yevmiye kaydının açıklaması serbest metin biçiminde yapılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entryComment_2">Kayıt Açıklaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumberCounter" xlink:label="entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entryNumberCounter">Yevmiye madde numarası yazılacaktır.
+Kullanım: Yevmiye madde numarası hesap dönemi başlangıcında “1”’den başlatılacak ve izleyen her yevmiye maddesi(entryHeader) için müteselsil olarak kullanılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entryNumberCounter_2">Yevmiye Madde Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryDetail" xlink:label="entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_entryDetail">Kayıt detayları bu veri grubuna yazılacaktır. Yevmiye satırını ifade eder.
+Kullanım:
+Bknz. lineNumber
+Bknz. lineNumberCounter
+Bknz. account
+Bknz. amount
+Bknz. debitCreditCode
+Bknz. postingDate
+Bknz. documentType
+Bknz. documentTypeDescription
+Bknz. documentNumber
+Bknz. documentReference
+Bknz. documentDate
+Bknz. paymentMethod
+Bknz. detailComment</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_entryDetail_2">Kayıt Detayı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumber" xlink:label="lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_lineNumber">Kaydın bulunduğu yevmiye satırına (entryDetail) verilen müteselsil numaradır.
+Kullanım: Hesap dönemi başlangıcından sonuna kadar yevmiye defterinin her bir satırı için 1 den başlayıp müteselsil devam eden numara yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_lineNumber_2">Satır Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumberCounter" xlink:label="lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_lineNumberCounter">Satırın ait olduğu yevmiye maddesinin numarası yazılacaktır.
+Kullanım: Yevmiye satırı ile yevmiye madde numarası bağlantısı bu eleman aracılığı ile kurulacağından her yevmiye satırı için ilgili yevmiye madde numarası yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_lineNumberCounter_2">Yevmiye Madde Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_account" xlink:label="account"/>
+<label xlink:type="resource" xlink:label="label_account" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_account">Hesaplar ile ilgili bilgiler bu alana yazılacaktır. Bu veri grubu her bir hesap için çoklanabilmektedir.
+Kullanım: Bu veri grubunda yer alan “accountType” elemanına göre hesap bilgisi farklılaşabilmektedir. Eğer “accountType” ;
+· “account” olarak işaratlenmişse bu veri grubundaki elemanlara muhasebe hesapları hakkında bilgiler yazılacaktır.
+· “bank” olarak işaretlenmişse banka veya banka hesabı bilgileri yazılacaktır.
+· “employee” olarak işaretlenmişse personel hesabı ile ilgili bilgiler yazılacaktır.
+· “customer” olarak işaretlenmişse müşteri hesabı ile ilgili bilgiler yazılacaktır.
+· “job” olarak işaretlenmişse iş maliyetleri hesabı ile ilgili bilgiler yazılacaktır.
+· “vendor” olarak işaretlenmişse satıcılar hesabı ile ilgili bilgiler yazılacaktır.
+· “measurable” olarak işaretlenmişse duran varlıklar için veya genel olarak ölçülebilir (varlıklarla) ile ilgili bilgiler yazılacaktır.
+· “statistical” olarak işaretlenmişse finansal olmayan istatistiksel hesap ile ilgili bilgiler yazılacaktır.
+· “other” olarak işaretlenmişse diğer bilgi verilmek istenen hesap çeşitleri ile ilgili bilgiler yazılacaktır.
+e-Defter Uygulamasında bu kavramlardan sadece “account” kullanılacaktır.
+Bu veri grubunda kullanılacak elemanlar aşağıdaki gibidir.
+Bknz. accountMainID
+Bknz.accountMainDescription
+Bknz. accountSub</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account"/>
+<label xlink:type="resource" xlink:label="label_account_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_account_2">Hesap Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainID" xlink:label="accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountMainID">Ana hesap kod numarası yazılacaktır.
+Kullanım: Ana hesap kodu numerik olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountMainID_2">Ana Hesap Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainDescription" xlink:label="accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountMainDescription">Ana hesap adı yazılacaktır.
+Kullanım: Ana hesap adı serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountMainDescription_2">Ana Hesap Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSub" xlink:label="accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountSub">Alt hesaba ilişkin bilgilere bu veri grubunda yer verilecektir.
+Kullanım:
+Bknz. accountSubDescription
+Bknz. accountSubID</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountSub_2">Alt Hesap Bilgisi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubDescription" xlink:label="accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountSubDescription">Alt hesabın adı bu alana yazılacaktır.
+Kullanım: Alt hesabın adı bu alana serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountSubDescription_2">Alt Hesap Tanımı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubID" xlink:label="accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_accountSubID">Alt hesabın numarası bu alana yazılacaktır.
+Kullanım: Alt hesabın numarası bu alana ana hesap kodunu da içerecek biçimde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_accountSubID_2">Alt Hesap</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_amount" xlink:label="amount"/>
+<label xlink:type="resource" xlink:label="label_amount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_amount">Hesabın gösterdiği parasal tutar yazılacaktır.
+Kullanım: Parasal tutar olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount"/>
+<label xlink:type="resource" xlink:label="label_amount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_amount_2">Parasal Tutar</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_debitCreditCode" xlink:label="debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_debitCreditCode">Hesabın borçlu ya da alacaklı olup olmadığını gösteren tanımlayıcıdır.
+Kullanım: e-Defter uygulaması bakımından bu alanda sadece borç için “D” alacak için “C” göstergelerden birisi kullanılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_debitCreditCode_2">Borç/Alacak Tanımlayıcısı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingDate" xlink:label="postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_postingDate">Yevmiye tarihi yazılacaktır.
+Kullanım: Yevmiye tarihi 4 hane yıl, 2 hane ay ve 2 hane gün şeklinde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_postingDate_2">Yevmiye Tarihi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentType" xlink:label="documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_documentType">Yevmiye maddesine kaynak teşkil eden belgenin türünü gösteren elemandır.
+Kullanım:Bu elemanda sadece,sınırlı biçimde sayılmış olan (Enumerated) check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment,receipt,manual-adjustment ve otherkavramları kullanılabilmektedir. E-Defter Uygulamasında bu elemanda sadece aşağıdaki kavramlar kullanılacaktır.
+· check: Çek
+· invoice: Fatura
+· order-customer: Müşteri Sipariş Belgesi
+· order-vendor: Satıcı Sipariş Belgesi
+· voucher: Senet
+· shipment: Navlun
+· receipt: Makbuz
+· other: Diğer</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentType_2">Belge Tipi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentTypeDescription" xlink:label="documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_documentTypeDescription">documentType alanına “other” yazılmış ise belgeye ilişkin tür bilgisi yazılacaktır.
+Kullanım: Belge tipinin açıklaması serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentTypeDescription_2">Belge Tipi Tanımlaması</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentNumber" xlink:label="documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_documentNumber">Yevmiye maddesine kaynak teşkil eden belgenin numarasını gösteren elemandır.
+Kullanım: Yevmiye maddesine kaynak teşkil eden belgenin numarası serbest biçimde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentNumber_2">Belge Numarası</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentReference" xlink:label="documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_documentReference">Belgenin ilişkili olduğu muhasebe fiş numarası yazılacaktır.
+Kullanım: Muhasebe fiş numarası kullanıcı tarafından serbest metin olarak yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentReference_2">Belge Referansı</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentDate" xlink:label="documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_documentDate">Yevmiye maddesine kaynak teşkil eden belgenin tarihini gösteren elemandır.
+Kullanım: Yevmiye maddesine kaynak teşkil eden belgenin tarihi, 4 hane yıl, 2 hane ay, 2 hane gün şeklinde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_documentDate_2">Belge Tarihi</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailComment" xlink:label="detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="tr" id="label_detailComment">Yevmiye satırı ile ilgili açıklama yazılacaktır.
+Kullanım: Yevmiye satırı ile ilgili açıklama serbest metin biçiminde yazılacaktır.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="tr" id="label_detailComment_2">Açıklama</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment_2"/>
+  </labelLink>
+</linkbase>

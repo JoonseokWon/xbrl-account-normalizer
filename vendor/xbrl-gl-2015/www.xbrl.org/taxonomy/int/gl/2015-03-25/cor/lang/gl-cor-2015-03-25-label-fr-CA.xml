@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountingEntries" xlink:label="accountingEntries"/>
+<label xlink:type="resource" xlink:label="label_accountingEntries" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountingEntries">Racine pour XBRL GLG. Aucune donnée n'est saisie ici.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="label_accountingEntries"/>
+<label xlink:type="resource" xlink:label="label_accountingEntries_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountingEntries_2">Écritures comptables</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="label_accountingEntries_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentInfo" xlink:label="documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentInfo">Champ parent d'informations descriptives sur la section Écritures comptables (accountingEntries) dans laquelle elles sont contenues.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo"/>
+<label xlink:type="resource" xlink:label="label_documentInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentInfo_2">Information sur le document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInfo" xlink:to="label_documentInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesType" xlink:label="entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entriesType">(account: compte) : information à saisir dans un fichier de plan de comptes
+(balance: solde) : résultat du cumul d'une liste complète et validée d'écritures pour un compte (ou une liste de comptes) au cours d'une période donnée - parfois appelé grand livre général  
+(entries: écriture) : liste d'écritures comptables distinctes qui peuvent être reportées/validées ou non reportées/validées   
+(journal) : liste autonome (Dt = Ct) d'écritures pour une période donnée, y compris le solde d'ouverture pour cette période.  
+(ledger: grand livre) : liste complète d'écritures pour un compte donné (ou une liste de comptes) pour une période donnée; remarque : il n'est pas nécessaire que les débits soient égaux aux crédits.   
+(assets: actifs) : liste des comptes clients, des comptes fournisseurs, des stocks, des immobilisations non soldés ou autres informations pouvant être extraites d'une écriture de journal mais sans y être nécessairement incluses.  
+(trialbalance: Balance de vérification) : résultat autonome (Dt = Ct) du cumul d'une liste complète et validée d'écritures pour l'entité dans une liste complète de comptes au cours d'une période donnée. 
+(taxtables: Tables d'impôt) : facilitent l'interprétation automatisée d'instances qui représentent des tables d'impôt; les tables d'impôt sont définies à l'aide de plusieurs structures d'impôt permettant de réunir l'ensemble de codes, d'Administrations et de taux; les renvois à ce « fichier maître » de tables d'impôt sont effectués au moyen de renvois croisés [taxTableCode] dans les structures d'impôt. 
+(mapping)
+(versioning)
+(master_file)
+(trade_documents)
+(profile_compliant)
+(other: autre)
+Souvent triés par date ou par compte, ces termes ont des sens précis et parfois différents dans différents secteurs. L'usage déterminera le jumelage méthode comptable/terme.
+[énumération]
+(account: compte), (balance: solde), (entries: écriture), (journal), (ledger: grand livre), (assets: actifs), (trialbalance: Balance de vérification), (taxtables: Tables d'impôt), (mapping), (versioning), (master_file), (trade_documents), (profile_compliant), (other: autre)
+</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType"/>
+<label xlink:type="resource" xlink:label="label_entriesType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entriesType_2">Type de document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesType" xlink:to="label_entriesType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_uniqueID" xlink:label="uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_uniqueID">Identifiant unique pour ce fichier</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID"/>
+<label xlink:type="resource" xlink:label="label_uniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_uniqueID_2">Numéro d'audit</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="uniqueID" xlink:to="label_uniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_revisesUniqueID" xlink:label="revisesUniqueID"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_revisesUniqueID">Lorsque le lot d'informations corrige un lot d'informations précédent, ce champ indique que le lot précédent est corrigé. Le numéro d'identifiant unique (uniqueID) du lot précédent est saisi ici. Les développeurs doivent tenir compte de la production de rapports d'anomalies.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueID" xlink:to="label_revisesUniqueID"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_revisesUniqueID_2">Correction du numéro d'audit</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueID" xlink:to="label_revisesUniqueID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_revisesUniqueIDAction" xlink:label="revisesUniqueIDAction"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueIDAction" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_revisesUniqueIDAction">Indique ce qu'il faut faire avec l'ensemble de données précédent : remplacement - les anciennes données doivent être considérées comme caduques/remplacées; complément - doit être associé à ces données comme s'il en faisait partie.
+[énumération]
+(supersede: remplacement), (supplement: complément)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueIDAction" xlink:to="label_revisesUniqueIDAction"/>
+<label xlink:type="resource" xlink:label="label_revisesUniqueIDAction_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_revisesUniqueIDAction_2">Mesure à prendre à l'égard des données précédentes</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesUniqueIDAction" xlink:to="label_revisesUniqueIDAction_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_language" xlink:label="language"/>
+<label xlink:type="resource" xlink:label="label_language" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_language">Langue principale du contenu intellectuel. Lorsque c'est faisable, le contenu de ce champ devrait coïncider avec les codes langages de la norme ISO 639-1988.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language"/>
+<label xlink:type="resource" xlink:label="label_language_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_language_2">Langage</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="label_language_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_creationDate" xlink:label="creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_creationDate">Date/heure de création du fichier</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate"/>
+<label xlink:type="resource" xlink:label="label_creationDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_creationDate_2">Date de création</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="label_creationDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entriesComment" xlink:label="entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entriesComment">Texte pour l'ensemble du document.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment"/>
+<label xlink:type="resource" xlink:label="label_entriesComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entriesComment_2">Texte du document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entriesComment" xlink:to="label_entriesComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredStart" xlink:label="periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_periodCoveredStart">Borne inférieure de la fourchette de dates pour le contenu. Utilisé comme base pour de nombreuses hypothèses sur les données, y compris la date à compter de laquelle les soldes deviennent dûs ou exigibles.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredStart_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_periodCoveredStart_2">Début de la période visée</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="label_periodCoveredStart_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_periodCoveredEnd" xlink:label="periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_periodCoveredEnd">Borne supérieure de la fourchette de dates pour le contenu. Utilisé comme base pour de nombreuses hypothèses sur les données, y compris la date à compter de laquelle les soldes deviennent dûs ou exigibles.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd"/>
+<label xlink:type="resource" xlink:label="label_periodCoveredEnd_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_periodCoveredEnd_2">Fin de la période visée</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="label_periodCoveredEnd_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entityInformation" xlink:label="entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entityInformation">Conteneur pour l'information sur l'entité - information sur l'organisation présentant l'information.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation"/>
+<label xlink:type="resource" xlink:label="label_entityInformation_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entityInformation_2">Section Information sur l'entité</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityInformation" xlink:to="label_entityInformation_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryHeader" xlink:label="entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryHeader">Champ parent pour les en-têtes d'écritures/en-têtes d'écritures de journal</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader"/>
+<label xlink:type="resource" xlink:label="label_entryHeader_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryHeader_2">Information sur l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="label_entryHeader_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postedDate" xlink:label="postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_postedDate">Date à laquelle cette écriture a été reportée (validée) au grand livre général. Peut ne pas représenter la date ayant une valeur comptable, qui est représentée par la date de report (postingDate).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate"/>
+<label xlink:type="resource" xlink:label="label_postedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_postedDate_2">Date de validation</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postedDate" xlink:to="label_postedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredBy" xlink:label="enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_enteredBy">Initiales/nom du préposé à la saisie initiale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy"/>
+<label xlink:type="resource" xlink:label="label_enteredBy_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_enteredBy_2">Créateur de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredBy" xlink:to="label_enteredBy_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_enteredDate" xlink:label="enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_enteredDate">Représente la date/l'heure réelle de saisie dans l'ordinateur (automatisée par rapport à la date système, présente souvent des anomalies lors du changement d'horloge système). Les dates de report sont tenues à jour à part. </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate"/>
+<label xlink:type="resource" xlink:label="label_enteredDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_enteredDate_2">Date de saisie de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="enteredDate" xlink:to="label_enteredDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_sourceJournalID" xlink:label="sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_sourceJournalID">Journal source. Code du journal dans lequel l'écriture est traitée. Le code doit être une indication unique pour un journal et il est choisi dans l'énumération suivante :cd : décaissements (envoi de chèques aux fournisseurs)cr : encaissements (réception de chèques de tiers)fa : immobilisationsgi : giro/autres ajustements bancairesgj : journal généralim : gestion des stocksjc : coût des travauxpj : journal des achats (obligations découlant des achats)pl : journal de la paiesj :  journal des ventesse : écritures standardud : défini par l'utilisateurot : autres sources d'écritures
+[énumération]
+(cd), (cr), (fa), (gi), (gj), (im), (jc), (pj), (pl), (sj), (se), (ud), (ot)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID"/>
+<label xlink:type="resource" xlink:label="label_sourceJournalID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_sourceJournalID_2">Journal source</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournalID" xlink:to="label_sourceJournalID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryType" xlink:label="entryType"/>
+<label xlink:type="resource" xlink:label="label_entryType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryType">L'une des énumérations suivantes : ajustement, budget, comparatif, comptable externe, standard, ajustement passé, élimination, proposé, récurrent, reclassement, simulation, impôt, autre.
+[énumération]
+(adjusting: ajustement), (budget), (comparative: comparatif), (external-accountant: comptable externe), (standard), (passed-adjusting: ajustement passé), (eliminating: élimination), (proposed: proposé), (recurring: récurrent), (reclassifying: reclassement), (simulated: simulation), (tax: impôt), (other: autre).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryType" xlink:to="label_entryType"/>
+<label xlink:type="resource" xlink:label="label_entryType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryType_2">Identifiant de type</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryType" xlink:to="label_entryType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumber" xlink:label="entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryNumber">Identifiant dans le journal source</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber"/>
+<label xlink:type="resource" xlink:label="label_entryNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryNumber_2">Identifiant de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumber" xlink:to="label_entryNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryComment" xlink:label="entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryComment">Description de l'écriture décrite par cet en-tête (p. ex., solde d'ouverture)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment"/>
+<label xlink:type="resource" xlink:label="label_entryComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryComment_2">Description de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryComment" xlink:to="label_entryComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_qualifierEntry" xlink:label="qualifierEntry"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntry" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_qualifierEntry">Qualificatif d'écriture - champ énuméré définissant le type d'écriture; particulièrement utile pour le grand livre général et la balance de vérification lorsqu'il est important d'indiquer que les valeurs inscrites sont résumées à compter de la date de clôture - soldes d'ouverture ou de clôture. Dans les systèmes comptables, cette notion est souvent désignée par l'expression « solde reporté ». Les valeurs permises sont : standard, solde reporté et autre.
+[énumération]
+(standard), (balance-brought-forward: solde reporté), (other: autre).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntry" xlink:to="label_qualifierEntry"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntry_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_qualifierEntry_2">Qualificatif d'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntry" xlink:to="label_qualifierEntry_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_qualifierEntryDescription" xlink:label="qualifierEntryDescription"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntryDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_qualifierEntryDescription">Description en format libre du qualificatif de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntryDescription" xlink:to="label_qualifierEntryDescription"/>
+<label xlink:type="resource" xlink:label="label_qualifierEntryDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_qualifierEntryDescription_2">Description du qualificatif de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="qualifierEntryDescription" xlink:to="label_qualifierEntryDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_bookTaxDifference" xlink:label="bookTaxDifference"/>
+<label xlink:type="resource" xlink:label="label_bookTaxDifference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_bookTaxDifference">Champ énuméré pouvant afficher les valeurs permanente, temporaire ou aucune pour indiquer le type de différences entre les méthodes utilisées à des fins comptables et fiscales. L'omission de remplir ce champ équivaut à la valeur « aucune ».
+[énumération]
+(permanent: permanente), (temporary: temporaire) ou (none: aucune) </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="bookTaxDifference" xlink:to="label_bookTaxDifference"/>
+<label xlink:type="resource" xlink:label="label_bookTaxDifference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_bookTaxDifference_2">Type de différences entre les méthodes utilisées à des fins comptables et fiscales</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="bookTaxDifference" xlink:to="label_bookTaxDifference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryNumberCounter" xlink:label="entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryNumberCounter">Référence propre à l'écriture : compteur numérique</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_entryNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryNumberCounter_2">Compteur numérique des écritures</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="label_entryNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_entryDetail" xlink:label="entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_entryDetail">Champ parent pour le détail de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail"/>
+<label xlink:type="resource" xlink:label="label_entryDetail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_entryDetail_2">Détail de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="label_entryDetail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumber" xlink:label="lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_lineNumber">Identifiant d'un détail donné d'une écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber"/>
+<label xlink:type="resource" xlink:label="label_lineNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_lineNumber_2">Numéro de ligne</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumber" xlink:to="label_lineNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_lineNumberCounter" xlink:label="lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_lineNumberCounter">Référence unique pour la ligne : compteur numérique</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter"/>
+<label xlink:type="resource" xlink:label="label_lineNumberCounter_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_lineNumberCounter_2">Compteur de numéros de ligne</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineNumberCounter" xlink:to="label_lineNumberCounter_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_account" xlink:label="account"/>
+<label xlink:type="resource" xlink:label="label_account" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_account">Tuple : conteneur parent des numéros de compte et des identifiants. Aucune écriture n'y est saisie, mais chaque ligne de détail peut être associée à plusieurs comptes pour la présentation selon plusieurs référentiels comptables, la compensation des comptes au Japon, la transmission d'information aux systèmes de consolidation sur les comptes des établissements locaux par rapport aux comptes consolidés, etc. Par exemple, le compte 4783HG-QOWI-192837-1000 peut être exprimé ainsi : 
+/account/accountMainID 1000  
+/account/accountMainDescription Trésorerie  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Service
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Succursale  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division </label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account"/>
+<label xlink:type="resource" xlink:label="label_account_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_account_2">Identifiant du compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="account" xlink:to="label_account_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainID" xlink:label="accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountMainID">Compte principal - code servant à identifier la catégorie comptable à laquelle l'écriture a été attribuée. Par exemple : 1000 pour Trésorerie, 567GAAZ pour frais de vente ou Z pour paiements d'impôts. Les identifiants comme service, succursale, division, gestionnaire ou autres modificateurs sont consignés dans la zone Subaccount. Le compte n'est pas nécessaire tant qu'il n'y a pas d'écriture à reporter. Un report au grand livre général exige presque toujours une écriture ici.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID"/>
+<label xlink:type="resource" xlink:label="label_accountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountMainID_2">Numéro du compte principal</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainID" xlink:to="label_accountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountMainDescription" xlink:label="accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountMainDescription">Description de l'identifiant principal du compte (accountMainID) - descripteur intelligible qui accompagne le code utilisé dans le champ accountMainID.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription"/>
+<label xlink:type="resource" xlink:label="label_accountMainDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountMainDescription_2">Description du compte principal</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountMainDescription" xlink:to="label_accountMainDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_mainAccountType" xlink:label="mainAccountType"/>
+<label xlink:type="resource" xlink:label="label_mainAccountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_mainAccountType">Type de compte - Statement of Accounting Concepts 6 du FASB et normes internationales similaires. Quand le champ Information XBRL (xbrlInfo) est utilisé pour associer d'autres éléments d'information XBRL, ce champ convient mieux pour représenter les systèmes existants (audit) que les échanges de données. 
+[énumération]
+(asset), (liability), (equity), (income), (gain), (expense), (loss), (contr-to-equity), (distr-from-equity), (comprehensive-income), (other)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountType" xlink:to="label_mainAccountType"/>
+<label xlink:type="resource" xlink:label="label_mainAccountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_mainAccountType_2">Classement du compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountType" xlink:to="label_mainAccountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_mainAccountTypeDescription" xlink:label="mainAccountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_mainAccountTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_mainAccountTypeDescription">Description en format libre de la catégorie de compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountTypeDescription" xlink:to="label_mainAccountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_mainAccountTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_mainAccountTypeDescription_2">Description de la catégorie de compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="mainAccountTypeDescription" xlink:to="label_mainAccountTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentAccountMainID" xlink:label="parentAccountMainID"/>
+<label xlink:type="resource" xlink:label="label_parentAccountMainID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_parentAccountMainID">Élément reporté d'un compte par nature enfant vers un compte par nature parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentAccountMainID" xlink:to="label_parentAccountMainID"/>
+<label xlink:type="resource" xlink:label="label_parentAccountMainID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_parentAccountMainID_2">Numéro du compte parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentAccountMainID" xlink:to="label_parentAccountMainID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountPurposeCode" xlink:label="accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountPurposeCode">Code lié à l'utilisation pour le total des comptes : consolidation, européen, IFRS, compensation, de base, impôts, référentiel comptable américain, référentiel comptable japonais, autre. Les sociétés japonaises se servent de ce code pour les montants d'impôts nécessitant une écriture de contrepassation. Si le champ est laissé en blanc, on suppose que la méthode de comptabilisation par défaut s'applique à la société.
+[énumération]
+(consolidating: consolidation), (european: européen), (IFRS), (offsetting: compensation), (primary: de base), (tax: impôts), (usgaap: référentiel comptable américain), (japanese: référentiel comptable japonais), (other: autre)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountPurposeCode_2">Objet du compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeCode" xlink:to="label_accountPurposeCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountPurposeDescription" xlink:label="accountPurposeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountPurposeDescription">Description de l'utilisation pour le total des comptes</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeDescription" xlink:to="label_accountPurposeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountPurposeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountPurposeDescription_2">Description de l'objet du compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountPurposeDescription" xlink:to="label_accountPurposeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountType" xlink:label="accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountType">Type de compte. 
+[énumération]
+(account), (bank), (employee), (customer), (job), (vendor), (measurable), (statistical), (other).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType"/>
+<label xlink:type="resource" xlink:label="label_accountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountType_2">Type de compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountType" xlink:to="label_accountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountTypeDescription" xlink:label="accountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountTypeDescription">Description en format libre du type de compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountTypeDescription" xlink:to="label_accountTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_accountTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountTypeDescription_2">Description du type de compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountTypeDescription" xlink:to="label_accountTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSub" xlink:label="accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountSub">Tuple pouvant contenir plusieurs sous-identifiants du compte (accountSubID) et descriptions.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub"/>
+<label xlink:type="resource" xlink:label="label_accountSub_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountSub_2">Information relative au sous-compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSub" xlink:to="label_accountSub_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubDescription" xlink:label="accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountSubDescription">La description qui accompagne le sous-identifiant du compte (accountSubID) est saisie ici.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription"/>
+<label xlink:type="resource" xlink:label="label_accountSubDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountSubDescription_2">Description du sous-compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubDescription" xlink:to="label_accountSubDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubID" xlink:label="accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountSubID">Lorsque le compte principal est saisi dans l'identifiant principal du compte (accountMainID), le code utilisé pour chaque centre de profit, division, unité d'exploitation, fonds, programme, succursale, projet, catégorie, sous-catégorie ou autre modificateur est saisi ici.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID"/>
+<label xlink:type="resource" xlink:label="label_accountSubID_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountSubID_2">Sous-compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubID" xlink:to="label_accountSubID_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountSubType" xlink:label="accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountSubType">Le type de sous-compte (centre de profit, division, unité d'exploitation, fonds, programme, succursale, projet, catégorie, sous-catégorie ou autre modificateur) est placé ici. Par exemple : Centre de reddition de comptes : unité d'exploitation : catégorie : service : projet : fonds : programme : emploi : centre de profit : succursale : catégorie initiale : division : unité</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType"/>
+<label xlink:type="resource" xlink:label="label_accountSubType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountSubType_2">Type de sous-compte</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountSubType" xlink:to="label_accountSubType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_segmentParentTuple" xlink:label="segmentParentTuple"/>
+<label xlink:type="resource" xlink:label="label_segmentParentTuple" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_segmentParentTuple">Tuple servant à afficher les détails nécessaires pour passer d'un segment (type de sous-compte) à un autre.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="segmentParentTuple" xlink:to="label_segmentParentTuple"/>
+<label xlink:type="resource" xlink:label="label_segmentParentTuple_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_segmentParentTuple_2">Information segment parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="segmentParentTuple" xlink:to="label_segmentParentTuple_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountCode" xlink:label="parentSubaccountCode"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_parentSubaccountCode">NUMÉRO de sous-compte dans lequel un sous-compte est reporté - voir aussi le type de sous-compte dans lequel il est reporté.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountCode" xlink:to="label_parentSubaccountCode"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_parentSubaccountCode_2">Code du sous-compte parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountCode" xlink:to="label_parentSubaccountCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountType" xlink:label="parentSubaccountType"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_parentSubaccountType">Descripteur du segment auquel ce sous-compte est reporté.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountType" xlink:to="label_parentSubaccountType"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_parentSubaccountType_2">Type de sous-compte parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountType" xlink:to="label_parentSubaccountType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_reportingTreeIdentifier" xlink:label="reportingTreeIdentifier"/>
+<label xlink:type="resource" xlink:label="label_reportingTreeIdentifier" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_reportingTreeIdentifier">Sert à représenter des descriptions d'arbres d'informations.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingTreeIdentifier" xlink:to="label_reportingTreeIdentifier"/>
+<label xlink:type="resource" xlink:label="label_reportingTreeIdentifier_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_reportingTreeIdentifier_2">Identifiant d'arborescences d'informations</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingTreeIdentifier" xlink:to="label_reportingTreeIdentifier_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_parentSubaccountProportion" xlink:label="parentSubaccountProportion"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountProportion" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_parentSubaccountProportion">Dans le cas d'attributions partielles de montants à des comptes parents différents, pourcentage du compte enfant qui sera attribué à un compte parent.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountProportion" xlink:to="label_parentSubaccountProportion"/>
+<label xlink:type="resource" xlink:label="label_parentSubaccountProportion_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_parentSubaccountProportion_2">Proportion du sous-compte parent</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="parentSubaccountProportion" xlink:to="label_parentSubaccountProportion_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountActive" xlink:label="accountActive"/>
+<label xlink:type="resource" xlink:label="label_accountActive" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_accountActive">Opérateur booléen indiquant si le compte est actif (= «vrai») ou inactif (= «faux»)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountActive" xlink:to="label_accountActive"/>
+<label xlink:type="resource" xlink:label="label_accountActive_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_accountActive_2">Compte actif</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountActive" xlink:to="label_accountActive_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_amount" xlink:label="amount"/>
+<label xlink:type="resource" xlink:label="label_amount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_amount">Ce champ (montant) représente le montant monétaire principal lié au sujet de la ligne Détail de l'écriture (entryDetail). Il y a un montant monétaire principal par ligne détail de l'écriture (entryDetail). Il peut, par exemple, représenter le montant d'une ligne d'une écriture de journal, le solde dans un document ou le montant reporté d'un poste sur une facture. Le montant n'est pas requis si une écriture détaillée est utilisée pour les travaux non financiers et que d'autres éléments ont été saisis, en particulier la quantité d'éléments mesurables (measurableQuantity). Le champ du montant correspond à un nombre algébrique (positif ou négatif) et est utilisé en même temps qu'un signe de montant (signOfAmount) distinct et qu'un champ code débit ou crédit (debitCreditCode) distinct qui, ensemble, sont pris en compte pour comprendre le montant monétaire. L'unité de mesure est déterminée par la monnaie dans laquelle le montant est libellé (amountCurrency) si ce champ est présent, ou par la monnaie par défaut ou fonctionnelle si le champ amountCurrency n'est pas présent.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount"/>
+<label xlink:type="resource" xlink:label="label_amount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_amount_2">Montant monétaire</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="label_amount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_signOfAmount" xlink:label="signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_signOfAmount">Signe du montant; permet quatre champs possibles lorsqu'il est utilisé avec le champ Code débit ou crédit (debitCreditCode); utilisé principalement pour corriger des écritures afin d'éviter que les totaux des débits et des crédits ne soient gonflés après une erreur de saisie. D + augmentation débits (D) - diminution débits (C) + diminutions crédit (C) - augmentations crédits. 
+[énumération]
+(+), (-), (plus), (minus)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount"/>
+<label xlink:type="resource" xlink:label="label_signOfAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_signOfAmount_2">Signe du montant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signOfAmount" xlink:to="label_signOfAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_debitCreditCode" xlink:label="debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_debitCreditCode">Identifiant facultatif déterminant si le montant est un D débit, un C crédit ou s'il est indéfini.
+[énumération]
+(D: débit), (debit: débit), (C: crédit), (credit: crédit), (undefined: indéfini).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode"/>
+<label xlink:type="resource" xlink:label="label_debitCreditCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_debitCreditCode_2">Identifiant débit/crédit</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitCreditCode" xlink:to="label_debitCreditCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingDate" xlink:label="postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_postingDate">Au niveau des détails, représente la date ayant une valeur comptable. Sans égard à la date à laquelle le document est reçu, saisi ou reporté, représente la date de comptabilisation de l'écriture. Si vous souhaitez voir les résultats financiers pour le 5 mars 2002 et que cette date est attribuée à cette écriture, l'écriture fera partie des résultats pour le 5 mars 2002. Ce champ est différent du champ date de validation (postedDate) que l'on trouve au niveau du champ en-tête de l'écriture (entryHeader). Si vous souhaitez attribuer une valeur comptable à une date en particulier, c'est dans le présent champ que vous devez le faire. Une écriture simple peut représenter plusieurs dates, mais elle n'est reportée qu'à une seule date.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate"/>
+<label xlink:type="resource" xlink:label="label_postingDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_postingDate_2">Date de report</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingDate" xlink:to="label_postingDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierReference" xlink:label="identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierReference">Identification pour les clients, les fournisseurs ou les employés</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference"/>
+<label xlink:type="resource" xlink:label="label_identifierReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierReference_2">Référence de l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierReference" xlink:to="label_identifierReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierCode" xlink:label="identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierCode">Numéro d'identifiant interne associé au champ indiquant la référence de l'identifiant (identifierReference)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode"/>
+<label xlink:type="resource" xlink:label="label_identifierCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierCode_2">Numéro d'identifiant (interne)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCode" xlink:to="label_identifierCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierExternalReference" xlink:label="identifierExternalReference"/>
+<label xlink:type="resource" xlink:label="label_identifierExternalReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierExternalReference">Structure contenant des renvois à une autorité indépendante associée à l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierExternalReference" xlink:to="label_identifierExternalReference"/>
+<label xlink:type="resource" xlink:label="label_identifierExternalReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierExternalReference_2">Autorité indépendante</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierExternalReference" xlink:to="label_identifierExternalReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthorityCode" xlink:label="identifierAuthorityCode"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierAuthorityCode">Numéro d'identifiant de l'autorité indépendante (p. ex., administration fiscale) associée au champ indiquant la référence de l'identifiant (identifierReference).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityCode" xlink:to="label_identifierAuthorityCode"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierAuthorityCode_2">Numéro d'identifiant de l'autorité indépendante</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityCode" xlink:to="label_identifierAuthorityCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthority" xlink:label="identifierAuthority"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthority" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierAuthority">Nom de l'autorité indépendante (p. ex., administration fiscale).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthority" xlink:to="label_identifierAuthority"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthority_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierAuthority_2">Autorité indépendante</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthority" xlink:to="label_identifierAuthority_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierAuthorityVerificationDate" xlink:label="identifierAuthorityVerificationDate"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityVerificationDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierAuthorityVerificationDate">Dernière date à laquelle l'autorité indépendante a procédé à une vérification.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityVerificationDate" xlink:to="label_identifierAuthorityVerificationDate"/>
+<label xlink:type="resource" xlink:label="label_identifierAuthorityVerificationDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierAuthorityVerificationDate_2">Date de la vérification par l'autorité indépendante</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAuthorityVerificationDate" xlink:to="label_identifierAuthorityVerificationDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierOrganizationType" xlink:label="identifierOrganizationType"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierOrganizationType">Identifiant du type d'organisation
+[énumération]
+(individual), (organization), (other)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationType" xlink:to="label_identifierOrganizationType"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierOrganizationType_2">Identifiant type d'organisation</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationType" xlink:to="label_identifierOrganizationType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierOrganizationTypeDescription" xlink:label="identifierOrganizationTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierOrganizationTypeDescription">Description en format libre de l'identifiant du type d'organisation</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationTypeDescription" xlink:to="label_identifierOrganizationTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierOrganizationTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierOrganizationTypeDescription_2">Identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierOrganizationTypeDescription" xlink:to="label_identifierOrganizationTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierDescription" xlink:label="identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierDescription">Description textuelle du champ indiquant la référence de l'identifiant (identifierReference)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierDescription_2">Description de l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="label_identifierDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierType" xlink:label="identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierType">Type d'entité (énumération) : p. ex., C customer (client), V vendor (fournisseur), E employee (employé). 
+[énumération]
+(C: client) (customer: client), (E: employé) (employee: employé), (V: fornisseur) (vendor: fornisseur), (O: autre) (other: autre), (I) (salesperson-internal), (X) (salesperson-external), (N) (contractor)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType"/>
+<label xlink:type="resource" xlink:label="label_identifierType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierType_2">Type d'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierType" xlink:to="label_identifierType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierCategory" xlink:label="identifierCategory"/>
+<label xlink:type="resource" xlink:label="label_identifierCategory" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierCategory">À utiliser comme catégorie de client, de fournisseur ou d'employé (p. ex., résidentiel/commercial/institutionnel/gouvernement ou détail/gros ou autres catégories utilisées par une organisation).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCategory" xlink:to="label_identifierCategory"/>
+<label xlink:type="resource" xlink:label="label_identifierCategory_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierCategory_2">Catégorie d'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCategory" xlink:to="label_identifierCategory_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEMail" xlink:label="identifierEMail"/>
+<label xlink:type="resource" xlink:label="label_identifierEMail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierEMail">Adresse courriel associée à l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEMail" xlink:to="label_identifierEMail"/>
+<label xlink:type="resource" xlink:label="label_identifierEMail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierEMail_2">Adresse courriel</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEMail" xlink:to="label_identifierEMail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEmailAddressUsage" xlink:label="identifierEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddressUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierEmailAddressUsage">Utilisation de l'identifiant de l'adresse courriel (p. ex., commandes, siège social, relations avec les investisseurs)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="label_identifierEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddressUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierEmailAddressUsage_2">Utilisation de l'identifiant de l'adresse courriel</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="label_identifierEmailAddressUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierEmailAddress" xlink:label="identifierEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierEmailAddress">Identifiant de l'adresse courriel</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="label_identifierEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierEmailAddress_2">Identifiant de l'adresse courriel</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="label_identifierEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhoneNumber" xlink:label="identifierPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierPhoneNumber">Numéro de téléphone associé à l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="label_identifierPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierPhoneNumber_2">Numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="label_identifierPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhoneNumberDescription" xlink:label="identifierPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierPhoneNumberDescription">Utilisation de l'identifiant du numéro de téléphone (p. ex., principal, relations avec les investisseurs, etc.). 
+[énumération]
+(bookkeeper), (controller), (direct), (fax), (investor-relations), (main), (switchboard), (other)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="label_identifierPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierPhoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierPhoneNumberDescription_2">Utilisation de l'identifiant du numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="label_identifierPhoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierPhone" xlink:label="identifierPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierPhone" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierPhone">Identifiant du numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhone" xlink:to="label_identifierPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierPhone_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierPhone_2">Identifiant du numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhone" xlink:to="label_identifierPhone_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFaxNumber" xlink:label="identifierFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierFaxNumber">Structure du numéro de télécopieur associé à l'identifiant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="label_identifierFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierFaxNumber_2">Structure du numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="label_identifierFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFaxNumberUsage" xlink:label="identifierFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumberUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierFaxNumberUsage">Utilisation de l'identifiant du numéro de télécopieur (p. ex., commandes, siège social, relations avec les investisseurs)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="label_identifierFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierFaxNumberUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierFaxNumberUsage_2">Utilisation de l'identifiant du numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="label_identifierFaxNumberUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierFax" xlink:label="identifierFax"/>
+<label xlink:type="resource" xlink:label="label_identifierFax" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierFax">Identifiant du numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFax" xlink:to="label_identifierFax"/>
+<label xlink:type="resource" xlink:label="label_identifierFax_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierFax_2">Identifiant du numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFax" xlink:to="label_identifierFax_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactInformationStructure" xlink:label="identifierContactInformationStructure"/>
+<label xlink:type="resource" xlink:label="label_identifierContactInformationStructure" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactInformationStructure">Identifiant de la structure de l'information sur le contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactInformationStructure" xlink:to="label_identifierContactInformationStructure"/>
+<label xlink:type="resource" xlink:label="label_identifierContactInformationStructure_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactInformationStructure_2">Identifiant de la structure de l'information sur le contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactInformationStructure" xlink:to="label_identifierContactInformationStructure_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPrefix" xlink:label="identifierContactPrefix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPrefix" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactPrefix">Titre de civilité (p. ex., Dr, M., Mme)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPrefix" xlink:to="label_identifierContactPrefix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPrefix_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactPrefix_2">Identifiant titre de civilité du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPrefix" xlink:to="label_identifierContactPrefix_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactLastName" xlink:label="identifierContactLastName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactLastName" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactLastName">Identifiant du nom de famille du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactLastName" xlink:to="label_identifierContactLastName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactLastName_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactLastName_2">Identifiant du nom de famille du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactLastName" xlink:to="label_identifierContactLastName_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFirstName" xlink:label="identifierContactFirstName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFirstName" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactFirstName">Prénom</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFirstName" xlink:to="label_identifierContactFirstName"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFirstName_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactFirstName_2">Identifiant du prénom du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFirstName" xlink:to="label_identifierContactFirstName_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactSuffix" xlink:label="identifierContactSuffix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactSuffix" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactSuffix">Titre professionnel (p. ex., MD, CPA, Jr)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactSuffix" xlink:to="label_identifierContactSuffix"/>
+<label xlink:type="resource" xlink:label="label_identifierContactSuffix_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactSuffix_2">Identifiant du titre professionnel du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactSuffix" xlink:to="label_identifierContactSuffix_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactAttentionLine" xlink:label="identifierContactAttentionLine"/>
+<label xlink:type="resource" xlink:label="label_identifierContactAttentionLine" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactAttentionLine">Ligne « À l'attention de »</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactAttentionLine" xlink:to="label_identifierContactAttentionLine"/>
+<label xlink:type="resource" xlink:label="label_identifierContactAttentionLine_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactAttentionLine_2">Identifiant de la ligne « À l'attention de » du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactAttentionLine" xlink:to="label_identifierContactAttentionLine_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPositionRole" xlink:label="identifierContactPositionRole"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPositionRole" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactPositionRole">Poste ou rôle</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPositionRole" xlink:to="label_identifierContactPositionRole"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPositionRole_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactPositionRole_2">Identifiant du poste/rôle du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPositionRole" xlink:to="label_identifierContactPositionRole_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhone" xlink:label="identifierContactPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhone" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactPhone">Numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhone" xlink:to="label_identifierContactPhone"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhone_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactPhone_2">Identifiant du numéro de téléphone</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhone" xlink:to="label_identifierContactPhone_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhoneNumberDescription" xlink:label="identifierContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumberDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactPhoneNumberDescription">Identifiant de l'utilisation du numéro de téléphone du contact (principal, relations avec les investisseurs, etc.). 
+[énumération]
+(bookkeeper), (controller), (direct), (fax), (investor-relations), (main), (switchboard), (other)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="label_identifierContactPhoneNumberDescription"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumberDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactPhoneNumberDescription_2">Identifiant de l'utilisation du numéro de téléphone du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="label_identifierContactPhoneNumberDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactPhoneNumber" xlink:label="identifierContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactPhoneNumber">Identifiant du numéro de téléphone du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="label_identifierContactPhoneNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactPhoneNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactPhoneNumber_2">Identifiant du numéro de téléphone du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="label_identifierContactPhoneNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFax" xlink:label="identifierContactFax"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFax" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactFax">Numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFax" xlink:to="label_identifierContactFax"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFax_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactFax_2">Identifiant du numéro de télécopieur</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFax" xlink:to="label_identifierContactFax_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFaxNumberUsage" xlink:label="identifierContactFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumberUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactFaxNumberUsage">Identifiant de l'utilisation du numéro de télécopieur du contact (p. ex., commandes, siège social, relations avec les investisseurs)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="label_identifierContactFaxNumberUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumberUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactFaxNumberUsage_2">Identifiant de l'utilisation du numéro de télécopieur du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="label_identifierContactFaxNumberUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactFaxNumber" xlink:label="identifierContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactFaxNumber">Identifiant du numéro de télécopieur du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="label_identifierContactFaxNumber"/>
+<label xlink:type="resource" xlink:label="label_identifierContactFaxNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactFaxNumber_2">Identifiant du numéro de télécopieur du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="label_identifierContactFaxNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmail" xlink:label="identifierContactEmail"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmail" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactEmail">Adresse courriel</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmail" xlink:to="label_identifierContactEmail"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmail_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactEmail_2">Identifiant de l'adresse courriel du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmail" xlink:to="label_identifierContactEmail_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmailAddressUsage" xlink:label="identifierContactEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddressUsage" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactEmailAddressUsage">Identifiant de l'utilisation de l'adresse courriel du contact (p. ex., commandes, siège social, relations avec les investisseurs)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="label_identifierContactEmailAddressUsage"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddressUsage_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactEmailAddressUsage_2">Identifiant de l'utilisation de l'adresse courriel du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="label_identifierContactEmailAddressUsage_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactEmailAddress" xlink:label="identifierContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddress" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactEmailAddress">Identifiant de l'adresse courriel du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="label_identifierContactEmailAddress"/>
+<label xlink:type="resource" xlink:label="label_identifierContactEmailAddress_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactEmailAddress_2">Identifiant de l'adresse courriel du contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="label_identifierContactEmailAddress_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierContactType" xlink:label="identifierContactType"/>
+<label xlink:type="resource" xlink:label="label_identifierContactType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierContactType">Identifiant du type de contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactType" xlink:to="label_identifierContactType"/>
+<label xlink:type="resource" xlink:label="label_identifierContactType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierContactType_2">Identifiant du type de contact</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactType" xlink:to="label_identifierContactType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_identifierActive" xlink:label="identifierActive"/>
+<label xlink:type="resource" xlink:label="label_identifierActive" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_identifierActive">Opérateur booléen indiquant si l'identifiant est actif (=«vrai») ou inactif (=«faux»)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierActive" xlink:to="label_identifierActive"/>
+<label xlink:type="resource" xlink:label="label_identifierActive_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_identifierActive_2">Identifiant actif</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierActive" xlink:to="label_identifierActive_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentType" xlink:label="documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentType">Champ énuméré décrivant le document source initial : facture, bordereau, chèque et autres valeurs énumérées. 
+[énumération]
+(check), (debit-memo), (credit-memo), (finance-charge), (invoice), (order-customer), (order-vendor), (payment-other), (reminder), (tegata), (voucher), (shipment), (receipt), (manual-adjustment), (other).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType"/>
+<label xlink:type="resource" xlink:label="label_documentType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentType_2">Type de document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="label_documentType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentTypeDescription" xlink:label="documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentTypeDescription">Description en format libre du type de document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription"/>
+<label xlink:type="resource" xlink:label="label_documentTypeDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentTypeDescription_2">Description du type de document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTypeDescription" xlink:to="label_documentTypeDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_invoiceType" xlink:label="invoiceType"/>
+<label xlink:type="resource" xlink:label="label_invoiceType" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_invoiceType">Type de facture; énumération des valeurs possibles: autofacturation, point de vente électronique
+[énumération]
+(self-billed: autofacturation), (ePos: point de vente électronique)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="invoiceType" xlink:to="label_invoiceType"/>
+<label xlink:type="resource" xlink:label="label_invoiceType_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_invoiceType_2">Type de facture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="invoiceType" xlink:to="label_invoiceType_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentNumber" xlink:label="documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentNumber">Facture, chèque, bordereau ou tout autre identifiant de document source</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber"/>
+<label xlink:type="resource" xlink:label="label_documentNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentNumber_2">Numéro du document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentNumber" xlink:to="label_documentNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentApplyToNumber" xlink:label="documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentApplyToNumber">Numéro de document de la facture principale utilisé pour compenser des paiements, des débits et des crédits; pour une facture, il s'agit habituellement du même numéro que dans le champ du numéro de document (documentNumber). Pour calculer le solde restant à payer sur une facture, ou le montant non soldé sur des paiements anticipés ou non entièrement imputés; permet de calculer le montant non soldé des écritures.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber"/>
+<label xlink:type="resource" xlink:label="label_documentApplyToNumber_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentApplyToNumber_2">Numéro d'application</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentApplyToNumber" xlink:to="label_documentApplyToNumber_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentReference" xlink:label="documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentReference">Référence interne du document ci-dessus; numéro attribué en interne pour retracer le document.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference"/>
+<label xlink:type="resource" xlink:label="label_documentReference_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentReference_2">Numéro de référence du document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentReference" xlink:to="label_documentReference_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_documentDate" xlink:label="documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_documentDate">Date (et heure, moins probable sur papier, mais possible sur support électronique) figurant sur le document en question (facture, bordereau, chèque). D'autres dates permettent de contrôler l'information indiquée.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate"/>
+<label xlink:type="resource" xlink:label="label_documentDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_documentDate_2">Date du document</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentDate" xlink:to="label_documentDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingStatus" xlink:label="postingStatus"/>
+<label xlink:type="resource" xlink:label="label_postingStatus" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_postingStatus">
+[énumération]
+(deferred: différé) : saisi, mais ne peut être reporté qu'à une date ultérieure(posted: reporté) : déjà reporté(proposed: proposé) : élément proposé qui doit être approuvé(simulated: simulé) : élément simulé, pour une analyse d'hypothèses(tax: impôt ou taxe) : écriture associée aux impôts ou aux taxes(unposted: non reporté) : saisi mais pas encore reporté ou validé(cancelled: annulé) : saisi mais annulé ultérieurement(other: autre) : autre statut - doit être décrit dans le champ Description du statut de l'écriture (postingStatusDescription)</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatus" xlink:to="label_postingStatus"/>
+<label xlink:type="resource" xlink:label="label_postingStatus_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_postingStatus_2">Statut du report</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatus" xlink:to="label_postingStatus_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_postingStatusDescription" xlink:label="postingStatusDescription"/>
+<label xlink:type="resource" xlink:label="label_postingStatusDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_postingStatusDescription">Description en format libre du statut de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatusDescription" xlink:to="label_postingStatusDescription"/>
+<label xlink:type="resource" xlink:label="label_postingStatusDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_postingStatusDescription_2">Description du statut de l'écriture</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="postingStatusDescription" xlink:to="label_postingStatusDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_xbrlInfo" xlink:label="xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_xbrlInfo">Sera intégré à l'information présentée en XBRL - champ parent - peut être répété de sorte que le même élément peut être présenté selon de nombreuses taxonomies. Il faut évaluer ce qui se produit lorsqu'on reporte des écritures dans le même compte, mais que les éléments XBRL sont différents.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo"/>
+<label xlink:type="resource" xlink:label="label_xbrlInfo_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_xbrlInfo_2">Information XBRL</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInfo" xlink:to="label_xbrlInfo_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_xbrlInclude" xlink:label="xbrlInclude"/>
+<label xlink:type="resource" xlink:label="label_xbrlInclude" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_xbrlInclude">Indique que l'information donnée est solde_ouverture, solde_clôture, changement_période.
+[énumération]
+(beginning_balance: solde_ouverture), (ending_balance: solde_clôture), (period_change: changement_période).</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInclude" xlink:to="label_xbrlInclude"/>
+<label xlink:type="resource" xlink:label="label_xbrlInclude_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_xbrlInclude_2">Attribution XBRL</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="xbrlInclude" xlink:to="label_xbrlInclude_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_summaryReportingElement" xlink:label="summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_summaryReportingElement">Élément XBRL associé ou élément XML dans une taxonomie XML - mise en correspondance avec une notion XBRL.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement"/>
+<label xlink:type="resource" xlink:label="label_summaryReportingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_summaryReportingElement_2">Élément d'information sommaire</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingElement" xlink:to="label_summaryReportingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailMatchingElement" xlink:label="detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_detailMatchingElement">Élément XBRL associé dans une instance XBRL-GL</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement"/>
+<label xlink:type="resource" xlink:label="label_detailMatchingElement_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_detailMatchingElement_2">Élément de détail correspondant</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMatchingElement" xlink:to="label_detailMatchingElement_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_detailComment" xlink:label="detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_detailComment">Description de cette ligne de détail seulement</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment"/>
+<label xlink:type="resource" xlink:label="label_detailComment_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_detailComment_2">Description</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailComment" xlink:to="label_detailComment_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_dateAcknowledged" xlink:label="dateAcknowledged"/>
+<label xlink:type="resource" xlink:label="label_dateAcknowledged" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_dateAcknowledged">Date d'accusé de réception de biens ou services fournis ou reçus</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dateAcknowledged" xlink:to="label_dateAcknowledged"/>
+<label xlink:type="resource" xlink:label="label_dateAcknowledged_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_dateAcknowledged_2">Date d'accusé de réception</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dateAcknowledged" xlink:to="label_dateAcknowledged_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_confirmedDate" xlink:label="confirmedDate"/>
+<label xlink:type="resource" xlink:label="label_confirmedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_confirmedDate">Date de confirmation de l'expédition/la réception</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="confirmedDate" xlink:to="label_confirmedDate"/>
+<label xlink:type="resource" xlink:label="label_confirmedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_confirmedDate_2">Date de confirmation</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="confirmedDate" xlink:to="label_confirmedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_shipFrom" xlink:label="shipFrom"/>
+<label xlink:type="resource" xlink:label="label_shipFrom" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_shipFrom">Renvoi à l'identifiant de l'adresse de l'emplacement de l'organisation (organizationAddressLocationIdentifier) lorsqu'il est utilisé. Autrement en texte libre.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipFrom" xlink:to="label_shipFrom"/>
+<label xlink:type="resource" xlink:label="label_shipFrom_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_shipFrom_2">Expédié depuis</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipFrom" xlink:to="label_shipFrom_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_shipReceivedDate" xlink:label="shipReceivedDate"/>
+<label xlink:type="resource" xlink:label="label_shipReceivedDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_shipReceivedDate">Date à laquelle les biens ou services sont fournis/reçus.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipReceivedDate" xlink:to="label_shipReceivedDate"/>
+<label xlink:type="resource" xlink:label="label_shipReceivedDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_shipReceivedDate_2">Date d'expédition/de réception</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipReceivedDate" xlink:to="label_shipReceivedDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_maturityDate" xlink:label="maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_maturityDate">Date de paiement ou autre date d'échéance</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate"/>
+<label xlink:type="resource" xlink:label="label_maturityDate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_maturityDate_2">Date de paiement ou d'échéance</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDate" xlink:to="label_maturityDate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_terms" xlink:label="terms"/>
+<label xlink:type="resource" xlink:label="label_terms" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_terms">Rabais/modalités de paiement</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms"/>
+<label xlink:type="resource" xlink:label="label_terms_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_terms_2">Modalités de paiement</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="terms" xlink:to="label_terms_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxes" xlink:label="taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxes">Tuple servant à conserver des informations de nature fiscale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes"/>
+<label xlink:type="resource" xlink:label="label_taxes_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxes_2">Informations fiscales</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxes" xlink:to="label_taxes_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxAuthority" xlink:label="taxAuthority"/>
+<label xlink:type="resource" xlink:label="label_taxAuthority" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxAuthority">Nom de l'administration fiscale pertinente</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAuthority" xlink:to="label_taxAuthority"/>
+<label xlink:type="resource" xlink:label="label_taxAuthority_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxAuthority_2">Administration fiscale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAuthority" xlink:to="label_taxAuthority_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxTableCode" xlink:label="taxTableCode"/>
+<label xlink:type="resource" xlink:label="label_taxTableCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxTableCode">Code de la table d'impôt utilisée par l'administration fiscale pertinente</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxTableCode" xlink:to="label_taxTableCode"/>
+<label xlink:type="resource" xlink:label="label_taxTableCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxTableCode_2">Code de table d'impôt</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxTableCode" xlink:to="label_taxTableCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxDescription" xlink:label="taxDescription"/>
+<label xlink:type="resource" xlink:label="label_taxDescription" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxDescription">Description de l'administration fiscale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxDescription" xlink:to="label_taxDescription"/>
+<label xlink:type="resource" xlink:label="label_taxDescription_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxDescription_2">Description de l'impôt ou de la taxe</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxDescription" xlink:to="label_taxDescription_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxAmount" xlink:label="taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxAmount">Montant d'impôts</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount"/>
+<label xlink:type="resource" xlink:label="label_taxAmount_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxAmount_2">Montant d'impôts</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxAmount" xlink:to="label_taxAmount_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxBasis" xlink:label="taxBasis"/>
+<label xlink:type="resource" xlink:label="label_taxBasis" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxBasis">Assiette fiscale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxBasis" xlink:to="label_taxBasis"/>
+<label xlink:type="resource" xlink:label="label_taxBasis_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxBasis_2">Assiette fiscale</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxBasis" xlink:to="label_taxBasis_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxExchangeRate" xlink:label="taxExchangeRate"/>
+<label xlink:type="resource" xlink:label="label_taxExchangeRate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxExchangeRate">[DÉPRÉCIÉ. Le champ taux de change (taxExchangeRate) doit être utilisé dans gl-muc pallette.] Montant permettant de déterminer le taux de change de la monnaie étrangère par rapport à la monnaie fonctionnelle.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxExchangeRate" xlink:to="label_taxExchangeRate"/>
+<label xlink:type="resource" xlink:label="label_taxExchangeRate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxExchangeRate_2">[DÉPRÉCIÉ. taxExchangeRate doit être utilisé dans gl-muc pallette] Taux de change pour l'impôt</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxExchangeRate" xlink:to="label_taxExchangeRate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxPercentageRate" xlink:label="taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxPercentageRate">Pourcentage de la TVA ou d'autres taxes; habituellement un chiffre entre 0 et 1,0 - p. ex., 50 %, est représenté par 0,5.</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate"/>
+<label xlink:type="resource" xlink:label="label_taxPercentageRate_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxPercentageRate_2">Pourcentage de taxe</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxPercentageRate" xlink:to="label_taxPercentageRate_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCode" xlink:label="taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxCode">Classe ou catégorie d'impôts</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode"/>
+<label xlink:type="resource" xlink:label="label_taxCode_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxCode_2">Catégorie d'impôts</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCode" xlink:to="label_taxCode_2"/>
+<loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_taxCommentExemption" xlink:label="taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="fr-CA" id="label_taxCommentExemption">Texte supplémentaire/code pour les motifs d'exonération ou d'autres commentaires</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption"/>
+<label xlink:type="resource" xlink:label="label_taxCommentExemption_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="fr-CA" id="label_taxCommentExemption_2">Texte supplémentaire/motif d'exonération d'impôt</label>
+<labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="taxCommentExemption" xlink:to="label_taxCommentExemption_2"/>
+  </labelLink>
+</linkbase>

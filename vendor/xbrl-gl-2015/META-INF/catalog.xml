@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI uriStartString="http://www.xbrl.org/" rewritePrefix="../www.xbrl.org/"/>
+  <rewriteURI uriStartString="https://www.xbrl.org/" rewritePrefix="../www.xbrl.org/"/>
+  <rewriteURI uriStartString="http://xbrl.org/" rewritePrefix="../www.xbrl.org/"/>
+  <rewriteURI uriStartString="https://xbrl.org/" rewritePrefix="../www.xbrl.org/"/>
+  <rewriteURI uriStartString="http://www.w3.org/" rewritePrefix="../www.w3.org/"/>
+  <rewriteURI uriStartString="https://www.w3.org/" rewritePrefix="../www.w3.org/"/>
+</catalog>

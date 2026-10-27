@@ -48,4 +48,4 @@ v0.6.0-preview.1은 10개 더미 회사의 계정명 차이를 시험합니다. 
 
 `tools/create_company_workbooks.mjs`는 번들 `@oai/artifact-tool`로 입력 엑셀을 만듭니다. Python 변환 런타임에는 필요하지 않습니다. `python tools/verify_company_mapping.py --out outputs/새검증폴더`로 원장 변환·업무 재열기·이력 범위·원본 행/차대 합계 보존과 7시트 통합감사 입력 저장을 재현합니다. 기존 결과 폴더는 덮어쓰지 않습니다.
 
-공식 DART/IFRS 택사노미 매핑과 XBRL XML 파일 생성·공식 검증은 아직 구현 범위 밖입니다.
+v0.7.0부터 공식 XBRL GL XML 저장을 지원합니다. 공식 DART/IFRS 재무제표 개념 매핑과 공시 제출 형식은 별도 범위입니다. [XML 사용법](XBRL_GL.md)을 참고하세요.
