@@ -7369,12 +7369,12 @@
     },
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 156,
-  "pythonModuleCount": 107,
+  "sourceFileCount": 157,
+  "pythonModuleCount": 108,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "7d7b5746662d22dcaa6afa6a730b0c8a18ff7811fa51907cea88e936f95f5b1a",
-    "bytes": 3153817
+    "sha256": "3663c5efb564ac7f50ef15c7be925d6b87a45c3a4f4d2326fd37c7715d7a9371",
+    "bytes": 3155240
   },
   "files": [
     {
@@ -7654,8 +7654,8 @@
     },
     {
       "file": "desktop/components/review_editor.py",
-      "bytes": 2938,
-      "sha256": "4997670a541e2ddda17d87899d738c892967c6bd88c258086f9f46675a0e434e"
+      "bytes": 3097,
+      "sha256": "045d2efced887303a137751d2034b99050b18ffbb19737bc9e97a38dec3202e3"
     },
     {
       "file": "desktop/components/sidebar.py",
@@ -7671,6 +7671,11 @@
       "file": "desktop/components/text.py",
       "bytes": 270,
       "sha256": "fa9553a5e3c53078a2978c39faffbe3d3d854466a242f38ee22c3a330d3d500a"
+    },
+    {
+      "file": "desktop/components/wrapping_label.py",
+      "bytes": 868,
+      "sha256": "ffddc92f3b3649c10891c855bdd47c9463f964b9cbb6246d6136e46fc57906c0"
     },
     {
       "file": "desktop/controllers/__init__.py",
@@ -7889,8 +7894,8 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 5768,
-      "sha256": "40e1a3e94a4d1616b289ece7eee576ca3423b0b631a8f4d49fe7fd04a1e10c1e"
+      "bytes": 5866,
+      "sha256": "e081b37fe55a75d9c5ea517dd608af831675ef9100753d7a8c5ebc1932596907"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",

@@ -1,9 +1,10 @@
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QComboBox,QLineEdit,QHBoxLayout
+from PySide6.QtWidgets import QComboBox,QLineEdit,QHBoxLayout,QLayout
 from .card import Card
 from .text import label
 from .buttons import button
 from .badge import Badge
+from .wrapping_label import WrappingLabel
 
 class ReviewEditor(Card):
     decisionRequested=Signal(str,str,str)
@@ -12,7 +13,8 @@ class ReviewEditor(Card):
         self.key=None
         self.name=label('검토할 계정을 선택해요','CardTitle',True);self.body.addWidget(self.name)
         self.original=label('','Muted',True);self.body.addWidget(self.original)
-        self.candidates=label('계정명과 별칭을 비교해 후보를 제안해요.','Muted',True);self.body.addWidget(self.candidates)
+        self.candidates=WrappingLabel('계정명과 별칭을 비교해 후보를 제안해요.');self.candidates.setObjectName('Muted');self.body.addWidget(self.candidates)
+        self.body.setSizeConstraint(QLayout.SizeConstraint.SetMinimumSize)
         self.body.addWidget(label('연결할 표준 계정'));self.target=QComboBox();self.target.setMinimumWidth(235);self.body.addWidget(self.target)
         self.body.addWidget(label('확인자'));self.reviewer=QLineEdit();self.reviewer.setPlaceholderText('이름을 입력해 주세요');self.body.addWidget(self.reviewer)
         self.accept=button('이 계정으로 연결','primary');self.accept.clicked.connect(lambda:self.decide('확인'));self.body.addWidget(self.accept)
