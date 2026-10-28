@@ -12,12 +12,13 @@ def _q(prefix, local):
 def _context_key(fact, namespaces):
     dimensions = tuple(sorted((expanded_name(axis, namespaces), expanded_name(member, namespaces))
                               for axis, member in fact['dimensions'].items()))
-    return tuple(sorted(fact['period'].items())), dimensions
+    return tuple(sorted(fact['period'].items())), dimensions, fact.get('contextElement', 'scenario') if dimensions else ''
 
 
 def _context(parent, context_id, fact, entity):
     context = ET.SubElement(parent, _q('xbrli', 'context'), id=context_id)
-    identifier = ET.SubElement(ET.SubElement(context, _q('xbrli', 'entity')), _q('xbrli', 'identifier'), scheme=entity['scheme'])
+    entity_node = ET.SubElement(context, _q('xbrli', 'entity'))
+    identifier = ET.SubElement(entity_node, _q('xbrli', 'identifier'), scheme=entity['scheme'])
     identifier.text = entity['identifier']
     period = ET.SubElement(context, _q('xbrli', 'period'))
     if fact['period']['kind'] == 'instant':
@@ -26,9 +27,10 @@ def _context(parent, context_id, fact, entity):
         ET.SubElement(period, _q('xbrli', 'startDate')).text = fact['period']['start']
         ET.SubElement(period, _q('xbrli', 'endDate')).text = fact['period']['end']
     if fact['dimensions']:
-        scenario = ET.SubElement(context, _q('xbrli', 'scenario'))
+        placement = fact.get('contextElement', 'scenario')
+        dimensions = ET.SubElement(entity_node if placement == 'segment' else context, _q('xbrli', placement))
         for axis, member in sorted(fact['dimensions'].items()):
-            ET.SubElement(scenario, _q('xbrldi', 'explicitMember'), dimension=axis).text = member
+            ET.SubElement(dimensions, _q('xbrldi', 'explicitMember'), dimension=axis).text = member
 
 
 def _measure(parent, value):
@@ -74,6 +76,8 @@ def write_instance(path, prepared, catalog, schema_ref=None):
         attributes = {'id': fact['id'], 'contextRef': contexts[_context_key(fact, namespaces)]}
         if fact['unit']:
             attributes.update(unitRef=units[fact['unit']], decimals=fact['decimals'])
+        if fact.get('language'):
+            attributes['{http://www.w3.org/XML/1998/namespace}lang'] = fact['language']
         ET.SubElement(root, expanded_name(fact['concept'], namespaces), attributes).text = fact['value']
     target = Path(path)
     # Construct before opening: invalid input never leaves a partially written file.

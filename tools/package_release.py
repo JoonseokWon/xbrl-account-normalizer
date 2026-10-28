@@ -40,6 +40,7 @@ def main():
     files.append(ROOT/'tools/verify_xbrl_ui.py')
     files.append(ROOT/'tools/verify_filing.py')
     files.append(ROOT/'tools/verify_filing_ui.py')
+    files.append(ROOT/'tools/verify_official_writer.py')
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')

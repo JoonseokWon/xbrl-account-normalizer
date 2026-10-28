@@ -24,6 +24,7 @@ STANDARD_NAMESPACES = {
 }
 NUMERIC_KINDS = {'monetary', 'shares', 'perShare', 'decimal'}
 KINDS = NUMERIC_KINDS | {'string', 'boolean', 'date'}
+LANGUAGE_PATTERN = re.compile(r'[A-Za-z]{1,8}(?:-[A-Za-z0-9]{1,8})*', re.ASCII)
 
 
 def xml_text(value, label, limit=2000, blank=False):
@@ -214,6 +215,16 @@ def prepare_report(report, catalog):
             raise InputError(label + ': 값이 있는 일반 공시 개념을 선택해 주세요.')
         if not isinstance(kind, str) or kind not in KINDS or metadata.get('numeric') is not (kind in NUMERIC_KINDS):
             raise InputError(label + ': 이 공시 개념의 자료형은 지원하지 않습니다.')
+        language = original.get('language', '')
+        # XML Schema's language lexical space; language tags are case-insensitive.
+        if not isinstance(language, str) or len(language) > 100 or (language and LANGUAGE_PATTERN.fullmatch(language) is None):
+            raise InputError(label + ': 언어는 ko, en, en-US 같은 XML 언어 태그여야 합니다.')
+        if language and kind != 'string':
+            raise InputError(label + ': 언어는 문자열 공시 팩트에만 지정할 수 있습니다.')
+        language = language.lower()
+        context_element = original.get('contextElement', 'scenario')
+        if context_element not in ('segment', 'scenario'):
+            raise InputError(label + ': 차원의 contextElement는 segment 또는 scenario여야 합니다.')
         period = _period(original.get('period'), metadata.get('periodType'), ranges)
         dimensions = original.get('dimensions', {})
         if not isinstance(dimensions, dict) or len(dimensions) > 32:
@@ -250,12 +261,12 @@ def prepare_report(report, catalog):
         text_size += len(value)
         if text_size > 20_000_000:
             raise InputError('공시 팩트 텍스트 합계가 처리 한도를 넘습니다.')
-        key = (expanded, tuple(sorted(period.items())), tuple(sorted(expanded_dimensions)), unit)
+        key = (expanded, tuple(sorted(period.items())), tuple(sorted(expanded_dimensions)), unit, language)
         if key in keys:
-            raise InputError(label + ': 같은 개념·회사·기간·차원·단위의 팩트가 중복되었습니다. 자동 합산하지 않습니다.')
+            raise InputError(label + ': 같은 개념·회사·기간·차원·단위·언어의 팩트가 중복되었습니다. 자동 합산하지 않습니다.')
         keys.add(key)
         fact = deepcopy(original)
-        fact.update(value=value, unit=unit, decimals=decimals, period=period, dimensions=dict(dimensions), source=source, reviewer=reviewer)
+        fact.update(value=value, unit=unit, decimals=decimals, period=period, dimensions=dict(dimensions), source=source, reviewer=reviewer, language=language, contextElement=context_element)
         prepared_facts.append(fact)
     prepared = deepcopy(report)
     prepared['entity'] = dict(entity, name=name, identifier=identifier, scheme=scheme)

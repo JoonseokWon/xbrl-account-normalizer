@@ -2,13 +2,13 @@
 
 XLSX·CSV·TSV 원장과 재무상태표를 공통 계정코드로 연결하는 Windows 앱입니다. 회사·ERP별 입력 설정, 계정 사전 관리, 전표별 분개와 대사, 업무 저장·다시 열기를 지원합니다.
 
-**v0.9.0-preview.1 — 확정 재무제표의 공시 개념 연결·비교기간·차원·승인, 로컬 공식 DTS의 XBRL 2.1 XML 출력과 Arelle 검사, DART 공식 엑셀의 개념 검색·입력 대사표를 추가했습니다. [IFRS/DART 사용법과 검증 범위](docs/IFRS_DART.md)를 먼저 확인하세요.**
+**v0.10.0-preview.1 — 설치된 DART 공식 작성기의 스키마 선택, 필수 회사·보고서 정보를 포함한 불러오기 XML 준비, 백그라운드 기술검사와 IXD 결과 수집을 추가했습니다. [공식 작성기 연동 순서와 확인 범위](docs/official-writer-workflow.md)를 먼저 확인하세요.**
 
-공식 XSD 경로는 실제 스키마를 읽어 XML을 만들고, DART 엑셀 참조 경로는 XML을 생성하지 않는 입력·대사표입니다. DART 접수용 최종 파일은 금융감독원 공식 작성기에서 생성·검사해야 합니다. IFRS/DART 택사노미 원본은 재배포하지 않으며 이용 권한이 있는 로컬 공식 파일을 선택합니다.
+공식 XSD 경로는 실제 스키마를 읽어 XML을 만들고, DART 엑셀 참조 경로는 XML을 생성하지 않는 입력·대사표입니다. **설치된 작성기 9.01의 일반 화면에는 외부 데이터 가져오기 메뉴가 없습니다. 연동 시험 XML의 직접 가져오기와 최종 IXD 생성은 미확인입니다.** 최종 IXD는 공식 작성기에서 검사·생성합니다. 기술검사·입력 대사·공식 생성·DART 접수 상태를 구분합니다. IFRS/DART 택사노미와 공식 작성기는 재배포하지 않으며 이용 권한이 있는 로컬 설치를 사용합니다.
 
 ## Windows에서 시작하기
 
-1. [GitHub v0.9.0 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.9.0-preview.1)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
+1. [GitHub 릴리스](https://github.com/JoonseokWon/xbrl-account-normalizer/releases)의 Windows 실행팩 ZIP을 내려받아 압축을 모두 풀어요.
 2. `AccountDataNormalizer.exe`를 실행해요. Python이나 Codex 설치는 필요하지 않아요.
 3. EXE와 `_internal` 폴더를 함께 보관해요. 앱은 로컬 파일을 처리하며 런타임에 서버로 원장을 전송하지 않아요.
 
@@ -90,7 +90,7 @@ python tools/build_windows.py
 python tools/package_release.py
 ```
 
-[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. GL의 250,000행 처리와 공시 팩트의 재무제표·비교기간·단위·차원·승인·합계 오류 차단을 별도로 검사합니다. 소스·EXE·GUI·단위 검사의 버전별 결과와 제외 사유는 릴리스의 `validation-summary.json`에 담습니다. 실제 DART DTS는 이번 개발 환경에서 확보하지 못했으며 DART 엑셀 대사표를 공식 XSD·접수 검사로 해석하지 않습니다. GUI 시험에서 OS 파일선택창은 경로로 대체합니다. 실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
+[새 회사 변환 예제](samples/새회사변환예제/)와 [여러 회사 원장](samples/여러회사매핑/)을 제공합니다. GL의 250,000행 처리와 공시 팩트의 재무제표·비교기간·단위·차원·승인·합계 오류 차단을 별도로 검사합니다. 소스·EXE·GUI·단위 검사의 버전별 결과와 제외 사유는 릴리스의 `validation-summary.json`에 담습니다. 설치된 공식 작성기 9.01의 DART 2026-01-31 DTS를 읽는 경로를 확인했습니다. 기술검사 실적과 공식 작성기의 가져오기·최종 생성 실적은 별도로 기록하며 DART 접수는 수행하지 않습니다. GUI 시험에서 OS 파일선택창은 경로로 대체합니다. 실사용 자료·감사결론을 확인한 결과는 아닙니다. [수동 확인 목록](docs/MANUAL_VALIDATION.md)을 함께 제공합니다.
 
 ## 참고 자료
 

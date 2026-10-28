@@ -97,5 +97,25 @@ class FilingWriterTests(unittest.TestCase):
         _, tree = self.write(value, cat)
         self.assertEqual(len(tree.findall('xbrli:context', NS)), 1)
 
+    def test_multilingual_strings_share_context_and_write_xml_language(self):
+        period = {'kind': 'duration', 'start': '2026-01-01', 'end': '2026-12-31'}
+        value = report(fact(concept='t:Name', unit='', value='한국 회사', period=period, language='ko'),
+                       fact(id='english', concept='t:Name', unit='', value='Company', period=period, language='EN-US'))
+        _, tree = self.write(value)
+        items = tree.findall('{urn:example:financial-report}Name')
+        self.assertEqual([item.get('{http://www.w3.org/XML/1998/namespace}lang') for item in items], ['ko', 'en-us'])
+        self.assertEqual(len(tree.findall('xbrli:context', NS)), 1)
+        self.assertEqual(items[0].get('contextRef'), items[1].get('contextRef'))
+
+    def test_segment_dimensions_are_written_inside_entity(self):
+        value = report(fact(dimensions={'t:EquityAxis': 't:ShareCapitalMember'}, contextElement='segment'),
+                       fact(id='other', concept='t:Equity', dimensions={'t:EquityAxis': 't:ShareCapitalMember'}, contextElement='scenario'))
+        _, tree = self.write(value)
+        contexts = tree.findall('xbrli:context', NS)
+        self.assertEqual(len(contexts), 2)
+        self.assertIsNotNone(contexts[0].find('xbrli:entity/xbrli:segment/xbrldi:explicitMember', NS))
+        self.assertIsNone(contexts[0].find('xbrli:scenario', NS))
+        self.assertIsNotNone(contexts[1].find('xbrli:scenario/xbrldi:explicitMember', NS))
+
 
 if __name__ == '__main__':unittest.main()

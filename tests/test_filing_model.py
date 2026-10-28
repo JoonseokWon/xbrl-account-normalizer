@@ -170,5 +170,37 @@ class FilingModelTests(unittest.TestCase):
             else:source['reporting']['consolidation'] = 'unknown'
             with self.subTest(mutation=mutation), self.assertRaises(InputError):prepare_report(source, catalog())
 
+    def test_distinct_string_languages_and_normalized_duplicate_detection(self):
+        period = {'kind': 'duration', 'start': '2026-01-01', 'end': '2026-12-31'}
+        first = fact(concept='t:Name', unit='', value='한국 회사', period=period, language='ko')
+        second = fact(id='english', concept='t:Name', unit='', value='Company', period=period, language='EN-us')
+        result = prepare_report(report(first, second), catalog())
+        self.assertEqual([f['language'] for f in result['facts']], ['ko', 'en-us'])
+        second['language'] = 'KO'
+        with self.assertRaisesRegex(InputError, '중복'):prepare_report(report(first, second), catalog())
+        first.pop('language');second['language'] = ''
+        with self.assertRaisesRegex(InputError, '중복'):prepare_report(report(first, second), catalog())
+
+    def test_language_is_lexically_valid_and_does_not_bypass_numeric_duplicates(self):
+        for language in ('ko_KR', 'en--US', '-en', 'en-', 'en US', '한국어', 'abcdefghi', None, 1):
+            with self.subTest(language=language):
+                self.check_bad_fact({'concept': 't:Name', 'unit': '', 'value': 'Name',
+                                     'period': {'kind': 'duration', 'start': '2026-01-01', 'end': '2026-12-31'},
+                                     'language': language})
+        for concept, unit, value in [('t:Cash', 'KRW', '1'), ('t:IsListed', '', 'true'), ('t:Incorporation', '', '2026-01-01')]:
+            period = {'kind': 'instant', 'instant': '2026-12-31'} if concept == 't:Cash' else {'kind': 'duration', 'start': '2026-01-01', 'end': '2026-12-31'}
+            with self.subTest(concept=concept):
+                self.check_bad_fact({'concept': concept, 'unit': unit, 'value': value, 'period': period, 'language': 'en'})
+        with self.assertRaisesRegex(InputError, '문자열'):
+            prepare_report(report(fact(), fact(id='numeric2', language='en')), catalog())
+
+    def test_dimension_placement_is_explicit_and_cannot_bypass_duplicate_checks(self):
+        first = fact(dimensions={'t:EquityAxis': 't:ShareCapitalMember'}, contextElement='segment')
+        self.assertEqual(prepare_report(report(first), catalog())['facts'][0]['contextElement'], 'segment')
+        for value in ('SEGMENT', '', 'other', None):
+            with self.subTest(value=value):self.check_bad_fact({'contextElement': value})
+        second = dict(first, id='second', contextElement='scenario')
+        with self.assertRaisesRegex(InputError, '중복'):prepare_report(report(first, second), catalog())
+
 
 if __name__ == '__main__':unittest.main()

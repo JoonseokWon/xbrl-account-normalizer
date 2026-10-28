@@ -53,7 +53,8 @@ class FilingDialog(QDialog):
         self.actions=QWidget();actions=QGridLayout(self.actions);actions.setContentsMargins(0,0,0,0)
         definitions=[('공식 택사노미 선택',self.choose_taxonomy),('공시 엑셀·CSV·JSON 열기',self.choose_input),
                      ('공시 엑셀 양식 만들기',self.create_template),('열린 업무의 BS 가져오기',self.use_session),
-                     ('공시 업무 열기',self.open_work),('공시 업무 저장',self.save_work),('DART 공식 엑셀 참조 선택',self.choose_dart_reference)]
+                     ('공시 업무 열기',self.open_work),('공시 업무 저장',self.save_work),('DART 공식 엑셀 참조 선택',self.choose_dart_reference),
+                     ('설치된 DART 스키마 선택',self.choose_installed_taxonomy),('공식 작성기 연동',self.official_writer)]
         self.action_buttons=[]
         for index,(title,callback) in enumerate(definitions):
             action=button(title);action.clicked.connect(callback);actions.addWidget(action,index//3,index%3);self.action_buttons.append(action)
@@ -294,6 +295,17 @@ class FilingDialog(QDialog):
         if not path:return
         from application.filing import load_dart_reference
         self.run(lambda:load_dart_reference(path),self.taxonomy_ready,'DART 공식 엑셀의 개념·표시명·업종·연결/별도 서식을 읽고 있어요. XML 스키마 검사와는 별도예요.')
+
+    def choose_installed_taxonomy(self):
+        if not self.commit():return
+        from application.official_writer import load_installed_taxonomy
+        self.run(load_installed_taxonomy,self.taxonomy_ready,'공식 작성기에 설치된 DART 스키마의 개념·자료형을 읽고 있어요.')
+
+    def official_writer(self):
+        if not self.commit():return
+        from desktop.dialogs.official_writer import OfficialWriterDialog
+        dialog=OfficialWriterDialog(deepcopy(self.report),self.catalog,self);dialog.exec()
+        if dialog.last_export:self.notice.setText('작성기 연동 작업을 보관했어요. 작업 기록에서 생성·검사 상태를 확인해 주세요.')
 
     def choose_input(self):
         if not self.can_replace():return

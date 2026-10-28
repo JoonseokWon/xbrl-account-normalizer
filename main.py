@@ -16,7 +16,13 @@ def main():
     parser.add_argument('--self-test-filing',help=argparse.SUPPRESS)
     parser.add_argument('--filing-taxonomy',help=argparse.SUPPRESS)
     parser.add_argument('--filing-dart-reference',help=argparse.SUPPRESS)
+    parser.add_argument('--self-test-official-writer',nargs=2,help=argparse.SUPPRESS)
+    parser.add_argument('--official-editor-document',help=argparse.SUPPRESS)
     args=parser.parse_args()
+    if args.self_test_official_writer:
+        from tools.verify_official_writer import run_checks
+        result=run_checks(*args.self_test_official_writer,editor_document=args.official_editor_document)
+        return 0 if result['ok'] else 1
     if args.filing_worker:
         from xbrl_filing.runtime import worker_main
         return worker_main(*args.filing_worker)

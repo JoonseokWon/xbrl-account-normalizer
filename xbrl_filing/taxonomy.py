@@ -69,6 +69,12 @@ def _root_for(entry):
     for ancestor in [entry.parent, *list(entry.parents)[1:8]]:
         candidate = ancestor/'META-INF/taxonomyPackage.xml'
         if candidate.is_file():return ancestor, candidate
+    # The official Windows writer stores a host/path cache without META-INF.
+    # Keep its whole selected cache bound to the snapshot; do not edit it.
+    if re.fullmatch(r'dart_all_\d{4}-\d{2}-\d{2}\.xsd',entry.name):
+        for ancestor in list(entry.parents)[:8]:
+            if ancestor.name.casefold()=='taxonomycache' and entry.relative_to(ancestor).parts[0].casefold()=='dart.fss.or.kr':
+                return ancestor,None
     return entry.parent, None
 
 
@@ -82,7 +88,8 @@ def _snapshot(entry_path):
     if root == Path(root.anchor):
         raise InputError('드라이브 최상위 대신 택사노미 전용 폴더를 사용해 주세요.')
     files = [];total = 0
-    for path in sorted(root.rglob('*')):
+    paths=_cache_dependencies(entry,root) if root.name.casefold()=='taxonomycache' else sorted(root.rglob('*'))
+    for path in paths:
         if path.is_symlink() or (hasattr(path, 'is_junction') and path.is_junction()):
             raise InputError('택사노미 폴더의 심볼릭 링크·정션은 지원하지 않습니다.')
         if not path.is_file():continue
@@ -102,9 +109,55 @@ def _snapshot(entry_path):
             'packageManifestPath': str(manifest) if manifest else None}
 
 
+def _cache_dependencies(entry,root):
+    """Bind only the selected DTS closure in a cache containing many releases."""
+    pending=[entry];known={entry};result=[];total=0;reference_seen=set()
+    while pending:
+        path=pending.pop();total+=path.stat().st_size
+        if len(result)>=MAX_FILES or total>MAX_PACKAGE_BYTES:
+            raise InputError('선택한 택사노미 의존 파일은 5,000개·256MB 이내여야 합니다.')
+        tree=_safe_xml(path);result.append(path)
+        for node in tree.iter():
+            if not isinstance(node.tag,str):continue
+            references=[]
+            if node.get('schemaLocation'):references.append(node.get('schemaLocation'))
+            if node.get('{http://www.w3.org/1999/xlink}href'):references.append(node.get('{http://www.w3.org/1999/xlink}href'))
+            schema_locations=node.get('{http://www.w3.org/2001/XMLSchema-instance}schemaLocation')
+            if schema_locations:references.extend(schema_locations.split()[1::2])
+            for reference in references:
+                uri=urlsplit(reference)
+                # Linkbases repeat the same schema for thousands of concept
+                # fragments. Resolve each physical reference only once.
+                key=(uri.scheme,uri.netloc,uri.path,str(path.parent) if not uri.scheme else '')
+                if key in reference_seen:continue
+                reference_seen.add(key)
+                if uri.scheme in ('http','https'):
+                    if not uri.hostname:raise InputError('택사노미 참조 URI를 확인해 주세요.')
+                    candidate=root/uri.hostname/unquote(uri.path.lstrip('/'))
+                elif uri.scheme=='file':candidate=Path(_canonical_local_uri(urldefrag(reference)[0]))
+                elif uri.scheme:continue
+                else:candidate=path.parent/unquote(uri.path) if uri.path else path
+                if candidate.is_symlink() or (hasattr(candidate,'is_junction') and candidate.is_junction()):
+                    raise InputError('택사노미 의존 파일의 심볼릭 링크·정션은 지원하지 않습니다.')
+                candidate=candidate.resolve()
+                if not candidate.is_relative_to(root):raise InputError('택사노미 의존 참조가 캐시 폴더 밖에 있습니다.')
+                if not candidate.is_file() or candidate in known:continue
+                known.add(candidate)
+                if len(known)>MAX_FILES:raise InputError('택사노미 의존 파일 수 한도를 넘었습니다.')
+                pending.append(candidate)
+    return sorted(result)
+
+
 def _catalog_rules(snapshot):
     root = Path(snapshot['root']);path = root/'META-INF/catalog.xml'
-    if not path.is_file():return []
+    if not path.is_file():
+        if root.name.casefold()=='taxonomycache':
+            rules=[]
+            for host in sorted(root.iterdir()):
+                if host.is_dir() and re.fullmatch(r'[a-zA-Z0-9](?:[a-zA-Z0-9.-]{0,251}[a-zA-Z0-9])?',host.name):
+                    for scheme in ('http','https'):rules.append((scheme+'://'+host.name+'/',host.resolve()))
+            return rules
+        return []
     rules = []
     for node in _safe_xml(path).getroot().iter():
         local = ET.QName(node).localname if isinstance(node.tag, str) else ''
@@ -286,6 +339,11 @@ def _assert_stable(snapshot):
 def _load_taxonomy(entry_path):
     snapshot = _snapshot(entry_path)
     with _controller(snapshot) as (controller, rules):
+        cache_metadata=Path(snapshot['root']).name.casefold()=='taxonomycache'
+        if cache_metadata:
+            # Search/type metadata does not need the writer's very large role
+            # graphs. Validation uses a fresh controller and loads them all.
+            controller.modelManager.skipLoading=re.compile(r'.*_(?:def|pre|cal|ref)\.xml$',re.IGNORECASE)
         model = controller.modelManager.load(snapshot['entryPoint'])
         errors, warnings = _messages(_logs(controller))
         if model.modelDocument is None or errors or model.errors:
@@ -293,6 +351,7 @@ def _load_taxonomy(entry_path):
             raise InputError('택사노미를 완전히 읽지 못했습니다: '+detail)
         result = _metadata(model, snapshot, rules)
         result['warnings'] = warnings
+        if cache_metadata:result['catalogScope']='concepts-and-types; relationship validation only at export'
         _assert_stable(snapshot)
         return result
 
