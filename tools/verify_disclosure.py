@@ -44,6 +44,17 @@ def run_checks(folder):
     wrong_scale['mappings'][0]['scale'] = '1'
     mismatch = compare_disclosures(sample['dsd'], sample['ixd'], wrong_scale)
     assert mismatch['status'] == 'differences' and mismatch['counts']['value-mismatch'] == 1
+    wrong_row = next(row for row in mismatch['rows'] if row['status'] == 'value-mismatch')
+    assert wrong_row['diagnostics'][0]['code'] == 'scale'
+    assert wrong_row['columnHeaders'] == ['2025-12-31']
+    from xbrl_filing.disclosure_compare.suggestions import suggest_correspondences
+    from xbrl_filing.disclosure_compare import inspect_disclosures
+    inventory = inspect_disclosures(sample['dsd'], sample['ixd'])
+    cell_id = next(cell['id'] for cell in inventory['dsd']['cells'] if cell['text'] == '1,234')
+    candidates = suggest_correspondences(inventory, cell_id, scale='1000')
+    assert candidates['candidates'][0]['ixdFactId'] == 'cash-current'
+    assert candidates['approved'] is False and candidates['candidates'][0]['approved'] is False
+    _json(root / 'correspondence-candidates.json', candidates)
     unbound = compare_disclosures(sample['dsd'], sample['ixd'])
     assert unbound['status'] == 'review' and unbound['counts']['unmapped'] == 3
     wrong_hash = deepcopy(mapping)
@@ -104,6 +115,9 @@ def run_checks(folder):
               'comparison': {'matched': 3, 'scaledAmounts': True, 'negativeParentheses': True,
                              'comparativePeriod': True, 'unmappedNeedsReview': True,
                              'wrongScaleDetected': True, 'staleHashBlocked': True},
+              'assistance': {'mergedHeaderContext': True, 'unapprovedExistingFactCandidates': True,
+                             'numericDiagnosticHintsKeepMismatch': True, 'candidateLimit': 3,
+                             'method': candidates['method']},
               'workspace': {'noteEdit': True, 'factEdit': True, 'saveReopen': True,
                             'appendOnlyRestore': True, 'inconsistentHistoryRejected': True,
                             'draftReopenedByFilingService': True,
@@ -153,6 +167,15 @@ def _ui_checks(root, sample, workspace):
         cells = dialog.inspection['dsd']['cells']
         facts = dialog.inspection['ixd']['facts']
         dialog.scale.setCurrentIndex(dialog.scale.findData('1000'))
+        dialog.cells.selectRow(next(i for i, c in enumerate(cells) if c['text'] == '1,234'))
+        dialog.find_candidates()
+        wait(dialog)
+        assert dialog.candidates.envelope['candidates'][0]['ixdFactId'] == 'cash-current'
+        dialog.candidates.choose()
+        assert not dialog.condition_confirmed.isChecked()
+        assert not dialog.mapping['mappings']
+        app.processEvents()
+        assert dialog.grab().save(str(root / '대응후보.png'))
         for source_value, fact_id in [('1,234', 'cash-current'), ('1,100', 'cash-prior'), ('(20)', 'loss-current')]:
             dialog.cells.selectRow(next(i for i, c in enumerate(cells) if c['text'] == source_value))
             dialog.facts.selectRow(next(i for i, f in enumerate(facts) if f['id'] == fact_id))
@@ -166,6 +189,16 @@ def _ui_checks(root, sample, workspace):
         assert dialog.report['counts']['matched'] == 3
         app.processEvents()
         assert dialog.grab().save(str(root / '대사결과.png'))
+        bad_scale = deepcopy(dialog.mapping)
+        bad_scale['mappings'][0]['scale'] = '1'
+        from xbrl_filing.disclosure_compare import compare_disclosures
+        dialog.comparison_ready(compare_disclosures(sample['dsd'], sample['ixd'], bad_scale))
+        dialog.result_filter.setCurrentIndex(dialog.result_filter.findData('scale'))
+        index = next(i for i, row in enumerate(dialog.report['rows']) if row['status'] == 'value-mismatch')
+        dialog.results.selectRow(index)
+        assert '원·천원·백만원' in dialog.result_detail.toPlainText()
+        app.processEvents()
+        assert dialog.grab().save(str(root / '대사원인.png'))
         notes.actor.setText('화면 검증 작성자')
         notes.set_workspace(deepcopy(workspace))
         notes.tabs.setCurrentIndex(1)
@@ -180,6 +213,7 @@ def _ui_checks(root, sample, workspace):
         assert notes.grab().save(str(root / '변경이력.png'))
         return {'renderedOffscreen': True, 'nativeDialogsOpened': False,
                 'comparisonBackgroundWorker': True, 'confirmedPairsThroughUi': 3,
+                'candidateChoiceNeedsApproval': True, 'diagnosticFilterThroughUi': True,
                 'noteEditThroughUi': True}
     finally:
         # Test widgets are destroyed without opening unsaved-change dialogs.

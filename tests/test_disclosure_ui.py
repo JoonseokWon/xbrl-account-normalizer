@@ -217,6 +217,45 @@ class DisclosureUiTests(unittest.TestCase):
         self.assertIn("'=HYPERLINK", text)
         self.assertIn('100,99,1', text)
 
+    def test_candidate_selection_needs_separate_confirmation_and_resets_on_scale_change(self):
+        from xbrl_filing.disclosure_compare.examples import create_comparison_example
+        example = create_comparison_example(self.directory / 'candidate')
+        dialog = DisclosureCompareDialog(); self.dialogs.append(dialog)
+        dialog.set_source('dsd', example['dsd']); dialog.set_source('ixd', example['ixd']); dialog.inspect(); self.wait(dialog)
+        index = next(i for i, c in enumerate(dialog.inspection['dsd']['cells']) if c['text'] == '1,234')
+        dialog.cells.selectRow(index); dialog.scale.setCurrentIndex(1)
+        self.assertIn('2025-12-31', dialog.cell_context.text())
+        dialog.find_candidates(); self.wait(dialog)
+        self.assertEqual(dialog.candidates.table.data_model.rows[0][1], '1234000')
+        self.assertEqual(dialog.mapping['mappings'], [])
+        dialog.candidates.choose()
+        self.assertIn('1234000', dialog.conditions.toPlainText())
+        self.assertFalse(dialog.condition_confirmed.isChecked())
+        dialog.bind_selected(); self.assertEqual(dialog.mapping['mappings'], [])
+        dialog.condition_confirmed.setChecked(True); dialog.bind_selected()
+        self.assertEqual(dialog.mapping['mappings'][0]['ixdFactId'], 'cash-current')
+        dialog.scale.setCurrentIndex(0)
+        self.assertIsNone(dialog.candidates.envelope)
+        self.assertFalse(dialog.condition_confirmed.isChecked())
+
+    def test_diagnostic_filters_and_csv_keep_nonzero_differences(self):
+        from xbrl_filing.disclosure_compare import compare_disclosures
+        from xbrl_filing.disclosure_compare.examples import create_comparison_example
+        example = create_comparison_example(self.directory / 'diagnostics')
+        mapping = json.loads(example['mapping'].read_text(encoding='utf-8'))
+        mapping['mappings'][0]['scale'] = '1'
+        report = compare_disclosures(example['dsd'], example['ixd'], mapping)
+        dialog = DisclosureCompareDialog(); self.dialogs.append(dialog)
+        dialog.comparison_ready(report)
+        dialog.result_filter.setCurrentIndex(dialog.result_filter.findData('scale'))
+        shown = [i for i in range(len(report['rows'])) if not dialog.results.isRowHidden(i)]
+        self.assertEqual(len(shown), 1)
+        dialog.results.selectRow(shown[0])
+        self.assertIn('원·천원·백만원', dialog.result_detail.toPlainText())
+        path = self.directory / '원인.csv'; export_comparison_csv(report, path)
+        text = path.read_text(encoding='utf-8-sig')
+        self.assertIn('원인 확인', text); self.assertIn('다른 표시 배율', text)
+
 
 if __name__ == '__main__':
     unittest.main()

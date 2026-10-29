@@ -12,6 +12,7 @@ from lxml import etree
 
 from .dsd import read_dsd
 from .ixd import read_ixd
+from .diagnostics import numeric_diagnostics
 from ..official_writer.reconcile import _expected_period, _unit
 
 MAPPING_SCHEMA = 'account-normalizer-disclosure-mapping/1'
@@ -143,7 +144,9 @@ def _row(cell=None, mapping=None, **updates):
     row = {'dsdCellId': cell.get('id', mapping.get('dsdCellId', '')),
            'ixdFactId': mapping.get('ixdFactId', ''), 'label': cell.get('label', ''),
            'dsdValue': cell.get('text', ''), 'ixdValue': '', 'difference': None,
-           'status': 'needs-review', 'message': '', 'source': deepcopy(cell.get('source', {}))}
+           'status': 'needs-review', 'message': '', 'source': deepcopy(cell.get('source', {})),
+           'rowHeaders': deepcopy(cell.get('rowHeaders', [])),
+           'columnHeaders': deepcopy(cell.get('columnHeaders', [])), 'diagnostics': []}
     row.update(updates)
     return row
 
@@ -187,8 +190,11 @@ def _compare_one(cell, fact, mapping):
                 difference = normalized - actual
             row.update(dsdValue=_plain(normalized), difference=_plain(difference),
                        scale=str(scale), rawDsdValue=cell['text'])
+            row['diagnostics'] = numeric_diagnostics(cell['number'], fact['value'], str(scale))
             return {**row, 'status': 'matched' if difference == 0 else 'value-mismatch',
-                    'message': '확인한 배율 적용 후 숫자가 일치합니다.' if difference == 0 else 'DSD 환산금액과 IXD 숫자가 다릅니다.'}
+                    'message': ('확인한 배율 적용 후 숫자가 일치합니다.' if difference == 0 else
+                                'DSD 환산금액과 IXD 숫자가 다릅니다. ' +
+                                ' · '.join(item['label'] for item in row['diagnostics']))}
         if scale != 1:
             return {**row, 'status': 'unsupported', 'message': '텍스트 팩트에는 금액 배율을 적용할 수 없습니다.'}
         matches = cell['text'] == fact['value']

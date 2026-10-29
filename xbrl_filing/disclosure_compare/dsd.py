@@ -3,6 +3,8 @@
 XML exports and ZIP-based DSD documents containing XML tables are supported.
 Opaque/binary editor formats are reported as unsupported, never repaired or run.
 """
+from bisect import bisect_right
+from collections import defaultdict
 from decimal import Decimal, InvalidOperation, localcontext
 from pathlib import Path
 import re
@@ -99,6 +101,7 @@ def _tables(root, member, cell_budget=None, table_budget=None):
         occupied = set()
         table_cells = []
         column_headers = {}
+        anchored = []
         for row_index, row in enumerate(rows, 1):
             column, row_label = 1, ''
             for node in row:
@@ -126,6 +129,7 @@ def _tables(root, member, cell_budget=None, table_budget=None):
                                    'xmlLine': node.sourceline},
                         'periodHints': periods, 'unitHints': units}
                 cells.append(cell)
+                anchored.append(cell)
                 table_cells.append(cell['id'])
                 if len(cells) > cell_budget:
                     raise ValueError('DSD 셀의 개수 한도를 넘었습니다.')
@@ -135,6 +139,44 @@ def _tables(root, member, cell_budget=None, table_budget=None):
                             raise ValueError('DSD 표의 병합 셀 위치가 겹칩니다.')
                         occupied.add((r, c))
                 column += colspan
+        # Keep the whole path through merged headers. A leaf such as '기말'
+        # alone loses the parent year or asset class needed for review.
+        by_column, by_row = defaultdict(list), defaultdict(list)
+        for item in anchored:
+            position = item['source']
+            if item['isHeader'] and item['text']:
+                for column in range(position['column'], position['column'] + position['colspan']):
+                    by_column[column].append(item)
+            if item['text'] and item['number'] is None:
+                for row in range(position['row'], position['row'] + position['rowspan']):
+                    by_row[row].append(item)
+        row_end = lambda item: item['source']['row'] + item['source']['rowspan']
+        column_end = lambda item: item['source']['column'] + item['source']['colspan']
+        for items in by_column.values():
+            items.sort(key=row_end)
+        for items in by_row.values():
+            items.sort(key=column_end)
+        context_text = {item['id']: item['text'][:2000] for item in anchored}
+        paths = {}
+        def display_path(items):
+            key = tuple(item['id'] for item in items)
+            if key not in paths:
+                paths[key] = ' / '.join(context_text[item['id']] for item in items)[:600]
+            return paths[key]
+        for cell in anchored:
+            position = cell['source']
+            row, column = position['row'], position['column']
+            column_items, row_items = by_column[column], by_row[row]
+            hi = bisect_right(column_items, row, key=row_end)
+            ri = bisect_right(row_items, column, key=column_end)
+            headers = column_items[max(0, hi - 32):hi]
+            row_headers = row_items[max(0, ri - 32):ri]
+            # Bound display/prompt context independently of original cell text.
+            cell['columnHeaders'] = [context_text[item['id']] for item in headers]
+            cell['rowHeaders'] = [context_text[item['id']] for item in row_headers]
+            cell['columnHeaderPath'] = display_path(headers)
+            if cell['rowHeaders'] and not cell['isHeader']:
+                cell['label'] = display_path(row_headers)
         tables.append({'id': table_id, 'member': member, 'number': table_number,
                        'rows': len(rows), 'cellIds': table_cells,
                        'periodHints': periods, 'unitHints': units})

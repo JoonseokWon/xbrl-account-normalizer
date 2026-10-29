@@ -1,63 +1,102 @@
 {
-  "version": "0.13.0-preview.1",
+  "version": "0.14.0-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.13.0-preview.1",
-    "unitTestsPassed": 485,
+    "version": "0.14.0-preview.1",
+    "unitTestsPassed": 500,
     "unitTests": {
-      "run": 487,
-      "passed": 485,
+      "run": 502,
+      "passed": 500,
       "failures": 0,
       "errors": 0,
-      "skipped": 2
+      "skipped": 2,
+      "skipReasons": [
+        {
+          "test": "test_symlink_escape_is_rejected (test_xbrl_inspection.XbrlInspectionTests.test_symlink_escape_is_rejected)",
+          "reason": "Windows symlink privilege is unavailable in this test environment."
+        },
+        {
+          "test": "test_symlink_outside_result_folder_is_rejected (test_xbrl_preview.XbrlPreviewTests.test_symlink_outside_result_folder_is_rejected)",
+          "reason": "Windows symlink privilege is unavailable in this test environment."
+        }
+      ]
     },
-    "skippedReason": "Two pre-existing Windows symlink privilege tests only; all local LLM tests ran.",
-    "localLlmSource": {
-      "version": "0.13.0-preview.1",
-      "frozen": false,
+    "sourceChangedDuringRegression": false,
+    "disclosureFrozen": {
+      "version": "0.14.0-preview.1",
+      "frozen": true,
       "ok": true,
       "syntheticOnly": true,
-      "liveLocalModel": true,
-      "model": "qwen3:4b",
-      "endpoint": "http://127.0.0.1:11434",
-      "provider": "ollama",
-      "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-      "candidates": [
-        {
-          "code": "A1102",
-          "name": "현금성 예금",
-          "reason": "원본 계정명 '국민은행 보통예금'이 '보통예금' 별칭과 일치하며, 표준 계정 '현금성 예금'은 은행 보통예금을 포함하는 범위",
-          "origin": "local-llm"
-        },
-        {
-          "code": "A1101",
-          "name": "현금",
-          "reason": "원본 계정명 '국민은행 보통예금'이 '소액현금' 별칭과 일치하지 않으나, 현금 계정은 일반적으로 소액현금을 포함하지만, 보통예금은 현금이 아님",
-          "origin": "local-llm"
-        },
-        {
-          "code": "A1291",
-          "name": "매출채권 대손충당금",
-          "reason": "원본 계정명 '국민은행 보통예금'이 '매출채권 대손충당금' 별칭과 일치하지 않으나, 보통예금은 대손충당금과 무관",
-          "origin": "local-llm"
-        }
-      ],
-      "distinctValidCandidates": 3,
-      "recommendationKeptMappingsAndAmounts": true,
-      "candidateSelectionNotApproval": true,
-      "reviewerRequired": true,
-      "explicitCandidateApproval": true,
-      "explicitOutsideCandidateApproval": true,
-      "runtimeCacheOnly": true,
-      "cloudInferenceUsed": false,
-      "ledgerAmountsOrPartiesSent": false,
+      "officialGenerated": false,
+      "comparison": {
+        "matched": 3,
+        "scaledAmounts": true,
+        "negativeParentheses": true,
+        "comparativePeriod": true,
+        "unmappedNeedsReview": true,
+        "wrongScaleDetected": true,
+        "staleHashBlocked": true
+      },
+      "assistance": {
+        "mergedHeaderContext": true,
+        "unapprovedExistingFactCandidates": true,
+        "numericDiagnosticHintsKeepMismatch": true,
+        "candidateLimit": 3,
+        "method": "local-label-period-and-exact-value"
+      },
+      "workspace": {
+        "noteEdit": true,
+        "factEdit": true,
+        "saveReopen": true,
+        "appendOnlyRestore": true,
+        "inconsistentHistoryRejected": true,
+        "draftReopenedByFilingService": true,
+        "nextYearBlankCurrentFacts": 16,
+        "preservedComparativeFacts": 30,
+        "approvalsRevoked": true,
+        "taxonomyReviewRequired": true
+      },
+      "ui": {
+        "renderedOffscreen": true,
+        "nativeDialogsOpened": false,
+        "comparisonBackgroundWorker": true,
+        "confirmedPairsThroughUi": 3,
+        "candidateChoiceNeedsApproval": true,
+        "diagnosticFilterThroughUi": true,
+        "noteEditThroughUi": true
+      },
       "osInputUsed": false,
-      "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
-      "seconds": 49.922
+      "dartSubmission": "not-performed",
+      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
+      "seconds": 0.719
+    },
+    "installedDartTaxonomyLabels": {
+      "ok": true,
+      "officialDtsReadLocally": true,
+      "conceptCount": 9454,
+      "labelledConceptCount": 9454,
+      "ixdFacts": 2181,
+      "catalogFingerprint": "4a7997de2cbd7bb93124845721ea23ea096ca4c315d4ff88038b1c1b5991f73e",
+      "syntheticIxdSha256": "5c08926f91cad408f7064ac65d871c080efba1f6d1bb24d173a283adc0d23ddf",
+      "fixtureIsPreviousSyntheticCompany": true,
+      "labelsUsedThroughExpandedQName": true,
+      "selectedSyntheticFactInTopThree": true,
+      "allCandidatesUnapproved": true,
+      "officialEditorExecuted": false,
+      "osInputUsed": false,
+      "officialFilesRedistributed": false,
+      "seconds": 21.89
+    },
+    "embeddedSourceCheck": {
+      "checked": 152,
+      "mismatches": [],
+      "missingRequiredModules": [],
+      "exeSha256": "b4a85f4e348b084b534c44bcf0a8ffc8b02056484e27948d8e50d588ccbc09eb",
+      "ok": true
     },
     "localLlmFrozen": {
-      "version": "0.13.0-preview.1",
+      "version": "0.14.0-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -101,7 +140,7 @@
       "ledgerAmountsOrPartiesSent": false,
       "osInputUsed": false,
       "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
-      "seconds": 47.875
+      "seconds": 42.797
     },
     "missingModelFrozen": {
       "ok": true,
@@ -110,109 +149,18 @@
       "nativeTracebackDialogAvoided": true,
       "modelDownloaded": false
     },
-    "retryPolicy": {
-      "maximumRetries": 1,
-      "withinOriginalDeadline": true,
-      "scope": "Client TCP reset, or HTTP500 narrowly identifying Ollama internal loopback tokenize/completion reset/EOF only.",
-      "general500OomModelErrorsTimeoutNotRetried": true
-    },
-    "actualLocalModel": {
-      "provider": "ollama",
-      "runtimeVersion": "0.40.13",
-      "model": "qwen3:4b",
-      "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
-      "verifiedModelLayers": 6,
-      "cloudDisabledInTestServer": true,
-      "cpuOnlyTestServer": true,
-      "runtimeAndWeightsRedistributed": false
-    },
-    "mappingAccuracy": {
-      "status": "not-certified",
-      "expectedBankCodeObservedInTopThree": true,
-      "scope": "Synthetic bank-account example only. Other suggestions can be unrelated or wrong; valid dictionary codes do not establish accounting correctness."
-    },
-    "embeddedSourceCheck": {
-      "checked": 149,
-      "mismatches": [],
-      "requiredModules": [
-        "application.local_llm",
-        "application.local_llm.client",
-        "application.local_llm.config",
-        "application.local_llm.prompts",
-        "application.local_llm.transport",
-        "application.llm_mapping",
-        "desktop.controllers.local_llm",
-        "desktop.dialogs.local_llm",
-        "tools.verify_local_llm",
-        "application.disclosure_workspace",
-        "application.disclosure_workspace._shared",
-        "application.disclosure_workspace.storage",
-        "application.disclosure_workspace.service",
-        "application.disclosure_workspace.rollover",
-        "desktop.disclosure_compare",
-        "desktop.disclosure_workspace",
-        "xbrl_filing.disclosure_compare",
-        "xbrl_filing.disclosure_compare.dsd",
-        "xbrl_filing.disclosure_compare.ixd",
-        "xbrl_filing.disclosure_compare.service",
-        "xbrl_filing.disclosure_compare.examples",
-        "tools.verify_disclosure",
-        "xbrl_filing.taxonomy",
-        "xbrl_filing.official_writer.interchange"
-      ],
-      "missingRequiredModules": [],
-      "exeSha256": "9b354712410542c0275f64a4ea44c8f9564e91301cbcf1cb68db89d3f7ad7f2c",
-      "ok": true
-    },
-    "disclosureFrozen": {
-      "version": "0.13.0-preview.1",
-      "frozen": true,
-      "ok": true,
-      "syntheticOnly": true,
-      "officialGenerated": false,
-      "comparison": {
-        "matched": 3,
-        "scaledAmounts": true,
-        "negativeParentheses": true,
-        "comparativePeriod": true,
-        "unmappedNeedsReview": true,
-        "wrongScaleDetected": true,
-        "staleHashBlocked": true
-      },
-      "workspace": {
-        "noteEdit": true,
-        "factEdit": true,
-        "saveReopen": true,
-        "appendOnlyRestore": true,
-        "inconsistentHistoryRejected": true,
-        "draftReopenedByFilingService": true,
-        "nextYearBlankCurrentFacts": 16,
-        "preservedComparativeFacts": 30,
-        "approvalsRevoked": true,
-        "taxonomyReviewRequired": true
-      },
-      "ui": {
-        "renderedOffscreen": true,
-        "nativeDialogsOpened": false,
-        "comparisonBackgroundWorker": true,
-        "confirmedPairsThroughUi": 3,
-        "noteEditThroughUi": true
-      },
-      "osInputUsed": false,
-      "dartSubmission": "not-performed",
-      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
-      "seconds": 0.656
-    },
     "glFrozen": {
-      "version": "0.13.0-preview.1",
+      "version": "0.14.0-preview.1",
       "frozen": true,
       "ok": true,
       "totalRows": 1291,
       "documents": 11,
-      "seconds": 12.551
+      "seconds": 8.54
     },
     "previousVersionFilingRegression": {
       "version": "0.12.0-preview.1",
+      "rerunInThisVersion": false,
+      "reason": "Filing engine unchanged; current full unit suite, actual DTS label-read and current GL/disclosure EXE checks passed.",
       "filingFrozen": {
         "version": "0.12.0-preview.1",
         "frozen": true,
@@ -240,38 +188,43 @@
         "validator": "Arelle",
         "version": "2.47.3",
         "offline": true
-      },
-      "rerunInThisVersion": false,
-      "reason": "Filing engine unchanged; current unit suite and current disclosure/GL EXE checks passed."
+      }
     },
-    "batchWorkflow": {
-      "defaultUniqueAccounts": 20,
-      "maximumUniqueAccounts": 30,
-      "perAccountCandidates": 3,
-      "explicitRequestOnly": true,
-      "approvalSeparate": true,
-      "cancelBetweenAccounts": true,
-      "individualFailureAndCacheReuseTested": true,
-      "sourceChangeRollsBackNewCacheTested": true
+    "candidateMethod": {
+      "disclosure": "Deterministic local label, column-year, explicit unit and exact scaled-value evidence among existing IXD facts.",
+      "maximumCandidates": 3,
+      "minimumCandidates": 0,
+      "selectionIsApproval": false,
+      "equalNumbersWithoutNameEvidenceWarned": true,
+      "yearUnitAndDuplicateContextWarnings": true,
+      "ledgerMapping": "Existing optional Ollama local LLM; separately tested with the real qwen3:4b model."
     },
-    "privacy": {
-      "allowedInferenceDestination": "HTTP loopback only",
-      "cloudModelsExcluded": true,
-      "proxyAndRedirectsDisabled": true,
-      "prompt": "Single account code/name/kind/statement and selected standard dictionary metadata/aliases only.",
-      "ledgerAmountsPartiesJournalsSourcePathsSent": false,
-      "recommendationCacheInWorkFiles": false
+    "numericDiagnostics": {
+      "sign": true,
+      "alternateScale": true,
+      "displayRoundingHint": true,
+      "nonzeroDifferenceStillMismatch": true,
+      "automaticCorrection": false,
+      "xbrlDecimalsValidationOrRegulatoryTolerance": false
+    },
+    "largeTableContext": {
+      "headerItemsPerPath": 32,
+      "charactersPerHeader": 2000,
+      "displayPathCharacters": 600,
+      "repeatedHeaderStringsShared": true,
+      "originalTextAndLocationPreserved": true
     },
     "osMouseKeyboardClipboardUsed": false,
+    "competitorPrivateMaterialUsed": false,
     "officialTaxonomyRedistributed": false,
     "officialBinariesRedistributed": false,
-    "modelWeightsRedistributed": false,
+    "localLlmRuntimeAndWeightsRedistributed": false,
     "dartSubmissionValidated": false,
-    "scope": "Local Ollama candidates are unapproved suggestions. One real local-model source and EXE flow plus deterministic HTTP/UI/unit tests verified explicit candidate approval and a manually selected alternative. No general mapping-accuracy, IFRS/DART concept approval, model training or automated filing claim."
+    "scope": "Synthetic fixtures and prior synthetic-company IXD only. Existing-fact correspondence assistance, not automatic DSD authoring, new official tag approval, general mapping-accuracy certification, official IXD generation or DART acceptance."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.13.0-preview.1",
+    "version": "0.14.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -281,9 +234,9 @@
       "vendor/xbrl-gl-2015/manifest.json": true
     },
     "display": {
-      "platform": "offscreen",
-      "devicePixelRatio": 1.0,
-      "fontFamily": "Noto Sans KR",
+      "platform": "windows",
+      "devicePixelRatio": 1.5,
+      "fontFamily": "Malgun Gothic",
       "pointSize": 11.0
     },
     "catalogVersion": "USER-f4a60cab790ba1f6",
@@ -299,12 +252,12 @@
     "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 308,
-  "pythonModuleCount": 211,
+  "sourceFileCount": 313,
+  "pythonModuleCount": 215,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "9b354712410542c0275f64a4ea44c8f9564e91301cbcf1cb68db89d3f7ad7f2c",
-    "bytes": 7874762
+    "sha256": "b4a85f4e348b084b534c44bcf0a8ffc8b02056484e27948d8e50d588ccbc09eb",
+    "bytes": 7893959
   },
   "files": [
     {
@@ -314,13 +267,13 @@
     },
     {
       "file": "README.md",
-      "bytes": 15742,
-      "sha256": "fcf3cae60e25a84db70801ef8361fc27281082719c5cca9207dd9c5ed23ed5b9"
+      "bytes": 15836,
+      "sha256": "5932409393e09b6b42ed439366069ce2f8c439b63ca0ed950f543a97d021c315"
     },
     {
       "file": "version.py",
       "bytes": 75,
-      "sha256": "b1f56f25f8a4a956e0aec33cb14a8fd10b76a37f0fd6eb62d988bf13450e70f6"
+      "sha256": "ec7af2bc25416403b7e3b62fd17409bf0bf5f3e3c8e84dd4a12a70491e5c4613"
     },
     {
       "file": "main.py",
@@ -648,6 +601,11 @@
       "sha256": "2a45e4203641839a267961ad86e800af701fb8a7338c89ff571ce420f568625d"
     },
     {
+      "file": "desktop/components/disclosure_candidates.py",
+      "bytes": 2786,
+      "sha256": "a8450a04141d9658de7015648153f5db9d6771b9b97a93f665b475a1f2c947a5"
+    },
+    {
       "file": "desktop/components/drop_zone.py",
       "bytes": 2071,
       "sha256": "3122e20241c161ad3c0f3c2edce18ed9389b56a2ec7acae549273fdaf4d9dab0"
@@ -799,8 +757,8 @@
     },
     {
       "file": "desktop/disclosure_compare.py",
-      "bytes": 22464,
-      "sha256": "e85998cf3c963c5a35c02c9efe93e43b36b7a8ffaa01b18884112874ec5477c7"
+      "bytes": 30537,
+      "sha256": "c9d59e9875ae12569a2468758ddc0cbab43c46cc3aa991f334e6b22a481a5497"
     },
     {
       "file": "desktop/disclosure_workspace.py",
@@ -974,13 +932,18 @@
     },
     {
       "file": "xbrl_filing/disclosure_compare/__init__.py",
-      "bytes": 229,
-      "sha256": "07fade045aae2889852d79e5f4d89ded99cc312be6f1b8ab76711094c1773c90"
+      "bytes": 305,
+      "sha256": "ab38e1130e89536ab033adfdc636e2dbc6ce82dab57c0caf87afac4c47c02979"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/diagnostics.py",
+      "bytes": 1900,
+      "sha256": "3aa9ee22cda98e5f0cf798c225eec0d5231bd07095c325650c97e8178c651674"
     },
     {
       "file": "xbrl_filing/disclosure_compare/dsd.py",
-      "bytes": 8864,
-      "sha256": "e4b145bd28e587d816598cc884d714a1d2cc849b7e1eb48c69cf16eb695c57e4"
+      "bytes": 11188,
+      "sha256": "5741937d760d71e2955083a271d3fe7de0ba92fb924a0d735b79375cda433182"
     },
     {
       "file": "xbrl_filing/disclosure_compare/examples.py",
@@ -994,8 +957,13 @@
     },
     {
       "file": "xbrl_filing/disclosure_compare/service.py",
-      "bytes": 15826,
-      "sha256": "8f98bada85be06d34bb0a8d99918d5c3a41ebd99a6690bde7cbd304a5f5c0548"
+      "bytes": 16245,
+      "sha256": "95b26c1cbf669cc3f573cc80eb4b1b779c3f32e063efe060a1b9f27638c40fab"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/suggestions.py",
+      "bytes": 6681,
+      "sha256": "c390ace30a8fcf798b34c2b3060cb4d3d37b81e1f78c6dfcc20af6ee615e2f82"
     },
     {
       "file": "xbrl_filing/inputs.py",
@@ -1113,9 +1081,14 @@
       "sha256": "918a5518e40a5e08d1ee97096b3efb07ff56e61a1542ca1212bcacb7ce3702a0"
     },
     {
+      "file": "docs/DISCLOSURE_ASSISTANCE.md",
+      "bytes": 4248,
+      "sha256": "b0a7c1b15a2e28537e60a175a74e1d93bfb5b1c67d565ac5af98bbfaa0e135bf"
+    },
+    {
       "file": "docs/DISCLOSURE_COMPARE.md",
-      "bytes": 7582,
-      "sha256": "268746a018724b147fd56b901e8e4c949a61b1750015e586c10b8ae91c8117db"
+      "bytes": 7826,
+      "sha256": "db30092c9c1d5a5c47f5f0c799ae64ebcc5dd4ab1240269d2aebb9c614081111"
     },
     {
       "file": "docs/DISCLOSURE_WORKSPACE.md",
@@ -1154,8 +1127,8 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 15658,
-      "sha256": "d4539f5ab581a5b72ef616b96821a8aa447ea7d37e9a68c3012fa467f40e259e"
+      "bytes": 17327,
+      "sha256": "f488b9a593c3caf8cfebba8d3b34e4b69237227e07f715877979ef520440ca8a"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -1193,6 +1166,11 @@
       "sha256": "f8d52f4a0cfa03e3597ea7fe69eb586fc86c9af87eae8ad171557db377c6f421"
     },
     {
+      "file": "tests/test_disclosure_assistance.py",
+      "bytes": 9269,
+      "sha256": "ab173c5962ed8e077098a4992fdf423fcfd26f873841d112f2046b7bfb0c9bfb"
+    },
+    {
       "file": "tests/test_disclosure_compare.py",
       "bytes": 12555,
       "sha256": "f1e14fe702fc747fb14c8cb7aa3f1d4bc1a243ad47d614a3881a76171a9c1939"
@@ -1204,8 +1182,8 @@
     },
     {
       "file": "tests/test_disclosure_ui.py",
-      "bytes": 14347,
-      "sha256": "04f059c290378e29e8cbbd302dc7bdec31d85c47461d8e1ca206bc0b77d9cbf3"
+      "bytes": 16990,
+      "sha256": "28220ed2096aaa2984282edeb7a8a5a70c227e365778d8653f0f308b5382adcd"
     },
     {
       "file": "tests/test_disclosure_workspace.py",
@@ -1809,8 +1787,8 @@
     },
     {
       "file": "tools/verify_disclosure.py",
-      "bytes": 10284,
-      "sha256": "a7e069edbe0f54b7d3c7be50cf2c3ab511dfc15eb6efe5a232a3713d75420d86"
+      "bytes": 12583,
+      "sha256": "f2fa5c6e63b8283a6ea2f6af12c6287831614543bf94eb9210bc4bed782954c9"
     },
     {
       "file": "tools/verify_local_llm.py",

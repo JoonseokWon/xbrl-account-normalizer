@@ -6,13 +6,15 @@ import json
 from pathlib import Path
 
 from PySide6.QtWidgets import (QDialog, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
-    QLineEdit, QComboBox, QPlainTextEdit, QCheckBox, QTabWidget, QFileDialog, QProgressBar)
+    QLineEdit, QComboBox, QPlainTextEdit, QCheckBox, QTabWidget, QFileDialog, QProgressBar,
+    QScrollArea, QFrame)
 
 from application.json_store import atomic_json
 from application.paths import default_outputs
 from desktop.components.buttons import button
 from desktop.components.card import Card
 from desktop.components.confirmation import confirm
+from desktop.components.disclosure_candidates import DisclosureCandidates
 from desktop.components.table import DataTable
 from desktop.components.text import label
 from desktop.controllers.jobs import Jobs
@@ -21,7 +23,7 @@ from desktop.controllers.jobs import Jobs
 MAPPING_SCHEMA = 'account-normalizer-disclosure-mapping/1'
 STATUS_TEXT = {'matched': '일치', 'value-mismatch': '금액 차이', 'aspect-mismatch': '측정조건 차이',
                'nil-mismatch': '값 없음 차이', 'unmapped': '대응 미확인', 'ambiguous': '중복·모호',
-               'needs-review': '확인 필요', 'unsupported': '지원 범위 확인'}
+               'needs-review': '확인 필요', 'unsupported': '지원 범위 확인', 'missing': '원본 항목 없음'}
 COUNT_TEXT = {**STATUS_TEXT, 'dsdCells': 'DSD 셀', 'ixdFacts': 'IXD 팩트',
               'mappedPairs': '확인한 대응', 'notComparedIxdFacts': '비교하지 않은 IXD 팩트',
               'unmappedNumericCells': '미대응 숫자 셀'}
@@ -58,12 +60,13 @@ def export_comparison_csv(report, path):
     """Value-only CSV; opening a source label in Excel cannot execute a formula."""
     stream = io.StringIO(newline='')
     writer = csv.writer(stream)
-    writer.writerow(['상태', '원본 항목', 'DSD 셀', 'IXD 팩트', 'DSD 값', 'IXD 값', '차이', '확인 내용'])
+    writer.writerow(['상태', '원본 항목', 'DSD 셀', 'IXD 팩트', 'DSD 값', 'IXD 값', '차이', '확인 내용', '열 머리글', '원인 확인'])
     for row in report.get('rows', []):
         writer.writerow([_csv_text(value) for value in (
             STATUS_TEXT.get(row.get('status'), row.get('status', '')), row.get('label'),
             row.get('dsdCellId'), row.get('ixdFactId'), row.get('dsdValue'), row.get('ixdValue'),
-            row.get('difference'), row.get('message'))])
+            row.get('difference'), row.get('message'), ' / '.join(row.get('columnHeaders', [])),
+            ' / '.join(item['detail'] for item in row.get('diagnostics', [])))])
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     # One replace, so an interrupted write does not truncate an earlier report.
@@ -93,6 +96,7 @@ class DisclosureCompareDialog(QDialog):
         self.dirty = False
         self.dsd_path = None
         self.ixd_path = None
+        self.catalog = None
         root = QVBoxLayout(self)
         root.setSpacing(14)
         root.addWidget(label('공시문서와 IXD의 숫자를 함께 확인해요', 'PageTitle', True))
@@ -108,6 +112,9 @@ class DisclosureCompareDialog(QDialog):
         actions.addWidget(self.dsd_field, 0, 0); actions.addWidget(choose_dsd, 0, 1)
         actions.addWidget(self.ixd_field, 1, 0); actions.addWidget(choose_ixd, 1, 1)
         actions.addWidget(self.inspect_button, 0, 2, 2, 1)
+        self.taxonomy_notice = label('선택 사항: 로컬 택사노미를 읽으면 공시 항목의 한글 이름도 후보 검색에 사용해요.', 'Muted', True)
+        self.taxonomy_button = button('택사노미 이름 읽기'); self.taxonomy_button.clicked.connect(self.choose_taxonomy)
+        actions.addWidget(self.taxonomy_notice, 2, 0, 1, 2); actions.addWidget(self.taxonomy_button, 2, 2)
         root.addWidget(self.actions)
         self.notice = label('두 파일을 선택한 뒤 셀·공시 항목 읽기를 눌러 주세요.', 'Muted', True); root.addWidget(self.notice)
         self.progress = QProgressBar(); self.progress.setRange(0, 0); self.progress.setTextVisible(False); self.progress.hide(); root.addWidget(self.progress)
@@ -123,14 +130,23 @@ class DisclosureCompareDialog(QDialog):
         pair = QHBoxLayout()
         left = Card('DSD 셀', '공시문서에서 비교할 숫자 셀을 선택해 주세요.')
         self.cell_search = QLineEdit(); self.cell_search.setPlaceholderText('항목명·표시값·위치 검색'); left.body.addWidget(self.cell_search)
-        self.cells = DataTable(['항목', '값·표시', '위치']); left.body.addWidget(self.cells)
+        self.cells = DataTable(['항목', '값·표시', '열 머리글', '위치']); left.body.addWidget(self.cells)
         right = Card('IXD 공시 항목', '같은 숫자를 나타내는 팩트를 선택해 주세요.')
+        left.setMinimumHeight(535); right.setMinimumHeight(535)
         self.fact_search = QLineEdit(); self.fact_search.setPlaceholderText('개념·값·기간 검색'); right.body.addWidget(self.fact_search)
-        self.facts = DataTable(['공시 개념', '값', '기간']); right.body.addWidget(self.facts)
+        self.fact_tabs = QTabWidget(); right.body.addWidget(self.fact_tabs)
+        self.facts = DataTable(['공시 개념', '값', '기간']); self.fact_tabs.addTab(self.facts, '전체 항목')
+        self.candidates = DisclosureCandidates(); self.fact_tabs.addTab(self.candidates, '대응 후보 3개')
+        self.candidates.find_requested.connect(self.find_candidates)
+        self.candidates.chosen.connect(self.select_candidate)
         pair.addWidget(left, 1); pair.addWidget(right, 1); layout.addLayout(pair, 2)
         self.facts.selectionModel().currentRowChanged.connect(self.show_conditions)
         review = Card('측정조건을 확인하고 연결해요', '공시문서의 표 제목·주석을 확인해 아래 팩트의 조건과 같은지 판단해 주세요.')
+        self.cell_context = label('DSD 숫자 셀을 선택하면 행·열 머리글과 원문 단위가 보여요.', 'Muted', True)
+        self.cell_context.setMinimumHeight(65)
+        review.body.addWidget(self.cell_context)
         self.conditions = QPlainTextEdit(); self.conditions.setReadOnly(True); self.conditions.setMaximumHeight(145)
+        self.conditions.setMinimumHeight(135)
         review.body.addWidget(self.conditions)
         line = QHBoxLayout(); line.addWidget(label('DSD 표시 단위'))
         self.scale = QComboBox()
@@ -145,16 +161,28 @@ class DisclosureCompareDialog(QDialog):
             item = button(title); item.clicked.connect(method); commands.addWidget(item)
         commands.addStretch()
         self.compare_button = button('대사 실행', 'primary'); self.compare_button.clicked.connect(self.compare); commands.addWidget(self.compare_button)
-        layout.addLayout(commands); self.tabs.addTab(pane, '대응 확인')
-        self.cells.selectionModel().currentRowChanged.connect(lambda *_: self.condition_confirmed.setChecked(False))
-        self.scale.currentIndexChanged.connect(lambda *_: self.condition_confirmed.setChecked(False))
+        layout.addLayout(commands)
+        # Preserve readable tables and full review text on ordinary laptop
+        # windows; scroll the document instead of squeezing controls to zero.
+        self.mapping_scroll = QScrollArea(); self.mapping_scroll.setWidgetResizable(True)
+        self.mapping_scroll.setFrameShape(QFrame.Shape.NoFrame); self.mapping_scroll.setWidget(pane)
+        self.tabs.addTab(self.mapping_scroll, '대응 확인')
+        self.cells.selectionModel().currentRowChanged.connect(self.show_cell_context)
+        self.scale.currentIndexChanged.connect(self.clear_candidates)
         self.cell_search.textChanged.connect(lambda text: self.filter_rows(self.cells, text))
         self.fact_search.textChanged.connect(lambda text: self.filter_rows(self.facts, text))
 
     def build_result_tab(self):
         pane = QWidget(); layout = QVBoxLayout(pane)
         self.result_summary = label('대사 결과가 여기에 표시돼요.', 'CardTitle', True); layout.addWidget(self.result_summary)
+        self.result_filter = QComboBox()
+        self.result_filter.addItem('모든 결과', 'all'); self.result_filter.addItem('차이·미대응만', 'unresolved')
+        self.result_filter.addItem('부호 확인', 'sign'); self.result_filter.addItem('표시 단위 확인', 'scale')
+        self.result_filter.addItem('단수 차이 가능성', 'display-rounding')
+        self.result_filter.currentIndexChanged.connect(self.filter_results); layout.addWidget(self.result_filter)
         self.results = DataTable(['상태', '원본 항목', 'DSD 값', 'IXD 값', '차이', '확인 내용']); layout.addWidget(self.results, 1)
+        self.result_detail = QPlainTextEdit(); self.result_detail.setReadOnly(True); self.result_detail.setMaximumHeight(110)
+        self.results.selectionModel().currentRowChanged.connect(self.show_result_detail); layout.addWidget(self.result_detail)
         actions = QHBoxLayout(); actions.addStretch()
         self.json_button = button('결과 JSON 저장'); self.json_button.clicked.connect(self.save_report_json); actions.addWidget(self.json_button)
         self.csv_button = button('결과 CSV 저장'); self.csv_button.clicked.connect(self.save_report_csv); actions.addWidget(self.csv_button)
@@ -176,6 +204,8 @@ class DisclosureCompareDialog(QDialog):
         self.inspection = None; self.mapping = None; self.report = None; self.dirty = False
         for table in (self.cells, self.facts, self.bindings, self.results): table.set_rows([])
         self.conditions.clear(); self.condition_confirmed.setChecked(False)
+        self.clear_candidates()
+        self.cell_context.setText('새 원본을 읽고 숫자 셀을 선택해 주세요.'); self.result_detail.clear()
         self.result_summary.setText('새 원본을 읽고 대응을 확인해 주세요.')
 
     def run(self, function, ready, message):
@@ -199,6 +229,79 @@ class DisclosureCompareDialog(QDialog):
         dsd, ixd = self.dsd_path, self.ixd_path
         self.run(lambda: inspect_disclosures(dsd, ixd), self.inspection_ready, 'DSD 셀과 IXD의 측정조건을 읽고 있어요.')
 
+    def choose_taxonomy(self):
+        if self.loading: return
+        path, _ = QFileDialog.getOpenFileName(self, '로컬 공식 택사노미 진입점 선택', str(default_outputs()), 'XSD (*.xsd)')
+        if not path: return
+        from application.filing import load_taxonomy
+        self.run(lambda: load_taxonomy(path), self.taxonomy_ready, '로컬 택사노미의 개념 이름을 읽고 있어요.')
+
+    def taxonomy_ready(self, catalog):
+        self.catalog = catalog
+        self.clear_candidates()
+        self.refresh_facts()
+        self.taxonomy_notice.setText(f"로컬 택사노미 이름 {len(catalog.get('concepts', {})):,}개 · 후보 검색에 사용해요.")
+        self.notice.setText('개념 이름을 읽었어요. 택사노미와 후보를 읽어도 대응이 자동 승인되지는 않아요.')
+
+    def refresh_facts(self):
+        from xbrl_filing.disclosure_compare.suggestions import concept_labels
+        labels = concept_labels(self.catalog)
+        facts = (self.inspection or {}).get('ixd', {}).get('facts', [])
+        self.facts.set_rows([[(labels.get(row.get('concept')) + '\n' if labels.get(row.get('concept')) else '') + row.get('concept', ''),
+                             '값 없음(nil)' if row.get('nil') else row.get('value', ''),
+                             self.period_text(row.get('period', {}))] for row in facts])
+        self.conditions.clear()
+        self.filter_rows(self.facts, self.fact_search.text())
+
+    def clear_candidates(self, *_):
+        self.candidates.clear()
+        self.condition_confirmed.setChecked(False)
+
+    def show_cell_context(self, current, previous=None):
+        self.clear_candidates()
+        rows = (self.inspection or {}).get('dsd', {}).get('cells', [])
+        if current.isValid() and 0 <= current.row() < len(rows):
+            cell = rows[current.row()]
+            self.cell_context.setText('행: ' + (' / '.join(cell.get('rowHeaders', [])) or cell.get('label', ''))[:600] +
+                '\n열: ' + cell.get('columnHeaderPath', cell.get('columnLabel', ''))[:600] +
+                '\n원문 단위: ' + (' / '.join(cell.get('unitHints', [])) or '확인 필요')[:400])
+        else:
+            self.cell_context.setText('DSD 숫자 셀을 선택해 주세요.')
+
+    def find_candidates(self):
+        index = self.cells.currentIndex().row()
+        if not self.inspection or index < 0 or self.cells.isRowHidden(index):
+            self.notice.setText('검색 결과의 DSD 숫자 셀을 먼저 선택해 주세요.'); return
+        from xbrl_filing.disclosure_compare.suggestions import suggest_correspondences
+        inspection, catalog = self.inspection, self.catalog
+        cell_id = inspection['dsd']['cells'][index]['id']; scale = self.scale.currentData()
+        self.clear_candidates()
+        self.run(lambda: suggest_correspondences(inspection, cell_id, scale=scale, catalog=catalog),
+                 self.candidates_ready, '행 이름·열 연도·표시 배율로 IXD 대응 후보를 찾고 있어요.')
+
+    def candidates_ready(self, envelope):
+        if not self.inspection or envelope['sourceHashes'] != self.inspection['sourceHashes']: return
+        self.candidates.set_candidates(envelope)
+        self.fact_tabs.setCurrentIndex(1)
+        self.notice.setText('후보 선택은 연결 승인이 아니에요. 전체 측정조건을 확인한 뒤 대응을 확인해 주세요.')
+
+    def select_candidate(self, fact_id):
+        envelope = self.candidates.envelope
+        index = self.cells.currentIndex().row()
+        if (not envelope or not self.inspection or index < 0 or self.cells.isRowHidden(index)
+                or envelope['sourceHashes'] != self.inspection['sourceHashes']
+                or envelope['dsdCellId'] != self.inspection['dsd']['cells'][index]['id']
+                or envelope['scale'] != self.scale.currentData()):
+            self.clear_candidates(); self.notice.setText('셀·배율이 바뀌었어요. 후보를 다시 찾아 주세요.'); return
+        facts = self.inspection['ixd']['facts']
+        matches = [i for i, row in enumerate(facts) if row['id'] == fact_id]
+        if len(matches) != 1: return
+        self.fact_search.clear()
+        self.facts.selectRow(matches[0])
+        self.condition_confirmed.setChecked(False)
+        self.mapping_scroll.ensureWidgetVisible(self.conditions, 0, 60)
+        self.notice.setText('후보를 선택했어요. 아래 측정조건을 확인하고 체크한 뒤 선택한 대응 확인을 눌러 주세요.')
+
     def inspection_ready(self, inspection):
         errors = inspection.get('errors', [])
         if errors: self.notice.setText(' · '.join(str(value) for value in errors)); return
@@ -207,8 +310,9 @@ class DisclosureCompareDialog(QDialog):
         self.inspection = inspection
         if not same: self.mapping = {'schema': MAPPING_SCHEMA, 'sourceHashes': deepcopy(hashes), 'mappings': []}; self.dirty = False
         cells = inspection.get('dsd', {}).get('cells', []); facts = inspection.get('ixd', {}).get('facts', [])
-        self.cells.set_rows([[row.get('label', ''), row.get('text', ''), self.source_text(row.get('source', {}))] for row in cells])
-        self.facts.set_rows([[row.get('concept', ''), '값 없음(nil)' if row.get('nil') else row.get('value', ''), self.period_text(row.get('period', {}))] for row in facts])
+        self.clear_candidates()
+        self.cells.set_rows([[row.get('label', ''), row.get('text', ''), row.get('columnHeaderPath', row.get('columnLabel', '')), self.source_text(row.get('source', {}))] for row in cells])
+        self.refresh_facts()
         self.filter_rows(self.cells, self.cell_search.text()); self.filter_rows(self.facts, self.fact_search.text())
         self.refresh_bindings(); self.condition_confirmed.setChecked(False)
         self.notice.setText(f'DSD 셀 {len(cells):,}개와 IXD 팩트 {len(facts):,}개를 읽었어요. 같은 측정조건의 항목을 선택해 주세요.')
@@ -299,6 +403,23 @@ class DisclosureCompareDialog(QDialog):
         messages = [str(value) for value in report.get('errors', []) + report.get('warnings', [])]
         self.notice.setText(' · '.join(messages) if messages else '대사 결과를 표시했어요. 미대응 항목과 제외 범위도 함께 확인해 주세요.')
         self.tabs.setCurrentIndex(1)
+        self.result_detail.clear(); self.filter_results()
+
+    def filter_results(self, *_):
+        choice = self.result_filter.currentData()
+        for index, row in enumerate((self.report or {}).get('rows', [])):
+            visible = choice == 'all' or (choice == 'unresolved' and row['status'] != 'matched') or any(
+                item['code'] == choice for item in row.get('diagnostics', []))
+            self.results.setRowHidden(index, not visible)
+        self.result_detail.clear()
+
+    def show_result_detail(self, current, previous=None):
+        rows = (self.report or {}).get('rows', [])
+        if not current.isValid() or not 0 <= current.row() < len(rows): self.result_detail.clear(); return
+        row = rows[current.row()]
+        self.result_detail.setPlainText(self.source_text(row.get('source', {})) + '\n열: ' +
+            ' / '.join(row.get('columnHeaders', [])) + '\n' + row.get('message', '') + '\n' +
+            '\n'.join(item['detail'] for item in row.get('diagnostics', [])))
 
     def save_report_json(self):
         self.save_result('json')
