@@ -58,7 +58,7 @@ class OfficialWriterSettingsTests(unittest.TestCase):
             self.dialog.fields['ordinalYear'].setText(value);self.dialog.accept_settings()
             self.assertIsNone(self.dialog.value);self.assertIn('1 이상의 정수',self.dialog.notice.text())
         self.dialog.fields['ordinalYear'].setText('12');self.dialog.title.setCurrentText('반기보고서');self.dialog.accept_settings()
-        self.assertIsNone(self.dialog.value);self.assertIn('사업보고서만 지원',self.dialog.notice.text())
+        self.assertIsNone(self.dialog.value);self.assertIn('사업보고서 형식만 지원',self.dialog.notice.text())
 
     def test_saved_explicit_period_settings_can_be_reopened_without_guessing(self):
         report=deepcopy(self.report);report['officialWriterSettings']={

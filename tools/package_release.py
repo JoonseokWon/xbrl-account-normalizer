@@ -41,6 +41,9 @@ def main():
     files.append(ROOT/'tools/verify_filing.py')
     files.append(ROOT/'tools/verify_filing_ui.py')
     files.append(ROOT/'tools/verify_official_writer.py')
+    files.append(ROOT/'tools/verify_disclosure.py')
+    files.extend(sorted(path for path in (ROOT/'samples/공시검토예제').glob('*')
+                        if path.is_file() and path.suffix in ('.md','.json','.dsd','.ixd','.acdisclosure')))
     entries=[]
     for path in files:
         if not path.resolve().is_relative_to(ROOT) or not path.is_file():raise ValueError('프로젝트 밖 또는 누락된 배포 파일')

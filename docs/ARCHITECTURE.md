@@ -1,6 +1,15 @@
-# v0.10 모듈 구조
+# v0.12 모듈 구조
 
 화면은 Qt를 사용하지만 데이터 처리 계층은 Qt에 의존하지 않습니다. 데스크톱과 CLI는 같은 application 서비스를 호출합니다.
+
+v0.12 공시 검토는 다음 경계로 나뉩니다.
+
+- `xbrl_filing/disclosure_compare/`: 한도 있는 DSD XML 표 읽기, 기존 IXD 구조·XBRL 문맥 읽기 재사용, 해시로 묶인 명시적 대응과 정확한 수치 대사. 입력을 실행하거나 수정하지 않습니다.
+- `application/disclosure_workspace/`: 기존 공시 report를 보관하는 주석 업무, 명시적 팩트 수정, 해시 연결 이력과 복원, 동시 저장 충돌 확인, 공란 당기·보존 비교기간의 연도 재사용.
+- `desktop/disclosure_compare.py`, `desktop/disclosure_workspace.py`: 독립된 Qt 대화상자. 원장 Session을 바꾸지 않고 파일 읽기·대사는 Jobs로 실행합니다.
+- `tools/verify_disclosure.py`: 자체 합성 DSD/IXD와 실제 서비스·보이지 않는 Qt 화면을 사용하는 소스/EXE 공통 검증. OS 입력과 공식 작성기 실행을 사용하지 않습니다.
+
+원본 대응표는 특정 DSD·IXD 바이트 해시에만 유효합니다. 주석 업무 이력은 값 변경·복원·연도 재사용을 기록하며 편집은 기존 공시 승인을 취소합니다. 자유 서술과 XBRL NOTE 팩트를 구분하고, 공식 XML 내보내기는 기존 실제 DTS 검토·승인 경로를 사용합니다. 이 경로에서 LLM 서버를 호출하지 않습니다.
 
 ```text
 main.py                         Windows GUI 진입점

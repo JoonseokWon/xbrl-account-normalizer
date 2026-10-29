@@ -1,5 +1,5 @@
 from PySide6.QtCore import Signal,Qt
-from PySide6.QtGui import QIcon
+from PySide6.QtGui import QIcon,QAction
 from PySide6.QtWidgets import QMainWindow,QWidget,QHBoxLayout,QVBoxLayout,QStackedWidget,QScrollArea,QProgressBar
 from desktop.components.sidebar import Sidebar
 from desktop.components.text import label
@@ -42,6 +42,23 @@ class MainWindow(QMainWindow):
             scroll.viewport().setObjectName('PageViewport')
         main.addWidget(self.stack,1);self.setCentralWidget(central)
         self.sidebar.pageRequested.connect(self.show_page);self.show_page(0)
+        disclosure_menu=self.menuBar().addMenu('공시 검토')
+        self.disclosure_compare_action=QAction('DSD·IXD 숫자 대사',self)
+        self.disclosure_compare_action.triggered.connect(self.open_disclosure_compare)
+        disclosure_menu.addAction(self.disclosure_compare_action)
+        self.disclosure_workspace_action=QAction('주석·변경 이력·다음 연도 업무',self)
+        self.disclosure_workspace_action.triggered.connect(self.open_disclosure_workspace)
+        disclosure_menu.addAction(self.disclosure_workspace_action)
+
+    def open_disclosure_compare(self):
+        if self.busy:return
+        from desktop.disclosure_compare import DisclosureCompareDialog
+        dialog=DisclosureCompareDialog(self);dialog.exec()
+
+    def open_disclosure_workspace(self):
+        if self.busy:return
+        from desktop.disclosure_workspace import DisclosureWorkspaceDialog
+        dialog=DisclosureWorkspaceDialog(self);dialog.exec()
     def show_page(self,index):
         if index==1 and not self.has_file:
             self.notice.set_message('먼저 엑셀 파일을 선택해 주세요.');return

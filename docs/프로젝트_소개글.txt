@@ -1,6 +1,6 @@
-회계데이터 표준화 | 엑셀 계정 연결·XBRL·공시 준비 Windows 앱
+회계데이터 표준화 | 엑셀 계정 연결·XBRL·공시 검토 Windows 앱
 
-엑셀 원장을 공통 계정코드에 연결하고 감사 입력과 XBRL GL XML을 만드는 Windows 앱입니다. v0.9에서는 확정 재무제표를 공식 로컬 택사노미의 공시 XML로 변환하고, DART 공식 엑셀을 참고한 승인 대사표를 준비하는 별도 화면을 추가했습니다.
+회사마다 다르게 표현한 엑셀 계정을 공통 코드로 연결하고, 감사 입력과 XBRL XML을 준비하는 Windows 앱입니다. 공시문서와 IXD의 숫자를 비교하고 주석·수정 이력을 관리하며 다음 연도 업무를 이어서 사용할 수 있습니다.
 
 • 새 파일 열기로 회사별 엑셀을 선택하고 시트·열을 표준 항목에 연결
 • 회사·ERP별 입력 설정 재사용, CSV·여러 파일 입력, 업무 저장·다시 열기
@@ -19,18 +19,22 @@
 • DART 공식 엑셀의 역할·개념 검색과 승인 대사표·한국어 보고서 저장
 • 토스 UX 가이드를 참고한 벤토 그리드 UI와 Windows EXE
 
-상태: 공개 저장소 / v0.9.0-preview.1 / 회사별 매핑·GL 출력·공시 XML 준비·DART 엑셀 대사 지원
+• DSD·IXD 숫자 대사와 회사·기간·단위·차원을 확인한 대응표
+• 주석·공시 항목 편집, 변경 전후 조회·복원, 다음 연도 구조 재사용
+
+상태: 공개 저장소 / v0.12.0-preview.1 / 합성자료·소스·EXE 검증
 공시 XML: 이용 권한이 있는 공식 XSD와 전체 택사노미를 로컬에서 선택합니다. 원장 순증감으로 기말잔액·현금흐름을 추정하지 않습니다.
-DART 엑셀: 개념 메타데이터를 참고한 대사표이며 XML을 생성하지 않습니다. 실제 DART DTS·최종 접수는 이번 릴리스에서 검증하지 못했습니다.
+DART 엑셀: 개념 메타데이터를 참고한 대사표이며 XML을 생성하지 않습니다. 실제 DART 접수는 수행하지 않습니다.
 검사 범위: Arelle의 실제 DTS·자료형·기간·차원과 가능한 계산 관계를 확인합니다. 필수 공시·주석 완전성·회계 적정성·DART 수리를 보장하지 않습니다.
-최종 제출: 금융감독원 최신 공식 작성기에서 제출용 파일을 생성·검사하고 DART 편집기에서 확인합니다. 앱 CSV/XML의 자동 불러오기는 확인하지 않았습니다.
+최종 제출: 공식 작성기 본체에서 합성 IXD 생성은 별도로 검증했으며 해당 자동 생성 연결은 이번 EXE에 포함하지 않았습니다. 공식 작성기에서 준비한 IXD를 선택해 대사합니다.
+매핑 방식: 사전·별칭·문자열 유사도·승인 이력이며 로컬 LLM이나 외부 LLM API를 사용하지 않습니다.
 원본 IFRS/DART 택사노미는 재배포하지 않습니다. 버전별 검사 기록은 릴리스의 validation-summary.json을 참고하세요.
 
 🔗 GitHub
 https://github.com/JoonseokWon/xbrl-account-normalizer
 
 📦 Windows EXE 다운로드
-https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.9.0-preview.1
+https://github.com/JoonseokWon/xbrl-account-normalizer/releases/tag/v0.12.0-preview.1
 
 사용 방법: Windows 실행팩 ZIP을 모두 풀고 AccountDataNormalizer.exe를 실행하세요.
 Python 설치가 필요하지 않습니다. _internal 폴더는 EXE와 함께 보관하세요.

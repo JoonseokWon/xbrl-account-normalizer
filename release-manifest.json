@@ -1,88 +1,145 @@
 {
-  "version": "0.10.0-preview.1",
+  "version": "0.12.0-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.10.0-preview.1",
-    "unitTestsPassed": 352,
+    "version": "0.12.0-preview.1",
+    "unitTestsPassed": 417,
     "unitTests": {
-      "run": 354,
+      "run": 419,
+      "passed": 417,
       "failures": 0,
       "errors": 0,
-      "skipped": 2,
-      "passed": 352
+      "skipped": 2
     },
-    "skippedReason": "Two Windows symlink creation privilege tests skipped; other path checks passed.",
-    "officialWriter": {
-      "programVersion": "9.01",
-      "fileVersion": "1.64.0.27",
-      "taxonomyVersion": "8.6",
-      "taxonomyDate": "2026-01-31",
-      "source": {
-        "version": "0.10.0-preview.1",
-        "frozen": false,
-        "ok": true,
-        "scope": "installed-DART-DTS and official-bundled technical validator only",
-        "candidateSha256": "418d8b7def911b829235f30f64f107c1189b1ddf5986ef8401999d1840c99d12",
-        "facts": 47,
-        "taxonomyConcepts": 9454,
-        "taxonomyFingerprint": "4a7997de2cbd7bb93124845721ea23ea096ca4c315d4ff88038b1c1b5991f73e",
-        "technicalValidation": "pass",
-        "technicalReport": "technical\\DART_기술검사_04baa1cc2f1e\\report.json",
-        "technicalLogCounts": {
-          "errors": 0,
-          "warnings": 0,
-          "info": 2,
-          "other": 0
-        },
-        "officialImport": "not-run",
-        "officialGenerated": false,
-        "finalSubmission": false,
-        "dartSubmission": "not-performed",
-        "officialTaxonomyRedistributed": false,
-        "seconds": 77.297,
-        "editorDocumentKind": "editor-document"
-      },
-      "frozen": {
-        "version": "0.10.0-preview.1",
-        "frozen": true,
-        "ok": true,
-        "scope": "installed-DART-DTS and official-bundled technical validator only",
-        "candidateSha256": "418d8b7def911b829235f30f64f107c1189b1ddf5986ef8401999d1840c99d12",
-        "candidateRegenerated": true,
-        "facts": 47,
-        "taxonomyConcepts": 9454,
-        "taxonomyFingerprint": "4a7997de2cbd7bb93124845721ea23ea096ca4c315d4ff88038b1c1b5991f73e",
-        "technicalValidation": "pass",
-        "technicalReport": "technical\\DART_기술검사_8a21b1f4fd84\\report.json",
-        "technicalLogCounts": {
-          "errors": 0,
-          "warnings": 0,
-          "info": 2,
-          "other": 0
-        },
-        "officialImport": "not-run",
-        "officialGenerated": false,
-        "finalSubmission": false,
-        "dartSubmission": "not-performed",
-        "officialTaxonomyRedistributed": false,
-        "seconds": 89.203,
-        "editorDocumentKind": "editor-document"
-      },
-      "actualEditorDocumentInspected": true,
-      "actualEditorDocumentKind": "editor-document",
-      "externalImportUi": "not-exposed-in-observed-distribution",
-      "officialImport": "not-run",
+    "skippedReason": "Two existing Windows symlink tests require an unavailable file-link privilege; all new feature tests ran.",
+    "disclosureSource": {
+      "version": "0.12.0-preview.1",
+      "frozen": false,
+      "ok": true,
+      "syntheticOnly": true,
       "officialGenerated": false,
-      "fullOfficialValidation": false,
-      "submissionPackageReconciliation": "synthetic-unit-fixtures-only",
-      "clipboardTransfer": "not-implemented; runtime row order and sign weights not verified",
-      "settingsModified": false
+      "comparison": {
+        "matched": 3,
+        "scaledAmounts": true,
+        "negativeParentheses": true,
+        "comparativePeriod": true,
+        "unmappedNeedsReview": true,
+        "wrongScaleDetected": true,
+        "staleHashBlocked": true
+      },
+      "workspace": {
+        "noteEdit": true,
+        "factEdit": true,
+        "saveReopen": true,
+        "appendOnlyRestore": true,
+        "inconsistentHistoryRejected": true,
+        "draftReopenedByFilingService": true,
+        "nextYearBlankCurrentFacts": 16,
+        "preservedComparativeFacts": 30,
+        "approvalsRevoked": true,
+        "taxonomyReviewRequired": true
+      },
+      "ui": {
+        "renderedOffscreen": true,
+        "nativeDialogsOpened": false,
+        "comparisonBackgroundWorker": true,
+        "confirmedPairsThroughUi": 3,
+        "noteEditThroughUi": true
+      },
+      "osInputUsed": false,
+      "dartSubmission": "not-performed",
+      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
+      "seconds": 0.562
+    },
+    "disclosureFrozen": {
+      "version": "0.12.0-preview.1",
+      "frozen": true,
+      "ok": true,
+      "syntheticOnly": true,
+      "officialGenerated": false,
+      "comparison": {
+        "matched": 3,
+        "scaledAmounts": true,
+        "negativeParentheses": true,
+        "comparativePeriod": true,
+        "unmappedNeedsReview": true,
+        "wrongScaleDetected": true,
+        "staleHashBlocked": true
+      },
+      "workspace": {
+        "noteEdit": true,
+        "factEdit": true,
+        "saveReopen": true,
+        "appendOnlyRestore": true,
+        "inconsistentHistoryRejected": true,
+        "draftReopenedByFilingService": true,
+        "nextYearBlankCurrentFacts": 16,
+        "preservedComparativeFacts": 30,
+        "approvalsRevoked": true,
+        "taxonomyReviewRequired": true
+      },
+      "ui": {
+        "renderedOffscreen": true,
+        "nativeDialogsOpened": false,
+        "comparisonBackgroundWorker": true,
+        "confirmedPairsThroughUi": 3,
+        "noteEditThroughUi": true
+      },
+      "osInputUsed": false,
+      "dartSubmission": "not-performed",
+      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
+      "seconds": 0.593
+    },
+    "actualOfficialIxdReadOnlyComparison": {
+      "ok": true,
+      "syntheticOnly": true,
+      "actualOfficialOutputRead": true,
+      "factsRead": 2181,
+      "reviewedSourceFactsCompared": 3,
+      "matched": 3,
+      "notComparedIxdFacts": 2178,
+      "changedAmountDetected": true,
+      "inputIxdUnchanged": true,
+      "ixdSha256": "5c08926f91cad408f7064ac65d871c080efba1f6d1bb24d173a283adc0d23ddf",
+      "dartSubmission": "not-performed",
+      "scope": "Three independent approved synthetic source values against the prior genuine official output. Not a full DSD/IXD or disclosure acceptance validation."
+    },
+    "embeddedSourceCheck": {
+      "checked": 139,
+      "mismatches": [],
+      "requiredModules": [
+        "application.disclosure_workspace",
+        "application.disclosure_workspace._shared",
+        "application.disclosure_workspace.storage",
+        "application.disclosure_workspace.service",
+        "application.disclosure_workspace.rollover",
+        "desktop.disclosure_compare",
+        "desktop.disclosure_workspace",
+        "xbrl_filing.disclosure_compare",
+        "xbrl_filing.disclosure_compare.dsd",
+        "xbrl_filing.disclosure_compare.ixd",
+        "xbrl_filing.disclosure_compare.service",
+        "xbrl_filing.disclosure_compare.examples",
+        "tools.verify_disclosure",
+        "xbrl_filing.taxonomy",
+        "xbrl_filing.official_writer.interchange"
+      ],
+      "missingRequiredModules": [],
+      "exeSha256": "6874005161760a1225b221863ceb065060bf06e714d6290fb2e4fa55feb36ccb",
+      "ok": true
+    },
+    "glFrozen": {
+      "version": "0.12.0-preview.1",
+      "frozen": true,
+      "ok": true,
+      "totalRows": 1291,
+      "documents": 11,
+      "seconds": 6.501
     },
     "filingFrozen": {
-      "version": "0.10.0-preview.1",
+      "version": "0.12.0-preview.1",
       "frozen": true,
-      "syntheticOnly": true,
       "ok": true,
       "facts": 30,
       "statements": [
@@ -94,241 +151,32 @@
       ],
       "comparativePeriods": 1,
       "explicitDimensions": 1,
-      "xmlOutput": "exports/공시_XML_20261028_100155_409766",
-      "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
       "templateCreated": true,
       "workRoundtrip": true,
       "unapprovedBlocked": true,
       "calculationMismatchBlocked": true,
-      "validation": {
-        "passed": true,
-        "errors": [],
-        "warnings": [],
-        "checks": [
-          {
-            "code": "XBRL_21_DTS",
-            "status": "pass",
-            "message": "Arelle의 XBRL 2.1·팩트 자료형·기간·차원 검사를 수행했습니다."
-          },
-          {
-            "code": "CALCULATION_COMPLETE_BINDINGS",
-            "status": "pass",
-            "message": "계산망 완전 연결 8건. 필요한 하위 팩트가 모두 있는 경우만 계산 검사합니다."
-          },
-          {
-            "code": "CALCULATION_MISSING_FACTS",
-            "status": "skipped",
-            "message": "하위 팩트가 없는 계산 연결 42건은 합계 일치를 확인한 것이 아닙니다."
-          },
-          {
-            "code": "FORMULA",
-            "status": "skipped",
-            "message": "Formula·회사별 주석 완전성·공시 접수 규칙은 이 검사에 포함하지 않습니다."
-          },
-          {
-            "code": "DART_ACCEPTANCE",
-            "status": "skipped",
-            "message": "DART 편집기 가져오기·최종 접수 검증은 별도 확인이 필요합니다."
-          },
-          {
-            "code": "BALANCE_EQUALITY",
-            "status": "pass",
-            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
-            "factIds": [
-              "f000001",
-              "f000006"
-            ]
-          },
-          {
-            "code": "BALANCE_COMPONENTS",
-            "status": "pass",
-            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
-            "factIds": [
-              "f000001",
-              "f000004",
-              "f000005"
-            ]
-          },
-          {
-            "code": "BALANCE_EQUALITY",
-            "status": "pass",
-            "message": "자산 = 부채·자본 표시 합계 · 차이 0원 · 표시 정확도 허용 1.0원",
-            "factIds": [
-              "f000015",
-              "f000020"
-            ]
-          },
-          {
-            "code": "BALANCE_COMPONENTS",
-            "status": "pass",
-            "message": "자산 = 부채 + 자본 · 차이 0원 · 표시 정확도 허용 1.5원",
-            "factIds": [
-              "f000015",
-              "f000018",
-              "f000019"
-            ]
-          }
-        ],
-        "validator": "Arelle",
-        "version": "2.47.3",
-        "offline": true,
-        "calculationCoverage": {
-          "networks": 335,
-          "completeBindings": 8,
-          "incompleteBindings": 42
-        },
-        "taxonomyFingerprint": "d6be6b96e9aedf5f911acd7d8328c30f1a342194515a0c77240420de7200893f",
-        "schema": "account-normalizer-filing-export/1",
-        "applicationVersion": "0.10.0-preview.1",
-        "entity": {
-          "name": "입력 예제 회사",
-          "identifier": "EXAMPLE-001",
-          "scheme": "urn:account-normalizer:example"
-        },
-        "reporting": {
-          "periodStart": "2026-01-01",
-          "periodEnd": "2026-12-31",
-          "consolidation": "연결",
-          "comparativePeriods": [
-            {
-              "periodStart": "2025-01-01",
-              "periodEnd": "2025-12-31"
-            }
-          ]
-        },
-        "factCount": 30,
-        "dartSubmission": {
-          "status": "not-performed",
-          "message": "금융감독원 공식 XBRL 작성기에서 제출용 파일 생성·검사와 DART 편집기 삽입·제출이 필요합니다."
-        },
-        "completeness": {
-          "status": "not-performed",
-          "message": "회사별 필수 공시 항목·주석의 완전성과 회계 적정성은 별도 확인 대상입니다."
-        },
-        "files": {
-          "DART_입력대사.csv": {
-            "bytes": 5511,
-            "sha256": "eeddd479541df241472291d9ee1311368c99c91332056badbe3e7fcfd9af2ba4"
-          },
-          "facts.json": {
-            "bytes": 17724,
-            "sha256": "d80ed414532d84422163edd687580d8f4a8326c0f74a9c8a6ca3d43305e0fe95"
-          },
-          "financial-report.xbrl": {
-            "bytes": 10692,
-            "sha256": "6f597f2410898bb253425bd108f9733431e52afd848b1f51bf4ed0e4a5518583"
-          },
-          "taxonomy-reference.json": {
-            "bytes": 85553,
-            "sha256": "cc49c0142f76d30eddc3b2f2f6a4c4ae183c668791e185343604e1947ec0510b"
-          }
-        }
-      },
-      "seconds": 96.025,
-      "dartHandoff": "dart-exports/DART_공시대사_20261028_100304_878701_7ac48015",
-      "dartFacts": 7,
-      "dartMetadataOnly": true
+      "seconds": 81.951
     },
-    "sourceDesktop": {
-      "version": "0.10.0-preview.1",
-      "ok": true,
-      "syntheticOnly": true,
-      "nativeFileDialogsMocked": true,
-      "exportFunctionsMocked": false,
-      "currentGlSession": null,
-      "glSessionPreserved": true,
-      "ifrsFactsApprovedThroughUi": 30,
-      "workSavedAndReopened": true,
-      "sameTaxonomyApprovalsRestored": true,
-      "xmlOutput": "xml-exports/공시_XML_20261028_095617_034196",
+    "filingTechnicalValidation": {
+      "passed": true,
+      "errors": [],
+      "warnings": [],
       "validator": "Arelle",
-      "validatorVersion": "2.47.3",
-      "actualDtsValidated": true,
-      "dartSubmissionValidated": false,
-      "scope": "실제 Qt 입력/승인/업무/출력 서비스 확인. OS 파일선택창만 시험 경로로 대체. 공시 접수·회계 적정성·실사용 자료 검증은 아님.",
-      "dartFactsApprovedThroughUi": 7,
-      "dartRoleChoices": 2005,
-      "dartMetadataOnly": true,
-      "dartXmlGenerated": false,
-      "dartOutput": "dart-exports/DART_공시대사_20261028_095646_464645_b362516c",
-      "seconds": 59.516,
-      "steps": [
-        {
-          "step": "input-loaded",
-          "seconds": 0.219
-        },
-        {
-          "step": "official-dts-loaded",
-          "seconds": 17.547
-        },
-        {
-          "step": "rows-approved-30",
-          "seconds": 17.844
-        },
-        {
-          "step": "work-saved",
-          "seconds": 17.875
-        },
-        {
-          "step": "work-reopened",
-          "seconds": 17.938
-        },
-        {
-          "step": "export-xml-exports",
-          "seconds": 40.875
-        },
-        {
-          "step": "input-loaded",
-          "seconds": 41.016
-        },
-        {
-          "step": "dart-reference-loaded",
-          "seconds": 51.469
-        },
-        {
-          "step": "rows-approved-7",
-          "seconds": 51.563
-        },
-        {
-          "step": "export-dart-exports",
-          "seconds": 59.453
-        }
-      ]
+      "version": "2.47.3",
+      "offline": true
     },
-    "embeddedSourceCheck": {
-      "checked": 119,
-      "mismatches": [],
-      "requiredModules": [
-        "application.official_writer",
-        "desktop.dialogs.official_writer",
-        "desktop.dialogs.official_writer_settings",
-        "xbrl_filing.official_writer.discovery",
-        "xbrl_filing.official_writer.profiles",
-        "xbrl_filing.official_writer.launch",
-        "xbrl_filing.official_writer.session",
-        "xbrl_filing.official_writer.interchange",
-        "xbrl_filing.official_writer.artifacts",
-        "xbrl_filing.official_writer.validation",
-        "xbrl_filing.official_writer.reconcile"
-      ],
-      "missingRequiredModules": []
-    },
-    "glFrozen": {
-      "version": "0.10.0-preview.1",
-      "frozen": true,
-      "ok": true,
-      "totalRows": 251291,
-      "seconds": 91.148,
-      "cancelledOutputDiscarded": true
-    },
+    "mappingEngine": "local dictionary, aliases, normalized string similarity and scoped approval history; no LLM",
+    "osMouseKeyboardClipboardUsed": false,
     "officialTaxonomyRedistributed": false,
     "officialBinariesRedistributed": false,
+    "officialGeneratedSamplesRedistributed": false,
+    "sampleIxd": "Original synthetic minimum container only; not official-generated or filing-ready.",
     "dartSubmissionValidated": false,
-    "scope": "설치된 DART DTS로 시험 XML 47팩트 재생성 및 공식 기술검사 오류·경고 0건. 일반 배포 UI의 외부 XML 가져오기 미제공으로 공식 불러오기·최종 IXD 생성은 미완료. IXD 입력 대사는 합성 구조 시험만 수행. DART 접수·회사별 공시 완전성·실제 회계 적정성은 검증하지 않음."
+    "scope": "Implemented local XML-table DSD/IXD explicit correspondence comparison, note/fact drafts, replayable history and next-year reuse. Synthetic tests, actual frozen services/Qt, and three approved synthetic source values against an earlier genuine official output were checked. No universal binary DSD editing, productized automated IXD generation, real-company disclosure completeness or DART acceptance claim."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.10.0-preview.1",
+    "version": "0.12.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -338,9 +186,9 @@
       "vendor/xbrl-gl-2015/manifest.json": true
     },
     "display": {
-      "platform": "windows",
-      "devicePixelRatio": 1.5,
-      "fontFamily": "Malgun Gothic",
+      "platform": "offscreen",
+      "devicePixelRatio": 1.0,
+      "fontFamily": "Noto Sans KR",
       "pointSize": 11.0
     },
     "catalogVersion": "USER-f4a60cab790ba1f6",
@@ -356,12 +204,12 @@
     "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 265,
-  "pythonModuleCount": 178,
+  "sourceFileCount": 292,
+  "pythonModuleCount": 196,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "4ccc46b74b36e38db5334517bf15d0dc565ee359dfcbc294f7818c509df8f170",
-    "bytes": 7712819
+    "sha256": "6874005161760a1225b221863ceb065060bf06e714d6290fb2e4fa55feb36ccb",
+    "bytes": 7818964
   },
   "files": [
     {
@@ -371,18 +219,18 @@
     },
     {
       "file": "README.md",
-      "bytes": 12453,
-      "sha256": "50dde4eba71c08986280e256e382c64cc486d08962b30159ba69916a93d343b0"
+      "bytes": 14531,
+      "sha256": "7a833f3378d747cd2a08e06f8fee649649f525320bbde046faace07f9d73bc84"
     },
     {
       "file": "version.py",
       "bytes": 75,
-      "sha256": "27d7b8c44954db0c2a02f82d5b46b8c43ec0c9769dd224bb1d9bc55939d2e151"
+      "sha256": "ef974537a5d75e6aba7c790814318ca93baf6cfe05deb235ab21b0fec858c98d"
     },
     {
       "file": "main.py",
-      "bytes": 5086,
-      "sha256": "8a97b0838cc44b9c15e4834b708760dd906f6970bb1b1cefe4f871c2a9bc27a3"
+      "bytes": 5341,
+      "sha256": "a0c91aa6344329633c0033334f9f84d95db0132655274fdaa36b7d7bdab7bd52"
     },
     {
       "file": "convert.py",
@@ -533,6 +381,31 @@
       "file": "application/configuration.py",
       "bytes": 1193,
       "sha256": "3728e1f57a2c4de57356a0151007298de9ac777e9d24040e1856f03fafc61e29"
+    },
+    {
+      "file": "application/disclosure_workspace/__init__.py",
+      "bytes": 836,
+      "sha256": "a4025cfbc1d5ab539880db9a188cceebe365b3c32e5d152567eed2a956ca3d7e"
+    },
+    {
+      "file": "application/disclosure_workspace/_shared.py",
+      "bytes": 14959,
+      "sha256": "30cf75c1fc81a60089b21e9dce3d4cc39b485e3716ecbb8796ab432403e18792"
+    },
+    {
+      "file": "application/disclosure_workspace/rollover.py",
+      "bytes": 8294,
+      "sha256": "1dc4666827e9575633af2ecb8ad1d0b4776d8a35b36a1187a857d4db52a9aaeb"
+    },
+    {
+      "file": "application/disclosure_workspace/service.py",
+      "bytes": 7898,
+      "sha256": "1b5a1a639ae60d873787552466e3117db974ab00a34322a919a2c4b65b4eaa78"
+    },
+    {
+      "file": "application/disclosure_workspace/storage.py",
+      "bytes": 4982,
+      "sha256": "12a3577853504275b13c0e742d01a701ac3969026c394b2d018fa7eb3289aac4"
     },
     {
       "file": "application/exporting.py",
@@ -785,6 +658,16 @@
       "sha256": "c832938e7e733482c45e9270df2e76439352261fb8cfd67279bea74cb4592108"
     },
     {
+      "file": "desktop/disclosure_compare.py",
+      "bytes": 22464,
+      "sha256": "e85998cf3c963c5a35c02c9efe93e43b36b7a8ffaa01b18884112874ec5477c7"
+    },
+    {
+      "file": "desktop/disclosure_workspace.py",
+      "bytes": 32523,
+      "sha256": "002454488888aef034a1aed55156ebe9f81fd46d9eff5cc32a7ba21882d6f79a"
+    },
+    {
       "file": "desktop/models/__init__.py",
       "bytes": 2,
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
@@ -846,8 +729,8 @@
     },
     {
       "file": "desktop/window.py",
-      "bytes": 5648,
-      "sha256": "7479a8f4d345aaa7d771ae4fa2427f44e0c71a2e3b3345044d66bf9d285a743f"
+      "bytes": 6615,
+      "sha256": "4c49e993ab249bdc717cd68471b717f89ec2795b6abdfa82c938b59f82273d16"
     },
     {
       "file": "io_xlsx/__init__.py",
@@ -941,13 +824,38 @@
     },
     {
       "file": "xbrl_filing/dart_excel.py",
-      "bytes": 13711,
-      "sha256": "306f8209587b752ec1c65f94a4490067a0a37624578105b987f820c8aa7813f4"
+      "bytes": 13770,
+      "sha256": "47fcaa9854f925d14a23cccf62a232577a8df05518b1578caecd65316d4e86d0"
     },
     {
       "file": "xbrl_filing/dart_handoff.py",
       "bytes": 16154,
       "sha256": "6c4a69a8ce0450f0365cc2f010c1663e0e8710f016cb7c42f40388731970ac1d"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/__init__.py",
+      "bytes": 229,
+      "sha256": "07fade045aae2889852d79e5f4d89ded99cc312be6f1b8ab76711094c1773c90"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/dsd.py",
+      "bytes": 8864,
+      "sha256": "e4b145bd28e587d816598cc884d714a1d2cc849b7e1eb48c69cf16eb695c57e4"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/examples.py",
+      "bytes": 4810,
+      "sha256": "08413fc520ef4df838251518d3d75232d7c537c8563c896cd8f2bdcbfc2291d8"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/ixd.py",
+      "bytes": 2571,
+      "sha256": "f2ae625ace93f9a1e72cda3105769844ac2dd6b582b92215b6557a624ab440c9"
+    },
+    {
+      "file": "xbrl_filing/disclosure_compare/service.py",
+      "bytes": 15826,
+      "sha256": "8f98bada85be06d34bb0a8d99918d5c3a41ebd99a6690bde7cbd304a5f5c0548"
     },
     {
       "file": "xbrl_filing/inputs.py",
@@ -976,8 +884,8 @@
     },
     {
       "file": "xbrl_filing/official_writer/interchange.py",
-      "bytes": 22315,
-      "sha256": "a21cb06e018d94c11b43655cdf196a73179f60874365d4a662e3919372981aa2"
+      "bytes": 22920,
+      "sha256": "69646de9f0398cd8f8c3fc3ea8fc3126b1d9ec314f4a0d29905b691a506f8f7a"
     },
     {
       "file": "xbrl_filing/official_writer/launch.py",
@@ -1021,8 +929,8 @@
     },
     {
       "file": "xbrl_filing/taxonomy.py",
-      "bytes": 26188,
-      "sha256": "e138c077a53b07ef86e3436cd36b9f98d7c15c1a56a1c6989c8a53cc9c6a54f9"
+      "bytes": 26744,
+      "sha256": "7dc02867cd848f1105d786337a3e94126ee6255eb9c3f7eace6c60e161154ed8"
     },
     {
       "file": "xbrl_filing/writer.py",
@@ -1046,8 +954,8 @@
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 10204,
-      "sha256": "9e2f8c448083e7a20cf64845c629aaaaa6980a888ab1f952904df6eee2d5d122"
+      "bytes": 11522,
+      "sha256": "c2b53aff1ddacb7fb6f5f34833093d6b77a813c07b882e90db79e8c220390790"
     },
     {
       "file": "docs/AUDIT_EXPORT.md",
@@ -1065,14 +973,24 @@
       "sha256": "918a5518e40a5e08d1ee97096b3efb07ff56e61a1542ca1212bcacb7ce3702a0"
     },
     {
+      "file": "docs/DISCLOSURE_COMPARE.md",
+      "bytes": 7582,
+      "sha256": "268746a018724b147fd56b901e8e4c949a61b1750015e586c10b8ae91c8117db"
+    },
+    {
+      "file": "docs/DISCLOSURE_WORKSPACE.md",
+      "bytes": 7453,
+      "sha256": "1d18f448e79c6cb36bd837dbbd6f0b955943975c5e7cccae14d322062ef117fc"
+    },
+    {
       "file": "docs/IFRS_DART.md",
       "bytes": 10182,
       "sha256": "0226b72a1d8bd88eacaabb214c62e844c99faaaeb2233349ca91c01a1c33ea61"
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 15564,
-      "sha256": "87a59469b95db759d9c65a646b2e707cb6c9a394d480574e4fe1ee72337b22a9"
+      "bytes": 17789,
+      "sha256": "503e96bcdf8a7f156fb3991ddb4bb1bde57505ec4c9c372ff3a74f08c5f24957"
     },
     {
       "file": "docs/MULTI_COMPANY_MAPPING.md",
@@ -1081,13 +999,18 @@
     },
     {
       "file": "docs/official-writer-workflow.md",
-      "bytes": 11890,
-      "sha256": "0b261285802388734fd0b3978639dbd25d1e8e974cad63387abdc1a0193f9010"
+      "bytes": 12675,
+      "sha256": "75826a4f04e05653497384781d10b189a4bcd6793700ef769ebd8d67df0dab35"
+    },
+    {
+      "file": "docs/PUBLIC_FEATURE_DESIGN.md",
+      "bytes": 2876,
+      "sha256": "c2c6efef2564c7b50a9dc969698ade1fda65750f12cda53ff20fe6c3b3d4bf69"
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 10523,
-      "sha256": "faff9fbc211adfc1d69e2f2b5a674de127be2fa1d09831954a54889eaa44dd5d"
+      "bytes": 13544,
+      "sha256": "72323a165341fdf758908c3a3895d26c189058390ed0d5abf9943c97a75ace51"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -1125,14 +1048,39 @@
       "sha256": "f8d52f4a0cfa03e3597ea7fe69eb586fc86c9af87eae8ad171557db377c6f421"
     },
     {
+      "file": "tests/test_disclosure_compare.py",
+      "bytes": 12555,
+      "sha256": "f1e14fe702fc747fb14c8cb7aa3f1d4bc1a243ad47d614a3881a76171a9c1939"
+    },
+    {
+      "file": "tests/test_disclosure_compare_review.py",
+      "bytes": 3743,
+      "sha256": "a17ad26bd4842f3c6fafbb94cc10ae1208bc860a3448a62d452aaea8f8efe7ce"
+    },
+    {
+      "file": "tests/test_disclosure_ui.py",
+      "bytes": 14347,
+      "sha256": "04f059c290378e29e8cbbd302dc7bdec31d85c47461d8e1ca206bc0b77d9cbf3"
+    },
+    {
+      "file": "tests/test_disclosure_workspace.py",
+      "bytes": 15694,
+      "sha256": "72e377072a0724cdcfc16a9788591e3861fbbb4a2ca75f6b298e3e886e524844"
+    },
+    {
+      "file": "tests/test_disclosure_workspace_review.py",
+      "bytes": 4393,
+      "sha256": "5d2c904c2ab6703461f204b6eea76ba8d0a7694a2e7ca1bbd3807e45599931f2"
+    },
+    {
       "file": "tests/test_filing_application.py",
       "bytes": 3219,
       "sha256": "3ab251da723eeffcedf0af436b41f0e7efbe1a3d703cf1ac479a63d3803e533e"
     },
     {
       "file": "tests/test_filing_dart_excel.py",
-      "bytes": 8284,
-      "sha256": "60f3bda36374fa11fa36b6e20d8db2252b2f615e21a17860ee9f8254885105cf"
+      "bytes": 9662,
+      "sha256": "fac387a35a46637d7e0413d7a8395101e84145e6f5a486b8d1a64e600932250f"
     },
     {
       "file": "tests/test_filing_dart_handoff.py",
@@ -1151,8 +1099,8 @@
     },
     {
       "file": "tests/test_filing_taxonomy.py",
-      "bytes": 15944,
-      "sha256": "700ac6ddb2be4fb5f7653d2f9836766a8c265377e6acf1a0e62aa9bdd6697fdb"
+      "bytes": 20071,
+      "sha256": "0578905eabedf9cd9d62302412e37ff5614308dd6cabde7e59cbcf01ac59fe45"
     },
     {
       "file": "tests/test_filing_ui_contract.py",
@@ -1191,8 +1139,8 @@
     },
     {
       "file": "tests/test_official_writer_interchange.py",
-      "bytes": 17432,
-      "sha256": "b357f386feb9a68ee0ff9a97dd367ba3961c2755cdb5369ff5b91b3d8e0c7a97"
+      "bytes": 20062,
+      "sha256": "7aaa99709d186eba338a429890f06c9ee13a3af7ce4b69d3e364df63940a3bec"
     },
     {
       "file": "tests/test_official_writer_launch.py",
@@ -1211,8 +1159,8 @@
     },
     {
       "file": "tests/test_official_writer_settings.py",
-      "bytes": 4835,
-      "sha256": "be18e0f72e7922912ec2665b1ceae53eb0a18a4e333b90a356e4754d37ca940d"
+      "bytes": 4842,
+      "sha256": "01e615ff25cbcee367c3dc1775baffd37343cad3c24811b563958b27813a605d"
     },
     {
       "file": "tests/test_official_writer_taxonomy_cache.py",
@@ -1276,8 +1224,8 @@
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 6676,
-      "sha256": "80af4b5a16d641196bbd0d6c6db4169675b6192202bd1018f48a9b3fa2267594"
+      "bytes": 6924,
+      "sha256": "de83586d4dfe0de6cd540e032002ee1df6274266515dc6269891b6692edf5d52"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -1321,8 +1269,8 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 3349,
-      "sha256": "171d2d02885eb73d2cf89c25cf97649471639ad7f68b8d4f174a5512b1553671"
+      "bytes": 3593,
+      "sha256": "712cb6d8a9e6f347d6832dadd12f68af4e3b19f7c76e90efff1cc91991888e85"
     },
     {
       "file": "tools/run_audit_demo.py",
@@ -1688,6 +1636,41 @@
       "file": "tools/verify_official_writer.py",
       "bytes": 3904,
       "sha256": "9ca74adcc6c33e4cd7d0fabeb45e15fb0b07d2685ae453e566d22d5d3f475c8a"
+    },
+    {
+      "file": "tools/verify_disclosure.py",
+      "bytes": 10284,
+      "sha256": "a7e069edbe0f54b7d3c7be50cf2c3ab511dfc15eb6efe5a232a3713d75420d86"
+    },
+    {
+      "file": "samples/공시검토예제/README.md",
+      "bytes": 1604,
+      "sha256": "a684b8fcdfa2e810928d1a068b1af4dda7b7d95afe321a03ea8a0c7e375a2178"
+    },
+    {
+      "file": "samples/공시검토예제/공시검토_입력예제.acdisclosure",
+      "bytes": 22528,
+      "sha256": "a2bdb508768e600f5bf345a3a86df18599453ae88fd7a076f25a437105551257"
+    },
+    {
+      "file": "samples/공시검토예제/공시입력_검토초안.json",
+      "bytes": 11014,
+      "sha256": "d0c92007387441dd118ab8ad346d4bed104f6586372429b5bf45c88a0c65fca9"
+    },
+    {
+      "file": "samples/공시검토예제/합성_대응표.json",
+      "bytes": 2257,
+      "sha256": "3ea729c5d672874ccef7d59c78dadf8f1c72a144687f66b2673b1f93e8aa5966"
+    },
+    {
+      "file": "samples/공시검토예제/합성_숫자대사_제출금지.dsd",
+      "bytes": 398,
+      "sha256": "7528b630fec32e2edf1a73f3735ca160172012bfb75a6ef0b8b8cd765d33ab0d"
+    },
+    {
+      "file": "samples/공시검토예제/합성_숫자대사_제출금지.ixd",
+      "bytes": 2216,
+      "sha256": "01d5dc87b8cd8419a5b7e81eda603d2a9840b415b2b6717457832fcad64680d0"
     }
   ]
 }

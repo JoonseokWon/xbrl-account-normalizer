@@ -18,7 +18,12 @@ def main():
     parser.add_argument('--filing-dart-reference',help=argparse.SUPPRESS)
     parser.add_argument('--self-test-official-writer',nargs=2,help=argparse.SUPPRESS)
     parser.add_argument('--official-editor-document',help=argparse.SUPPRESS)
+    parser.add_argument('--self-test-disclosure',help=argparse.SUPPRESS)
     args=parser.parse_args()
+    if args.self_test_disclosure:
+        from tools.verify_disclosure import run_checks
+        result=run_checks(args.self_test_disclosure)
+        return 0 if result['ok'] else 1
     if args.self_test_official_writer:
         from tools.verify_official_writer import run_checks
         result=run_checks(*args.self_test_official_writer,editor_document=args.official_editor_document)

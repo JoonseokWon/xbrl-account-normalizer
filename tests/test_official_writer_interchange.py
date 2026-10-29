@@ -224,6 +224,43 @@ class OfficialWriterInterchangeTests(unittest.TestCase):
         schema = ET.parse(str(self.target.with_suffix('.xsd')))
         self.assertEqual(schema.getroot().nsmap['entity00123456'], self.settings['extensionNamespace'])
 
+    def test_company_schema_declares_every_instance_binding_for_native_qname_lookup(self):
+        # Additional declared aliases need not appear in a fact's element name.
+        # Native LookupNamespace must still see the exact instance bindings.
+        for index in range(12):self.catalog['namespaces']['alias'+str(index)]='urn:fixture:alias:'+str(index)
+        self.build();instance=ET.parse(str(self.target));schema=ET.parse(str(self.target.with_suffix('.xsd'))).getroot()
+        self.assertEqual(len(self.catalog['namespaces']),14)
+        for prefix,uri in instance.getroot().nsmap.items():self.assertEqual(schema.nsmap.get(prefix),uri)
+        for member in instance.findall('.//xbrldi:explicitMember',NS):
+            for value in (member.get('dimension'),member.text):
+                prefix=value.split(':',1)[0]
+                self.assertEqual(schema.nsmap[prefix],member.nsmap[prefix])
+        self.assertEqual(instance.find('{' + FIN + '}Cash').text,'1200')
+        evidence=json.loads(self.target.with_suffix('.review.json').read_text(encoding='utf-8'))
+        for item in (self.target,self.target.with_suffix('.xsd')):
+            self.assertEqual(evidence['files'][item.name],hashlib.sha256(item.read_bytes()).hexdigest())
+
+    def test_identical_structural_namespace_redeclarations_are_preserved(self):
+        self.catalog['namespaces'].update(xsd=XS,link=LINK,xlink=XLINK,xbrli=NS['xbrli'])
+        self.build();schema=ET.parse(str(self.target.with_suffix('.xsd'))).getroot()
+        for prefix,uri in self.catalog['namespaces'].items():self.assertEqual(schema.nsmap[prefix],uri)
+
+    def test_company_prefix_and_reserved_schema_bindings_cannot_rebind_existing_names(self):
+        original=deepcopy(self.settings)
+        for prefix in ('fin','meta','xbrli','xbrldi','iso4217','xsd','link','xlink','XMLreserved'):
+            with self.subTest(prefix=prefix):
+                self.settings=deepcopy(original);self.settings['extensionPrefix']=prefix
+                with self.assertRaises(InputError):self.build()
+                self.assertFalse(self.target.exists());self.assertFalse(self.target.with_suffix('.xsd').exists())
+        self.settings=original;self.catalog['namespaces']['xsd']='urn:incorrect:schema'
+        with self.assertRaisesRegex(InputError,'접두사'):self.build()
+        self.assertFalse(self.target.exists())
+
+    def test_company_namespace_cannot_reuse_a_standard_instance_uri(self):
+        self.settings['extensionNamespace']=NS['xbrli']
+        with self.assertRaisesRegex(InputError,'네임스페이스.*달라'):self.build()
+        self.assertFalse(self.target.exists())
+
     def test_existing_outputs_are_never_overwritten(self):
         for suffix in ('.xbrl', '.xsd', '.review.json'):
             existing = self.target.with_suffix(suffix);existing.write_bytes(b'keep original')

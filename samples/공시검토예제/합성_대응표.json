@@ -1,0 +1,84 @@
+{
+  "schema": "account-normalizer-disclosure-mapping/1",
+  "sourceHashes": {
+    "dsd": "7528b630fec32e2edf1a73f3735ca160172012bfb75a6ef0b8b8cd765d33ab0d",
+    "ixd": "01d5dc87b8cd8419a5b7e81eda603d2a9840b415b2b6717457832fcad64680d0"
+  },
+  "mappings": [
+    {
+      "dsdCellId": "contents.xml#t1:r2:c2",
+      "ixdFactId": "cash-current",
+      "scale": "1000",
+      "approved": true,
+      "expected": {
+        "concept": "{urn:account-normalizer:synthetic:disclosure}Cash",
+        "entity": {
+          "scheme": "urn:synthetic:entity",
+          "identifier": "00000000"
+        },
+        "period": {
+          "kind": "instant",
+          "instant": "2025-12-31"
+        },
+        "unit": {
+          "numerator": [
+            "{http://www.xbrl.org/2003/iso4217}KRW"
+          ],
+          "denominator": []
+        },
+        "dimensions": [],
+        "language": ""
+      }
+    },
+    {
+      "dsdCellId": "contents.xml#t1:r2:c3",
+      "ixdFactId": "cash-prior",
+      "scale": "1000",
+      "approved": true,
+      "expected": {
+        "concept": "{urn:account-normalizer:synthetic:disclosure}Cash",
+        "entity": {
+          "scheme": "urn:synthetic:entity",
+          "identifier": "00000000"
+        },
+        "period": {
+          "kind": "instant",
+          "instant": "2024-12-31"
+        },
+        "unit": {
+          "numerator": [
+            "{http://www.xbrl.org/2003/iso4217}KRW"
+          ],
+          "denominator": []
+        },
+        "dimensions": [],
+        "language": ""
+      }
+    },
+    {
+      "dsdCellId": "contents.xml#t1:r3:c2",
+      "ixdFactId": "loss-current",
+      "scale": "1000",
+      "approved": true,
+      "expected": {
+        "concept": "{urn:account-normalizer:synthetic:disclosure}Loss",
+        "entity": {
+          "scheme": "urn:synthetic:entity",
+          "identifier": "00000000"
+        },
+        "period": {
+          "kind": "instant",
+          "instant": "2025-12-31"
+        },
+        "unit": {
+          "numerator": [
+            "{http://www.xbrl.org/2003/iso4217}KRW"
+          ],
+          "denominator": []
+        },
+        "dimensions": [],
+        "language": ""
+      }
+    }
+  ]
+}

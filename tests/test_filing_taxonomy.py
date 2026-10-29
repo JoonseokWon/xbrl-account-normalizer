@@ -83,6 +83,39 @@ def source_report(*items):
             'reporting': {'periodStart': '2026-01-01', 'periodEnd': '2026-12-31', 'consolidation': '별도'}, 'facts': facts}
 
 
+def make_per_share_dts(folder):
+    """Official DTR 2022 per-share declaration plus authored derived concepts.
+
+    The minimal registry declaration is the simpleContent restriction from
+    https://www.xbrl.org/dtr/type/2022-03-31/types.xsd; no network is required.
+    """
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder/'dtr-types.xsd').write_text('''<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xbrli="http://www.xbrl.org/2003/instance"
+      targetNamespace="http://www.xbrl.org/dtr/type/2022-03-31">
+      <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+      <xs:complexType name="perShareItemType"><xs:simpleContent>
+        <xs:restriction base="xbrli:decimalItemType"><xs:attributeGroup ref="xbrli:numericItemAttrs"/></xs:restriction>
+      </xs:simpleContent></xs:complexType></xs:schema>''', encoding='utf-8')
+    entry = folder/'entry.xsd'
+    entry.write_text('''<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:t="urn:example:filing-test"
+      xmlns:registryAlias="http://www.xbrl.org/dtr/type/2022-03-31"
+      targetNamespace="urn:example:filing-test" elementFormDefault="qualified">
+      <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+      <xs:import namespace="http://www.xbrl.org/dtr/type/2022-03-31" schemaLocation="dtr-types.xsd"/>
+      <xs:complexType name="DerivedEpsType"><xs:simpleContent><xs:restriction base="registryAlias:perShareItemType"/></xs:simpleContent></xs:complexType>
+      <xs:complexType name="FurtherDerivedEpsType"><xs:simpleContent><xs:restriction base="t:DerivedEpsType"/></xs:simpleContent></xs:complexType>
+      <xs:complexType name="perShareItemType"><xs:simpleContent><xs:restriction base="xbrli:decimalItemType"/></xs:simpleContent></xs:complexType>
+      <xs:element name="BasicEps" id="t_BasicEps" type="registryAlias:perShareItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true"/>
+      <xs:element name="DilutedEps" id="t_DilutedEps" type="t:DerivedEpsType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true"/>
+      <xs:element name="FurtherEps" id="t_FurtherEps" type="t:FurtherDerivedEpsType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true"/>
+      <xs:element name="SameLocalName" id="t_SameLocalName" type="t:perShareItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true"/>
+      <xs:element name="PlainDecimal" id="t_PlainDecimal" type="xbrli:decimalItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true"/>
+    </xs:schema>''', encoding='utf-8')
+    return entry
+
+
 class FilingTaxonomyTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -111,6 +144,27 @@ class FilingTaxonomyTests(unittest.TestCase):
         try:self.assertNotEqual(_snapshot(copy_entry)['fingerprint'], _snapshot(self.entry)['fingerprint'])
         finally:copy_entry.unlink()
         self.assertEqual(first['fingerprint'], _snapshot(self.entry)['fingerprint'])
+
+    def test_dtr_per_share_ancestry_preserves_eps_units_through_real_arelle(self):
+        catalog = load_taxonomy(make_per_share_dts(self.folder/'eps-dts'))
+        for name in ('BasicEps', 'DilutedEps', 'FurtherEps'):
+            with self.subTest(concept=name):
+                self.assertEqual(catalog['concepts']['t:'+name]['kind'], 'perShare')
+                self.assertTrue(catalog['concepts']['t:'+name]['numeric'])
+        for name in ('SameLocalName', 'PlainDecimal'):
+            self.assertEqual(catalog['concepts']['t:'+name]['kind'], 'decimal')
+        report = source_report(('BasicEps', '5.25'), ('DilutedEps', '4.75'), ('FurtherEps', '4.50'))
+        for fact in report['facts']:
+            fact.update(statement='PL', period={'kind': 'duration', 'start': '2026-01-01', 'end': '2026-12-31'},
+                        unit='KRW/shares', decimals='2')
+        prepared = prepare_report(report, catalog)
+        path = self.folder/'eps.xbrl'
+        write_instance(path, prepared, catalog, catalog['schemaRef'])
+        checked = validate_instance(path, catalog)
+        self.assertTrue(checked['passed'], checked['errors'])
+        report['facts'][1]['unit'] = 'pure'
+        with self.assertRaisesRegex(InputError, 'KRW/shares'):
+            prepare_report(report, catalog)
 
     def test_valid_instance_runs_base_dimension_and_calc_checks_offline(self):
         checked = validate_instance(self.instance(), self.catalog)

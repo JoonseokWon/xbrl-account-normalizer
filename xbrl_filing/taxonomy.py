@@ -304,13 +304,21 @@ def _metadata(model, snapshot, rules):
     def name(qname):
         if qname is None:return ''
         return add_namespace(qname.namespaceURI, qname.prefix)+':'+qname.localName if qname.namespaceURI else qname.localName
+    # DTR per-share types derive from xbrli:decimalItemType, so the flattened
+    # baseXbrliType loses their currency/shares unit semantics. Match the
+    # registry QName and Arelle's real type ancestry, independent of prefixes.
+    per_share_types = {qname for qname in model.qnameTypes
+                       if qname.localName == 'perShareItemType'
+                       and XbrlConst.isDtrTypeNamespace(qname.namespaceURI)}
     concepts = {}
     for qname, concept in model.qnameConcepts.items():
         if not (concept.isItem or concept.isDimensionItem or concept.isHypercubeItem):continue
-        key = name(qname);base = concept.baseXbrliType or '';xsd = concept.baseXsdType
+        key = name(qname);xsd = concept.baseXsdType
         if concept.isMonetary:kind = 'monetary'
         elif concept.isShares:kind = 'shares'
-        elif base == 'perShareItemType':kind = 'perShare'
+        elif per_share_types and concept.isNumeric and concept.type is not None and (
+                concept.typeQname in per_share_types or concept.type.isDerivedFrom(per_share_types)):
+            kind = 'perShare'
         elif concept.isNumeric:kind = 'decimal'
         elif xsd in ('string', 'normalizedString', 'token', 'anyURI', 'language'):kind = 'string'
         elif xsd == 'boolean':kind = 'boolean'

@@ -17,7 +17,7 @@ from urllib.parse import quote, urljoin, urlsplit
 from lxml import etree as ET
 
 from core.errors import InputError
-from ..model import _ncname, expanded_name, prepare_report, xml_text
+from ..model import _ncname, _namespaces, expanded_name, prepare_report, xml_text
 from ..writer import write_instance
 
 CIK_SCHEME = 'http://dart.fss.or.kr/ifrs/CIK'
@@ -143,8 +143,16 @@ def _schema_contract(catalog, gcd_namespace, extension_namespace, extension_pref
         raise InputError('공식 불러오기는 선택한 DTS 안의 XSD 진입점이 필요합니다.')
     schema = _bound_xml(entry, indexed)
     namespace = schema.get('targetNamespace')
-    if not namespace or extension_namespace in set(catalog['namespaces'].values()):
+    # The official native importer resolves dimension/member QName prefixes
+    # against the top company schema, rather than the instance element. Keep
+    # the same bindings that write_instance uses, including unused aliases.
+    extension_namespaces = _namespaces(catalog)
+    if not namespace or extension_namespace in set(extension_namespaces.values()):
         raise InputError('회사 확장 네임스페이스는 선택한 DTS의 네임스페이스와 달라야 합니다.')
+    for prefix, uri in (('xsd', XSD), ('link', LINK), ('xlink', XLINK), (extension_prefix, extension_namespace)):
+        if prefix in extension_namespaces and extension_namespaces[prefix] != uri:
+            raise InputError('회사 XSD의 네임스페이스 접두사를 다른 URI로 다시 연결할 수 없습니다: ' + prefix)
+        extension_namespaces[prefix] = uri
     reference = catalog.get('schemaRef')
     if not isinstance(reference, str) or urlsplit(reference).scheme not in ('http', 'https'):
         raise InputError('공식 불러오기 지원을 확인하지 못했습니다. DTS의 공개 schemaRef가 필요합니다.')
@@ -189,7 +197,7 @@ def _schema_contract(catalog, gcd_namespace, extension_namespace, extension_pref
         pair = imported_namespace, urljoin(reference, location)
         if pair not in imports:
             imports.append(pair)
-    extension = ET.Element('{' + XSD + '}schema', nsmap={'xsd': XSD, 'link': LINK, 'xlink': XLINK, extension_prefix: extension_namespace},
+    extension = ET.Element('{' + XSD + '}schema', nsmap=extension_namespaces,
                            targetNamespace=extension_namespace, elementFormDefault='qualified')
     appinfo = ET.SubElement(ET.SubElement(extension, '{' + XSD + '}annotation'), '{' + XSD + '}appinfo')
     for attributes in refs:

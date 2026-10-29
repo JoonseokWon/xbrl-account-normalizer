@@ -123,6 +123,7 @@ def _kind(type_name, group):
     if local in _NUMERIC:
         if local == 'monetaryItemType':kind = 'monetary'
         elif local == 'sharesItemType':kind = 'shares'
+        elif local == 'perShareItemType':kind = 'perShare'
         elif local == 'percentItemType':kind = 'percent'
         elif 'Integer' in local or local in ('integerItemType', 'intItemType', 'longItemType', 'shortItemType', 'byteItemType'):kind = 'integer'
         else:kind = 'decimal'

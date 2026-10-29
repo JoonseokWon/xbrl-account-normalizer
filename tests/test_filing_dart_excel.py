@@ -108,7 +108,25 @@ class DartExcelTests(unittest.TestCase):
     def test_numeric_types_are_explicit(self):
         self.assertEqual(reader._kind('custom:inventedItemType','xbrli:item'), ('other',False))
         self.assertEqual(reader._kind('xbrli:sharesItemType','xbrli:item'), ('shares',True))
+        self.assertEqual(reader._kind('dtr-2022:perShareItemType','xbrli:item'), ('perShare',True))
+        self.assertEqual(reader._kind('num:perShareItemType','xbrli:item'), ('perShare',True))
+        self.assertEqual(reader._kind('custom:DerivedEpsType','xbrli:item'), ('other',False))
         self.assertEqual(reader._kind('xbrli:stringItemType','xbrldt:dimensionItem'), ('dimension',False))
+
+    def test_workbook_eps_metadata_keeps_per_share_semantics_without_guessing_namespace(self):
+        from openpyxl import load_workbook
+        path = self.book();workbook = load_workbook(path)
+        workbook['Concepts'].append([4,'ifrs-full','BasicEarningsLossPerShare','ifrs-full_BasicEarningsLossPerShare',
+                                    'dtr-2022:perShareItemType','','xbrli:item','','duration','','true'])
+        workbook['Concepts'].append([5,'ifrs-full','DilutedEarningsLossPerShare','ifrs-full_DilutedEarningsLossPerShare',
+                                    'num:perShareItemType','','xbrli:item','','duration','','true'])
+        workbook.save(path);workbook.close()
+        value = reader.read_dart_taxonomy(path)
+        for local in ('BasicEarningsLossPerShare','DilutedEarningsLossPerShare'):
+            item = value['concepts']['ifrs-full:'+local]
+            self.assertEqual((item['kind'],item['numeric'],item['namespace']), ('perShare',True,''))
+        self.assertEqual(value['namespaces'], {})
+        self.assertTrue(value['namespaceResolutionRequired'])
 
 
 if __name__ == '__main__':unittest.main()
