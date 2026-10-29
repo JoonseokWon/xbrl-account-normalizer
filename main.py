@@ -21,9 +21,22 @@ def main():
     parser.add_argument('--self-test-disclosure',help=argparse.SUPPRESS)
     parser.add_argument('--self-test-local-llm',help=argparse.SUPPRESS)
     parser.add_argument('--self-test-security',help=argparse.SUPPRESS)
+    parser.add_argument('--self-test-dsd-workflow',help=argparse.SUPPRESS)
     parser.add_argument('--local-llm-model',help=argparse.SUPPRESS)
     parser.add_argument('--local-llm-endpoint',default='http://127.0.0.1:11434',help=argparse.SUPPRESS)
     args=parser.parse_args()
+    if args.self_test_dsd_workflow:
+        from tools.verify_dsd_workflow import run_checks
+        try:result=run_checks(args.self_test_dsd_workflow)
+        except Exception as error:
+            from application.diagnostics import safe_exception_details
+            try:
+                target=Path(args.self_test_dsd_workflow);target.mkdir(parents=True,exist_ok=True)
+                (target/'self-test-error.json').write_text(json.dumps(
+                    {'ok':False,'diagnostic':json.loads(safe_exception_details(error))},ensure_ascii=False,indent=2),encoding='utf-8')
+            except OSError:pass
+            return 1
+        return 0 if result['ok'] else 1
     if args.self_test_security:
         from tools.verify_security import run_checks
         try:result=run_checks(args.self_test_security)

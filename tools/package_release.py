@@ -44,6 +44,9 @@ def main():
     files.append(ROOT/'tools/verify_disclosure.py')
     files.append(ROOT/'tools/verify_local_llm.py')
     files.extend(ROOT/name for name in ('tools/audit_dependencies.py','tools/verify_security.py'))
+    files.append(ROOT/'tools/verify_dsd_workflow.py')
+    files.extend(sorted(path for path in (ROOT/'samples/DSD문서예제').glob('*')
+                        if path.is_file() and path.suffix in ('.md','.json','.xlsx','.dsd','.xml','.html')))
     files.extend(sorted(path for path in (ROOT/'samples/공시검토예제').glob('*')
                         if path.is_file() and path.suffix in ('.md','.json','.dsd','.ixd','.acdisclosure')))
     entries=[]

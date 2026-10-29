@@ -6,6 +6,7 @@ user_data/
 dist/
 build/
 배포/
+보관/
 *.log
 .build-tools/
 .build-cache/

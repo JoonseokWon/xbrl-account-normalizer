@@ -186,6 +186,7 @@ class DisclosureCompareDialog(QDialog):
         actions = QHBoxLayout(); actions.addStretch()
         self.json_button = button('결과 JSON 저장'); self.json_button.clicked.connect(self.save_report_json); actions.addWidget(self.json_button)
         self.csv_button = button('결과 CSV 저장'); self.csv_button.clicked.connect(self.save_report_csv); actions.addWidget(self.csv_button)
+        self.html_button = button('HTML 검토보고서 저장'); self.html_button.clicked.connect(self.save_report_html); actions.addWidget(self.html_button)
         layout.addLayout(actions); self.tabs.addTab(pane, '대사 결과')
 
     def choose_dsd(self):
@@ -426,6 +427,18 @@ class DisclosureCompareDialog(QDialog):
 
     def save_report_csv(self):
         self.save_result('csv')
+
+    def save_report_html(self):
+        if self.report is None:
+            self.notice.setText('대사를 실행한 뒤 결과를 저장해 주세요.'); return
+        path, _ = QFileDialog.getSaveFileName(self, '공시 검토보고서 저장',
+            str(default_outputs() / '공시_대사검토.html'), 'HTML 검토보고서 (*.html)')
+        if not path: return
+        from xbrl_filing.dsd_reporting import export_dsd_review_html
+        report, sources = self.report, {'dsd': self.dsd_path, 'ixd': self.ixd_path}
+        self.run(lambda: export_dsd_review_html(report, path, source_paths=sources),
+                 lambda result: self.notice.setText('HTML 검토보고서를 저장했어요. ' + Path(path).name),
+                 '원본을 다시 확인하고 공시 대사 검토보고서를 만들고 있어요.')
 
     def save_result(self, suffix):
         if self.report is None: self.notice.setText('대사를 실행한 뒤 결과를 저장해 주세요.'); return

@@ -43,6 +43,12 @@ class MainWindow(QMainWindow):
         main.addWidget(self.stack,1);self.setCentralWidget(central)
         self.sidebar.pageRequested.connect(self.show_page);self.show_page(0)
         disclosure_menu=self.menuBar().addMenu('공시 검토')
+        self.dsd_tools_actions=[]
+        for index,title in enumerate(('DSD → 엑셀', 'DSD 버전 비교', 'HTML 검토보고서', '정산표 → DSD')):
+            action=QAction(title,self)
+            action.triggered.connect(lambda checked=False, tab=index:self.open_dsd_tools(tab))
+            disclosure_menu.addAction(action);self.dsd_tools_actions.append(action)
+        disclosure_menu.addSeparator()
         self.disclosure_compare_action=QAction('DSD·IXD 숫자 대사',self)
         self.disclosure_compare_action.triggered.connect(self.open_disclosure_compare)
         disclosure_menu.addAction(self.disclosure_compare_action)
@@ -54,6 +60,11 @@ class MainWindow(QMainWindow):
         if self.busy:return
         from desktop.disclosure_compare import DisclosureCompareDialog
         dialog=DisclosureCompareDialog(self);dialog.exec()
+
+    def open_dsd_tools(self,tab=0):
+        if self.busy:return
+        from desktop.dsd_tools import DsdToolsDialog
+        dialog=DsdToolsDialog(self,tab=tab);dialog.exec()
 
     def open_disclosure_workspace(self):
         if self.busy:return

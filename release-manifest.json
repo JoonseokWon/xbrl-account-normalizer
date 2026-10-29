@@ -1,13 +1,13 @@
 {
-  "version": "0.14.1-preview.1",
+  "version": "0.15.0-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.14.1-preview.1",
-    "unitTestsPassed": 528,
+    "version": "0.15.0-preview.1",
+    "unitTestsPassed": 605,
     "unitTests": {
-      "run": 530,
-      "passed": 528,
+      "run": 607,
+      "passed": 605,
       "failures": 0,
       "errors": 0,
       "skipped": 2,
@@ -23,24 +23,105 @@
       ]
     },
     "sourceChangedDuringRegression": false,
-    "securitySource": {
-      "version": "0.14.1-preview.1",
-      "frozen": false,
+    "syntheticLargeDsd": {
+      "excel": {
+        "cells": 100000,
+        "narratives": 1,
+        "seconds": 20.328,
+        "sourceUnchanged": true,
+        "sourceChangedDuringRun": false
+      },
+      "comparison": {
+        "cellsPerFile": 99999,
+        "bytesPerFile": 1877870,
+        "seconds": 4.14,
+        "oneExactValueDifference": true,
+        "sourceUnchanged": true
+      }
+    },
+    "dsdSource": {
       "ok": true,
+      "version": "0.15.0-preview.1",
+      "frozen": false,
       "syntheticOnly": true,
-      "legitimateWorkReopened": true,
-      "externalWorkSupportPathBlocked": true,
-      "externalXlsxRelationshipBlocked": true,
-      "workerErrorSignalDelivered": true,
-      "exceptionValuesAndPathsExcludedFromDiagnostic": true,
-      "firstExportCsvTextNeutralized": true,
-      "networkUsed": false,
       "osInputUsed": false,
-      "seconds": 0.062,
-      "scope": "Harmless local fixtures. Does not certify encryption, authenticity, runtime/OS security or absence of vulnerabilities."
+      "networkUsed": false,
+      "extractedTables": 2,
+      "extractedCells": 28,
+      "unchangedRoundtripExactText": true,
+      "diffCounts": {
+        "value-changed": 2,
+        "changes": 2,
+        "matchedTables": 2,
+        "matchedCells": 28,
+        "unchangedCells": 26,
+        "movedCells": 0,
+        "ambiguous": 0
+      },
+      "htmlForBothComparisonKinds": true,
+      "originalFilesUnchanged": true,
+      "officialDartEditorOpened": false,
+      "officialDartFormatCheckPassed": false,
+      "seconds": 0.656,
+      "scope": "Synthetic XML-table DSD fixtures, actual UI jobs and output reparsing. Not official DART editor compatibility or filing acceptance.",
+      "editedRoundtrip": {
+        "mappedCellCount": 28,
+        "changedCellCount": 2,
+        "unchangedCellCount": 26,
+        "unmappedCellCount": 0
+      },
+      "genericWorkbookMapping": {
+        "mappedCellCount": 3,
+        "changedCellCount": 3,
+        "unchangedCellCount": 25,
+        "unmappedCellCount": 25
+      }
+    },
+    "dsdFrozen": {
+      "ok": true,
+      "version": "0.15.0-preview.1",
+      "frozen": true,
+      "syntheticOnly": true,
+      "osInputUsed": false,
+      "networkUsed": false,
+      "extractedTables": 2,
+      "extractedCells": 28,
+      "unchangedRoundtripExactText": true,
+      "diffCounts": {
+        "value-changed": 2,
+        "changes": 2,
+        "matchedTables": 2,
+        "matchedCells": 28,
+        "unchangedCells": 26,
+        "movedCells": 0,
+        "ambiguous": 0
+      },
+      "htmlForBothComparisonKinds": true,
+      "originalFilesUnchanged": true,
+      "officialDartEditorOpened": false,
+      "officialDartFormatCheckPassed": false,
+      "seconds": 0.656,
+      "scope": "Synthetic XML-table DSD fixtures, actual UI jobs and output reparsing. Not official DART editor compatibility or filing acceptance.",
+      "editedRoundtrip": {
+        "mappedCellCount": 28,
+        "changedCellCount": 2,
+        "unchangedCellCount": 26,
+        "unmappedCellCount": 0
+      },
+      "genericWorkbookMapping": {
+        "mappedCellCount": 3,
+        "changedCellCount": 3,
+        "unchangedCellCount": 25,
+        "unmappedCellCount": 25
+      }
+    },
+    "htmlBrowserRender": {
+      "verified": false,
+      "reason": "The browser URL policy disallowed local file protocol. No workaround or OS input used.",
+      "structureEscapingCspAndSourceHashTested": true
     },
     "securityFrozen": {
-      "version": "0.14.1-preview.1",
+      "version": "0.15.0-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -52,57 +133,11 @@
       "firstExportCsvTextNeutralized": true,
       "networkUsed": false,
       "osInputUsed": false,
-      "seconds": 0.078,
+      "seconds": 0.079,
       "scope": "Harmless local fixtures. Does not certify encryption, authenticity, runtime/OS security or absence of vulnerabilities."
     },
-    "securityCoverage": {
-      "workSupportReferencesBoundToEmbeddedAttachments": true,
-      "networkFilingSourceReferencesRejectedBeforeFileProbe": true,
-      "duplicateNonfiniteDeepWorkJsonRejected": true,
-      "deviceNamesSpecialZipEntriesAndBudgetsChecked": true,
-      "spreadsheetExternalRelationshipsAndAmbiguousPathsBlocked": true,
-      "streamedXmlAndPhysicalRowDepthBudgets": true,
-      "exceptionValuesSourcePathsAndLocalsNotPersisted": true,
-      "maximumNewDiagnosticLogBytes": 3145728,
-      "legacyLogsDeletedOrScrubbed": false,
-      "csvFirstExportFormulaLikeTextNeutralized": true,
-      "csvResaveSafetyCertified": false
-    },
-    "dependencyAudit": {
-      "checkedAt": "2026-10-29T10:03:27+00:00",
-      "status": "no-known-advisories-returned",
-      "packageCount": 24,
-      "affectedPackages": 0,
-      "accountingDataSent": false,
-      "nativeOsAndSeparateModelRuntimeCovered": false,
-      "noVulnerabilitiesCertification": false
-    },
-    "githubSecuritySettings": {
-      "ok": true,
-      "repository": "JoonseokWon/xbrl-account-normalizer",
-      "previouslyEnabled": false,
-      "privateVulnerabilityReportingEnabled": true,
-      "visibilityChanged": false,
-      "reportSubmitted": false,
-      "otherRepositorySettingsChanged": false
-    },
-    "storageAndIdentity": {
-      "fileEncryptionImplemented": false,
-      "loginOrRoleBasedAccessImplemented": false,
-      "reviewerTextAuthenticatesIdentity": false,
-      "windowsCodeSigned": false,
-      "signatureStatus": "NotSigned",
-      "sha256IsPublisherSignature": false
-    },
-    "embeddedSourceCheck": {
-      "checked": 156,
-      "mismatches": [],
-      "missingRequiredModules": [],
-      "exeSha256": "f6728ff399baa1a71d13822bdceb2e3f3032ec2be025cdc99cdc5251e4da26b5",
-      "ok": true
-    },
     "disclosureFrozen": {
-      "version": "0.14.1-preview.1",
+      "version": "0.15.0-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -147,10 +182,10 @@
       "osInputUsed": false,
       "dartSubmission": "not-performed",
       "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
-      "seconds": 0.734
+      "seconds": 0.687
     },
     "localLlmFrozen": {
-      "version": "0.14.1-preview.1",
+      "version": "0.15.0-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -194,7 +229,7 @@
       "ledgerAmountsOrPartiesSent": false,
       "osInputUsed": false,
       "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
-      "seconds": 41.75
+      "seconds": 43.75
     },
     "missingModelFrozen": {
       "ok": true,
@@ -206,26 +241,48 @@
     "glFrozen": {
       "ok": true,
       "frozen": true,
-      "version": "0.14.1-preview.1",
+      "version": "0.15.0-preview.1",
       "totalRows": 1291,
       "documents": 11,
-      "seconds": 9.365
+      "seconds": 10.009
     },
-    "previousFilingEvidence": {
-      "version": "0.14.0-preview.1",
+    "embeddedSourceCheck": {
+      "checked": 177,
+      "mismatches": [],
+      "missingRequiredModules": [],
+      "exeSha256": "68197f9f0c8315ac4c723f3dd9097eb5ba61b4e483e2c629d6a93afdc00b6625",
+      "ok": true
+    },
+    "dependencyAudit": {
+      "checkedAt": "2026-10-29T13:15:19+00:00",
+      "status": "no-known-advisories-returned",
+      "packageCount": 24,
+      "affectedPackages": 0,
+      "accountingDataSent": false,
+      "nativeOsAndSeparateModelRuntimeCovered": false
+    },
+    "storageAndIdentity": {
+      "fileEncryptionImplemented": false,
+      "loginOrRoleBasedAccessImplemented": false,
+      "reviewerTextAuthenticatesIdentity": false,
+      "windowsCodeSigned": false,
+      "sha256IsPublisherSignature": false
+    },
+    "previousOfficialWriterEvidence": {
+      "version": "0.11.0-preview.1",
       "rerunInThisVersion": false,
-      "scope": "Prior release evidence only. Current unit suite includes filing cases; official writer generation, actual full-DTS validation and DART acceptance were not rerun for this security patch."
+      "scope": "Earlier synthetic official IXD generation experiment only. No official DART editor generation, format check or submission in this release."
     },
     "osMouseKeyboardClipboardUsed": false,
     "officialBinariesRedistributed": false,
     "officialIfrsDartTaxonomyRedistributed": false,
     "modelRuntimeOrWeightsRedistributed": false,
     "realCustomerRecordsUsed": false,
-    "scope": "Source review and harmless synthetic regression cases, actual EXE checks, Python metadata/OSV lookup and private reporting setup. Not an independent penetration test, security certification, encrypted storage or code-signing implementation."
+    "scope": "Synthetic regression and actual portable EXE offscreen checks. DSD outputs are template-based value drafts, not proof of official editor compatibility, accounting adequacy or filing acceptance."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.14.1-preview.1",
+    "version": "0.15.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -253,38 +310,38 @@
     "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 323,
-  "pythonModuleCount": 224,
+  "sourceFileCount": 361,
+  "pythonModuleCount": 250,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "f6728ff399baa1a71d13822bdceb2e3f3032ec2be025cdc99cdc5251e4da26b5",
-    "bytes": 7910204
+    "sha256": "68197f9f0c8315ac4c723f3dd9097eb5ba61b4e483e2c629d6a93afdc00b6625",
+    "bytes": 8023308
   },
   "files": [
     {
       "file": ".gitignore",
-      "bytes": 149,
-      "sha256": "727a9480addd09f00e1887a437584cac74947ca49b82bd1230a995eb925d1dca"
+      "bytes": 157,
+      "sha256": "c0851b02c7b8aba3713f074834d73a133e02be680aedef8997e01e354aa56c2a"
     },
     {
       "file": "README.md",
-      "bytes": 15836,
-      "sha256": "bbf6b3f7276bbc1e18968c4f3b6594e8f74890658bcb4fa6527f08750ee5534c"
+      "bytes": 17695,
+      "sha256": "52fd9eceffee32542f4ac69b14a4d8d0492095102bb99c1bafcd1873dc473566"
     },
     {
       "file": "SECURITY.md",
-      "bytes": 4749,
-      "sha256": "cb6a25be5899c5360031ae16452477dfdef0c99a2cdcf04f2c365082960bb4bd"
+      "bytes": 5293,
+      "sha256": "f71663d73353a3d5250b5496a8992116c1378f7efb10b5f07beabf974811fafd"
     },
     {
       "file": "version.py",
       "bytes": 75,
-      "sha256": "16cd8f9b9ca0e210f015f9bf644b9b67dbad2f0fb4f3d0036ced60b1f34e95f1"
+      "sha256": "c74f7c793d170b5dffad1745e669d348e126911712cd428c7f781252532f85d7"
     },
     {
       "file": "main.py",
-      "bytes": 7105,
-      "sha256": "38d103a31e4867f7e4c134b73c93c023ee21c1fb3db0a306d426d90e157ed88e"
+      "bytes": 7852,
+      "sha256": "7f8535914688127432cd4eeb0042aa1c3de2525c68a5b299c230c8e8e4ebce12"
     },
     {
       "file": "convert.py",
@@ -470,6 +527,11 @@
       "file": "application/disclosure_workspace/storage.py",
       "bytes": 4982,
       "sha256": "12a3577853504275b13c0e742d01a701ac3969026c394b2d018fa7eb3289aac4"
+    },
+    {
+      "file": "application/dsd_workflow.py",
+      "bytes": 1556,
+      "sha256": "8cf1051008d1d250638e60600162774459671b84e2aa28872dc5fd5f9c670bdb"
     },
     {
       "file": "application/exporting.py",
@@ -778,13 +840,48 @@
     },
     {
       "file": "desktop/disclosure_compare.py",
-      "bytes": 30466,
-      "sha256": "dccf6e4b2a4c0b19adb2af6e6910c57b6b89bdc829238e1ffb4867be77d59428"
+      "bytes": 31457,
+      "sha256": "41151df191c817aa7e8d170a04e0076560ae028902832b3ee9eb3d0835ad9c23"
     },
     {
       "file": "desktop/disclosure_workspace.py",
       "bytes": 32523,
       "sha256": "002454488888aef034a1aed55156ebe9f81fd46d9eff5cc32a7ba21882d6f79a"
+    },
+    {
+      "file": "desktop/dsd_tools/__init__.py",
+      "bytes": 143,
+      "sha256": "6d22d2f0a1d3eeea35d44a1339cd6dd90cc9ea74d37d1f1d070c809bf444238f"
+    },
+    {
+      "file": "desktop/dsd_tools/common.py",
+      "bytes": 1645,
+      "sha256": "8155293ba3a07a781772500472b9bb688fd007e6c4fe2c45e3bf367ab32dee58"
+    },
+    {
+      "file": "desktop/dsd_tools/dialog.py",
+      "bytes": 3282,
+      "sha256": "34242605f0c03dd7536368783ba30efc3ab0a715667699550662a583901c320d"
+    },
+    {
+      "file": "desktop/dsd_tools/extraction.py",
+      "bytes": 2060,
+      "sha256": "b76d22f412ee51c832d0c98f6c75ed294fead1986564386f49cf343d0aaca645"
+    },
+    {
+      "file": "desktop/dsd_tools/html_report.py",
+      "bytes": 2893,
+      "sha256": "906fd3b8be49bddefc76f6fd31b53644612ef4c241b8412cb17ff47bce13a7d8"
+    },
+    {
+      "file": "desktop/dsd_tools/roundtrip.py",
+      "bytes": 11219,
+      "sha256": "a1a8c0709b7dede7970933f99381ccf91be06e127dc4f41ac824723975a5c881"
+    },
+    {
+      "file": "desktop/dsd_tools/versions.py",
+      "bytes": 7686,
+      "sha256": "0c071be981701f5a319a34dede841da46666c3fc317d4a8c0a544c960025f22c"
     },
     {
       "file": "desktop/models/__init__.py",
@@ -848,8 +945,8 @@
     },
     {
       "file": "desktop/window.py",
-      "bytes": 6615,
-      "sha256": "4c49e993ab249bdc717cd68471b717f89ec2795b6abdfa82c938b59f82273d16"
+      "bytes": 7206,
+      "sha256": "00f638f85e1c792e2a39ed81ad1475e44222ffded5ee0ae82b22d962e41b5dd9"
     },
     {
       "file": "io_xlsx/__init__.py",
@@ -987,6 +1084,66 @@
       "sha256": "c390ace30a8fcf798b34c2b3060cb4d3d37b81e1f78c6dfcc20af6ee615e2f82"
     },
     {
+      "file": "xbrl_filing/dsd_diff/__init__.py",
+      "bytes": 201,
+      "sha256": "58c43adbd6d29953fa23ce2a0dfad9ae91448a65205f0086b292bef028057064"
+    },
+    {
+      "file": "xbrl_filing/dsd_diff/_alignment.py",
+      "bytes": 8541,
+      "sha256": "0b22d7df7e1489d2b70b7f6172bb4ae68270dd6c9c60c4914ab64c8f6ff565e1"
+    },
+    {
+      "file": "xbrl_filing/dsd_diff/_document.py",
+      "bytes": 271,
+      "sha256": "38990b64d5e6b038263145a3cf81019d2616082048767daddd6a942820c65255"
+    },
+    {
+      "file": "xbrl_filing/dsd_diff/service.py",
+      "bytes": 18178,
+      "sha256": "bac48f86eb4c0e1fd9df0bc5080cf78fcaaa56ba79c885604ae3f7b52bdd53cc"
+    },
+    {
+      "file": "xbrl_filing/dsd_document.py",
+      "bytes": 9872,
+      "sha256": "17e0b84a84294013c58091ed5501a12856235ef51b9a76d13f216e8243b3306f"
+    },
+    {
+      "file": "xbrl_filing/dsd_excel/__init__.py",
+      "bytes": 482,
+      "sha256": "3d692d9ccbb12becddbd3b8960966ff7b8f178f0150e318ae820c32200a6acd4"
+    },
+    {
+      "file": "xbrl_filing/dsd_excel/plan.py",
+      "bytes": 7563,
+      "sha256": "4e0d029e27722be61b415806d478c35c4cee005fe989f4182d739af2e7827e9f"
+    },
+    {
+      "file": "xbrl_filing/dsd_excel/service.py",
+      "bytes": 13585,
+      "sha256": "f888b07a66e6966f933c1305f49b80dd59b78910452cf2776994d575be1d0b92"
+    },
+    {
+      "file": "xbrl_filing/dsd_reporting/__init__.py",
+      "bytes": 164,
+      "sha256": "9e6938ba991b0d7924b9e5ea427f8f86e042e4375520ab4cb64b7d3d26891cb1"
+    },
+    {
+      "file": "xbrl_filing/dsd_reporting/html.py",
+      "bytes": 12411,
+      "sha256": "2b250eb9c53256898c8013f8182a60e6bd92da36cb72dcdc6f2f19f2bc70b6f4"
+    },
+    {
+      "file": "xbrl_filing/dsd_roundtrip/__init__.py",
+      "bytes": 257,
+      "sha256": "cf5f69f2c356bf813845d540d9acacf92791adf9279b62ce9e573f34f58eeb93"
+    },
+    {
+      "file": "xbrl_filing/dsd_roundtrip/service.py",
+      "bytes": 30034,
+      "sha256": "b260bb0d21fcf9a868a1bcf8c583dea53566d01ed530a81a9546c38dfbbf372d"
+    },
+    {
       "file": "xbrl_filing/inputs.py",
       "bytes": 26060,
       "sha256": "aa7001e1ce0e3868e4a6b689b91bfcd3bb17fce2a77905a26b9ae488cdc9c4b3"
@@ -1117,6 +1274,26 @@
       "sha256": "1d18f448e79c6cb36bd837dbbd6f0b955943975c5e7cccae14d322062ef117fc"
     },
     {
+      "file": "docs/DSD_EXCEL.md",
+      "bytes": 4347,
+      "sha256": "d5d5d3952c6f7f96342cf4dc14583eb140e0baee74c73273cd864d8a1a4c0101"
+    },
+    {
+      "file": "docs/DSD_OUTPUT.md",
+      "bytes": 8448,
+      "sha256": "e134096eb904c86bf3d5e24c8f0e43ba100cb976a5f0077619eaa228b925a695"
+    },
+    {
+      "file": "docs/DSD_VERSION_COMPARE.md",
+      "bytes": 5846,
+      "sha256": "81959baadfd9c3ba329e6b01c065c542fb16d25dabbd35dace2a70d61c877b1d"
+    },
+    {
+      "file": "docs/DSD_WORKFLOW.md",
+      "bytes": 5667,
+      "sha256": "42104bd0ec9cc3fbb41ff23eb72b6f9d9cc58886391b5b2ac0380595d7dc9dbb"
+    },
+    {
       "file": "docs/IFRS_DART.md",
       "bytes": 10182,
       "sha256": "0226b72a1d8bd88eacaabb214c62e844c99faaaeb2233349ca91c01a1c33ea61"
@@ -1128,8 +1305,8 @@
     },
     {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 19455,
-      "sha256": "38480c725e094758451b5e91a49bbd82ad11ab7a7d6e1a1248554fb080670d84"
+      "bytes": 21211,
+      "sha256": "53f2e0e281ebd0a2365d91f5908dd6a95049c724d48c5a5240606253761a79c7"
     },
     {
       "file": "docs/MULTI_COMPANY_MAPPING.md",
@@ -1148,8 +1325,8 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 19132,
-      "sha256": "77dd815cafc58aaf7abe93fe07b21591c6aae463fb9c7fb35cb744da2ff87177"
+      "bytes": 21621,
+      "sha256": "0be4eda5e6862096d526f70acaf781473fee6ce2613b69f272be51367183fd96"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -1220,6 +1397,31 @@
       "file": "tests/test_disclosure_workspace_review.py",
       "bytes": 4393,
       "sha256": "5d2c904c2ab6703461f204b6eea76ba8d0a7694a2e7ca1bbd3807e45599931f2"
+    },
+    {
+      "file": "tests/test_dsd_diff.py",
+      "bytes": 16004,
+      "sha256": "1ad842e7e3ef819db81f900d463c3a2c35372fd693ca6f665dfa8e296943f57d"
+    },
+    {
+      "file": "tests/test_dsd_excel.py",
+      "bytes": 13577,
+      "sha256": "b844389653b209f31b96bff4f7429269c9089d9ea67a5dccddf184993c67a28e"
+    },
+    {
+      "file": "tests/test_dsd_reporting.py",
+      "bytes": 3863,
+      "sha256": "4a0af3b7d8d5160749837eaac177ebb172dfbaa49eadfaa283ac96d6a9cb6480"
+    },
+    {
+      "file": "tests/test_dsd_roundtrip.py",
+      "bytes": 14997,
+      "sha256": "0b6c298b4746548d411012da1f14f66c5b0138dff51d591c5af1b9ace4a13e34"
+    },
+    {
+      "file": "tests/test_dsd_tools_ui.py",
+      "bytes": 5871,
+      "sha256": "3ae68da34c3e9ec76d598842357c1917b860eb4b6baea7a25bcd9f2ced7485c6"
     },
     {
       "file": "tests/test_filing_application.py",
@@ -1413,8 +1615,8 @@
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 7370,
-      "sha256": "702a668ab619aef8b63c99ae16b60f208774f1420c88a104d8b01687fa03ca77"
+      "bytes": 7617,
+      "sha256": "98cf0050865b9fef126762ce084c13a0a0a4dd60eb8966f77610e0b6f5e1e7dc"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -1845,6 +2047,51 @@
       "file": "tools/verify_security.py",
       "bytes": 4789,
       "sha256": "72886db071e7ccacf1d191c00be7578328c29a49f2c5eed6e80835fabd5aa217"
+    },
+    {
+      "file": "tools/verify_dsd_workflow.py",
+      "bytes": 8873,
+      "sha256": "d183bbed01331343006b47dcf578dee45ec91388fb99fad0d9edccc90c90f265"
+    },
+    {
+      "file": "samples/DSD문서예제/README.md",
+      "bytes": 1844,
+      "sha256": "670a63d33b68f2291851c2c96ae96013120655ae13bb63acf35b983de65976fd"
+    },
+    {
+      "file": "samples/DSD문서예제/검토용_원본.dsd",
+      "bytes": 863,
+      "sha256": "b22e80eabef3b5d1fd5bb737eb25b4840b6e73cf6cbd6989b8f7d848bc8815a7"
+    },
+    {
+      "file": "samples/DSD문서예제/다른정산표.xlsx",
+      "bytes": 5127,
+      "sha256": "176d7a4af72ff7685a74c12ea807e5a055acdd98cd60962579a83214ded2e3bb"
+    },
+    {
+      "file": "samples/DSD문서예제/변경_검토보고서.html",
+      "bytes": 4383,
+      "sha256": "53142479499ba2244b98eb8698b5b8904a8717d85c72b373a3e1de2d415122b7"
+    },
+    {
+      "file": "samples/DSD문서예제/수정_초안.dsd",
+      "bytes": 865,
+      "sha256": "7a5cf20f9ead4073cd07069d977f9e85de9c51ed033132d6184db48954a4e651"
+    },
+    {
+      "file": "samples/DSD문서예제/수정한_표.xlsx",
+      "bytes": 13172,
+      "sha256": "6abb3446b749f18042e81fa099fdfea7b9fbbe5079e5f38886c8c3efe78654d5"
+    },
+    {
+      "file": "samples/DSD문서예제/정산표_반영초안.dsd",
+      "bytes": 866,
+      "sha256": "5575ace2971d0db6d718f6b9a0cc15d7ab6fde5f8ce20b74c4969f3319ec95ac"
+    },
+    {
+      "file": "samples/DSD문서예제/표_추출.xlsx",
+      "bytes": 13172,
+      "sha256": "ea1a6b147872cddcaf9961cc82ea547e5fe3a0326d850f9e9f57e8ab6e1919cd"
     },
     {
       "file": "samples/공시검토예제/README.md",
