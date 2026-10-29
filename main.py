@@ -19,7 +19,24 @@ def main():
     parser.add_argument('--self-test-official-writer',nargs=2,help=argparse.SUPPRESS)
     parser.add_argument('--official-editor-document',help=argparse.SUPPRESS)
     parser.add_argument('--self-test-disclosure',help=argparse.SUPPRESS)
+    parser.add_argument('--self-test-local-llm',help=argparse.SUPPRESS)
+    parser.add_argument('--local-llm-model',help=argparse.SUPPRESS)
+    parser.add_argument('--local-llm-endpoint',default='http://127.0.0.1:11434',help=argparse.SUPPRESS)
     args=parser.parse_args()
+    if args.self_test_local_llm:
+        from tools.verify_local_llm import run_checks
+        try:
+            result=run_checks(args.self_test_local_llm,args.local_llm_model,args.local_llm_endpoint)
+        except Exception as error:
+            # Windowed EXEs must not open a native traceback dialog during a
+            # background diagnostic run (e.g. an unavailable local model).
+            try:
+                target=Path(args.self_test_local_llm);target.mkdir(parents=True,exist_ok=True)
+                (target/'self-test-error.json').write_text(json.dumps(
+                    {'ok':False,'type':type(error).__name__,'message':str(error)},ensure_ascii=False,indent=2),encoding='utf-8')
+            except OSError:pass
+            return 1
+        return 0 if result['ok'] else 1
     if args.self_test_disclosure:
         from tools.verify_disclosure import run_checks
         result=run_checks(args.self_test_disclosure)

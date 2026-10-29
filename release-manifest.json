@@ -1,114 +1,149 @@
 {
-  "version": "0.12.0-preview.1",
+  "version": "0.13.0-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.12.0-preview.1",
-    "unitTestsPassed": 417,
+    "version": "0.13.0-preview.1",
+    "unitTestsPassed": 485,
     "unitTests": {
-      "run": 419,
-      "passed": 417,
+      "run": 487,
+      "passed": 485,
       "failures": 0,
       "errors": 0,
       "skipped": 2
     },
-    "skippedReason": "Two existing Windows symlink tests require an unavailable file-link privilege; all new feature tests ran.",
-    "disclosureSource": {
-      "version": "0.12.0-preview.1",
+    "skippedReason": "Two pre-existing Windows symlink privilege tests only; all local LLM tests ran.",
+    "localLlmSource": {
+      "version": "0.13.0-preview.1",
       "frozen": false,
       "ok": true,
       "syntheticOnly": true,
-      "officialGenerated": false,
-      "comparison": {
-        "matched": 3,
-        "scaledAmounts": true,
-        "negativeParentheses": true,
-        "comparativePeriod": true,
-        "unmappedNeedsReview": true,
-        "wrongScaleDetected": true,
-        "staleHashBlocked": true
-      },
-      "workspace": {
-        "noteEdit": true,
-        "factEdit": true,
-        "saveReopen": true,
-        "appendOnlyRestore": true,
-        "inconsistentHistoryRejected": true,
-        "draftReopenedByFilingService": true,
-        "nextYearBlankCurrentFacts": 16,
-        "preservedComparativeFacts": 30,
-        "approvalsRevoked": true,
-        "taxonomyReviewRequired": true
-      },
-      "ui": {
-        "renderedOffscreen": true,
-        "nativeDialogsOpened": false,
-        "comparisonBackgroundWorker": true,
-        "confirmedPairsThroughUi": 3,
-        "noteEditThroughUi": true
-      },
+      "liveLocalModel": true,
+      "model": "qwen3:4b",
+      "endpoint": "http://127.0.0.1:11434",
+      "provider": "ollama",
+      "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "candidates": [
+        {
+          "code": "A1102",
+          "name": "현금성 예금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '보통예금' 별칭과 일치하며, 표준 계정 '현금성 예금'은 은행 보통예금을 포함하는 범위",
+          "origin": "local-llm"
+        },
+        {
+          "code": "A1101",
+          "name": "현금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '소액현금' 별칭과 일치하지 않으나, 현금 계정은 일반적으로 소액현금을 포함하지만, 보통예금은 현금이 아님",
+          "origin": "local-llm"
+        },
+        {
+          "code": "A1291",
+          "name": "매출채권 대손충당금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '매출채권 대손충당금' 별칭과 일치하지 않으나, 보통예금은 대손충당금과 무관",
+          "origin": "local-llm"
+        }
+      ],
+      "distinctValidCandidates": 3,
+      "recommendationKeptMappingsAndAmounts": true,
+      "candidateSelectionNotApproval": true,
+      "reviewerRequired": true,
+      "explicitCandidateApproval": true,
+      "explicitOutsideCandidateApproval": true,
+      "runtimeCacheOnly": true,
+      "cloudInferenceUsed": false,
+      "ledgerAmountsOrPartiesSent": false,
       "osInputUsed": false,
-      "dartSubmission": "not-performed",
-      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
-      "seconds": 0.562
+      "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
+      "seconds": 49.922
     },
-    "disclosureFrozen": {
-      "version": "0.12.0-preview.1",
+    "localLlmFrozen": {
+      "version": "0.13.0-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
-      "officialGenerated": false,
-      "comparison": {
-        "matched": 3,
-        "scaledAmounts": true,
-        "negativeParentheses": true,
-        "comparativePeriod": true,
-        "unmappedNeedsReview": true,
-        "wrongScaleDetected": true,
-        "staleHashBlocked": true
+      "liveLocalModel": true,
+      "model": "qwen3:4b",
+      "endpoint": "http://127.0.0.1:11434",
+      "provider": "ollama",
+      "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "candidates": [
+        {
+          "code": "A1102",
+          "name": "현금성 예금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '보통예금' 별칭과 일치하며, 표준 계정 '현금성 예금'은 은행 보통예금을 포함하는 범위",
+          "origin": "local-llm"
+        },
+        {
+          "code": "A1101",
+          "name": "현금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '소액현금' 별칭과 일치하지 않으나, 현금 계정은 일반적으로 소액현금을 포함하지만, 보통예금은 현금이 아님",
+          "origin": "local-llm"
+        },
+        {
+          "code": "A1291",
+          "name": "매출채권 대손충당금",
+          "reason": "원본 계정명 '국민은행 보통예금'이 '매출채권 대손충당금' 별칭과 일치하지 않으나, 보통예금은 대손충당금과 무관",
+          "origin": "local-llm"
+        }
+      ],
+      "transport": {
+        "attempts": 1,
+        "retryReasons": []
       },
-      "workspace": {
-        "noteEdit": true,
-        "factEdit": true,
-        "saveReopen": true,
-        "appendOnlyRestore": true,
-        "inconsistentHistoryRejected": true,
-        "draftReopenedByFilingService": true,
-        "nextYearBlankCurrentFacts": 16,
-        "preservedComparativeFacts": 30,
-        "approvalsRevoked": true,
-        "taxonomyReviewRequired": true
-      },
-      "ui": {
-        "renderedOffscreen": true,
-        "nativeDialogsOpened": false,
-        "comparisonBackgroundWorker": true,
-        "confirmedPairsThroughUi": 3,
-        "noteEditThroughUi": true
-      },
+      "distinctValidCandidates": 3,
+      "recommendationKeptMappingsAndAmounts": true,
+      "candidateSelectionNotApproval": true,
+      "reviewerRequired": true,
+      "explicitCandidateApproval": true,
+      "explicitOutsideCandidateApproval": true,
+      "runtimeCacheOnly": true,
+      "cloudInferenceUsed": false,
+      "ledgerAmountsOrPartiesSent": false,
       "osInputUsed": false,
-      "dartSubmission": "not-performed",
-      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
-      "seconds": 0.593
+      "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
+      "seconds": 47.875
     },
-    "actualOfficialIxdReadOnlyComparison": {
+    "missingModelFrozen": {
       "ok": true,
-      "syntheticOnly": true,
-      "actualOfficialOutputRead": true,
-      "factsRead": 2181,
-      "reviewedSourceFactsCompared": 3,
-      "matched": 3,
-      "notComparedIxdFacts": 2178,
-      "changedAmountDetected": true,
-      "inputIxdUnchanged": true,
-      "ixdSha256": "5c08926f91cad408f7064ac65d871c080efba1f6d1bb24d173a283adc0d23ddf",
-      "dartSubmission": "not-performed",
-      "scope": "Three independent approved synthetic source values against the prior genuine official output. Not a full DSD/IXD or disclosure acceptance validation."
+      "modelNotInstalled": true,
+      "controlledNonzeroExit": true,
+      "nativeTracebackDialogAvoided": true,
+      "modelDownloaded": false
+    },
+    "retryPolicy": {
+      "maximumRetries": 1,
+      "withinOriginalDeadline": true,
+      "scope": "Client TCP reset, or HTTP500 narrowly identifying Ollama internal loopback tokenize/completion reset/EOF only.",
+      "general500OomModelErrorsTimeoutNotRetried": true
+    },
+    "actualLocalModel": {
+      "provider": "ollama",
+      "runtimeVersion": "0.40.13",
+      "model": "qwen3:4b",
+      "modelDigest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+      "verifiedModelLayers": 6,
+      "cloudDisabledInTestServer": true,
+      "cpuOnlyTestServer": true,
+      "runtimeAndWeightsRedistributed": false
+    },
+    "mappingAccuracy": {
+      "status": "not-certified",
+      "expectedBankCodeObservedInTopThree": true,
+      "scope": "Synthetic bank-account example only. Other suggestions can be unrelated or wrong; valid dictionary codes do not establish accounting correctness."
     },
     "embeddedSourceCheck": {
-      "checked": 139,
+      "checked": 149,
       "mismatches": [],
       "requiredModules": [
+        "application.local_llm",
+        "application.local_llm.client",
+        "application.local_llm.config",
+        "application.local_llm.prompts",
+        "application.local_llm.transport",
+        "application.llm_mapping",
+        "desktop.controllers.local_llm",
+        "desktop.dialogs.local_llm",
+        "tools.verify_local_llm",
         "application.disclosure_workspace",
         "application.disclosure_workspace._shared",
         "application.disclosure_workspace.storage",
@@ -126,57 +161,117 @@
         "xbrl_filing.official_writer.interchange"
       ],
       "missingRequiredModules": [],
-      "exeSha256": "6874005161760a1225b221863ceb065060bf06e714d6290fb2e4fa55feb36ccb",
+      "exeSha256": "9b354712410542c0275f64a4ea44c8f9564e91301cbcf1cb68db89d3f7ad7f2c",
       "ok": true
     },
+    "disclosureFrozen": {
+      "version": "0.13.0-preview.1",
+      "frozen": true,
+      "ok": true,
+      "syntheticOnly": true,
+      "officialGenerated": false,
+      "comparison": {
+        "matched": 3,
+        "scaledAmounts": true,
+        "negativeParentheses": true,
+        "comparativePeriod": true,
+        "unmappedNeedsReview": true,
+        "wrongScaleDetected": true,
+        "staleHashBlocked": true
+      },
+      "workspace": {
+        "noteEdit": true,
+        "factEdit": true,
+        "saveReopen": true,
+        "appendOnlyRestore": true,
+        "inconsistentHistoryRejected": true,
+        "draftReopenedByFilingService": true,
+        "nextYearBlankCurrentFacts": 16,
+        "preservedComparativeFacts": 30,
+        "approvalsRevoked": true,
+        "taxonomyReviewRequired": true
+      },
+      "ui": {
+        "renderedOffscreen": true,
+        "nativeDialogsOpened": false,
+        "comparisonBackgroundWorker": true,
+        "confirmedPairsThroughUi": 3,
+        "noteEditThroughUi": true
+      },
+      "osInputUsed": false,
+      "dartSubmission": "not-performed",
+      "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
+      "seconds": 0.656
+    },
     "glFrozen": {
-      "version": "0.12.0-preview.1",
+      "version": "0.13.0-preview.1",
       "frozen": true,
       "ok": true,
       "totalRows": 1291,
       "documents": 11,
-      "seconds": 6.501
+      "seconds": 12.551
     },
-    "filingFrozen": {
+    "previousVersionFilingRegression": {
       "version": "0.12.0-preview.1",
-      "frozen": true,
-      "ok": true,
-      "facts": 30,
-      "statements": [
-        "BS",
-        "PL",
-        "CF",
-        "CE",
-        "NOTE"
-      ],
-      "comparativePeriods": 1,
-      "explicitDimensions": 1,
-      "templateCreated": true,
-      "workRoundtrip": true,
-      "unapprovedBlocked": true,
-      "calculationMismatchBlocked": true,
-      "seconds": 81.951
+      "filingFrozen": {
+        "version": "0.12.0-preview.1",
+        "frozen": true,
+        "ok": true,
+        "facts": 30,
+        "statements": [
+          "BS",
+          "PL",
+          "CF",
+          "CE",
+          "NOTE"
+        ],
+        "comparativePeriods": 1,
+        "explicitDimensions": 1,
+        "templateCreated": true,
+        "workRoundtrip": true,
+        "unapprovedBlocked": true,
+        "calculationMismatchBlocked": true,
+        "seconds": 81.951
+      },
+      "filingTechnicalValidation": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "validator": "Arelle",
+        "version": "2.47.3",
+        "offline": true
+      },
+      "rerunInThisVersion": false,
+      "reason": "Filing engine unchanged; current unit suite and current disclosure/GL EXE checks passed."
     },
-    "filingTechnicalValidation": {
-      "passed": true,
-      "errors": [],
-      "warnings": [],
-      "validator": "Arelle",
-      "version": "2.47.3",
-      "offline": true
+    "batchWorkflow": {
+      "defaultUniqueAccounts": 20,
+      "maximumUniqueAccounts": 30,
+      "perAccountCandidates": 3,
+      "explicitRequestOnly": true,
+      "approvalSeparate": true,
+      "cancelBetweenAccounts": true,
+      "individualFailureAndCacheReuseTested": true,
+      "sourceChangeRollsBackNewCacheTested": true
     },
-    "mappingEngine": "local dictionary, aliases, normalized string similarity and scoped approval history; no LLM",
+    "privacy": {
+      "allowedInferenceDestination": "HTTP loopback only",
+      "cloudModelsExcluded": true,
+      "proxyAndRedirectsDisabled": true,
+      "prompt": "Single account code/name/kind/statement and selected standard dictionary metadata/aliases only.",
+      "ledgerAmountsPartiesJournalsSourcePathsSent": false,
+      "recommendationCacheInWorkFiles": false
+    },
     "osMouseKeyboardClipboardUsed": false,
     "officialTaxonomyRedistributed": false,
     "officialBinariesRedistributed": false,
-    "officialGeneratedSamplesRedistributed": false,
-    "sampleIxd": "Original synthetic minimum container only; not official-generated or filing-ready.",
+    "modelWeightsRedistributed": false,
     "dartSubmissionValidated": false,
-    "scope": "Implemented local XML-table DSD/IXD explicit correspondence comparison, note/fact drafts, replayable history and next-year reuse. Synthetic tests, actual frozen services/Qt, and three approved synthetic source values against an earlier genuine official output were checked. No universal binary DSD editing, productized automated IXD generation, real-company disclosure completeness or DART acceptance claim."
+    "scope": "Local Ollama candidates are unapproved suggestions. One real local-model source and EXE flow plus deterministic HTTP/UI/unit tests verified explicit candidate approval and a manually selected alternative. No general mapping-accuracy, IFRS/DART concept approval, model training or automated filing claim."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.12.0-preview.1",
+    "version": "0.13.0-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -204,33 +299,33 @@
     "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 292,
-  "pythonModuleCount": 196,
+  "sourceFileCount": 308,
+  "pythonModuleCount": 211,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "6874005161760a1225b221863ceb065060bf06e714d6290fb2e4fa55feb36ccb",
-    "bytes": 7818964
+    "sha256": "9b354712410542c0275f64a4ea44c8f9564e91301cbcf1cb68db89d3f7ad7f2c",
+    "bytes": 7874762
   },
   "files": [
     {
       "file": ".gitignore",
-      "bytes": 134,
-      "sha256": "eff220154b0c521754bc7694ace8280ab0f083f4c33936508ed84e098df4e39e"
+      "bytes": 149,
+      "sha256": "727a9480addd09f00e1887a437584cac74947ca49b82bd1230a995eb925d1dca"
     },
     {
       "file": "README.md",
-      "bytes": 14531,
-      "sha256": "7a833f3378d747cd2a08e06f8fee649649f525320bbde046faace07f9d73bc84"
+      "bytes": 15742,
+      "sha256": "fcf3cae60e25a84db70801ef8361fc27281082719c5cca9207dd9c5ed23ed5b9"
     },
     {
       "file": "version.py",
       "bytes": 75,
-      "sha256": "ef974537a5d75e6aba7c790814318ca93baf6cfe05deb235ab21b0fec858c98d"
+      "sha256": "b1f56f25f8a4a956e0aec33cb14a8fd10b76a37f0fd6eb62d988bf13450e70f6"
     },
     {
       "file": "main.py",
-      "bytes": 5341,
-      "sha256": "a0c91aa6344329633c0033334f9f84d95db0132655274fdaa36b7d7bdab7bd52"
+      "bytes": 6378,
+      "sha256": "6d5e9ff3883f0d276c0619db9b7234b85a0f09dbe10bd42572906a01371420c5"
     },
     {
       "file": "convert.py",
@@ -428,9 +523,44 @@
       "sha256": "ead56985ee63da5426673786d99109471b2d327683745062d1d2b7d131b75d18"
     },
     {
+      "file": "application/llm_mapping.py",
+      "bytes": 18126,
+      "sha256": "433e995f9b1abbf96783cdde57f2701d63dc1b5a943a8f180fb32b4891fbc199"
+    },
+    {
       "file": "application/loading.py",
       "bytes": 2792,
       "sha256": "47c660ccc06311fd23b73ee2826112ce79b0999f0ad3bd70346c3c381a0e4520"
+    },
+    {
+      "file": "application/local_llm/__init__.py",
+      "bytes": 511,
+      "sha256": "21a55558191dbd1345ff30e9c0911819bde4f54f5470700c5e705c0e3f1e3080"
+    },
+    {
+      "file": "application/local_llm/client.py",
+      "bytes": 4816,
+      "sha256": "1d3eb65ae177f23b6eb5f4b8648a7b85ab932ae2377930faf9193c9b107c63db"
+    },
+    {
+      "file": "application/local_llm/config.py",
+      "bytes": 4307,
+      "sha256": "43f22e278f786b63940e29cee7c36c816602d1ebd160c199da4db076b47a7018"
+    },
+    {
+      "file": "application/local_llm/errors.py",
+      "bytes": 161,
+      "sha256": "dd115025218ac3461d44c6148c451eac502f045b0177c4ad382679adc94b53e4"
+    },
+    {
+      "file": "application/local_llm/prompts.py",
+      "bytes": 6857,
+      "sha256": "ed595356461ea499cdc399f5c37538a680707dd7dbd9c8c094b3f16538644ccb"
+    },
+    {
+      "file": "application/local_llm/transport.py",
+      "bytes": 9493,
+      "sha256": "5d382c8d0d60fcea4a2145eb8fa1e2e7a7094019b70a72909375c4015eddbe1d"
     },
     {
       "file": "application/official_writer.py",
@@ -449,13 +579,13 @@
     },
     {
       "file": "application/reviews.py",
-      "bytes": 2183,
-      "sha256": "f05b41074ad98b0967e2e2b5dbee5e8acec5dba1f0b47e13743d77e6fb8c289a"
+      "bytes": 2352,
+      "sha256": "46dffca2b5752a7bc9e60e5779f9fef2f6ac3a15d5c007c400db0f0bf670ef7e"
     },
     {
       "file": "application/session.py",
-      "bytes": 497,
-      "sha256": "08348e55b11848103b4b1a329152dfbe577d562a4f1f8f5a4fb62cdac9598958"
+      "bytes": 601,
+      "sha256": "7274e5c1428c6b3ffd792427565fbad7c9b73efe4707f1ff2f15d3b9af945da0"
     },
     {
       "file": "application/support_preparation.py",
@@ -544,8 +674,8 @@
     },
     {
       "file": "desktop/components/review_editor.py",
-      "bytes": 3097,
-      "sha256": "045d2efced887303a137751d2034b99050b18ffbb19737bc9e97a38dec3202e3"
+      "bytes": 7064,
+      "sha256": "907315ac876e5ae2d5b6877a69856eb74b5b598b5b6756b53dd711bff20472ee"
     },
     {
       "file": "desktop/components/sidebar.py",
@@ -574,8 +704,8 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 12714,
-      "sha256": "4021e341e2cf0901d25345b2db63662bf56fa60f3895adb49f75da06934b33e9"
+      "bytes": 12812,
+      "sha256": "5d1ee287381b811e363c69473662b56f55433c1f53427ccf4ba3ff313720f5c3"
     },
     {
       "file": "desktop/controllers/audit_export.py",
@@ -591,6 +721,11 @@
       "file": "desktop/controllers/jobs.py",
       "bytes": 1378,
       "sha256": "d7c762a05506c7ad29c907ffe4ae92da60cdf70f447fa8e82f07c9c2d881611e"
+    },
+    {
+      "file": "desktop/controllers/local_llm.py",
+      "bytes": 7580,
+      "sha256": "c48efaf7cd1f5c93c64425ce27a87a0fa5ba95d5d8cef13570bd3d56ca1f4df5"
     },
     {
       "file": "desktop/controllers/official_writer.py",
@@ -626,6 +761,11 @@
       "file": "desktop/dialogs/filing.py",
       "bytes": 31281,
       "sha256": "264bd00feac5cb59be3cdc5ddc10a2a1cb8debd9de4b40740d6af3d4d70bc248"
+    },
+    {
+      "file": "desktop/dialogs/local_llm.py",
+      "bytes": 5782,
+      "sha256": "41629fa919a688834ff398fa8c0adc9737d46df8bd1310d4ad44055df39b18f2"
     },
     {
       "file": "desktop/dialogs/mapped_table.py",
@@ -694,8 +834,8 @@
     },
     {
       "file": "desktop/screens/mapping.py",
-      "bytes": 4303,
-      "sha256": "3522e89a4c277b44ca3965c3dce5503d1a4052614d167ffa6f3990abf23be881"
+      "bytes": 5041,
+      "sha256": "5601859719d3c179e9fbf1fa4809060d61c2cb4544fecf501f5008ce859cba19"
     },
     {
       "file": "desktop/screens/overview.py",
@@ -954,8 +1094,8 @@
     },
     {
       "file": "docs/ARCHITECTURE.md",
-      "bytes": 11522,
-      "sha256": "c2b53aff1ddacb7fb6f5f34833093d6b77a813c07b882e90db79e8c220390790"
+      "bytes": 12516,
+      "sha256": "08b884787ba48eed9cfea9fd4383f5812775bd2355eeaa6a1ae161f0b0d3461b"
     },
     {
       "file": "docs/AUDIT_EXPORT.md",
@@ -988,9 +1128,14 @@
       "sha256": "0226b72a1d8bd88eacaabb214c62e844c99faaaeb2233349ca91c01a1c33ea61"
     },
     {
+      "file": "docs/LOCAL_LLM_MAPPING.md",
+      "bytes": 7013,
+      "sha256": "3a528f638f9429f922f46f672709c6d775c2eeb8649d2368f5e9d5e652d143c3"
+    },
+    {
       "file": "docs/MANUAL_VALIDATION.md",
-      "bytes": 17789,
-      "sha256": "503e96bcdf8a7f156fb3991ddb4bb1bde57505ec4c9c372ff3a74f08c5f24957"
+      "bytes": 19455,
+      "sha256": "38480c725e094758451b5e91a49bbd82ad11ab7a7d6e1a1248554fb080670d84"
     },
     {
       "file": "docs/MULTI_COMPANY_MAPPING.md",
@@ -1009,8 +1154,8 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 13544,
-      "sha256": "72323a165341fdf758908c3a3895d26c189058390ed0d5abf9943c97a75ace51"
+      "bytes": 15658,
+      "sha256": "d4539f5ab581a5b72ef616b96821a8aa447ea7d37e9a68c3012fa467f40e259e"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -1111,6 +1256,31 @@
       "file": "tests/test_filing_writer.py",
       "bytes": 7672,
       "sha256": "6a92610253b3456f90877c050734e8dc13695f87926a6655dd55a2270feee8b5"
+    },
+    {
+      "file": "tests/test_llm_mapping_workflow.py",
+      "bytes": 18990,
+      "sha256": "5c2dbb2d344f1f4adde814b77145377f5d4e13c66da529a33d1e3dbfd5fc7bd7"
+    },
+    {
+      "file": "tests/test_local_llm.py",
+      "bytes": 20922,
+      "sha256": "5620c209b64578cc16ff2840b3ff460c20592620af6c495c4ecd4da2eb7bc69e"
+    },
+    {
+      "file": "tests/test_local_llm_entrypoint.py",
+      "bytes": 1045,
+      "sha256": "47a9736e82608f40066ea48ba3b946377303a28fed3722fbfbc1b01a718e05ee"
+    },
+    {
+      "file": "tests/test_local_llm_review.py",
+      "bytes": 3785,
+      "sha256": "8570521c283b5b0afb3d6694b83025cca691c38a1bb2a69f4ca7106f2141412c"
+    },
+    {
+      "file": "tests/test_local_llm_ui.py",
+      "bytes": 13876,
+      "sha256": "1d03f8e07364a0d2778ed85f811c32572929f80cffcb6fedfb46a660896824a1"
     },
     {
       "file": "tests/test_mapping_workflow.py",
@@ -1224,8 +1394,8 @@
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 6924,
-      "sha256": "de83586d4dfe0de6cd540e032002ee1df6274266515dc6269891b6692edf5d52"
+      "bytes": 6975,
+      "sha256": "510270ceb5b7a4e842f4eaf2545585ff67657848cff094d8f7267037b43fde17"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -1269,8 +1439,8 @@
     },
     {
       "file": "docs/프로젝트_소개글.txt",
-      "bytes": 3593,
-      "sha256": "712cb6d8a9e6f347d6832dadd12f68af4e3b19f7c76e90efff1cc91991888e85"
+      "bytes": 3672,
+      "sha256": "67be8052076c22a78fca500a04a91380ccd332660af3e221eba57db1ee0de114"
     },
     {
       "file": "tools/run_audit_demo.py",
@@ -1641,6 +1811,11 @@
       "file": "tools/verify_disclosure.py",
       "bytes": 10284,
       "sha256": "a7e069edbe0f54b7d3c7be50cf2c3ab511dfc15eb6efe5a232a3713d75420d86"
+    },
+    {
+      "file": "tools/verify_local_llm.py",
+      "bytes": 7458,
+      "sha256": "b4467715db27b75f3f4a1e189a1842832f9bc8fb384d46f01de6e927b65426e9"
     },
     {
       "file": "samples/공시검토예제/README.md",

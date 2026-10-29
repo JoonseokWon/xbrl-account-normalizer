@@ -1,5 +1,5 @@
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QLineEdit,QCheckBox,QSplitter
+from PySide6.QtWidgets import QWidget,QVBoxLayout,QHBoxLayout,QLineEdit,QCheckBox,QSplitter,QPlainTextEdit
 from desktop.components.card import Card
 from desktop.components.text import label
 from desktop.components.buttons import button
@@ -9,6 +9,7 @@ from desktop.components.review_editor import ReviewEditor
 
 class MappingScreen(QWidget):
     resultsRequested=Signal()
+    localLlmBatchRequested=Signal()
     def __init__(self):
         super().__init__();self.accounts=[];self.visible=[];self.catalog={};self.default_reviewer=''
         root=QVBoxLayout(self);root.setContentsMargins(0,0,0,0);root.setSpacing(18)
@@ -18,6 +19,11 @@ class MappingScreen(QWidget):
         self.pending=MetricCard('검토할 계정','후보를 확인하고 연결해요.')
         for metric in (self.total,self.confirmed,self.pending):metrics.addWidget(metric)
         root.addLayout(metrics)
+        llm_actions=QHBoxLayout()
+        llm_actions.addWidget(label('로컬 LLM은 요청할 때만 추천해요. 후보 선택과 연결 승인은 별도예요.','Muted',True),1)
+        self.llm_batch=button('미확정 계정 20개 추천');self.llm_batch.clicked.connect(self.localLlmBatchRequested);llm_actions.addWidget(self.llm_batch)
+        root.addLayout(llm_actions)
+        self.llm_batch_report=QPlainTextEdit();self.llm_batch_report.setReadOnly(True);self.llm_batch_report.setMaximumHeight(150);self.llm_batch_report.hide();root.addWidget(self.llm_batch_report)
         splitter=QSplitter();splitter.setChildrenCollapsible(False)
         card=Card('계정 연결 목록')
         filters=QHBoxLayout();self.search=QLineEdit();self.search.setPlaceholderText('원본 코드나 계정명 검색');self.only_pending=QCheckBox('미확정만');filters.addWidget(self.search);filters.addWidget(self.only_pending);card.body.addLayout(filters)
@@ -49,5 +55,7 @@ class MappingScreen(QWidget):
         self.search.clear();self.only_pending.setChecked(False);self.table.set_rows([])
         self.editor.key=None;self.editor.name.setText('검토할 계정을 선택해요');self.editor.original.clear()
         self.editor.candidates.setText('계정명과 별칭을 비교해 후보를 제안해요.')
+        self.editor.set_llm_candidates([])
+        self.llm_batch_report.clear();self.llm_batch_report.hide()
         self.editor.target.clear();self.editor.reviewer.clear();self.editor.setEnabled(False)
         for metric in (self.total,self.confirmed,self.pending):metric.update_value('—')

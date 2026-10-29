@@ -42,6 +42,8 @@ class AppController(QObject):
         self.results.supportRequested.connect(self.connect_support)
         self.help.openDataRequested.connect(self.open_data);window.actionRequested.connect(self.action)
         self.work_actions=WorkActions(self)
+        from .local_llm import LocalLlmController
+        self.local_llm=LocalLlmController(self)
     def action(self,index):
         if self.window.busy:return
         if index==0:

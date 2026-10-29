@@ -9,7 +9,11 @@ def review_rows(session):
             if key not in rows:
                 rows[key]=dict(row,kind=kind,key=key,transactionCount=0)
             rows[key]['transactionCount']+=1
-    return list(rows.values())
+    values=list(rows.values())
+    if getattr(session,'llm_candidates',None):
+        from .llm_mapping import overlay_review_rows
+        values=overlay_review_rows(session,values)
+    return values
 
 def apply_review(session,key,target,decision,reviewer):
     if decision not in ('확인','거절','미확정'):

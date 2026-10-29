@@ -1,6 +1,10 @@
-# v0.12 모듈 구조
+# v0.13 모듈 구조
 
 화면은 Qt를 사용하지만 데이터 처리 계층은 Qt에 의존하지 않습니다. 데스크톱과 CLI는 같은 application 서비스를 호출합니다.
+
+v0.13 로컬 LLM은 `application/local_llm/`의 로컬 주소·설정, 직접 HTTP 전송, 최소 입력 프롬프트, 설치 모델 검사와 3후보 검증으로 나눕니다. `application/llm_mapping.py`는 요청 스냅샷·원본 확인·세션 캐시·오래된 결과 차단·미확정 계정 일괄 추천을 관리합니다. 실제 매핑과 승인은 기존 `application/reviews.py`만 변경합니다. 추천은 `review_rows.llmCandidates`로 표시하고 원장 결과·공시 팩트를 바꾸지 않습니다.
+
+`desktop/dialogs/local_llm.py`와 `desktop/controllers/local_llm.py`가 모델 설정·백그라운드 요청을 맡고 계정 검토 컴포넌트가 세 후보와 별도의 승인 동작을 표시합니다. 네트워크와 원본 재확인은 작업 스레드에서 수행하며 모델이 없을 때 기존 사전 후보와 수동 선택을 유지합니다. 모델·Ollama·개인 설정·추천 캐시·시험 로그는 실행팩 소스에 포함하지 않습니다.
 
 v0.12 공시 검토는 다음 경계로 나뉩니다.
 

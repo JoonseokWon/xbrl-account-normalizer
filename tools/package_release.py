@@ -42,6 +42,7 @@ def main():
     files.append(ROOT/'tools/verify_filing_ui.py')
     files.append(ROOT/'tools/verify_official_writer.py')
     files.append(ROOT/'tools/verify_disclosure.py')
+    files.append(ROOT/'tools/verify_local_llm.py')
     files.extend(sorted(path for path in (ROOT/'samples/공시검토예제').glob('*')
                         if path.is_file() and path.suffix in ('.md','.json','.dsd','.ixd','.acdisclosure')))
     entries=[]

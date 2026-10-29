@@ -19,3 +19,5 @@ class Session:
     support_config: dict=field(default_factory=dict)
     support_bundle: object=None
     support_setup: dict=field(default_factory=dict)
+    llm_candidates: dict=field(default_factory=dict)
+    llm_settings: dict=field(default_factory=dict)

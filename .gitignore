@@ -10,4 +10,5 @@ build/
 .build-tools/
 .build-cache/
 검증/
+local_runtime/
 *.inspect.ndjson
