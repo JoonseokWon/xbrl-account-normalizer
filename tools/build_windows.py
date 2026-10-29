@@ -60,7 +60,7 @@ collect=COLLECT(exe,a.binaries,a.datas,strip=False,upx=False,name='AccountDataNo
     spec_path=specs/'AccountDataNormalizer.spec';spec_path.write_text(spec,encoding='utf-8')
     PyInstaller.__main__.run([str(spec_path),'--clean','--distpath',str(target),'--workpath',str(work/'analysis-isolated')])
     portable=target/'AccountDataNormalizer'
-    for name in ('README.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
+    for name in ('README.md','SECURITY.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
         destination=portable/Path(name).name
         shutil.copy2(ROOT/name,destination)
     (portable/'docs').mkdir(exist_ok=True)

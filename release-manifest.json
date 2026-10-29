@@ -1,30 +1,108 @@
 {
-  "version": "0.14.0-preview.1",
+  "version": "0.14.1-preview.1",
   "validationStatus": "회사별 입력·업무 저장·시험 원장 변환 검증 완료; 실사용 확인 필요",
   "applicationTestsRun": true,
   "validation": {
-    "version": "0.14.0-preview.1",
-    "unitTestsPassed": 500,
+    "version": "0.14.1-preview.1",
+    "unitTestsPassed": 528,
     "unitTests": {
-      "run": 502,
-      "passed": 500,
+      "run": 530,
+      "passed": 528,
       "failures": 0,
       "errors": 0,
       "skipped": 2,
       "skipReasons": [
         {
           "test": "test_symlink_escape_is_rejected (test_xbrl_inspection.XbrlInspectionTests.test_symlink_escape_is_rejected)",
-          "reason": "Windows symlink privilege is unavailable in this test environment."
+          "reason": "Windows symlink privilege is unavailable."
         },
         {
           "test": "test_symlink_outside_result_folder_is_rejected (test_xbrl_preview.XbrlPreviewTests.test_symlink_outside_result_folder_is_rejected)",
-          "reason": "Windows symlink privilege is unavailable in this test environment."
+          "reason": "Windows symlink privilege is unavailable."
         }
       ]
     },
     "sourceChangedDuringRegression": false,
+    "securitySource": {
+      "version": "0.14.1-preview.1",
+      "frozen": false,
+      "ok": true,
+      "syntheticOnly": true,
+      "legitimateWorkReopened": true,
+      "externalWorkSupportPathBlocked": true,
+      "externalXlsxRelationshipBlocked": true,
+      "workerErrorSignalDelivered": true,
+      "exceptionValuesAndPathsExcludedFromDiagnostic": true,
+      "firstExportCsvTextNeutralized": true,
+      "networkUsed": false,
+      "osInputUsed": false,
+      "seconds": 0.062,
+      "scope": "Harmless local fixtures. Does not certify encryption, authenticity, runtime/OS security or absence of vulnerabilities."
+    },
+    "securityFrozen": {
+      "version": "0.14.1-preview.1",
+      "frozen": true,
+      "ok": true,
+      "syntheticOnly": true,
+      "legitimateWorkReopened": true,
+      "externalWorkSupportPathBlocked": true,
+      "externalXlsxRelationshipBlocked": true,
+      "workerErrorSignalDelivered": true,
+      "exceptionValuesAndPathsExcludedFromDiagnostic": true,
+      "firstExportCsvTextNeutralized": true,
+      "networkUsed": false,
+      "osInputUsed": false,
+      "seconds": 0.078,
+      "scope": "Harmless local fixtures. Does not certify encryption, authenticity, runtime/OS security or absence of vulnerabilities."
+    },
+    "securityCoverage": {
+      "workSupportReferencesBoundToEmbeddedAttachments": true,
+      "networkFilingSourceReferencesRejectedBeforeFileProbe": true,
+      "duplicateNonfiniteDeepWorkJsonRejected": true,
+      "deviceNamesSpecialZipEntriesAndBudgetsChecked": true,
+      "spreadsheetExternalRelationshipsAndAmbiguousPathsBlocked": true,
+      "streamedXmlAndPhysicalRowDepthBudgets": true,
+      "exceptionValuesSourcePathsAndLocalsNotPersisted": true,
+      "maximumNewDiagnosticLogBytes": 3145728,
+      "legacyLogsDeletedOrScrubbed": false,
+      "csvFirstExportFormulaLikeTextNeutralized": true,
+      "csvResaveSafetyCertified": false
+    },
+    "dependencyAudit": {
+      "checkedAt": "2026-10-29T10:03:27+00:00",
+      "status": "no-known-advisories-returned",
+      "packageCount": 24,
+      "affectedPackages": 0,
+      "accountingDataSent": false,
+      "nativeOsAndSeparateModelRuntimeCovered": false,
+      "noVulnerabilitiesCertification": false
+    },
+    "githubSecuritySettings": {
+      "ok": true,
+      "repository": "JoonseokWon/xbrl-account-normalizer",
+      "previouslyEnabled": false,
+      "privateVulnerabilityReportingEnabled": true,
+      "visibilityChanged": false,
+      "reportSubmitted": false,
+      "otherRepositorySettingsChanged": false
+    },
+    "storageAndIdentity": {
+      "fileEncryptionImplemented": false,
+      "loginOrRoleBasedAccessImplemented": false,
+      "reviewerTextAuthenticatesIdentity": false,
+      "windowsCodeSigned": false,
+      "signatureStatus": "NotSigned",
+      "sha256IsPublisherSignature": false
+    },
+    "embeddedSourceCheck": {
+      "checked": 156,
+      "mismatches": [],
+      "missingRequiredModules": [],
+      "exeSha256": "f6728ff399baa1a71d13822bdceb2e3f3032ec2be025cdc99cdc5251e4da26b5",
+      "ok": true
+    },
     "disclosureFrozen": {
-      "version": "0.14.0-preview.1",
+      "version": "0.14.1-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -69,34 +147,10 @@
       "osInputUsed": false,
       "dartSubmission": "not-performed",
       "scope": "Synthetic original fixtures and actual services/Qt; no real company, official DSD schema conformance, full note completeness or DART acceptance.",
-      "seconds": 0.719
-    },
-    "installedDartTaxonomyLabels": {
-      "ok": true,
-      "officialDtsReadLocally": true,
-      "conceptCount": 9454,
-      "labelledConceptCount": 9454,
-      "ixdFacts": 2181,
-      "catalogFingerprint": "4a7997de2cbd7bb93124845721ea23ea096ca4c315d4ff88038b1c1b5991f73e",
-      "syntheticIxdSha256": "5c08926f91cad408f7064ac65d871c080efba1f6d1bb24d173a283adc0d23ddf",
-      "fixtureIsPreviousSyntheticCompany": true,
-      "labelsUsedThroughExpandedQName": true,
-      "selectedSyntheticFactInTopThree": true,
-      "allCandidatesUnapproved": true,
-      "officialEditorExecuted": false,
-      "osInputUsed": false,
-      "officialFilesRedistributed": false,
-      "seconds": 21.89
-    },
-    "embeddedSourceCheck": {
-      "checked": 152,
-      "mismatches": [],
-      "missingRequiredModules": [],
-      "exeSha256": "b4a85f4e348b084b534c44bcf0a8ffc8b02056484e27948d8e50d588ccbc09eb",
-      "ok": true
+      "seconds": 0.734
     },
     "localLlmFrozen": {
-      "version": "0.14.0-preview.1",
+      "version": "0.14.1-preview.1",
       "frozen": true,
       "ok": true,
       "syntheticOnly": true,
@@ -140,7 +194,7 @@
       "ledgerAmountsOrPartiesSent": false,
       "osInputUsed": false,
       "scope": "One original synthetic account, real local model and explicit UI approval/override flow. Not a general mapping-accuracy or accounting conclusion.",
-      "seconds": 42.797
+      "seconds": 41.75
     },
     "missingModelFrozen": {
       "ok": true,
@@ -150,81 +204,28 @@
       "modelDownloaded": false
     },
     "glFrozen": {
-      "version": "0.14.0-preview.1",
-      "frozen": true,
       "ok": true,
+      "frozen": true,
+      "version": "0.14.1-preview.1",
       "totalRows": 1291,
       "documents": 11,
-      "seconds": 8.54
+      "seconds": 9.365
     },
-    "previousVersionFilingRegression": {
-      "version": "0.12.0-preview.1",
+    "previousFilingEvidence": {
+      "version": "0.14.0-preview.1",
       "rerunInThisVersion": false,
-      "reason": "Filing engine unchanged; current full unit suite, actual DTS label-read and current GL/disclosure EXE checks passed.",
-      "filingFrozen": {
-        "version": "0.12.0-preview.1",
-        "frozen": true,
-        "ok": true,
-        "facts": 30,
-        "statements": [
-          "BS",
-          "PL",
-          "CF",
-          "CE",
-          "NOTE"
-        ],
-        "comparativePeriods": 1,
-        "explicitDimensions": 1,
-        "templateCreated": true,
-        "workRoundtrip": true,
-        "unapprovedBlocked": true,
-        "calculationMismatchBlocked": true,
-        "seconds": 81.951
-      },
-      "filingTechnicalValidation": {
-        "passed": true,
-        "errors": [],
-        "warnings": [],
-        "validator": "Arelle",
-        "version": "2.47.3",
-        "offline": true
-      }
-    },
-    "candidateMethod": {
-      "disclosure": "Deterministic local label, column-year, explicit unit and exact scaled-value evidence among existing IXD facts.",
-      "maximumCandidates": 3,
-      "minimumCandidates": 0,
-      "selectionIsApproval": false,
-      "equalNumbersWithoutNameEvidenceWarned": true,
-      "yearUnitAndDuplicateContextWarnings": true,
-      "ledgerMapping": "Existing optional Ollama local LLM; separately tested with the real qwen3:4b model."
-    },
-    "numericDiagnostics": {
-      "sign": true,
-      "alternateScale": true,
-      "displayRoundingHint": true,
-      "nonzeroDifferenceStillMismatch": true,
-      "automaticCorrection": false,
-      "xbrlDecimalsValidationOrRegulatoryTolerance": false
-    },
-    "largeTableContext": {
-      "headerItemsPerPath": 32,
-      "charactersPerHeader": 2000,
-      "displayPathCharacters": 600,
-      "repeatedHeaderStringsShared": true,
-      "originalTextAndLocationPreserved": true
+      "scope": "Prior release evidence only. Current unit suite includes filing cases; official writer generation, actual full-DTS validation and DART acceptance were not rerun for this security patch."
     },
     "osMouseKeyboardClipboardUsed": false,
-    "competitorPrivateMaterialUsed": false,
-    "officialTaxonomyRedistributed": false,
     "officialBinariesRedistributed": false,
-    "localLlmRuntimeAndWeightsRedistributed": false,
-    "dartSubmissionValidated": false,
-    "scope": "Synthetic fixtures and prior synthetic-company IXD only. Existing-fact correspondence assistance, not automatic DSD authoring, new official tag approval, general mapping-accuracy certification, official IXD generation or DART acceptance."
+    "officialIfrsDartTaxonomyRedistributed": false,
+    "modelRuntimeOrWeightsRedistributed": false,
+    "realCustomerRecordsUsed": false,
+    "scope": "Source review and harmless synthetic regression cases, actual EXE checks, Python metadata/OSV lookup and private reporting setup. Not an independent penetration test, security certification, encrypted storage or code-signing implementation."
   },
   "initialUiRendered": false,
   "exeStartup": {
-    "version": "0.14.0-preview.1",
+    "version": "0.14.1-preview.1",
     "frozen": true,
     "resources": {
       "config/profile.json": true,
@@ -252,12 +253,12 @@
     "filingNoteEditorLimit": 100000,
     "scope": "startup, resource discovery and three dictionary candidates only; no conversion run"
   },
-  "sourceFileCount": 313,
-  "pythonModuleCount": 215,
+  "sourceFileCount": 323,
+  "pythonModuleCount": 224,
   "exe": {
     "name": "AccountDataNormalizer.exe",
-    "sha256": "b4a85f4e348b084b534c44bcf0a8ffc8b02056484e27948d8e50d588ccbc09eb",
-    "bytes": 7893959
+    "sha256": "f6728ff399baa1a71d13822bdceb2e3f3032ec2be025cdc99cdc5251e4da26b5",
+    "bytes": 7910204
   },
   "files": [
     {
@@ -268,17 +269,22 @@
     {
       "file": "README.md",
       "bytes": 15836,
-      "sha256": "5932409393e09b6b42ed439366069ce2f8c439b63ca0ed950f543a97d021c315"
+      "sha256": "bbf6b3f7276bbc1e18968c4f3b6594e8f74890658bcb4fa6527f08750ee5534c"
+    },
+    {
+      "file": "SECURITY.md",
+      "bytes": 4749,
+      "sha256": "cb6a25be5899c5360031ae16452477dfdef0c99a2cdcf04f2c365082960bb4bd"
     },
     {
       "file": "version.py",
       "bytes": 75,
-      "sha256": "ec7af2bc25416403b7e3b62fd17409bf0bf5f3e3c8e84dd4a12a70491e5c4613"
+      "sha256": "16cd8f9b9ca0e210f015f9bf644b9b67dbad2f0fb4f3d0036ced60b1f34e95f1"
     },
     {
       "file": "main.py",
-      "bytes": 6378,
-      "sha256": "6d5e9ff3883f0d276c0619db9b7234b85a0f09dbe10bd42572906a01371420c5"
+      "bytes": 7105,
+      "sha256": "38d103a31e4867f7e4c134b73c93c023ee21c1fb3db0a306d426d90e157ed88e"
     },
     {
       "file": "convert.py",
@@ -406,6 +412,11 @@
       "sha256": "8d994b2a2499b3a49ba4ebdb57faa7251e47c0d95c7a96d8c24d0104fc7f1602"
     },
     {
+      "file": "core/spreadsheet_text.py",
+      "bytes": 432,
+      "sha256": "2b7bdb94141af22c000f0088ac7f6e4c13a3f4fed8c6e4a2aefe15b04bef008d"
+    },
+    {
       "file": "core/values.py",
       "bytes": 1824,
       "sha256": "d3953c6c91a90f55d4888df42f4883d00d0764da2204e5cb132d0c739e107638"
@@ -429,6 +440,11 @@
       "file": "application/configuration.py",
       "bytes": 1193,
       "sha256": "3728e1f57a2c4de57356a0151007298de9ac777e9d24040e1856f03fafc61e29"
+    },
+    {
+      "file": "application/diagnostics.py",
+      "bytes": 3681,
+      "sha256": "0bf83dfcf53c66eb76e0bbd753e720b012ce9391a494b2c889dc25a5326ab935"
     },
     {
       "file": "application/disclosure_workspace/__init__.py",
@@ -462,8 +478,8 @@
     },
     {
       "file": "application/filing.py",
-      "bytes": 9927,
-      "sha256": "fda75493019d6f6d19212f97d5146f738254056feb060ea735a64115cf4a55be"
+      "bytes": 10290,
+      "sha256": "27a2a7d2c1e33da4617b489a0dd1aafe187b6a0885a8a3398654ec773ac01580"
     },
     {
       "file": "application/json_store.py",
@@ -546,9 +562,14 @@
       "sha256": "0caa2ad06880cbbab65dfc55b3ae000f50e7d10ac8942087a05ca1364a268fa0"
     },
     {
+      "file": "application/workfile_guard.py",
+      "bytes": 6545,
+      "sha256": "83a7e459f1c94b3ed6232ed2eaab79df875870e404015c8c2ade8db51a033cf0"
+    },
+    {
       "file": "application/workfiles.py",
-      "bytes": 7208,
-      "sha256": "95cf1f147d1401d10b4c8ec96ab085a6406ed82ffd65541d8760bb1f8782b94f"
+      "bytes": 5985,
+      "sha256": "d531a2b6cc1f5d9fe970011fed424de415a061c5120f3ff3f66c22aa8515ada6"
     },
     {
       "file": "application/xbrl_export.py",
@@ -662,8 +683,8 @@
     },
     {
       "file": "desktop/controllers/app.py",
-      "bytes": 12812,
-      "sha256": "5d1ee287381b811e363c69473662b56f55433c1f53427ccf4ba3ff313720f5c3"
+      "bytes": 12734,
+      "sha256": "d37bb839279bcf658552b84915ac15709131191f151049815e4b45e1e6f0b5ca"
     },
     {
       "file": "desktop/controllers/audit_export.py",
@@ -677,8 +698,8 @@
     },
     {
       "file": "desktop/controllers/jobs.py",
-      "bytes": 1378,
-      "sha256": "d7c762a05506c7ad29c907ffe4ae92da60cdf70f447fa8e82f07c9c2d881611e"
+      "bytes": 1427,
+      "sha256": "6cb905600eb470c67581b470520740959e920f08da010cb7cd0ebccdc325d272"
     },
     {
       "file": "desktop/controllers/local_llm.py",
@@ -757,8 +778,8 @@
     },
     {
       "file": "desktop/disclosure_compare.py",
-      "bytes": 30537,
-      "sha256": "c9d59e9875ae12569a2468758ddc0cbab43c46cc3aa991f334e6b22a481a5497"
+      "bytes": 30466,
+      "sha256": "dccf6e4b2a4c0b19adb2af6e6910c57b6b89bdc829238e1ffb4867be77d59428"
     },
     {
       "file": "desktop/disclosure_workspace.py",
@@ -852,8 +873,8 @@
     },
     {
       "file": "io_xlsx/package_guard.py",
-      "bytes": 2953,
-      "sha256": "b57b4562c54103625ec8e07f77e1d123f22762c2486febbca2804c2962e23974"
+      "bytes": 5758,
+      "sha256": "68ef8b45724c5f1d0375e340b6b733197705ff357c1c1d6d3347f4c5b0b87217"
     },
     {
       "file": "io_xlsx/reader.py",
@@ -1027,8 +1048,8 @@
     },
     {
       "file": "xbrl_filing/reporting.py",
-      "bytes": 5051,
-      "sha256": "6cfcb097478fd0472d56a3c0d8225d3221c07a2b23c0b532086ee30dd27d30e1"
+      "bytes": 4915,
+      "sha256": "d1a058d94c98666eb91d4a46a02e728021e8f010f90673f7ba2dbfe2a05e16f6"
     },
     {
       "file": "xbrl_filing/runtime.py",
@@ -1127,8 +1148,8 @@
     },
     {
       "file": "docs/RELEASE_NOTES.md",
-      "bytes": 17327,
-      "sha256": "f488b9a593c3caf8cfebba8d3b34e4b69237227e07f715877979ef520440ca8a"
+      "bytes": 19132,
+      "sha256": "77dd815cafc58aaf7abe93fe07b21591c6aae463fb9c7fb35cb744da2ff87177"
     },
     {
       "file": "docs/THIRD_PARTY_NOTICES.md",
@@ -1164,6 +1185,11 @@
       "file": "tests/test_company_workflow.py",
       "bytes": 11012,
       "sha256": "f8d52f4a0cfa03e3597ea7fe69eb586fc86c9af87eae8ad171557db377c6f421"
+    },
+    {
+      "file": "tests/test_dependency_audit.py",
+      "bytes": 3880,
+      "sha256": "7bed071c4a47d3b0091f563adbd1b7cd39b1384d170690d9f76dc5964f56a83f"
     },
     {
       "file": "tests/test_disclosure_assistance.py",
@@ -1321,6 +1347,21 @@
       "sha256": "f7249255c3310462f528baf553eb69f991d97ec1c39f7bc0b2401fd557b60deb"
     },
     {
+      "file": "tests/test_package_guard_security.py",
+      "bytes": 4851,
+      "sha256": "145a71afc265f865355b9b8de1c32d0f7298336fbeb186d1a82e0637635030f7"
+    },
+    {
+      "file": "tests/test_security_diagnostics.py",
+      "bytes": 3687,
+      "sha256": "41cf463afe39e96fc3e8356763506dc543b11d7fc04ed289e445e7553024bb2c"
+    },
+    {
+      "file": "tests/test_workfile_security.py",
+      "bytes": 7172,
+      "sha256": "57142690992ae58a9d2732349a2d1dabe7e1f3ed137efb9319e72013a2855add"
+    },
+    {
       "file": "tests/test_xbrl_control.py",
       "bytes": 2309,
       "sha256": "ef961117e76dcef31998b3ab83b4ed214b76e53c4eb77b95fcef6df6e6b47cc7"
@@ -1367,13 +1408,13 @@
     },
     {
       "file": "tools/build_windows.py",
-      "bytes": 5422,
-      "sha256": "89cdf318eb10e3c8491c987ccd78d003d71e55818ae289f3570cf8abadc9ccbb"
+      "bytes": 5436,
+      "sha256": "950bdfa33f6f16d58cd9ec8aefaa63ef46136b4d83f1813854dc7bd34a20ff7f"
     },
     {
       "file": "tools/package_release.py",
-      "bytes": 6975,
-      "sha256": "510270ceb5b7a4e842f4eaf2545585ff67657848cff094d8f7267037b43fde17"
+      "bytes": 7370,
+      "sha256": "702a668ab619aef8b63c99ae16b60f208774f1420c88a104d8b01687fa03ca77"
     },
     {
       "file": "samples/계정매핑_합성입력.xlsx",
@@ -1794,6 +1835,16 @@
       "file": "tools/verify_local_llm.py",
       "bytes": 7458,
       "sha256": "b4467715db27b75f3f4a1e189a1842832f9bc8fb384d46f01de6e927b65426e9"
+    },
+    {
+      "file": "tools/audit_dependencies.py",
+      "bytes": 7986,
+      "sha256": "f9856acaffccbf54fb7eb8f363f93c352e4b67a280d60ef43fca2c7bd077b033"
+    },
+    {
+      "file": "tools/verify_security.py",
+      "bytes": 4789,
+      "sha256": "72886db071e7ccacf1d191c00be7578328c29a49f2c5eed6e80835fabd5aa217"
     },
     {
       "file": "samples/공시검토예제/README.md",

@@ -11,6 +11,7 @@ from PySide6.QtWidgets import (QDialog, QWidget, QVBoxLayout, QHBoxLayout, QGrid
 
 from application.json_store import atomic_json
 from application.paths import default_outputs
+from core.spreadsheet_text import csv_text
 from desktop.components.buttons import button
 from desktop.components.card import Card
 from desktop.components.confirmation import confirm
@@ -52,8 +53,7 @@ def fact_conditions(fact):
 
 
 def _csv_text(value):
-    text = '' if value is None else str(value)
-    return "'" + text if text.lstrip().startswith(('=', '+', '-', '@', '\t', '\r')) else text
+    return csv_text(value)
 
 
 def export_comparison_csv(report, path):

@@ -1,4 +1,4 @@
-import traceback
+from application.diagnostics import safe_exception_details
 from PySide6.QtCore import QObject,Signal,QRunnable,QThreadPool
 from xbrl_gl.control import ExportCancelled
 
@@ -14,7 +14,7 @@ class Job(QRunnable):
     def run(self):
         try:self.signals.succeeded.emit(self.function(self.signals.progress.emit) if self.with_progress else self.function())
         except ExportCancelled:self.signals.cancelled.emit()
-        except Exception as error:self.signals.failed.emit(str(error),traceback.format_exc())
+        except Exception as error:self.signals.failed.emit(str(error),safe_exception_details(error))
 
 class Jobs:
     def __init__(self):self.pool=QThreadPool();self.pool.setMaxThreadCount(1);self.active=None

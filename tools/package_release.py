@@ -18,7 +18,7 @@ def main():
     runtime=ROOT/'dist'/VERSION/'AccountDataNormalizer'
     executable=runtime/'AccountDataNormalizer.exe'
     if not executable.is_file():raise FileNotFoundError('Windows EXE를 먼저 빌드하세요.')
-    names=['.gitignore','README.md','version.py','main.py','convert.py','normalizer.py','suggestions.py',
+    names=['.gitignore','README.md','SECURITY.md','version.py','main.py','convert.py','normalizer.py','suggestions.py',
            'review_history.py','field_mapping.py','workbook_export.py','demo_data.py','requirements.txt',
            'requirements-build.txt','설치.cmd','변환실행.cmd']
     files=[ROOT/name for name in names]
@@ -43,6 +43,7 @@ def main():
     files.append(ROOT/'tools/verify_official_writer.py')
     files.append(ROOT/'tools/verify_disclosure.py')
     files.append(ROOT/'tools/verify_local_llm.py')
+    files.extend(ROOT/name for name in ('tools/audit_dependencies.py','tools/verify_security.py'))
     files.extend(sorted(path for path in (ROOT/'samples/공시검토예제').glob('*')
                         if path.is_file() and path.suffix in ('.md','.json','.dsd','.ixd','.acdisclosure')))
     entries=[]
@@ -52,11 +53,13 @@ def main():
         if path.suffix=='.json':json.loads(path.read_text(encoding='utf-8-sig'))
         entries.append({'file':path.relative_to(ROOT).as_posix(),'bytes':path.stat().st_size,'sha256':digest(path)})
     # Documentation may finish after the binary build. Copy the final versions.
-    for name in ('README.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
+    for name in ('README.md','SECURITY.md','docs/MANUAL_VALIDATION.md','docs/RELEASE_NOTES.md','docs/THIRD_PARTY_NOTICES.md'):
         shutil.copy2(ROOT/name,runtime/Path(name).name)
     (runtime/'docs').mkdir(exist_ok=True)
     for path in (ROOT/'docs').iterdir():
         if path.is_file() and path.suffix in ('.md','.txt'):shutil.copy2(path,runtime/'docs'/path.name)
+    for name in ('software-bom.json','dependency-audit.json'):
+        if (release/name).is_file():shutil.copy2(release/name,runtime/name)
     diagnostics=release/'exe-startup.json'
     subprocess.run([str(executable),'--diagnostics',str(diagnostics)],cwd=ROOT,
                    check=True,timeout=30,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
@@ -81,7 +84,8 @@ def main():
         for path in sorted(runtime.rglob('*')):
             if path.is_file():output.write(path,'AccountDataNormalizer/'+path.relative_to(runtime).as_posix())
     checksum_files=[windows_zip,source_zip,manifest_path]
-    checksum_files.extend(path for path in (release/'demo-conversion-pack.zip',release/'validation-summary.json') if path.is_file())
+    checksum_files.extend(path for path in (release/'demo-conversion-pack.zip',release/'validation-summary.json',
+                                           release/'software-bom.json',release/'dependency-audit.json',release/'ui-preview.png') if path.is_file())
     checksums=''.join(f'{digest(path)}  {path.name}\n' for path in checksum_files)
     (release/'SHA256SUMS.txt').write_text(checksums,encoding='utf-8')
     print(json.dumps({'windows':str(windows_zip),'source':str(source_zip),'sourceFileCount':len(entries),

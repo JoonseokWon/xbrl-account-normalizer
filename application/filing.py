@@ -63,7 +63,11 @@ def verify_sources(report):
     for item in inputs:
         if not isinstance(item,dict) or not isinstance(item.get('sha256'),str) or re.fullmatch('[0-9a-f]{64}',item['sha256']) is None:
             raise InputError('공시 원본의 해시 기록을 확인해 주세요.')
-        path=Path(item.get('path',''))
+        raw_path=item.get('path','')
+        if (not isinstance(raw_path,str) or raw_path.replace('\\','/').startswith('//')
+                or re.match(r'^(?:file|https?|ftp|smb):',raw_path,re.I)):
+            raise InputError('공시 원본 참조에는 UNC·네트워크·URL 경로를 사용할 수 없습니다. 직접 확인한 로컬 사본을 연결해 주세요.')
+        path=Path(raw_path)
         if not path.is_file() or path.suffix.lower() not in ('.xlsx','.csv','.tsv','.json') or path.stat().st_size>50*1024**2:
             raise InputError('공시 원본을 함께 보관하고 다시 선택해 주세요: '+str(item.get('name','')))
         if _digest(path)!=item['sha256']:raise InputError('불러온 뒤 공시 원본이 바뀌었어요. 새로 불러와 확인해 주세요: '+path.name)

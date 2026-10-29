@@ -156,8 +156,8 @@ class AppController(QObject):
         self.window.notice.set_message('시산표 대사를 표시했어요. 차이는 원본 행에서 확인하고, 통제자료를 확인한 뒤 감사 입력을 저장해 주세요.')
     def failure(self,message,trace):
         self.pending_path=None;self.finish_job();self.window.notice.set_message(message or '자료를 읽는 중 문제가 생겼어요. 파일과 열 연결을 확인해 주세요.',True)
-        folder=user_data()/'logs';folder.mkdir(parents=True,exist_ok=True)
-        with (folder/'desktop.log').open('a',encoding='utf-8') as output:output.write(trace+'\n')
+        from application.diagnostics import write_error_event
+        write_error_event(trace)
     def finish_job(self):
         self.export_cancel=None
         self.window.set_busy(False)

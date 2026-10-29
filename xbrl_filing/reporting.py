@@ -3,13 +3,11 @@ import csv
 import html
 import json
 import re
+from core.spreadsheet_text import csv_text
 
 
 def _safe_cell(value):
-    value=str(value)
-    # A CSV is opened in spreadsheets; untrusted account names must remain text.
-    if value.startswith(('=','+','-','@','\t','\r','\n')) or re.fullmatch('0[0-9]+',value):return "'"+value
-    return value
+    return csv_text(value,preserve_zeroes=True)
 
 
 def write_handoff(path,report):
